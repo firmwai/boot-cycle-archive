@@ -1,0 +1,27 @@
+self = <tests.e2e.qemu_server.test_network.TestNetworkEmulated object at 0xe578dac85bb0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:47495', 'container': <Container: b4ebe4910057>, 'container_name': 'test-qemu-ad983d72', ...}
+
+    async def test_network_disconnect(self, qemu_container):
+        """network_disconnect tears down connectivity."""
+        info = qemu_container
+        timeout = e2e_timeout(30, 300)
+    
+        await _boot_and_login(info, timeout=timeout)
+    
+        await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "network_connect",
+            {},
+            timeout=timeout,
+        )
+    
+        result = await call_tool(info["base_url"], info["api_key"], "network_disconnect", {})
+>       assert result["status"] == "disconnected"
+E       AssertionError: assert 'already_disconnected' == 'disconnected'
+E         
+E         - disconnected
+E         + already_disconnected
+E         ? ++++++++
+
+tests/e2e/qemu_server/test_network.py:171: AssertionError

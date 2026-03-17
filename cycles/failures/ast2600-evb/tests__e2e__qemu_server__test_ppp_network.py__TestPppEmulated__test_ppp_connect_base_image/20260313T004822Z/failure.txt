@@ -1,0 +1,25 @@
+self = <tests.e2e.qemu_server.test_ppp_network.TestPppEmulated object at 0xe0f7c708e540>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:42405', 'container': <Container: d91827e6ba9d>, 'container_name': 'test-qemu-70f2e87a', ...}
+
+    async def test_ppp_connect_base_image(self, qemu_container):
+        """PPP connect on base image (which includes pppd)."""
+        info = qemu_container
+        timeout = e2e_timeout(60, 300)
+    
+        await _boot_and_login(info, timeout=timeout)
+    
+        result = await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "network_connect",
+            {"interface": "ppp", "ssh_username": "root", "ssh_password": "0penBmc"},
+            timeout=timeout,
+        )
+>       assert result["status"] == "connected", f"PPP connect failed: {result}"
+E       AssertionError: PPP connect failed: {'status': 'error', 'error': 'PPP interface timed out waiting for ppp0 after 30s', 'interface': 'ppp', 'hint': 'Guest pppd debug log at /var/log/pppd.log — inspect with target_bash after PPP disconnect'}
+E       assert 'error' == 'connected'
+E         
+E         - connected
+E         + error
+
+tests/e2e/qemu_server/test_ppp_network.py:186: AssertionError

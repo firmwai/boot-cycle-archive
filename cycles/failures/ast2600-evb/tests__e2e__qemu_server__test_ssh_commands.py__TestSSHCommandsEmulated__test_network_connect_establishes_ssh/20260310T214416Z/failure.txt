@@ -1,0 +1,55 @@
+self = <tests.e2e.qemu_server.test_ssh_commands.TestSSHCommandsEmulated object at 0xfec8568c26c0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:49499', 'container': <Container: b1620a8efb70>, 'container_name': 'test-qemu-77cbeeee', ...}
+
+    async def test_network_connect_establishes_ssh(self, qemu_container):
+        """network_connect establishes real SSH to QEMU guest."""
+        info = qemu_container
+        timeout = e2e_timeout(30, 350)
+    
+>       result = await _boot_login_and_connect(info, timeout=timeout)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/e2e/qemu_server/test_ssh_commands.py:468: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/e2e/qemu_server/test_ssh_commands.py:63: in _boot_login_and_connect
+    await _boot_and_login(info, timeout=timeout)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+info = {'api_key': 'test-key', 'base_url': 'http://localhost:49499', 'container': <Container: b1620a8efb70>, 'container_name': 'test-qemu-77cbeeee', ...}
+timeout = 612.5
+
+    async def _boot_and_login(info, timeout=180):
+        """Boot target and wait for shell."""
+        base_url = info["base_url"]
+        api_key = info["api_key"]
+    
+        await call_tool(
+            base_url,
+            api_key,
+            "target_reboot",
+            {
+                "start_operation": "login_shell",
+                "username": "root",
+                "password": "0penBmc",
+            },
+        )
+    
+        result = await call_tool(
+            base_url,
+            api_key,
+            "wait_for_event",
+            {"event_types": ["shell_ready", "operation_ended"], "timeout": timeout},
+            timeout=timeout + 10,
+        )
+    
+        # Verify login actually succeeded
+        events = result.get("events", [])
+        shell_ready = any(e.get("event_type") == "shell_ready" for e in events)
+        if not shell_ready:
+            op_ended = next((e for e in events if e.get("event_type") == "operation_ended"), None)
+            if op_ended and not op_ended.get("metadata", {}).get("success"):
+                error = op_ended.get("metadata", {}).get("error", "unknown")
+>               raise AssertionError(f"Login operation failed: {error}")
+E               AssertionError: Login operation failed: Login prompt not reached within 180s (boot_state=uboot). U-Boot→Linux transition may have stalled.
+
+tests/e2e/qemu_server/test_ssh_commands.py:56: AssertionError

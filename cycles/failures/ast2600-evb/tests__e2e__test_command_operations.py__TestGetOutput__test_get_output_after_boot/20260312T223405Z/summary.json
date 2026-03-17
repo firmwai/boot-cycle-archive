@@ -1,0 +1,30 @@
+{
+  "test_name": "tests/e2e/test_command_operations.py::TestGetOutput::test_get_output_after_boot",
+  "machine_type": "ast2600-evb",
+  "timestamp": "20260312T223405Z",
+  "result": "fail",
+  "boot_count": 1,
+  "boots": [
+    {
+      "boot_id": "e3844725-12e5-4b5b-9b2e-9d19657ce140",
+      "boot_timestamp": "2026-03-12T22:34:04.985532+00:00",
+      "entry_count": 2,
+      "key_events": [
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-03-12T22:34:05.399335+00:00"
+        },
+        {
+          "event_type": "boot_firmware",
+          "timestamp": "2026-03-12T22:34:05.406576+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-03-12T22:34:05.444445+00:00"
+        }
+      ]
+    }
+  ],
+  "workers": 2,
+  "failure_type": "/usr/lib/python3.12/json/decoder.py:355: JSONDecodeError"
+}

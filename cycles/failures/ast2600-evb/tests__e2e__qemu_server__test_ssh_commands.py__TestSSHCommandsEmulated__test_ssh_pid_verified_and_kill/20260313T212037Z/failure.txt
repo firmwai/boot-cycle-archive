@@ -1,0 +1,26 @@
+self = <tests.e2e.qemu_server.test_ssh_commands.TestSSHCommandsEmulated object at 0xedda61c93b00>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:38985', 'container': <Container: 5fd26b53e8c8>, 'container_name': 'test-qemu-9d1df4e7', ...}
+
+    async def test_ssh_pid_verified_and_kill(self, qemu_container):
+        """Start sleep 1h over SSH, verify PID exists on guest, kill, confirm killed."""
+        info = qemu_container
+        connect_result = await _boot_login_and_connect(info)
+        assert connect_result.get("ssh") is True
+    
+        # 1. Start long-running command (short wait so it returns as "running")
+        sleep_result = await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "target_bash",
+            {"command": "sleep 3600", "method": "ssh", "wait_timeout": 2, "timeout": 3700},
+            timeout=10,
+        )
+        assert sleep_result.get("status") == "running", f"Expected running: {sleep_result}"
+        assert sleep_result.get("method") == "ssh"
+        sleep_pid = sleep_result.get("pid")
+        sleep_cmd_id = sleep_result["command_id"]
+>       assert sleep_pid is not None, f"Expected PID in response: {sleep_result}"
+E       AssertionError: Expected PID in response: {'status': 'running', 'command_id': '44365b82', 'command': 'sleep 3600', 'method': 'ssh', 'interface': 'tap', 'pid': None, 'output': '', 'hint': "Command still running. Use command_wait('44365b82') to continue waiting, get_output(target='44365b82') to see current output, or command_kill('44365b82') to terminate."}
+E       assert None is not None
+
+tests/e2e/qemu_server/test_ssh_commands.py:396: AssertionError

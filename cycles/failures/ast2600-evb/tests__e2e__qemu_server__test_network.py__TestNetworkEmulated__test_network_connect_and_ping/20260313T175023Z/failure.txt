@@ -1,0 +1,26 @@
+self = <tests.e2e.qemu_server.test_network.TestNetworkEmulated object at 0xf701e7a4a150>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:41203', 'container': <Container: 96cbe1f75adc>, 'container_name': 'test-qemu-030ed58d', ...}
+
+    async def test_network_connect_and_ping(self, qemu_container):
+        """Full TAP connect: host TAP up, guest config via serial, ping verification."""
+        info = qemu_container
+        timeout = e2e_timeout(30, 300)
+    
+        await _boot_and_login(info, timeout=timeout)
+    
+        # Connect network
+        result = await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "network_connect",
+            {},
+            timeout=timeout,
+        )
+>       assert result["status"] == "connected", f"Connect failed: {result}"
+E       AssertionError: Connect failed: {'status': 'error', 'message': "Guest config timed out: 'ip addr flush dev eth0' — serial console may be unresponsive under load. output=''", 'interface': 'tap'}
+E       assert 'error' == 'connected'
+E         
+E         - connected
+E         + error
+
+tests/e2e/qemu_server/test_network.py:152: AssertionError

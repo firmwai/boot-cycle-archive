@@ -1,0 +1,86 @@
+self = <tests.e2e.test_command_operations.TestCommandKillVerification object at 0xec3437965df0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:37603', 'container': <Container: a7b99055e5bd>, 'container_name': 'test-qemu-f64f19fc', ...}
+
+    async def test_kill_stops_process_and_shell_is_responsive(self, qemu_container):
+        """Killing a long-running command must free the shell for new commands.
+    
+        Requirement: When command_kill sends Ctrl+C to a running process,
+        the process must actually terminate on the target. The shell must
+        be immediately responsive for subsequent commands.
+    
+        Approach: Start 'sleep 120', kill it, then run 'echo' to prove the
+        shell is free. If the kill didn't work in emulated mode, the echo
+        would block for ~2 minutes because sleep is still running.
+    
+        Mock mode note: The mock echoes raw command strings (including $?)
+        so the marker regex never matches and commands stay "running". In
+        mock mode we verify the command was accepted (lock released) and
+        the killed command's operation completed (not stuck holding lock).
+        """
+        base_url = qemu_container["base_url"]
+        api_key = qemu_container["api_key"]
+    
+        # Boot with login
+        await call_tool(
+            base_url,
+            api_key,
+            "target_reboot",
+            {
+                "start_operation": "login_shell",
+                "username": "root",
+                "password": "0penBmc",
+                "timeout": e2e_timeout(300, 500),
+            },
+        )
+        # Wait for shell_ready (not operation_ended, which fires even on failure)
+        await call_tool(
+            base_url,
+            api_key,
+            "wait_for_event",
+            {"event_types": ["shell_ready"], "timeout": 350},
+            timeout=360.0,
+        )
+>       await wait_for_shell_responsive(base_url, api_key, timeout=e2e_timeout(5, 30))
+
+tests/e2e/test_command_operations.py:376: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/e2e/conftest.py:222: in wait_for_shell_responsive
+    async def _check():
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+check_fn = <function wait_for_shell_responsive.<locals>._check at 0xec3436c3b100>
+timeout = 52.5, interval = 2.0, description = 'shell responsive'
+
+        the number of parallel xdist workers (more workers → more CPU contention).
+    
+        Args:
+            mock_value: Timeout for mock mode (fast, predictable).
+            emulated_value: Timeout for emulated mode (slower, CPU-contended).
+        """
+        if is_mock_mode():
+            return mock_value
+        return emulated_value * _parallel_multiplier()
+    
+    
+    async def wait_until(
+        check_fn,
+        timeout: float,
+        interval: float = 1.0,
+        description: str = "condition",
+    ) -> dict:
+        """Poll until a condition is met or timeout expires.
+    
+        Replaces bare ``asyncio.sleep(N)`` + immediate check with adaptive polling.
+        The check function is called every *interval* seconds. It must return a
+        ``(bool, result_dict)`` tuple. When the bool is True, the result dict is
+        returned immediately. On timeout, raises ``TimeoutError`` with the last result.
+    
+        Args:
+            check_fn: Async callable returning ``(satisfied: bool, result: dict)``.
+            timeout: Maximum seconds to wait.
+>           interval: Seconds between polls.
+            description: Human-readable label for error messages.
+        """
+E       TimeoutError: wait_until(shell responsive) timed out after 52.5s. Last result: {'status': 'running', 'command_id': '384e37b3', 'command': 'true', 'output': '', 'hint': "Command still running. Use command_wait('384e37b3') to continue waiting, get_output(target='384e37b3') to see current output, or command_kill('384e37b3') to terminate."}
+
+tests/e2e/conftest.py:186: TimeoutError

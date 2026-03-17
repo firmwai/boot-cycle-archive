@@ -1,0 +1,46 @@
+self = <tests.e2e.qemu_server.test_image_transfer.TestImageTransfer object at 0xeeb108ff86b0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:39049', 'container': <Container: e027787eb37b>, 'container_name': 'test-qemu-ab061eec', ...}
+minio_service = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:54965', 'internal_url': 'http://lab-mcp-minio-777d9d4e:9000', ...}
+
+    async def test_image_transfer_from_presigned_url(self, qemu_container, minio_service):
+        """Requirement: Boot image can be transferred to QEMU container
+        via presigned URL generated with aws s3 presign CLI.
+    
+        Flow:
+        1. Create test image file with known content
+        2. Upload to MinIO via `aws s3 cp`
+        3. Generate presigned URL via `aws s3 presign` (Docker-internal endpoint)
+        4. Call image_transfer tool with presigned URL and SHA256
+        5. Verify via image_get_info that image is active with correct hash
+        """
+        # Create test image
+        content = os.urandom(4096)
+        sha256 = hashlib.sha256(content).hexdigest()
+    
+        with tempfile.NamedTemporaryFile(suffix=".img", delete=False) as f:
+            f.write(content)
+            local_path = f.name
+    
+        try:
+            s3_key = f"test-transfer-{sha256[:8]}.img"
+    
+            # Upload to MinIO
+            await upload_to_minio(minio_service, local_path, s3_key)
+    
+            # Generate presigned URL (Docker-internal endpoint)
+            presigned_url = await generate_presigned_url(minio_service, s3_key)
+    
+            # Transfer to QEMU container
+            result = await call_tool(
+                qemu_container["base_url"],
+                qemu_container["api_key"],
+                "image_transfer",
+                {"download_url": presigned_url, "sha256": sha256},
+                timeout=e2e_timeout(30, 60),
+            )
+    
+>           assert result["status"] == "activated"
+                   ^^^^^^^^^^^^^^^^
+E           KeyError: 'status'
+
+tests/e2e/qemu_server/test_image_transfer.py:67: KeyError

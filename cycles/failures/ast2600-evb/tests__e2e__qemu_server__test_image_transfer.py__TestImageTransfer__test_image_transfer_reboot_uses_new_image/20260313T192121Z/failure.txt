@@ -1,0 +1,113 @@
+self = <tests.e2e.qemu_server.test_image_transfer.TestImageTransfer object at 0xeeb108ffb950>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:52503', 'container': <Container: 33f907e70d09>, 'container_name': 'test-qemu-73967dfd', ...}
+minio_service = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:54965', 'internal_url': 'http://lab-mcp-minio-777d9d4e:9000', ...}
+test_image = '/mnt/second_disk/openbmc-builder-data/test_images/obmc-phosphor-image-evb-ast2600-pppd.static.mtd'
+
+    async def test_image_transfer_reboot_uses_new_image(
+        self, qemu_container, minio_service, test_image
+    ):
+        """Requirement: After image_transfer, QEMU uses the new image on reboot.
+    
+        Mock mode: transfers random data, verifies reboot started and
+        image_get_info returns correct SHA256.
+    
+        Emulated mode: tests good→bad→good flow:
+        1. Transfer real boot image, reboot, verify SHA256
+        2. Transfer random (bad) data, verify different SHA256 is active
+        3. Transfer real image again (cache hit), verify original SHA256 restored
+        """
+        base_url = qemu_container["base_url"]
+        api_key = qemu_container["api_key"]
+    
+        if is_mock_mode():
+            # Mock mode: simple transfer + reboot
+            content = os.urandom(2048)
+            sha256 = hashlib.sha256(content).hexdigest()
+            with tempfile.NamedTemporaryFile(suffix=".img", delete=False) as f:
+                f.write(content)
+                local_path = f.name
+    
+            try:
+                s3_key = f"test-reboot-{sha256[:8]}.img"
+                await upload_to_minio(minio_service, local_path, s3_key)
+                presigned_url = await generate_presigned_url(minio_service, s3_key)
+    
+                await call_tool(
+                    base_url,
+                    api_key,
+                    "image_transfer",
+                    {"download_url": presigned_url, "sha256": sha256},
+                    timeout=30,
+                )
+    
+                reboot_result = await call_tool(
+                    base_url,
+                    api_key,
+                    "target_reboot",
+                    {},
+                    timeout=10,
+                )
+                assert reboot_result["status"] == "started"
+    
+                info = await call_tool(base_url, api_key, "image_get_info", {})
+                assert info["has_image"] is True
+                assert info["sha256"] == sha256
+            finally:
+                os.unlink(local_path)
+        else:
+            # Emulated mode: good → bad → good flow
+            good_path = test_image
+            good_sha256 = calculate_sha256(good_path)
+    
+            # Step 1: Transfer good (real) image
+            good_s3_key = f"test-reboot-good-{good_sha256[:8]}.img"
+            await upload_to_minio(minio_service, good_path, good_s3_key)
+            good_url = await generate_presigned_url(minio_service, good_s3_key)
+    
+            result1 = await call_tool(
+                base_url,
+                api_key,
+                "image_transfer",
+                {"download_url": good_url, "sha256": good_sha256},
+                timeout=120,
+            )
+            assert result1["status"] == "activated"
+            assert result1["sha256"] == good_sha256
+    
+            reboot_result = await call_tool(
+                base_url,
+                api_key,
+                "target_reboot",
+                {},
+                timeout=30,
+            )
+            assert reboot_result["status"] == "started"
+    
+            info1 = await call_tool(base_url, api_key, "image_get_info", {})
+            assert info1["has_image"] is True
+            assert info1["sha256"] == good_sha256
+    
+            # Step 2: Transfer bad (random) image — different SHA256
+            bad_content = os.urandom(2048)
+            bad_sha256 = hashlib.sha256(bad_content).hexdigest()
+            with tempfile.NamedTemporaryFile(suffix=".img", delete=False) as f:
+                f.write(bad_content)
+                bad_path = f.name
+    
+            try:
+                bad_s3_key = f"test-reboot-bad-{bad_sha256[:8]}.img"
+                await upload_to_minio(minio_service, bad_path, bad_s3_key)
+                bad_url = await generate_presigned_url(minio_service, bad_s3_key)
+    
+                result2 = await call_tool(
+                    base_url,
+                    api_key,
+                    "image_transfer",
+                    {"download_url": bad_url, "sha256": bad_sha256},
+                    timeout=60,
+                )
+>               assert result2["status"] == "activated"
+                       ^^^^^^^^^^^^^^^^^
+E               KeyError: 'status'
+
+tests/e2e/qemu_server/test_image_transfer.py:329: KeyError

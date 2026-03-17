@@ -1,0 +1,37 @@
+self = <tests.e2e.qemu_server.test_image_transfer.TestImageTransfer object at 0xeeb108ffa990>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:60485', 'container': <Container: db2ab2d3fdab>, 'container_name': 'test-qemu-5a3fcf2c', ...}
+minio_service = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:54965', 'internal_url': 'http://lab-mcp-minio-777d9d4e:9000', ...}
+
+    async def test_image_transfer_cache_hit_skips_download(self, qemu_container, minio_service):
+        """Requirement: Second transfer of same image uses cache (no re-download).
+    
+        Flow:
+        1. Transfer an image (populates cache)
+        2. Transfer same image again (same SHA256)
+        3. Verify cache_hit=true in response
+        """
+        content = os.urandom(2048)
+        sha256 = hashlib.sha256(content).hexdigest()
+    
+        with tempfile.NamedTemporaryFile(suffix=".img", delete=False) as f:
+            f.write(content)
+            local_path = f.name
+    
+        try:
+            s3_key = f"test-cache-hit-{sha256[:8]}.img"
+            await upload_to_minio(minio_service, local_path, s3_key)
+            presigned_url = await generate_presigned_url(minio_service, s3_key)
+    
+            # First transfer (populates cache)
+            result1 = await call_tool(
+                qemu_container["base_url"],
+                qemu_container["api_key"],
+                "image_transfer",
+                {"download_url": presigned_url, "sha256": sha256},
+                timeout=e2e_timeout(30, 60),
+            )
+>           assert result1["cache_hit"] is False
+                   ^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'cache_hit'
+
+tests/e2e/qemu_server/test_image_transfer.py:113: KeyError

@@ -1,0 +1,28 @@
+self = <tests.e2e.qemu_server.test_ppp_network.TestPppEmulated object at 0xf4c37cac2090>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:40643', 'container': <Container: 61651e75b328>, 'container_name': 'test-qemu-30fd14ba', ...}
+
+    async def test_ppp_connect_no_pppd_graceful(self, qemu_container):
+        """Base image without pppd → clean error, serial still works.
+    
+        Skips if the base image happens to include pppd (some builds do).
+        """
+        info = qemu_container
+        timeout = e2e_timeout(60, 300)
+    
+        await _boot_and_login(info, timeout=timeout)
+    
+        # Check whether this base image has pppd
+        check = await call_tool(
+            info["base_url"],
+            info["api_key"],
+>           "target_bash",
+            {"command": "which pppd", "method": "serial", "wait_timeout": 10},
+            timeout=20,
+        )
+E       AssertionError: PPP connect failed: {'status': 'error', 'error': "'PppInterface' object has no attribute '_start_guest_pppd_with_shell_takeover'", 'interface': 'ppp', 'hint': 'Guest pppd debug log at /var/log/pppd.log — inspect with target_bash after PPP disconnect'}
+E       assert 'error' == 'connected'
+E         
+E         - connected
+E         + error
+
+tests/e2e/qemu_server/test_ppp_network.py:187: AssertionError

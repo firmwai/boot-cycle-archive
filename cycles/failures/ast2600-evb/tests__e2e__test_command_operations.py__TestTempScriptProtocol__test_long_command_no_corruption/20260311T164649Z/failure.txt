@@ -1,0 +1,31 @@
+self = <tests.e2e.test_command_operations.TestTempScriptProtocol object at 0xfacec553ecf0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:60619', 'container': <Container: 43635b172609>, 'container_name': 'test-qemu-8316df77', ...}
+
+    async def test_long_command_no_corruption(self, qemu_container):
+        """Long command (>80 chars) completes without line-wrap corruption."""
+        base_url = qemu_container["base_url"]
+        api_key = qemu_container["api_key"]
+    
+        if not await _boot_and_login(base_url, api_key):
+            pytest.skip("Login failed under load")
+    
+        # Build a command longer than 80 chars
+        long_value = "x" * 100
+        result = await call_tool(
+            base_url,
+            api_key,
+            "target_bash",
+            {"command": f"echo {long_value}", "wait_timeout": e2e_timeout(30, 60)},
+            timeout=e2e_timeout(35.0, 65.0),
+        )
+    
+        assert result.get("status") in ("completed", "running"), f"Unexpected: {result}"
+    
+        if result["status"] == "completed":
+            assert result.get("exit_code") == 0
+>           assert long_value in result.get("output", "")
+E           AssertionError: assert 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' in ''
+E            +  where '' = <built-in method get of dict object at 0xfacec54657c0>('output', '')
+E            +    where <built-in method get of dict object at 0xfacec54657c0> = {'command': 'echo xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', 'command_id': '94784fe3', 'duration_seconds': 2.1, 'exit_code': 0, ...}.get
+
+tests/e2e/test_command_operations.py:523: AssertionError

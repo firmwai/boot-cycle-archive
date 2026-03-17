@@ -1,0 +1,23 @@
+self = <tests.e2e.qemu_server.test_ppp_network.TestPppEmulated object at 0xeba5e9c80aa0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:39391', 'container': <Container: c74101580feb>, 'container_name': 'test-qemu-e2dc29bf', ...}
+
+    async def test_ppp_connect_without_pppd_graceful(self, qemu_container):
+        """Base image (no pppd) → clean error, serial still works."""
+        info = qemu_container
+        timeout = e2e_timeout(60, 300)
+    
+        await _boot_and_login(info, timeout=timeout)
+    
+        # Try PPP connect on base image (no pppd installed)
+        result = await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "network_connect",
+            {"interface": "ppp", "ssh_username": "root", "ssh_password": "0penBmc"},
+            timeout=timeout,
+        )
+        assert result["status"] == "error"
+>       assert "pppd not installed" in result["error"]
+E       AssertionError: assert 'pppd not installed' in 'Host pppd exited immediately: pppd: You need to create the /dev/ppp device node by\nexecuting the following command as root:\n\tmknod /dev/ppp c 108 0'
+
+tests/e2e/qemu_server/test_ppp_network.py:193: AssertionError

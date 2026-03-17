@@ -1,0 +1,41 @@
+self = <tests.e2e.qemu_server.test_image_transfer.TestImageTransfer object at 0xeeb108ffb410>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:44059', 'container': <Container: 16819d441f85>, 'container_name': 'test-qemu-2dcd7d73', ...}
+minio_service = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:54965', 'internal_url': 'http://lab-mcp-minio-777d9d4e:9000', ...}
+
+    async def test_image_get_info(self, qemu_container, minio_service):
+        """Requirement: image_get_info returns correct SHA256 and size."""
+        content = os.urandom(3072)
+        sha256 = hashlib.sha256(content).hexdigest()
+    
+        with tempfile.NamedTemporaryFile(suffix=".img", delete=False) as f:
+            f.write(content)
+            local_path = f.name
+    
+        try:
+            s3_key = f"test-info-{sha256[:8]}.img"
+            await upload_to_minio(minio_service, local_path, s3_key)
+            presigned_url = await generate_presigned_url(minio_service, s3_key)
+    
+            await call_tool(
+                qemu_container["base_url"],
+                qemu_container["api_key"],
+                "image_transfer",
+                {"download_url": presigned_url, "sha256": sha256},
+                timeout=e2e_timeout(30, 60),
+            )
+    
+            info = await call_tool(
+                qemu_container["base_url"],
+                qemu_container["api_key"],
+                "image_get_info",
+                {},
+            )
+    
+            assert info["has_image"] is True
+>           assert info["sha256"] == sha256
+E           AssertionError: assert 'd4d03524039f...24062363c3327' == '8f5377ae15d6...b3f30ca2793c5'
+E             
+E             - 8f5377ae15d6f69aa22ebc1e9c779bdf4cb43779bade56be202b3f30ca2793c5
+E             + d4d03524039f922ca4bddc706d16dd8c77bc97951946436f48f24062363c3327
+
+tests/e2e/qemu_server/test_image_transfer.py:220: AssertionError

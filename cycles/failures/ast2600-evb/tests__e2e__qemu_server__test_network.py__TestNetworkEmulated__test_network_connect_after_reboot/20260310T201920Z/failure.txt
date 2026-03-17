@@ -1,0 +1,55 @@
+self = <tests.e2e.qemu_server.test_network.TestNetworkEmulated object at 0xe9d6af0607d0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:47423', 'container': <Container: 428e5119173e>, 'container_name': 'test-qemu-45f64838', ...}
+
+    async def test_network_connect_after_reboot(self, qemu_container):
+        """Network can be re-established after reboot."""
+        info = qemu_container
+        timeout = e2e_timeout(30, 300)
+    
+        await _boot_and_login(info, timeout=timeout)
+    
+        # Connect network
+        result1 = await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "network_connect",
+            {},
+            timeout=timeout,
+        )
+        assert result1["status"] == "connected"
+    
+        # Reboot
+        await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "target_reboot",
+            {
+                "start_operation": "login_shell",
+                "username": "root",
+                "password": "0penBmc",
+                "timeout": e2e_timeout(300, 500),
+            },
+        )
+        await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "wait_for_event",
+            {"event_types": ["shell_ready", "operation_ended"], "timeout": timeout},
+            timeout=timeout + 10,
+        )
+    
+        # Reconnect network
+        result2 = await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "network_connect",
+            {},
+            timeout=timeout,
+        )
+>       assert result2["status"] == "connected"
+E       AssertionError: assert 'error' == 'connected'
+E         
+E         - connected
+E         + error
+
+tests/e2e/qemu_server/test_network.py:304: AssertionError

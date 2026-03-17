@@ -1,0 +1,119 @@
+@contextlib.contextmanager
+    def map_httpcore_exceptions() -> typing.Iterator[None]:
+        global HTTPCORE_EXC_MAP
+        if len(HTTPCORE_EXC_MAP) == 0:
+            HTTPCORE_EXC_MAP = _load_httpcore_exceptions()
+        try:
+>           yield
+
+.venv/lib/python3.12/site-packages/httpx/_transports/default.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/httpx/_transports/default.py:271: in __aiter__
+    async for part in self._httpcore_stream:
+.venv/lib/python3.12/site-packages/httpcore/_async/connection_pool.py:407: in __aiter__
+    raise exc from None
+.venv/lib/python3.12/site-packages/httpcore/_async/connection_pool.py:403: in __aiter__
+    async for part in self._stream:
+.venv/lib/python3.12/site-packages/httpcore/_async/http11.py:342: in __aiter__
+    raise exc
+.venv/lib/python3.12/site-packages/httpcore/_async/http11.py:334: in __aiter__
+    async for chunk in self._connection._receive_response_body(**kwargs):
+.venv/lib/python3.12/site-packages/httpcore/_async/http11.py:203: in _receive_response_body
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/httpcore/_async/http11.py:213: in _receive_event
+    with map_exceptions({h11.RemoteProtocolError: RemoteProtocolError}):
+/usr/lib/python3.12/contextlib.py:158: in __exit__
+    self.gen.throw(value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+map = {<class 'h11._util.RemoteProtocolError'>: <class 'httpcore.RemoteProtocolError'>}
+
+    @contextlib.contextmanager
+    def map_exceptions(map: ExceptionMapping) -> typing.Iterator[None]:
+        try:
+            yield
+        except Exception as exc:  # noqa: PIE786
+            for from_exc, to_exc in map.items():
+                if isinstance(exc, from_exc):
+>                   raise to_exc(exc) from exc
+E                   httpcore.RemoteProtocolError: peer closed connection without sending complete message body (incomplete chunked read)
+
+.venv/lib/python3.12/site-packages/httpcore/_exceptions.py:14: RemoteProtocolError
+
+The above exception was the direct cause of the following exception:
+
+self = <tests.e2e.test_command_operations.TestTempScriptProtocol object at 0xe846987379b0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:56481', 'container': <Container: f5e738a48dac>, 'container_name': 'test-qemu-4c69aa4f', ...}
+
+    async def test_syntax_error_completes_not_timeout(self, qemu_container):
+        """Syntax error command completes (not timeout) thanks to subshell isolation.
+    
+        Mock mode: always returns exit code 0 (mock doesn't execute commands, lab-TD-010).
+        Emulated mode: returns non-zero exit code from sh subshell.
+        Key validation: command does NOT timeout — the temp-script protocol
+        isolates syntax errors so the marker always prints.
+        """
+        base_url = qemu_container["base_url"]
+        api_key = qemu_container["api_key"]
+    
+>       if not await _boot_and_login(base_url, api_key):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/e2e/test_command_operations.py:536: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/e2e/test_command_operations.py:38: in _boot_and_login
+    result = await call_tool(
+tests/e2e/conftest.py:565: in call_tool
+    tool_response = await client.post(
+.venv/lib/python3.12/site-packages/httpx/_client.py:1859: in post
+    return await self.request(
+.venv/lib/python3.12/site-packages/httpx/_client.py:1540: in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/httpx/_client.py:1643: in send
+    raise exc
+.venv/lib/python3.12/site-packages/httpx/_client.py:1637: in send
+    await response.aread()
+.venv/lib/python3.12/site-packages/httpx/_models.py:979: in aread
+    self._content = b"".join([part async for part in self.aiter_bytes()])
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/httpx/_models.py:997: in aiter_bytes
+    async for raw_bytes in self.aiter_raw():
+.venv/lib/python3.12/site-packages/httpx/_models.py:1055: in aiter_raw
+    async for raw_stream_bytes in self.stream:
+.venv/lib/python3.12/site-packages/httpx/_client.py:176: in __aiter__
+    async for chunk in self._stream:
+.venv/lib/python3.12/site-packages/httpx/_transports/default.py:270: in __aiter__
+    with map_httpcore_exceptions():
+/usr/lib/python3.12/contextlib.py:158: in __exit__
+    self.gen.throw(value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    @contextlib.contextmanager
+    def map_httpcore_exceptions() -> typing.Iterator[None]:
+        global HTTPCORE_EXC_MAP
+        if len(HTTPCORE_EXC_MAP) == 0:
+            HTTPCORE_EXC_MAP = _load_httpcore_exceptions()
+        try:
+            yield
+        except Exception as exc:
+            mapped_exc = None
+    
+            for from_exc, to_exc in HTTPCORE_EXC_MAP.items():
+                if not isinstance(exc, from_exc):
+                    continue
+                # We want to map to the most specific exception we can find.
+                # Eg if `exc` is an `httpcore.ReadTimeout`, we want to map to
+                # `httpx.ReadTimeout`, not just `httpx.TimeoutException`.
+                if mapped_exc is None or issubclass(to_exc, mapped_exc):
+                    mapped_exc = to_exc
+    
+            if mapped_exc is None:  # pragma: no cover
+                raise
+    
+            message = str(exc)
+>           raise mapped_exc(message) from exc
+E           httpx.RemoteProtocolError: peer closed connection without sending complete message body (incomplete chunked read)
+
+.venv/lib/python3.12/site-packages/httpx/_transports/default.py:118: RemoteProtocolError

@@ -1,0 +1,58 @@
+self = <tests.e2e.qemu_server.test_image_transfer.TestImageTransfer object at 0xeeb108ffaed0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:49175', 'container': <Container: 597ae2bb4142>, 'container_name': 'test-qemu-fb3e395d', ...}
+minio_service = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:54965', 'internal_url': 'http://lab-mcp-minio-777d9d4e:9000', ...}
+
+    async def test_image_transfer_stops_running_qemu(self, qemu_container, minio_service):
+        """Requirement: image_transfer stops QEMU if it's running.
+    
+        Flow:
+        1. Boot QEMU via target_reboot
+        2. Verify QEMU is running via target_get_status
+        3. Call image_transfer
+        4. Verify qemu_was_stopped=true
+        5. Verify QEMU is not running
+        """
+        # Boot QEMU
+        await call_tool(
+            qemu_container["base_url"],
+            qemu_container["api_key"],
+            "target_reboot",
+            {},
+            timeout=e2e_timeout(10, 30),
+        )
+    
+        # Verify running
+        status = await call_tool(
+            qemu_container["base_url"],
+            qemu_container["api_key"],
+            "target_get_status",
+            {},
+        )
+        assert status["qemu_running"] is True
+    
+        # Transfer image
+        content = os.urandom(1024)
+        sha256 = hashlib.sha256(content).hexdigest()
+    
+        with tempfile.NamedTemporaryFile(suffix=".img", delete=False) as f:
+            f.write(content)
+            local_path = f.name
+    
+        try:
+            s3_key = f"test-stop-qemu-{sha256[:8]}.img"
+            await upload_to_minio(minio_service, local_path, s3_key)
+            presigned_url = await generate_presigned_url(minio_service, s3_key)
+    
+            result = await call_tool(
+                qemu_container["base_url"],
+                qemu_container["api_key"],
+                "image_transfer",
+                {"download_url": presigned_url, "sha256": sha256},
+                timeout=e2e_timeout(30, 60),
+            )
+    
+>           assert result["qemu_was_stopped"] is True
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'qemu_was_stopped'
+
+tests/e2e/qemu_server/test_image_transfer.py:177: KeyError

@@ -1,0 +1,61 @@
+self = <tests.e2e.test_boot_operations.TestBootOperationsEmulatedOnly object at 0xe45ebfe35a90>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:49883', 'container': <Container: 76156a0400da>, 'container_name': 'test-qemu-ec1b63fe', ...}
+
+    async def test_wait_for_event_receives_real_time_events(self, qemu_container):
+        """In emulated mode, wait_for_event should receive events in real-time.
+    
+        Unlike mock mode, real QEMU emits events over time, so real-time
+        subscription should work. This test uses include_history=False to
+        verify real-time delivery.
+        """
+        # Start boot
+        await call_tool(
+            qemu_container["base_url"],
+            qemu_container["api_key"],
+            "target_reboot",
+            {},
+        )
+    
+        # Wait for terminal_clean events in real-time
+        # In emulated mode, boot takes 60-120s, so events are still being emitted
+>       result = await call_tool(
+            qemu_container["base_url"],
+            qemu_container["api_key"],
+            "wait_for_event",
+            {"event_types": ["terminal_clean"], "timeout": 120, "include_history": False},
+            timeout=125.0,
+        )
+
+tests/e2e/test_boot_operations.py:195: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/e2e/conftest.py:597: in call_tool
+    return json.loads(content_block.get("text", "{}"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/json/decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0xe45ec5063e30>
+s = "Input validation error: 'terminal_clean' is not one of ['boot_start', 'boot_complete', 'boot_firmware', 'boot_uboot',...ady', 'login_complete', 'operation_started', 'operation_ended', 'operation_stage', 'command_started', 'command_ended']"
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/usr/lib/python3.12/json/decoder.py:355: JSONDecodeError

@@ -1,0 +1,42 @@
+self = <tests.e2e.qemu_server.test_network.TestNetwork object at 0xe1373fd9ae70>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:49765', 'container': <Container: 5e01f61ef3f8>, 'container_name': 'test-qemu-eb687776', ...}
+
+    async def test_network_connect_requires_running_target(self, qemu_container):
+        """network_connect without a running target returns error."""
+        info = qemu_container
+>       result = await call_tool(
+            info["base_url"], info["api_key"], "network_connect", {"ssh_password": "0penBmc"}
+        )
+
+tests/e2e/qemu_server/test_network.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/e2e/conftest.py:597: in call_tool
+    return json.loads(content_block.get("text", "{}"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/json/decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0xe13741338650>
+s = "Input validation error: 'ssh_username' is a required property", idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/usr/lib/python3.12/json/decoder.py:355: JSONDecodeError

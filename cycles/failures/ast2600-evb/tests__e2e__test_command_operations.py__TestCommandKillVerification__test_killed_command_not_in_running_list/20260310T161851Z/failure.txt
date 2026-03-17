@@ -1,0 +1,78 @@
+self = <tests.e2e.test_command_operations.TestCommandKillVerification object at 0xe9d4440b4590>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:48945', 'container': <Container: ca4bafc17d7f>, 'container_name': 'test-qemu-fc72cde1', ...}
+
+    async def test_killed_command_not_in_running_list(self, qemu_container):
+        """After killing a command, it must not appear in the running list.
+    
+        Requirement: Killed commands must be removed from the running
+        commands list, reflecting that the process has been terminated
+        and resources have been cleaned up.
+        """
+        base_url = qemu_container["base_url"]
+        api_key = qemu_container["api_key"]
+    
+        # Boot with login
+        await call_tool(
+            base_url,
+            api_key,
+            "target_reboot",
+            {
+                "start_operation": "login_shell",
+                "username": "root",
+                "password": "0penBmc",
+                "timeout": e2e_timeout(300, 500),
+            },
+        )
+        # Wait for shell_ready (not operation_ended, which fires even on failure)
+        await call_tool(
+            base_url,
+            api_key,
+            "wait_for_event",
+            {"event_types": ["shell_ready"], "timeout": e2e_timeout(60, 350)},
+            timeout=e2e_timeout(70, 360),
+        )
+>       await wait_for_shell_responsive(base_url, api_key, timeout=e2e_timeout(5, 30))
+
+tests/e2e/test_command_operations.py:461: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/e2e/conftest.py:438: in wait_for_shell_responsive
+    await wait_until(_check, timeout=timeout, interval=2.0, description="shell responsive")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+check_fn = <function wait_for_shell_responsive.<locals>._check at 0xe9d43f34bb00>
+timeout = 52.5, interval = 2.0, description = 'shell responsive'
+
+    async def wait_until(
+        check_fn,
+        timeout: float,
+        interval: float = 1.0,
+        description: str = "condition",
+    ) -> dict:
+        """Poll until a condition is met or timeout expires.
+    
+        Replaces bare ``asyncio.sleep(N)`` + immediate check with adaptive polling.
+        The check function is called every *interval* seconds. It must return a
+        ``(bool, result_dict)`` tuple. When the bool is True, the result dict is
+        returned immediately. On timeout, raises ``TimeoutError`` with the last result.
+    
+        Args:
+            check_fn: Async callable returning ``(satisfied: bool, result: dict)``.
+            timeout: Maximum seconds to wait.
+            interval: Seconds between polls.
+            description: Human-readable label for error messages.
+        """
+        deadline = asyncio.get_event_loop().time() + timeout
+        last_result: dict = {}
+        while True:
+            satisfied, last_result = await check_fn()
+            if satisfied:
+                return last_result
+            remaining = deadline - asyncio.get_event_loop().time()
+            if remaining <= 0:
+>               raise TimeoutError(
+                    f"wait_until({description}) timed out after {timeout}s. "
+                    f"Last result: {last_result}"
+                )
+E               TimeoutError: wait_until(shell responsive) timed out after 52.5s. Last result: {'status': 'error', 'error': "Target not at shell (current state: uboot). Use target_reboot with start_operation='login_shell' first."}
+
+tests/e2e/conftest.py:402: TimeoutError

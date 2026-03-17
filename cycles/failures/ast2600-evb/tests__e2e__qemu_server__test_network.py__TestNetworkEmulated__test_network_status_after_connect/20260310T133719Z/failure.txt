@@ -1,0 +1,68 @@
+self = <tests.e2e.qemu_server.test_network.TestNetworkEmulated object at 0xf6daae5dcda0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:56539', 'container': <Container: 355fec013cea>, 'container_name': 'test-qemu-92097726', ...}
+
+    async def test_network_status_after_connect(self, qemu_container):
+        """network_status shows TAP as connected after network_connect."""
+        info = qemu_container
+        timeout = e2e_timeout(30, 300)
+    
+        await _boot_and_login(info, timeout=timeout)
+    
+        await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "network_connect",
+            {},
+            timeout=timeout,
+        )
+    
+        # Poll network_status — TAP interface configuration may not complete
+        # instantly after network_connect returns, especially under load (TD-011 fix).
+        async def _tap_connected():
+            result = await call_tool(info["base_url"], info["api_key"], "network_status", {})
+            tap = next((i for i in result["interfaces"] if i["name"] == "tap"), None)
+            return tap is not None and tap.get("connected", False), result
+    
+>       result = await wait_until(
+            _tap_connected, timeout=e2e_timeout(5, 30), description="tap connected",
+        )
+
+tests/e2e/qemu_server/test_network.py:148: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+check_fn = <function TestNetworkEmulated.test_network_status_after_connect.<locals>._tap_connected at 0xf6daad5dbb00>
+timeout = 52.5, interval = 1.0, description = 'tap connected'
+
+    # Write status to JSONL file
+    status_file = _get_status_file()
+    status = "passed" if report.passed else "failed" if report.failed else "skipped"
+    entry = {
+        "test": report.nodeid,
+        "status": status,
+        "duration": round(report.duration, 3),
+        "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    }
+    with status_file.open("a") as f:
+        f.write(json.dumps(entry) + "\n")
+    
+    # Check duration against baseline (only for passed tests — failed tests
+    # may have timed out which inflates their duration)
+    if not report.passed:
+        return
+    if os.environ.get("E2E_SKIP_BASELINE_CHECK"):
+        return
+    baselines, warn_mult, fail_mult = _get_baselines()
+    baseline = baselines.get(report.nodeid)
+    if baseline is None:
+        return
+    duration = report.duration
+    if duration > baseline * fail_mult:
+        report.sections.append((
+            "BASELINE FAIL",
+            f"Test took {duration:.1f}s — baseline is {baseline:.0f}s "
+>           f"({fail_mult:.0f}x threshold = {baseline * fail_mult:.0f}s). "
+            f"Investigate or update baselines.json.",
+        ))
+E       TimeoutError: wait_until(tap connected) timed out after 52.5s. Last result: {'interfaces': [{'name': 'tap', 'priority': 'wired', 'connected': False, 'is_default': False, 'host_ip': None, 'guest_ip': None}], 'count': 1}
+
+tests/e2e/conftest.py:186: TimeoutError
