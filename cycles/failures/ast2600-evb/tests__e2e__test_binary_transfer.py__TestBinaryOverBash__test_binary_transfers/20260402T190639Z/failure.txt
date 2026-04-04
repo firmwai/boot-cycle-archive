@@ -1,0 +1,71 @@
+self = <tests.e2e.test_binary_transfer.TestBinaryOverBash object at 0xea7417b133b0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:35659', 'container': <Container: 69b40b904ab1>, 'container_name': 'test-qemu-82b3b202', ...}
+minio_service = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:59295', 'internal_url': 'http://lab-mcp-minio-777d9d4e:9000', ...}
+
+    async def test_binary_transfers(self, qemu_container, minio_service):
+        """Put and get files at 4 sizes on one boot session.
+    
+        Requirement: binary-over-bash transfers work for small and large files
+        without network connectivity. Uses MinIO for file staging (same as SSH).
+        """
+        info = qemu_container
+        minio = minio_service
+        await _boot_and_login(info)
+    
+        sizes = [
+            (53, e2e_timeout(60, 120)),
+            (2048, e2e_timeout(60, 120)),
+            (204800, e2e_timeout(300, 600)),
+            (1048576, e2e_timeout(600, 1200)),
+        ]
+    
+        for size, timeout in sizes:
+            test_data = os.urandom(size)
+    
+            # PUT: MinIO → server → serial → target
+>           await self._put_via_minio(
+                info, minio, test_data, f"/tmp/bob_recv_{size}.bin", timeout
+            )
+
+tests/e2e/test_binary_transfer.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tests.e2e.test_binary_transfer.TestBinaryOverBash object at 0xea7417b133b0>
+info = {'api_key': 'test-key', 'base_url': 'http://localhost:35659', 'container': <Container: 69b40b904ab1>, 'container_name': 'test-qemu-82b3b202', ...}
+minio = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:59295', 'internal_url': 'http://lab-mcp-minio-777d9d4e:9000', ...}
+test_data = b'\x84\xea\xc5\xdb\x93"s\xfexse\x1a\x1c\x96\x94Z2gV\xbclc*\xd0\xc3D\x1a\xbd\xa4\xd1j\x8d\xb3zc\xb2\xf3\x18\x13w\xc1z\xc935\xd1\xe4\x8f*gM=I'
+dest_path = '/tmp/bob_recv_53.bin', timeout_sec = 120.0
+
+    async def _put_via_minio(self, info, minio, test_data, dest_path, timeout_sec):
+        """Upload test data to MinIO, presign, transfer to target via serial."""
+        import tempfile
+    
+        s3_key = f"test-bob-put/{len(test_data)}.bin"
+        # Write to temp file for aws s3 cp
+        with tempfile.NamedTemporaryFile(suffix=".bin", delete=False) as tmp:
+            tmp.write(test_data)
+            tmp_path = tmp.name
+        try:
+            await upload_to_minio(minio, tmp_path, s3_key)
+        finally:
+            os.unlink(tmp_path)
+        get_url = await generate_presigned_get_url(minio, s3_key)
+    
+        result = await call_tool(
+            info["base_url"], info["api_key"], "file_transfer",
+            {
+                "op": "put",
+                "method": "binary-over-bash",
+                "url": get_url,
+                "destination": dest_path,
+            },
+            timeout=timeout_sec,
+        )
+>       assert result.get("status") == "completed", f"Put {len(test_data)}B failed: {result}"
+E       AssertionError: Put 53B failed: {'status': 'error', 'error': 'Failed to deploy bin_recv.sh (no checksum marker)'}
+E       assert 'error' == 'completed'
+E         
+E         - completed
+E         + error
+
+tests/e2e/test_binary_transfer.py:88: AssertionError

@@ -1,0 +1,55 @@
+self = <tests.e2e.qemu_server.test_image_transfer.TestImageTransfer object at 0xefed3a3be300>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:49625', 'container': <Container: e2a9ecb38b07>, 'container_name': 'test-qemu-50278534', ...}
+minio_service = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:32937', 'internal_url': 'http://lab-mcp-minio-ec640c8d:9000', ...}
+
+    async def test_image_get_info(self, qemu_container, minio_service):
+        """Requirement: image_get_info returns correct SHA256 and size."""
+        content = os.urandom(3072)
+        sha256 = hashlib.sha256(content).hexdigest()
+    
+        with tempfile.NamedTemporaryFile(suffix=".img", delete=False) as f:
+            f.write(content)
+            local_path = f.name
+    
+        try:
+            s3_key = f"test-info-{sha256[:8]}.img"
+>           await upload_to_minio(minio_service, local_path, s3_key)
+
+tests/e2e/qemu_server/test_image_transfer.py:201: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+minio_info = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:32937', 'internal_url': 'http://lab-mcp-minio-ec640c8d:9000', ...}
+local_path = '/tmp/tmp7fonho9r.img', s3_key = 'test-info-69d77620.img'
+
+    async def upload_to_minio(
+        minio_info: dict,
+        local_path: str,
+        s3_key: str,
+    ) -> None:
+        """Upload file to MinIO using aws s3 cp CLI via localhost endpoint."""
+        env = {
+            **os.environ,
+            "AWS_ACCESS_KEY_ID": minio_info["access_key"],
+            "AWS_SECRET_ACCESS_KEY": minio_info["secret_key"],
+            "AWS_DEFAULT_REGION": "us-east-1",
+        }
+        proc = await asyncio.create_subprocess_exec(
+            "aws",
+            "--endpoint-url",
+            minio_info["host_url"],
+            "s3",
+            "cp",
+            local_path,
+            f"s3://{minio_info['bucket']}/{s3_key}",
+            env=env,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+        )
+        stdout, stderr = await proc.communicate()
+>       assert proc.returncode == 0, f"aws s3 cp failed: {stderr.decode()}"
+E       AssertionError: aws s3 cp failed: upload failed: ../../../../../../../../tmp/tmp7fonho9r.img to s3://test-images/test-info-69d77620.img Could not connect to the endpoint URL: "http://localhost:32937/test-images/test-info-69d77620.img"
+E         
+E       assert 1 == 0
+E        +  where 1 = <Process 3088217>.returncode
+
+tests/e2e/conftest.py:1342: AssertionError

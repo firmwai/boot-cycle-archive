@@ -1,0 +1,25 @@
+self = <tests.e2e.qemu_server.test_network.TestNetworkEmulated object at 0xef93e9e7c530>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:50987', 'container': <Container: fc9b5a335692>, 'container_name': 'test-qemu-8d7daf69', ...}
+
+    async def test_network_connect_idempotent(self, qemu_container):
+        """network_connect when already connected returns already_connected."""
+        info = qemu_container
+        timeout = e2e_timeout(30, 300)
+    
+        await _boot_and_login(info)
+    
+        # First connect
+        result1 = await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "network",
+            {"op": "connect"},
+            timeout=timeout,
+        )
+>       assert result1["status"] == "connected"
+E       AssertionError: assert 'error' == 'connected'
+E         
+E         - connected
+E         + error
+
+tests/e2e/qemu_server/test_network.py:238: AssertionError

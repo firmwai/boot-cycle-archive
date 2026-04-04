@@ -1,0 +1,11 @@
+tests/e2e/test_binary_transfer.py:135: in test_binary_transfers
+    await self._put_via_minio(
+tests/e2e/test_binary_transfer.py:66: in _put_via_minio
+    await upload_to_minio(minio, s3_key, test_data)
+tests/e2e/conftest.py:1346: in upload_to_minio
+    assert proc.returncode == 0, f"aws s3 cp failed: {stderr.decode()}"
+E   AssertionError: aws s3 cp failed: 
+E     The user-provided path test-bob-put/53.bin does not exist.
+E     
+E   assert 255 == 0
+E    +  where 255 = <Process 3509258>.returncode

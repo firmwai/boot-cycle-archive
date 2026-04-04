@@ -1,0 +1,6 @@
+tests/e2e/test_binary_transfer.py:76: in test_heredoc_put_small_script
+    assert "HEREDOC_TEST_OK" in verify.get("output", ""), f"Script output: {verify}"
+E   AssertionError: Script output: {'status': 'completed', 'command_id': '8228e392', 'command': 'chmod +x /tmp/heredoc_test.sh && sh /tmp/heredoc_test.sh', 'method': 'serial', 'interface': None, 'pid': 1234, 'output': 'chmod +x /tmp/heredoc_test.sh && sh /tmp/heredoc_test.sh', 'exit_code': 0, 'duration_seconds': 0.6}
+E   assert 'HEREDOC_TEST_OK' in 'chmod +x /tmp/heredoc_test.sh && sh /tmp/heredoc_test.sh'
+E    +  where 'chmod +x /tmp/heredoc_test.sh && sh /tmp/heredoc_test.sh' = <built-in method get of dict object at 0xea6bce000dc0>('output', '')
+E    +    where <built-in method get of dict object at 0xea6bce000dc0> = {'command': 'chmod +x /tmp/heredoc_test.sh && sh /tmp/heredoc_test.sh', 'command_id': '8228e392', 'duration_seconds': 0.6, 'exit_code': 0, ...}.get

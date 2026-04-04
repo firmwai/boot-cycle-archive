@@ -1,0 +1,79 @@
+self = <tests.e2e.test_binary_transfer.TestBinaryOverBashStability object at 0xe73d289bb2f0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:56377', 'container': <Container: e747f4402530>, 'container_name': 'test-qemu-68bb7128', ...}
+minio_service = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:38931', 'internal_url': 'http://lab-mcp-minio-9f02659c:9000', ...}
+
+    async def test_consecutive_transfers(self, qemu_container, minio_service):
+        """3x PUT then 3x GET of 2KB — stability across multiple transfers.
+    
+        Verifies PTY pause/resume cycle is stable across consecutive
+        transfers on a single boot session. Uses 2KB files (fast on
+        emulated QEMU) with integrity verification via MinIO download.
+        """
+        import zlib
+    
+        info = qemu_container
+        minio = minio_service
+        await _boot_and_login(info)
+    
+        size = 2048
+        count = 3
+        timeout = e2e_timeout(120, 300)
+    
+        import time as _time
+    
+        # Generate test data and store expected checksums
+        test_files = []
+        for i in range(count):
+            data = os.urandom(size)
+            expected_crc = format(zlib.crc32(data) & 0xFFFFFFFF, "08x")
+            test_files.append((data, expected_crc))
+    
+        # 5 consecutive PUTs
+        put_start = _time.monotonic()
+        for i, (data, _) in enumerate(test_files):
+>           await self._put_via_minio(
+                info, minio, data, f"/tmp/stability_{i}.bin", timeout
+            )
+
+tests/e2e/test_binary_transfer.py:272: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tests.e2e.test_binary_transfer.TestBinaryOverBashStability object at 0xe73d289bb2f0>
+info = {'api_key': 'test-key', 'base_url': 'http://localhost:56377', 'container': <Container: e747f4402530>, 'container_name': 'test-qemu-68bb7128', ...}
+minio = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:38931', 'internal_url': 'http://lab-mcp-minio-9f02659c:9000', ...}
+test_data = b'\t\x9a\x01\x0f\x018\xca\xccW\x04\x08iu\x16\xbfRd\xd4\xbd\xad\x0f\xffd)\x1d=\x82B\xbd%\x0bX\'\x8c\xad|\xfff\x89\xe6\x...xcfI\xbd\x00\xbdw\xf7\xad8\xaf#\xecI\xd3*\xa9O\x06\xee\r*\xcb\xf2<\x97\xf0,\xe9S$\x8bU\xa1\r\xa4\x14\x1f\xd9vq\xe8\xc0'
+dest_path = '/tmp/stability_1.bin', timeout_sec = 300.0
+
+    async def _put_via_minio(self, info, minio, test_data, dest_path, timeout_sec):
+        """Upload test data to MinIO, presign, transfer to target via serial.
+    
+        Uses checksum_tool=none for speed — caller verifies integrity.
+        """
+        s3_key = f"test-bob-stability-put/{len(test_data)}-{id(test_data) % 10000}.bin"
+        with tempfile.NamedTemporaryFile(suffix=".bin", delete=False) as tmp:
+            tmp.write(test_data)
+            tmp_path = tmp.name
+        try:
+            await upload_to_minio(minio, tmp_path, s3_key)
+        finally:
+            os.unlink(tmp_path)
+        get_url = await generate_presigned_url(minio, s3_key)
+    
+        result = await call_tool(
+            info["base_url"], info["api_key"], "file_transfer",
+            {
+                "op": "put",
+                "method": "binary-over-bash",
+                "url": get_url,
+                "destination": dest_path,
+                                            },
+            timeout=timeout_sec,
+        )
+>       assert result.get("status") == "completed", f"Put failed: {result}"
+E       AssertionError: Put failed: {'status': 'error', 'error': 'Failed to deploy bin_recv.sh: {\'status\': \'error\', \'error\': \'Heredoc transfer timed out: Command timed out after 60s: \\\'cat > /tmp/bin_recv.sh <<\\\\\\\'__HEREDOC_EOF__\\\\\\\'\\\\n#!/bin/sh\\\\n\\\\nOUTPUT="$1"\\\\nEXPECTED_FILE_SIZE="$2"\\\\nCHECKSUM_TOOL="${3:-auto}"\\\\n\\\\nif [ -z "$OUTPUT" ]; then\\\\n    echo "FAIL:usage:bin_recv.sh <output_path> [expected_size] [checksum_tool]"\\\\n    exit 1\\\\nfi\\\\n\\\\nif [ -n "$EXPECTED_FILE_SIZE" ] && [ "$EXPECTED_FILE_SIZE" -gt 0 ] 2>/dev/null; then\\\\n    OUTDIR=$(dirname "$OUTPUT")\\\\n    [ -d "$OUTDIR" ] || OUTDIR=/tmp\\\\n    AVAIL_KB=$(df -k "$OUTDIR" 2>/dev/null | awk \\\\\\\'NR==2{print $4}\\\\\\\')\\\\n    NEED_KB=$(( (EXPECTED_FILE_SIZE / 1024) + 1 ))\\\\n    if [ -n "$AVAIL_KB" ] && [ "$NEED_KB" -gt "$AVAIL_KB" ]; then\\\\n        echo "FAIL:disk_full:need=${NEED_KB}kb:avail=${AVAIL_KB}kb"\\\\n        exit 1\\\\n    fi\\\\nfi\\\\n\\\\nif command -v xxd >/dev/null 2>&1; then\\\\n    _hex_decode() { xxd -r -p; }\\\\nelse\\\\n    _hex_decode() { sed \\\\\\\'s/../\\\\\\\\\\\\\\\\x&/g\\\\\\\' | xargs printf 2>/dev/null; }\\\\nfi\\\\n\\\\n\\\\nif command -v crc32 >/dev/null 2>&1; then\\\\n    _file_crc32() { crc32 /dev/stdin 2>/dev/null | awk \\\\\\\'{print $1}\\\\\\\'; }\\\\nelif command -v python3 >/dev/null 2>&1; then\\\\n    _file_crc32() { python3 -c "import sys,zlib;d=sys.stdin.buffer.read();print(format(zlib.crc32(d)&0xFFFFFFFF,\\\\\\\'08x\\\\\\\'))"; }\\\\nelse\\\\n    _file_crc32() { cat >/dev/null; echo "00000000"; }\\\\nfi\\\\n\\\\ncase "$CHECKSUM_TOOL" in\\\\n    none)\\\\n        FRAME_CHECK_MODE="none"\\\\n        ;;\\\\n    crc32)\\\\n        FRAME_CHECK_MODE="crc32"\\\\n        ;;\\\\n    python3)\\\\n        FRAME_CHECK_MODE="crc32"\\\\n        ;;\\\\n    *)  # auto — length check (no subprocess, catches truncation)\\\\n        FRAME_CHECK_MODE="len"\\\\n        ;;\\\\nesac\\\\n\\\\nEXPECTED_OFFSET=0\\\\nTMPFILE="${OUTPUT}.recv"\\\\n\\\\nrm -f "$TMPFILE"\\\\ntouch "$TMPFILE"\\\\n\\\\nTTY_DEV=$(tty 2>/dev/null)\\\\nif [ -n "$TTY_DEV" ] && [ "$TTY_DEV" != "not a tty" ]; then\\\\n    stty -echo 2>/dev/null\\\\n    trap \\\\\\\'stty echo 2>/dev/null; rm -f "${OUTPUT}.recv"\\\\\\\' EXIT\\\\nelse\\\\n    trap \\\\\\\'rm -f "${OUTPUT}.recv"\\\\\\\' EXIT\\\\nfi\\\\n\\\\necho "READY"\\\\n\\\\nIDLE_COUNT=0\\\\nMAX_IDLE=5\\\\n\\\\nwhile true; do\\\\n    if ! IFS= read -r LINE; then\\\\n        break\\\\n    fi\\\\n\\\\n    LINE=$(printf \\\\\\\'%s\\\\\\\' "$LINE" | tr -d \\\\\\\'\\\\\\\\r\\\\\\\')\\\\n\\\\n    IDLE_COUNT=0\\\\n\\\\n    case "$LINE" in\\\\n        F:*)\\\\n            FRAME_OFFSET=$(echo "$LINE" | cut -d: -f2)\\\\n            DATA=$(echo "$LINE" | cut -d: -f3)\\\\n            RECV_CRC=$(echo "$LINE" | cut -d: -f4)\\\\n\\\\n            if [ -z "$FRAME_OFFSET" ] || [ -z "$DATA" ] || [ -z "$RECV_CRC" ]; then\\\\n                echo "NACK:${EXPECTED_OFFSET}"\\\\n                continue\\\\n            fi\\\\n\\\\n            if [ "$FRAME_OFFSET" != "$EXPECTED_OFFSET" ]; then\\\\n                echo "NACK:${EXPECTED_OFFSET}"\\\\n                continue\\\\n            fi\\\\n\\\\n            case "$FRAME_CHECK_MODE" in\\\\n                crc32)\\\\n                    CALC_CRC=$(printf \\\\\\\'%s\\\\\\\' "$DATA" | _hex_decode | _file_crc32)\\\\n                    if [ "$CALC_CRC" != "$RECV_CRC" ]; then\\\\n                        echo "NACK:${EXPECTED_OFFSET}"\\\\n                        continue\\\\n                    fi\\\\n                    ;;\\\\n                len)\\\\n                    HEX_LEN=$(printf \\\\\\\'%s\\\\\\\' "$DATA" | wc -c)\\\\n                    if [ "$HEX_LEN" != "$RECV_CRC" ]; then\\\\n                        echo "NACK:${EXPECTED_OFFSET}"\\\\n                        continue\\\\n                    fi\\\\n                    ;;\\\\n            esac\\\\n\\\\n            CHUNK_BYTES=$(( $(printf \\\\\\\'%s\\\\\\\' "$DATA" | wc -c) / 2 ))\\\\n            printf \\\\\\\'%s\\\\\\\' "$DATA" | _hex_decode >> "$TMPFILE"\\\\n\\\\n            ACTUAL_SIZE=$(wc -c < "$TMPFILE")\\\\n            EXPECTED_AFTER=$((EXPECTED_OFFSET + CHUNK_BYTES))\\\\n            if [ "$ACTUAL_SIZE" != "$EXPECTED_AFTER" ]; then\\\\n                echo "FAIL:disk_full:expected=${EXPECTED_AFTER}:actual=${ACTUAL_SIZE}"\\\\n                exit 1\\\\n            fi\\\\n\\\\n            EXPECTED_OFFSET=$EXPECTED_AFTER\\\\n            echo "ACK:F:${EXPECTED_OFFSET}"\\\\n            ;;\\\\n\\\\n        EOF:*)\\\\n            EXPECTED_SIZE=$(echo "$LINE" | cut -d: -f2)\\\\n            EXPECTED_CRC=$(echo "$LINE" | cut -d: -f3)\\\\n\\\\n            mv "$TMPFILE" "$OUTPUT"\\\\n\\\\n            ACTUAL_SIZE=$(wc -c < "$OUTPUT")\\\\n            ACTUAL_CRC=$(cat "$OUTPUT" | _file_crc32)\\\\n\\\\n            if [ "$ACTUAL_SIZE" != "$EXPECTED_SIZE" ]; then\\\\n                echo "FAIL:size_mismatch:expected=${EXPECTED_SIZE}:actual=${ACTUAL_SIZE}"\\\\n                exit 1\\\\n            fi\\\\n\\\\n            if [ -n "$EXPECTED_CRC" ] && [ "$EXPECTED_CRC" != "none" ]; then\\\\n                if [ "$ACTUAL_CRC" = "$EXPECTED_CRC" ]; then\\\\n                    echo "DONE:${ACTUAL_CRC}"\\\\n                else\\\\n                    echo "FAIL:crc_mismatch:expected=${EXPECTED_CRC}:actual=${ACTUAL_CRC}"\\\\n                    exit 1\\\\n                fi\\\\n            else\\\\n                echo "DONE:${ACTUAL_CRC}"\\\\n            fi\\\\n            exit 0\\\\n            ;;\\\\n\\\\n        C:STOP*)\\\\n            rm -f "$TMPFILE"\\\\n            echo "STOPPED"\\\\n            exit 1\\\\n            ;;\\\\n\\\\n        *)\\\\n            ;;\\\\n    esac\\\\ndone\\\\n__HEREDOC_EOF__\\\' — serial console may be unresponsive\', \'destination\': \'/tmp/bin_recv.sh\'}'}
+E       assert 'error' == 'completed'
+E         
+E         - completed
+E         + error
+
+tests/e2e/test_binary_transfer.py:211: AssertionError

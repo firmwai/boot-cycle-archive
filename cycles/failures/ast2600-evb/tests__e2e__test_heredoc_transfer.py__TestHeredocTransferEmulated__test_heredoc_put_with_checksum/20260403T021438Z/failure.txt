@@ -1,0 +1,28 @@
+self = <tests.e2e.test_heredoc_transfer.TestHeredocTransferEmulated object at 0xe1d424fce510>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:33635', 'container': <Container: bf2c0f8eede7>, 'container_name': 'test-qemu-466f3ce9', ...}
+
+    async def test_heredoc_put_with_checksum(self, qemu_container):
+        """Transfer a script and verify CRC32 checksum."""
+        info = qemu_container
+        await _boot_and_login(info)
+    
+        script_content = '#!/bin/sh\necho "HEREDOC_TEST_OK"\n'
+    
+        result = await call_tool(
+            info["base_url"], info["api_key"], "file_transfer",
+            {
+                "op": "put",
+                "method": "heredoc",
+                "content": script_content,
+                "destination": "/tmp/heredoc_test.sh",
+            },
+            timeout=e2e_timeout(30, 60),
+        )
+>       assert result.get("status") == "completed", f"Heredoc put failed: {result}"
+E       AssertionError: Heredoc put failed: {'status': 'error', 'error': 'Checksum mismatch (crc32): expected=c76bf59a got=83000000.', 'destination': '/tmp/heredoc_test.sh', 'expected_checksum': 'c76bf59a', 'actual_checksum': '83000000', 'checksum_method': 'crc32'}
+E       assert 'error' == 'completed'
+E         
+E         - completed
+E         + error
+
+tests/e2e/test_heredoc_transfer.py:124: AssertionError

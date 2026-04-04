@@ -1,0 +1,55 @@
+self = <tests.e2e.test_command_operations.TestCommandKillVerification object at 0xecdb20654620>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:35855', 'container': <Container: e0903d2e59e4>, 'container_name': 'test-qemu-shared-f7730efc', ...}
+
+    async def test_kill_stops_process_and_shell_is_responsive(self, qemu_container):
+        """Killing a long-running command must free the shell for new commands.
+    
+        Requirement: When command_kill sends Ctrl+C to a running process,
+        the process must actually terminate on the target. The shell must
+        be immediately responsive for subsequent commands.
+    
+        Approach: Start 'sleep 120', kill it, then run 'echo' to prove the
+        shell is free. If the kill didn't work in emulated mode, the echo
+        would block for ~2 minutes because sleep is still running.
+    
+        Mock mode note: The mock resolves commands via the temp-script
+        protocol (PID + marker), so commands complete immediately. In mock
+        mode, if the command already completed, we skip the kill step and
+        just verify the shell is responsive.
+        """
+        base_url = qemu_container["base_url"]
+        api_key = qemu_container["api_key"]
+    
+        if not await _boot_and_login(base_url, api_key):
+            pytest.fail("Login failed (boot stalled) — not a kill-verification issue")
+    
+        # Start a long-running command (would take 2 minutes without kill)
+        result = await call_tool(
+            base_url,
+            api_key,
+            "command",
+            {"op": "run", "command": "sleep 120", "wait_timeout": 2},
+            timeout=10.0,
+        )
+        assert result.get("status") in ("running", "completed"), (
+            f"Expected sleep to be running or completed: {result}"
+        )
+    
+        if result.get("status") == "running":
+            cmd_id = result["command_id"]
+    
+            # Kill the command
+            kill_result = await call_tool(
+                base_url,
+                api_key,
+                "command",
+                {"op": "kill", "command_id": cmd_id},
+            )
+>           assert kill_result.get("status") == "killed", f"Expected killed status: {kill_result}"
+E           AssertionError: Expected killed status: {'command_id': 'e89f6d89', 'command': 'sleep 120', 'status': 'completed', 'method': 'serial', 'interface': None, 'pid': 1234, 'start_time': '2026-03-31T09:53:27.713277+00:00', 'end_time': '2026-03-31T09:53:30.129112+00:00', 'exit_code': 0, 'error': None, 'duration_seconds': 2.4}
+E           assert 'completed' == 'killed'
+E             
+E             - killed
+E             + completed
+
+tests/e2e/test_command_operations.py:408: AssertionError

@@ -1,0 +1,81 @@
+self = <tests.e2e.qemu_server.test_image_transfer.TestImageTransfer object at 0xefed3a3bed80>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:41685', 'container': <Container: 44ef34cfeb7c>, 'container_name': 'test-qemu-9992e2a2', ...}
+minio_service = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:32937', 'internal_url': 'http://lab-mcp-minio-ec640c8d:9000', ...}
+test_image = '/mnt/second_disk/openbmc-builder-data/test_images/obmc-phosphor-image-evb-ast2600-pppd.static.mtd'
+
+    async def test_cache_integrity_after_transfer_and_reboot(
+        self,
+        qemu_container,
+        minio_service,
+        test_image,
+    ):
+        """Requirement: Cache files are never modified by QEMU operation.
+    
+        Flow:
+        1. Transfer an image (populates cache)
+        2. Boot QEMU via target_reboot (QEMU writes to working copy, not cache)
+        3. Re-transfer the same SHA256 — must be cache_hit=true
+        4. Verify image_get_info returns the original SHA256
+    
+        If QEMU had corrupted the cached file, re-activating from cache would
+        produce a working copy with a different SHA256 than the original.
+    
+        Mock mode uses random data (QEMU is faked). Emulated mode uses a real
+        boot image so QEMU can actually start.
+        """
+        base_url = qemu_container["base_url"]
+        api_key = qemu_container["api_key"]
+    
+        if is_mock_mode():
+            content = os.urandom(2048)
+            sha256 = hashlib.sha256(content).hexdigest()
+            with tempfile.NamedTemporaryFile(suffix=".img", delete=False) as f:
+                f.write(content)
+                local_path = f.name
+        else:
+            local_path = test_image
+            sha256 = calculate_sha256(local_path)
+    
+        try:
+            s3_key = f"test-integrity-{sha256[:8]}.img"
+>           await upload_to_minio(minio_service, local_path, s3_key)
+
+tests/e2e/qemu_server/test_image_transfer.py:388: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+minio_info = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:32937', 'internal_url': 'http://lab-mcp-minio-ec640c8d:9000', ...}
+local_path = '/mnt/second_disk/openbmc-builder-data/test_images/obmc-phosphor-image-evb-ast2600-pppd.static.mtd'
+s3_key = 'test-integrity-d4d03524.img'
+
+    async def upload_to_minio(
+        minio_info: dict,
+        local_path: str,
+        s3_key: str,
+    ) -> None:
+        """Upload file to MinIO using aws s3 cp CLI via localhost endpoint."""
+        env = {
+            **os.environ,
+            "AWS_ACCESS_KEY_ID": minio_info["access_key"],
+            "AWS_SECRET_ACCESS_KEY": minio_info["secret_key"],
+            "AWS_DEFAULT_REGION": "us-east-1",
+        }
+        proc = await asyncio.create_subprocess_exec(
+            "aws",
+            "--endpoint-url",
+            minio_info["host_url"],
+            "s3",
+            "cp",
+            local_path,
+            f"s3://{minio_info['bucket']}/{s3_key}",
+            env=env,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+        )
+        stdout, stderr = await proc.communicate()
+>       assert proc.returncode == 0, f"aws s3 cp failed: {stderr.decode()}"
+E       AssertionError: aws s3 cp failed: upload failed: ../../../../../../../../mnt/second_disk/openbmc-builder-data/test_images/obmc-phosphor-image-evb-ast2600-pppd.static.mtd to s3://test-images/test-integrity-d4d03524.img Could not connect to the endpoint URL: "http://localhost:32937/test-images/test-integrity-d4d03524.img?uploads"
+E         
+E       assert 1 == 0
+E        +  where 1 = <Process 3088685>.returncode
+
+tests/e2e/conftest.py:1342: AssertionError

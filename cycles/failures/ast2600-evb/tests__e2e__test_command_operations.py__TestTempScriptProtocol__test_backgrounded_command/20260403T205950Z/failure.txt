@@ -1,0 +1,55 @@
+self = <tests.e2e.test_command_operations.TestTempScriptProtocol object at 0xef93e9c2a900>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:35861', 'container': <Container: b546163d6d8a>, 'container_name': 'test-qemu-da833739', ...}
+
+    async def test_backgrounded_command(self, qemu_container):
+        """Backgrounded command (cmd &) — marker still prints."""
+        base_url = qemu_container["base_url"]
+        api_key = qemu_container["api_key"]
+    
+>       if not await _boot_and_login(base_url, api_key):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/e2e/test_command_operations.py:570: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/e2e/test_command_operations.py:55: in _boot_and_login
+    await wait_for_shell_responsive(base_url, api_key, timeout=e2e_timeout(5, 30))
+tests/e2e/conftest.py:532: in wait_for_shell_responsive
+    await wait_until(_check, timeout=timeout, interval=2.0, description="shell responsive")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+check_fn = <function wait_for_shell_responsive.<locals>._check at 0xef93da7b0ae0>
+timeout = 30.0, interval = 2.0, description = 'shell responsive'
+
+    async def wait_until(
+        check_fn,
+        timeout: float,
+        interval: float = 1.0,
+        description: str = "condition",
+    ) -> dict:
+        """Poll until a condition is met or timeout expires.
+    
+        Replaces bare ``asyncio.sleep(N)`` + immediate check with adaptive polling.
+        The check function is called every *interval* seconds. It must return a
+        ``(bool, result_dict)`` tuple. When the bool is True, the result dict is
+        returned immediately. On timeout, raises ``TimeoutError`` with the last result.
+    
+        Args:
+            check_fn: Async callable returning ``(satisfied: bool, result: dict)``.
+            timeout: Maximum seconds to wait.
+            interval: Seconds between polls.
+            description: Human-readable label for error messages.
+        """
+        deadline = asyncio.get_running_loop().time() + timeout
+        last_result: dict = {}
+        while True:
+            satisfied, last_result = await check_fn()
+            if satisfied:
+                return last_result
+            remaining = deadline - asyncio.get_running_loop().time()
+            if remaining <= 0:
+>               raise TimeoutError(
+                    f"wait_until({description}) timed out after {timeout}s. Last result: {last_result}"
+                )
+E               TimeoutError: wait_until(shell responsive) timed out after 30.0s. Last result: {'status': 'running', 'command_id': '840dd70c', 'command': 'true', 'method': 'serial', 'interface': None, 'pid': 346, 'output': '', 'hint': "Command still running. Use command(op='wait', command_id='840dd70c') to continue waiting, get_output(target='840dd70c') to see current output, or command(op='kill', command_id='840dd70c') to terminate."}
+
+tests/e2e/conftest.py:495: TimeoutError

@@ -1,0 +1,17 @@
+self = <tests.e2e.qemu_server.test_file_transfer.TestFileTransfer object at 0xef93e9e596a0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:60933', 'container': <Container: ad641ac7ef93>, 'container_name': 'test-qemu-497a3525', ...}
+
+    async def test_put_wait_timeout_zero_returns_transfer_id(self, qemu_container):
+        """Requirement: file_transfer with wait_timeout=0 returns immediately
+        with a transfer_id for async tracking.
+        """
+        info = qemu_container
+        timeout = e2e_timeout(30, 180)
+    
+        connect_result = await _boot_login_and_connect(info, timeout=timeout)
+>       assert connect_result.get("ssh") is True
+E       assert None is True
+E        +  where None = <built-in method get of dict object at 0xef93e933c380>('ssh')
+E        +    where <built-in method get of dict object at 0xef93e933c380> = {'interface': 'tap', 'message': "TAP target config timed out: 'ip link set eth0 up' — console may be unresponsive. output=''", 'status': 'error'}.get
+
+tests/e2e/qemu_server/test_file_transfer.py:320: AssertionError

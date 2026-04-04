@@ -1,0 +1,17 @@
+self = <tests.e2e.qemu_server.test_file_transfer.TestFileTransfer object at 0xef93e9e5a330>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:59585', 'container': <Container: 3e1e15e037e9>, 'container_name': 'test-qemu-601afb74', ...}
+
+    async def test_get_without_upload_url_returns_error(self, qemu_container):
+        """Requirement: file_transfer(op='get') without upload_url returns
+        an actionable error message.
+        """
+        info = qemu_container
+        timeout = e2e_timeout(30, 180)
+    
+        connect_result = await _boot_login_and_connect(info, timeout=timeout)
+>       assert connect_result.get("ssh") is True
+E       assert None is True
+E        +  where None = <built-in method get of dict object at 0xef93e8a58980>('ssh')
+E        +    where <built-in method get of dict object at 0xef93e8a58980> = {'interface': 'tap', 'message': "TAP target config timed out: 'ip link set eth0 up' — console may be unresponsive. output=''", 'status': 'error'}.get
+
+tests/e2e/qemu_server/test_file_transfer.py:211: AssertionError

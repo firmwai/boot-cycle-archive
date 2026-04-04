@@ -1,0 +1,36 @@
+{"event": "boot_start", "ts": "2026-03-25T20:32:17.259352+00:00"}
+{"event": "boot_firmware", "ts": "2026-03-25T20:32:17.259352+00:00"}
+{"event": "operation_ended", "ts": "2026-03-25T20:32:17.261263+00:00", "op": "Login", "success": false}
+Trying to boot from RAM
+U-Boot 2019.04 (Mar 10 2023 - 01:54:10 +0000)
+{"event": "boot_start", "ts": "2026-03-25T20:32:17.597615+00:00"}
+{"event": "boot_uboot", "ts": "2026-03-25T20:32:17.597615+00:00"}
+SOC: AST2600-A3
+eSPI Mode: SIO:Enable : SuperIO-2e
+Eth: MAC0: RGMII, MAC1: RGMII, MAC2: RGMII, MAC3: RGMII
+Model: AST2600 EVB
+{"event": "operation_started", "ts": "2026-03-25T20:32:17.621762+00:00", "op": "ConnectNetworks"}
+{"event": "operation_stage", "ts": "2026-03-25T20:32:17.621825+00:00", "op": "ConnectNetworks", "stage": "login"}
+{"event": "operation_stage", "ts": "2026-03-25T20:32:17.621857+00:00", "op": "Login", "stage": "checking_boot_state"}
+{"event": "operation_stage", "ts": "2026-03-25T20:32:17.621870+00:00", "op": "Login", "stage": "waiting_for_login_prompt"}
+DRAM:  already initialized, 1008 MiB (capacity:1024 MiB, VGA:64 MiB, ECC:off)
+MMC:
+MMC:
+sdhci_slot0@100: 1, sdhci_slot1@200: 2, emmc_slot0@100: 0
+Loading Environment from SPI Flash...
+Loading Environment from SPI Flash... SF: Detected mx66u51235f with page size 256 Bytes, erase size 4 KiB, total 64 MiB
+OK
+In:    serial@1e784000
+Out:   serial@1e784000
+Err:   serial@1e784000
+Model: AST2600 EVB
+Net:
+Net:
+Warning: ftgmac@1e660000 (eth0) using random MAC address - be:b9:96:36:a5:06
+eth0: ftgmac@1e660000
+Warning: ftgmac@1e680000 (eth1) using random MAC address - 5a:1b:3a:86:c3:f8
+, eth1: ftgmac@1e680000
+, eth1: ftgmac@1e680000
+Warning: ftgmac@1e670000 (eth2) using random MAC address - 9e:f2:8d:ba:bc:56
+, eth2: ftgmac@1e670000
+

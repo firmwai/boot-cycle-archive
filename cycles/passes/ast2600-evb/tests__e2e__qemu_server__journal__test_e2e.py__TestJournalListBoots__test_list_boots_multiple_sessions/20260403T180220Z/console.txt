@@ -1,0 +1,90 @@
+{"event": "error", "ts": "2026-04-03T18:02:12.656015+00:00"}
+{"event": "error", "ts": "2026-04-03T18:02:12.656103+00:00"}
+{"event": "error", "ts": "2026-04-03T18:02:12.656139+00:00"}
+{"event": "operation_started", "ts": "2026-04-03T18:02:12.837403+00:00", "op": "ConnectNetworks"}
+{"event": "operation_stage", "ts": "2026-04-03T18:02:12.837488+00:00", "op": "ConnectNetworks", "stage": "login"}
+{"event": "operation_stage", "ts": "2026-04-03T18:02:12.837522+00:00", "op": "Login", "stage": "checking_boot_state"}
+{"event": "operation_stage", "ts": "2026-04-03T18:02:12.837537+00:00", "op": "Login", "stage": "waiting_for_login_prompt"}
+U-Boot SPL 2019.04 (Mar 10 2023 - 01:54:10 +0000)
+{"event": "boot_firmware", "ts": "2026-04-03T18:02:13.050895+00:00"}
+Trying to boot from RAM
+U-Boot 2019.04 (Mar 10 2023 - 01:54:10 +0000)
+{"event": "boot_uboot", "ts": "2026-04-03T18:02:13.338593+00:00"}
+SOC: AST2600-A3
+eSPI Mode: SIO:Enable : SuperIO-2e
+Eth: MAC0: RGMII, MAC1: RGMII, MAC2: RGMII, MAC3: RGMII
+Model: AST2600 EVB
+DRAM:  already initialized, 1008 MiB (capacity:1024 MiB, VGA:64 MiB, ECC:off)
+MMC:
+MMC:
+sdhci_slot0@100: 1, sdhci_slot1@200: 2, emmc_slot0@100: 0
+Loading Environment from SPI Flash... SF: Detected mx66u51235f with page size 256 Bytes, erase size 4 KiB, total 64 MiB
+*** Warning - bad CRC, using default environment
+In:    serial@1e784000
+Out:   serial@1e784000
+Err:   serial@1e784000
+Model: AST2600 EVB
+Net:
+Warning: ftgmac@1e660000 (eth0) using random MAC address - 86:42:0a:3f:5b:c9
+eth0: ftgmac@1e660000
+Warning: ftgmac@1e680000 (eth1) using random MAC address - 02:e3:e1:c6:f6:c4
+, eth1: ftgmac@1e680000
+Warning: ftgmac@1e670000 (eth2) using random MAC address - 7a:ba:9e:60:05:ef
+, eth2: ftgmac@1e670000
+Warning: ftgmac@1e690000 (eth3) using random MAC address - 12:5e:c1:65:13:fa
+, eth3: ftgmac@1e690000
+Hit any key to stop autoboot:  2
+Hit any key to stop autoboot:  1
+Hit any key to stop autoboot:  0
+## Loading kernel from FIT Image at 83000000 ...
+## Loading kernel from FIT Image at 83000000 ...
+   Using 'conf-aspeed-ast2600-evb.dtb' configuration
+   Verifying Hash Integrity ... OK
+   Trying 'kernel-1' kernel subimage
+     Description:  Linux kernel
+     Type:         Kernel Image
+     Compression:  uncompressed
+     Data Start:   0x8300012c
+     Data Size:    3834512 Bytes = 3.7 MiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: 0x80001000
+     Entry Point:  0x80001000
+     Hash algo:    sha256
+     Hash value:   75f525ccd675e3add2b93fa68a5eb8f55a63e45df4e55ca29346b5855b5964ed
+   Verifying Hash Integrity ... sha256+ OK
+## Loading ramdisk from FIT Image at 83000000 ...
+   Using 'conf-aspeed-ast2600-evb.dtb' configuration
+   Verifying Hash Integrity ... OK
+   Trying 'ramdisk-1' ramdisk subimage
+     Description:  obmc-phosphor-initramfs
+     Type:         RAMDisk Image
+     Compression:  uncompressed
+     Data Start:   0x833b2058
+     Data Size:    1039504 Bytes = 1015.1 KiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: unavailable
+     Entry Point:  unavailable
+     Hash algo:    sha256
+     Hash value:   5e1a3fd9d769b8f6a240ca792926612e39a3a5383016d45f7b2979252bae066f
+   Verifying Hash Integrity ... sha256+ OK
+## Loading fdt from FIT Image at 83000000 ...
+   Using 'conf-aspeed-ast2600-evb.dtb' configuration
+   Verifying Hash Integrity ... OK
+   Trying 'fdt-aspeed-ast2600-evb.dtb' fdt subimage
+     Description:  Flattened Device Tree blob
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x833a84d0
+     Data Size:    39612 Bytes = 38.7 KiB
+     Architecture: ARM
+     Hash algo:    sha256
+     Hash value:   1bfd8771ac4774eb68abaeb8137238a44bdb18bde906ca060ea7ee41ff1e63a4
+   Verifying Hash Integrity ... sha256+ OK
+   Booting using the fdt blob at 0x833a84d0
+   Loading Kernel Image ... OK
+   Loading Ramdisk to 8ff02000, end 8ffffc90 ... OK
+   Loading Device Tree to 8fef5000, end 8ff01abb ... OK
+Starting kernel ...
+

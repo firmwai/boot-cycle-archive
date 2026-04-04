@@ -1,0 +1,7 @@
+tests/e2e/test_binary_transfer.py:71: in test_binary_put_small_file
+    assert result.get("status") == "completed", f"Transfer failed: {result}"
+E   AssertionError: Transfer failed: {'status': 'error', 'error': 'Source file not found: /tmp/test_bob_src.bin'}
+E   assert 'error' == 'completed'
+E     
+E     - completed
+E     + error

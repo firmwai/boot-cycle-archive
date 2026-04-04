@@ -1,0 +1,28 @@
+self = <tests.e2e.test_heredoc_transfer.TestHeredocTransferEmulated object at 0xf2f0cae992e0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:57223', 'container': <Container: fe967e386e2f>, 'container_name': 'test-qemu-758cd47f', ...}
+
+    async def test_heredoc_put_and_skip(self, qemu_container):
+        """PUT same content twice — second call should be skipped."""
+        info = qemu_container
+        await _boot_and_login(info)
+    
+        content = "#!/bin/sh\necho skip_test\nexit 0\n"
+    
+        # First put
+        result1 = await call_tool(
+            info["base_url"], info["api_key"], "file_transfer",
+            {
+                "op": "put",
+                "method": "heredoc",
+                "content": content,
+                "destination": "/tmp/skip_test.sh",
+            },
+            timeout=e2e_timeout(30, 60),
+        )
+>       assert result1.get("status") == "completed", f"First put failed: {result1}"
+E       AssertionError: First put failed: {'error': {'code': 'INTERNAL_ERROR', 'message': 'Lock held by: Login_39123f4b'}}
+E       assert None == 'completed'
+E        +  where None = <built-in method get of dict object at 0xf2f0ca5a12c0>('status')
+E        +    where <built-in method get of dict object at 0xf2f0ca5a12c0> = {'error': {'code': 'INTERNAL_ERROR', 'message': 'Lock held by: Login_39123f4b'}}.get
+
+tests/e2e/test_heredoc_transfer.py:147: AssertionError

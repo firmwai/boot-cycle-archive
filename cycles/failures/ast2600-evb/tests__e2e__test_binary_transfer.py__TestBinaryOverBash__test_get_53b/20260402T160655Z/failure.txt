@@ -1,0 +1,9 @@
+tests/e2e/test_binary_transfer.py:131: in test_get_53b
+    await self._get_and_verify(qemu_container, 53, e2e_timeout(60, 120))
+tests/e2e/test_binary_transfer.py:103: in _get_and_verify
+    assert result.get("status") == "completed", f"Get {size}B failed: {result}"
+E   AssertionError: Get 53B failed: {'status': 'error', 'error': 'No SENDING header from bin_send.sh'}
+E   assert 'error' == 'completed'
+E     
+E     - completed
+E     + error

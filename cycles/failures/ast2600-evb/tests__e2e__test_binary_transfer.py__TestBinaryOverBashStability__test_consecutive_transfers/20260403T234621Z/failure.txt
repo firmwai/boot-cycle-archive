@@ -1,0 +1,49 @@
+self = <tests.e2e.test_binary_transfer.TestBinaryOverBashStability object at 0xe1ec962ab140>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:57563', 'container': <Container: dd4c8ae465f7>, 'container_name': 'test-qemu-c1b618bc', ...}
+minio_service = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:34085', 'internal_url': 'http://lab-mcp-minio-9f02659c:9000', ...}
+
+>   ???
+
+tests/e2e/test_binary_transfer.py:270: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tests.e2e.test_binary_transfer.TestBinaryOverBashStability object at 0xe1ec962ab140>
+info = {'api_key': 'test-key', 'base_url': 'http://localhost:57563', 'container': <Container: dd4c8ae465f7>, 'container_name': 'test-qemu-c1b618bc', ...}
+minio = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:34085', 'internal_url': 'http://lab-mcp-minio-9f02659c:9000', ...}
+test_data = b'\x1akWUp_\xc7\xf4\xa4R\x98\x800\nl?\x890\x05F\xc93\xc38\x05\x03\xe6[\x9e]\n\x9c\xe9\x80\x1e.\x10w\xe6\x89\x85\'J\xc0...\xa1N\x99\xc1\xa5\xef\xf2hM\xcf\xdb\xb5\x82\xdbQ}\xca\xe7\x1e\x9e\xdbBu^\x17\xcfh\x89_`\xfe`\xf1\xca\x05\xccOX\x96\xe2'
+dest_path = '/tmp/stability_0.bin', timeout_sec = 1200.0
+
+    async def _put_via_minio(self, info, minio, test_data, dest_path, timeout_sec):
+        """Upload test data to MinIO, presign, transfer to target via serial.
+    
+        Uses checksum_tool=none for speed — caller verifies integrity.
+        """
+        s3_key = f"test-bob-stability-put/{len(test_data)}-{id(test_data) % 10000}.bin"
+        with tempfile.NamedTemporaryFile(suffix=".bin", delete=False) as tmp:
+            tmp.write(test_data)
+            tmp_path = tmp.name
+        try:
+            await upload_to_minio(minio, tmp_path, s3_key)
+        finally:
+            os.unlink(tmp_path)
+        get_url = await generate_presigned_url(minio, s3_key)
+    
+        result = await call_tool(
+            info["base_url"], info["api_key"], "file_transfer",
+            {
+                "op": "put",
+                "method": "binary-over-bash",
+                "url": get_url,
+                "destination": dest_path,
+                "checksum_tool": "none",
+                            },
+            timeout=timeout_sec,
+        )
+>       assert result.get("status") == "completed", f"Put failed: {result}"
+E       AssertionError: Put failed: {'status': 'error', 'error': 'No ACK received for 30s — broken link', 'frames_sent': 908, 'destination': '/tmp/stability_0.bin'}
+E       assert 'error' == 'completed'
+E         
+E         - completed
+E         + error
+
+tests/e2e/test_binary_transfer.py:212: AssertionError

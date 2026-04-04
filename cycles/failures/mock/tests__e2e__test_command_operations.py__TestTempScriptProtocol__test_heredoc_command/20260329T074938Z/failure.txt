@@ -1,0 +1,33 @@
+self = <tests.e2e.test_command_operations.TestTempScriptProtocol object at 0xe3f0faeb4200>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:53203', 'container': <Container: 500331bed748>, 'container_name': 'test-qemu-shared-73822769', ...}
+
+    async def test_heredoc_command(self, qemu_container):
+        """Heredoc command via multi-line JSON string."""
+        base_url = qemu_container["base_url"]
+        api_key = qemu_container["api_key"]
+    
+        if not await _boot_and_login(base_url, api_key):
+            pytest.fail("Login failed (boot stalled)")
+    
+        result = await call_tool(
+            base_url,
+            api_key,
+            "command",
+            {
+                "op": "run",
+                "command": "cat <<'EOF'\nhello world\nEOF",
+                "wait_timeout": e2e_timeout(30, 60),
+            },
+            timeout=e2e_timeout(35.0, 65.0),
+        )
+    
+        assert result.get("status") in ("completed", "running"), f"Unexpected: {result}"
+    
+        if result["status"] == "completed":
+            assert result.get("exit_code") == 0
+>           assert "hello world" in result.get("output", "")
+E           assert 'hello world' in 'root@evb-ast2600:~#'
+E            +  where 'root@evb-ast2600:~#' = <built-in method get of dict object at 0xe3f0fa604c00>('output', '')
+E            +    where <built-in method get of dict object at 0xe3f0fa604c00> = {'command': "cat <<'EOF'\nhello world\nEOF", 'command_id': 'aeba0090', 'duration_seconds': 0.3, 'exit_code': 0, ...}.get
+
+tests/e2e/test_command_operations.py:655: AssertionError

@@ -1,0 +1,18 @@
+self = <tests.e2e.qemu_server.test_file_transfer.TestFileTransferEmulated object at 0xef93e9e5b470>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:43633', 'container': <Container: a4955abd9aaa>, 'container_name': 'test-qemu-b27a4493', ...}
+minio_service = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:40099', 'internal_url': 'http://lab-mcp-minio-9f02659c:9000', ...}
+
+    async def test_sftp_get_integrity_via_minio(self, qemu_container, minio_service):
+        """Requirement: Retrieve file from real target via SFTP, upload to MinIO,
+        download from MinIO, verify content matches.
+    
+        Full end-to-end test of the presigned URL upload path.
+        """
+        info = qemu_container
+        connect_result = await _boot_login_and_connect(info)
+>       assert connect_result.get("ssh") is True
+E       assert None is True
+E        +  where None = <built-in method get of dict object at 0xef93e88dd400>('ssh')
+E        +    where <built-in method get of dict object at 0xef93e88dd400> = {'interface': 'tap', 'message': "TAP target config timed out: 'ip link set eth0 up' — console may be unresponsive. output=''", 'status': 'error'}.get
+
+tests/e2e/qemu_server/test_file_transfer.py:404: AssertionError

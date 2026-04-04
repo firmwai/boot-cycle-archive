@@ -1,0 +1,19 @@
+self = <tests.e2e.qemu_server.test_file_transfer.TestFileTransfer object at 0xefed3a39ac90>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:57391', 'container': <Container: f56c8c6c8586>, 'container_name': 'test-qemu-ac526f24', ...}
+
+    async def test_put_file_to_target(self, qemu_container):
+        """Requirement: file_transfer(op='put') transfers a local container file
+        to the target over SFTP.
+    
+        Uses /etc/hostname — a known file inside the QEMU container.
+        """
+        info = qemu_container
+        timeout = e2e_timeout(30, 180)
+    
+        connect_result = await _boot_login_and_connect(info, timeout=timeout)
+>       assert connect_result.get("status") in ("connected", "already_connected")
+E       assert 'error' in ('connected', 'already_connected')
+E        +  where 'error' = <built-in method get of dict object at 0xefed392d5a80>('status')
+E        +    where <built-in method get of dict object at 0xefed392d5a80> = {'interface': 'tap', 'message': "TAP target config timed out: 'ip addr add 192.168.7.2/24 dev eth0' — console may be unresponsive. output=''", 'status': 'error'}.get
+
+tests/e2e/qemu_server/test_file_transfer.py:102: AssertionError

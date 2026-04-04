@@ -1,0 +1,9 @@
+tests/e2e/test_binary_transfer.py:149: in test_binary_transfers
+    await self._get_via_minio(
+tests/e2e/test_binary_transfer.py:107: in _get_via_minio
+    assert result.get("status") == "completed", f"Get {size}B failed: {result}"
+E   AssertionError: Get 53B failed: {'status': 'error', 'error': 'No SENDING header from bin_send.sh'}
+E   assert 'error' == 'completed'
+E     
+E     - completed
+E     + error

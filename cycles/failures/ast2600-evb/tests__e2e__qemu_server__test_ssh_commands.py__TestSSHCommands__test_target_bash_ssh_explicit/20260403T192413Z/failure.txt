@@ -1,0 +1,30 @@
+self = <tests.e2e.qemu_server.test_ssh_commands.TestSSHCommands object at 0xef93e9e97c80>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:34885', 'container': <Container: aab385489d6c>, 'container_name': 'test-qemu-2ae048d1', ...}
+
+    async def test_target_bash_ssh_explicit(self, qemu_container):
+        """target_bash(method='ssh') explicitly uses SSH."""
+        info = qemu_container
+        timeout = e2e_timeout(30, 180)
+    
+        await _boot_login_and_connect(info, timeout=timeout)
+    
+        result = await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "command",
+            {
+                "op": "run",
+                "command": "echo hello",
+                "method": "ssh",
+                "wait_timeout": e2e_timeout(10, 30),
+            },
+            timeout=e2e_timeout(15, 35),
+        )
+    
+>       assert result.get("status") in ("completed", "running"), f"Unexpected: {result}"
+E       AssertionError: Unexpected: {'status': 'error', 'error': 'No connected network interface', 'method': 'ssh'}
+E       assert 'error' in ('completed', 'running')
+E        +  where 'error' = <built-in method get of dict object at 0xef93e88ba900>('status')
+E        +    where <built-in method get of dict object at 0xef93e88ba900> = {'error': 'No connected network interface', 'method': 'ssh', 'status': 'error'}.get
+
+tests/e2e/qemu_server/test_ssh_commands.py:177: AssertionError

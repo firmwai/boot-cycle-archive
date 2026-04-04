@@ -1,0 +1,22 @@
+self = <tests.e2e.qemu_server.test_file_transfer.TestFileTransfer object at 0xef93e9e59e20>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:35815', 'container': <Container: 573d085c11a6>, 'container_name': 'test-qemu-b231ec79', ...}
+minio_service = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:40099', 'internal_url': 'http://lab-mcp-minio-9f02659c:9000', ...}
+
+    async def test_get_to_presigned_url(self, qemu_container, minio_service):
+        """Requirement: file_transfer(op='get') retrieves file from target
+        and uploads to a presigned URL.
+    
+        Flow: put /etc/hostname to target -> generate presigned PUT URL ->
+        file_transfer(op='get', upload_url=...) -> verify file in MinIO.
+        Tests the full _upload_to_url() path that was broken by the httpx bug.
+        """
+        info = qemu_container
+        timeout = e2e_timeout(30, 180)
+    
+        connect_result = await _boot_login_and_connect(info, timeout=timeout)
+>       assert connect_result.get("ssh") is True
+E       assert None is True
+E        +  where None = <built-in method get of dict object at 0xef93e8a05ec0>('ssh')
+E        +    where <built-in method get of dict object at 0xef93e8a05ec0> = {'interface': 'tap', 'message': "TAP target config timed out: 'ip link set eth0 up' — console may be unresponsive. output=''", 'status': 'error'}.get
+
+tests/e2e/qemu_server/test_file_transfer.py:145: AssertionError

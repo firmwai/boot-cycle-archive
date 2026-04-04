@@ -1,0 +1,18 @@
+self = <tests.e2e.qemu_server.test_ssh_commands.TestSSHCommands object at 0xef93e9cbc650>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:36031', 'container': <Container: 585ee71a73ce>, 'container_name': 'test-qemu-3e058c80', ...}
+
+    async def test_network_connect_establishes_ssh(self, qemu_container):
+        """network_connect auto-establishes SSH (reported in response)."""
+        info = qemu_container
+        timeout = e2e_timeout(30, 180)
+    
+        result = await _boot_login_and_connect(info, timeout=timeout)
+>       assert result.get("status") in ("connected", "already_connected"), (
+            f"Connect failed: {result}"
+        )
+E       AssertionError: Connect failed: {'status': 'error', 'message': "TAP target config timed out: 'ip link set eth0 up' — console may be unresponsive. output=''", 'interface': 'tap'}
+E       assert 'error' in ('connected', 'already_connected')
+E        +  where 'error' = <built-in method get of dict object at 0xef93e89fb280>('status')
+E        +    where <built-in method get of dict object at 0xef93e89fb280> = {'interface': 'tap', 'message': "TAP target config timed out: 'ip link set eth0 up' — console may be unresponsive. output=''", 'status': 'error'}.get
+
+tests/e2e/qemu_server/test_ssh_commands.py:377: AssertionError

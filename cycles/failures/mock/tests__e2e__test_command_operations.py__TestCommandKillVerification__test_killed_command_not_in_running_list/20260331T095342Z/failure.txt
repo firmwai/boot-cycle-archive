@@ -1,0 +1,59 @@
+self = <tests.e2e.test_command_operations.TestCommandKillVerification object at 0xecdb20654b60>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:35855', 'container': <Container: e0903d2e59e4>, 'container_name': 'test-qemu-shared-f7730efc', ...}
+
+    async def test_killed_command_not_in_running_list(self, qemu_container):
+        """After killing a command, it must not appear in the running list.
+    
+        Requirement: Killed commands must be removed from the running
+        commands list, reflecting that the process has been terminated
+        and resources have been cleaned up.
+    
+        Mock mode note: The mock resolves commands via the temp-script
+        protocol, so commands complete immediately. In mock mode, if the
+        command already completed, the kill test is not applicable — we
+        verify the command is not in the running list instead.
+        """
+        base_url = qemu_container["base_url"]
+        api_key = qemu_container["api_key"]
+    
+        if not await _boot_and_login(base_url, api_key):
+            pytest.fail("Login failed (boot stalled) — not a kill test issue")
+    
+        # Start a long-running command
+        result = await call_tool(
+            base_url,
+            api_key,
+            "command",
+            {"op": "run", "command": "sleep 120", "wait_timeout": 2},
+            timeout=10.0,
+        )
+        assert result.get("status") in ("running", "completed"), (
+            f"Expected sleep to be running or completed: {result}"
+        )
+        cmd_id = result["command_id"]
+    
+        if result.get("status") == "running":
+            # Confirm it appears in running list
+            list_before = await call_tool(
+                base_url,
+                api_key,
+                "command",
+                {"op": "list"},
+            )
+            running_ids_before = [c["command_id"] for c in list_before["commands"]]
+            assert cmd_id in running_ids_before, "Command should be in running list before kill"
+    
+            # Kill the command
+            kill_result = await call_tool(
+                base_url,
+                api_key,
+                "command",
+                {"op": "kill", "command_id": cmd_id},
+            )
+>           assert kill_result.get("status") == "killed"
+E           AssertionError: assert 'completed' == 'killed'
+E             
+E             - killed
+E             + completed
+
+tests/e2e/test_command_operations.py:480: AssertionError

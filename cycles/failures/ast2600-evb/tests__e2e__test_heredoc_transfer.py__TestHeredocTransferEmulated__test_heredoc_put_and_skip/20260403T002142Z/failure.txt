@@ -1,0 +1,44 @@
+self = <tests.e2e.test_heredoc_transfer.TestHeredocTransferEmulated object at 0xe05bc8ef4ce0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:32869', 'container': <Container: c74f78a2d72e>, 'container_name': 'test-qemu-2f7da0ab', ...}
+
+    async def test_heredoc_put_and_skip(self, qemu_container):
+        """PUT same content twice — second call should be skipped."""
+        info = qemu_container
+        await _boot_and_login(info)
+    
+        content = "#!/bin/sh\necho skip_test\nexit 0\n"
+    
+        # First put
+        result1 = await call_tool(
+            info["base_url"], info["api_key"], "file_transfer",
+            {
+                "op": "put",
+                "method": "heredoc",
+                "content": content,
+                "destination": "/tmp/skip_test.sh",
+            },
+            timeout=e2e_timeout(30, 60),
+        )
+        assert result1.get("status") == "completed", f"First put failed: {result1}"
+        assert result1.get("verified") is True
+        assert result1.get("skipped") is not True
+    
+        # Second put — same content, should skip
+        result2 = await call_tool(
+            info["base_url"], info["api_key"], "file_transfer",
+            {
+                "op": "put",
+                "method": "heredoc",
+                "content": content,
+                "destination": "/tmp/skip_test.sh",
+            },
+            timeout=e2e_timeout(30, 60),
+        )
+        assert result2.get("status") == "completed", f"Second put failed: {result2}"
+>       assert result2.get("skipped") is True, f"Expected skip on identical content: {result2}"
+E       AssertionError: Expected skip on identical content: {'status': 'completed', 'method': 'heredoc', 'destination': '/tmp/skip_test.sh', 'size_bytes': 32, 'checksum_method': 'crc32', 'checksum': '4153cfbf', 'verified': True}
+E       assert None is True
+E        +  where None = <built-in method get of dict object at 0xe05bc854ee40>('skipped')
+E        +    where <built-in method get of dict object at 0xe05bc854ee40> = {'checksum': '4153cfbf', 'checksum_method': 'crc32', 'destination': '/tmp/skip_test.sh', 'method': 'heredoc', ...}.get
+
+tests/e2e/test_heredoc_transfer.py:163: AssertionError

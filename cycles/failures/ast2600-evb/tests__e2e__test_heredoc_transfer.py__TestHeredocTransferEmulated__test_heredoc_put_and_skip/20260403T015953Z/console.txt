@@ -1,0 +1,804 @@
+{"event": "error", "ts": "2026-04-03T01:55:14.690475+00:00"}
+{"event": "error", "ts": "2026-04-03T01:55:14.690621+00:00"}
+{"event": "error", "ts": "2026-04-03T01:55:14.690774+00:00"}
+{"event": "operation_started", "ts": "2026-04-03T01:55:14.947107+00:00", "op": "Login"}
+{"event": "operation_stage", "ts": "2026-04-03T01:55:14.947153+00:00", "op": "Login", "stage": "checking_boot_state"}
+{"event": "operation_stage", "ts": "2026-04-03T01:55:14.947170+00:00", "op": "Login", "stage": "waiting_for_login_prompt"}
+U-Boot SPL 2019.04 (Mar 10 2023 - 01:54:10 +0000)
+{"event": "boot_firmware", "ts": "2026-04-03T01:55:15.098217+00:00"}
+Trying to boot from RAM
+U-Boot 2019.04 (Mar 10 2023 - 01:54:10 +0000)
+{"event": "boot_uboot", "ts": "2026-04-03T01:55:15.320785+00:00"}
+SOC: AST2600-A3
+eSPI Mode: SIO:Enable : SuperIO-2e
+Eth: MAC0: RGMII, MAC1: RGMII, MAC2: RGMII, MAC3: RGMII
+Model: AST2600 EVB
+DRAM:  already initialized, 1008 MiB (capacity:1024 MiB, VGA:64 MiB, ECC:off)
+MMC:
+MMC:
+sdhci_slot0@100: 1, sdhci_slot1@200: 2, emmc_slot0@100: 0
+Loading Environment from SPI Flash...
+Loading Environment from SPI Flash... SF: Detected mx66u51235f with page size 256 Bytes, erase size 4 KiB, total 64 MiB
+*** Warning - bad CRC, using default environment
+In:    serial@1e784000
+Out:   serial@1e784000
+Err:   serial@1e784000
+Model: AST2600 EVB
+Net:
+Net:
+Warning: ftgmac@1e660000 (eth0) using random MAC address - 26:f5:e9:fc:66:26
+eth0: ftgmac@1e660000
+eth0: ftgmac@1e660000
+Warning: ftgmac@1e680000 (eth1) using random MAC address - 0e:59:ea:3c:a2:90
+, eth1: ftgmac@1e680000
+, eth1: ftgmac@1e680000
+Warning: ftgmac@1e670000 (eth2) using random MAC address - 6e:b5:9c:43:38:89
+, eth2: ftgmac@1e670000
+, eth2: ftgmac@1e670000
+Warning: ftgmac@1e690000 (eth3) using random MAC address - 56:4b:8e:16:48:eb
+, eth3: ftgmac@1e690000
+Hit any key to stop autoboot:  2
+Hit any key to stop autoboot:  1
+Hit any key to stop autoboot:  0
+## Loading kernel from FIT Image at 83000000 ...
+   Using 'conf-aspeed-ast2600-evb.dtb' configuration
+   Verifying Hash Integrity ... OK
+   Trying 'kernel-1' kernel subimage
+     Description:  Linux kernel
+     Type:         Kernel Image
+     Compression:  uncompressed
+     Data Start:   0x8300012c
+     Data Size:    3834512 Bytes = 3.7 MiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: 0x80001000
+     Entry Point:  0x80001000
+     Hash algo:    sha256
+     Hash value:   75f525ccd675e3add2b93fa68a5eb8f55a63e45df4e55ca29346b5855b5964ed
+   Verifying Hash Integrity ... sha256+ OK
+## Loading ramdisk from FIT Image at 83000000 ...
+   Using 'conf-aspeed-ast2600-evb.dtb' configuration
+   Verifying Hash Integrity ... OK
+   Trying 'ramdisk-1' ramdisk subimage
+     Description:  obmc-phosphor-initramfs
+     Type:         RAMDisk Image
+     Compression:  uncompressed
+     Data Start:   0x833b2058
+     Data Size:    1039504 Bytes = 1015.1 KiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: unavailable
+     Entry Point:  unavailable
+     Hash algo:    sha256
+     Hash value:   5e1a3fd9d769b8f6a240ca792926612e39a3a5383016d45f7b2979252bae066f
+   Verifying Hash Integrity ... sha256+ OK
+## Loading fdt from FIT Image at 83000000 ...
+   Using 'conf-aspeed-ast2600-evb.dtb' configuration
+   Verifying Hash Integrity ... OK
+   Trying 'fdt-aspeed-ast2600-evb.dtb' fdt subimage
+     Description:  Flattened Device Tree blob
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x833a84d0
+     Data Size:    39612 Bytes = 38.7 KiB
+     Architecture: ARM
+     Hash algo:    sha256
+     Hash value:   1bfd8771ac4774eb68abaeb8137238a44bdb18bde906ca060ea7ee41ff1e63a4
+   Verifying Hash Integrity ... sha256+ OK
+   Booting using the fdt blob at 0x833a84d0
+   Loading Kernel Image ... OK
+   Loading Ramdisk to 8ff02000, end 8ffffc90 ... OK
+   Loading Device Tree to 8fef5000, end 8ff01abb ... OK
+Starting kernel ...
+[    0.000000] Booting Linux on physical CPU 0xf00
+[    0.000000] Linux version 6.1.15-580639a (oe-user@oe-host) (arm-openbmc-linux-gnueabi-gcc (GCC) 12.2.0, GNU ld (GNU Binutils) 2.40.20230119) #1 SMP Thu Apr  6 00:55:09 UTC 2023
+[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c5387d
+[    0.000000] CPU: div instructions available: patching division code
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] OF: fdt: Machine model: AST2600 EVB
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] Reserved memory: created CMA memory pool at 0xbe000000, size 16 MiB
+[    0.000000] OF: reserved mem: initialized node framebuffer, compatible id shared-dma-pool
+[    0.000000] Reserved memory: created CMA memory pool at 0xba000000, size 64 MiB
+[    0.000000] OF: reserved mem: initialized node video, compatible id shared-dma-pool
+[    0.000000] cma: Reserved 16 MiB at 0xb9000000
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000080000000-0x00000000beffffff]
+[    0.000000]   HighMem  empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000080000000-0x00000000beffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000080000000-0x00000000beffffff]
+[    0.000000] percpu: Embedded 14 pages/cpu s36500 r0 d20844 u57344
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 256032
+[    0.000000] Kernel command line: console=ttyS4,115200n8 root=/dev/ram rw
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] Memory: 909212K/1032192K available (9216K kernel code, 811K rwdata, 1852K rodata, 1024K init, 179K bss, 24676K reserved, 98304K cma-reserved, 0K highmem)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] ftrace: allocating 29055 entries in 57 pages
+[    0.000000] ftrace: allocated 57 pages with 4 groups
+[    0.000000] trace event string verifier disabled
+[    0.000000] rcu: Hierarchical RCU implementation.
+[    0.000000] rcu:     RCU event tracing is enabled.
+[    0.000000]  Rude variant of Tasks RCU enabled.
+[    0.000000]  Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] arch_timer: cp15 timer(s) running at 1200.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0x1fffffffffffffff max_cycles: 0x114c1bbbeec, max_idle_ns: 440795229572 ns
+[    0.000240] sched_clock: 61 bits at 1200MHz, resolution 0ns, wraps every 2199023255551ns
+[    0.000631] Switching to timer-based delay loop, resolution 0ns
+[    0.016480] Calibrating delay loop (skipped), value calculated using timer frequency.. 2400.00 BogoMIPS (lpj=12000000)
+[    0.016975] pid_max: default: 32768 minimum: 301
+[    0.063735] Mount-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
+[    0.063897] Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
+[    0.097023] CPU: Testing write buffer coherency: ok
+[    0.140058] cblist_init_generic: Setting adjustable number of callback queues.
+[    0.140494] cblist_init_generic: Setting shift to 1 and lim to 1.
+[    0.141331] cblist_init_generic: Setting shift to 1 and lim to 1.
+[    0.143272] Setting up static identity map for 0x80100000 - 0x80100060
+[    0.145925] rcu: Hierarchical SRCU implementation.
+[    0.146054] rcu:     Max phase no-delay instances is 1000.
+[    0.158664] ASPEED AST2600 rev A3 (05030303)
+[    0.164990] smp: Bringing up secondary CPUs ...
+[    1.284980] CPU1: failed to come online
+[    1.290320] smp: Brought up 1 node, 1 CPU
+[    1.290525] SMP: Total of 1 processors activated (2400.00 BogoMIPS).
+[    1.290647] CPU: All CPU(s) started in SVC mode.
+[    1.363379] devtmpfs: initialized
+[    1.435712] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+[    1.479507] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    1.481479] futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    1.496416] pinctrl core: initialized pinctrl subsystem
+[    1.543115] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    1.626114] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    1.645475] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    1.645683] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    2.024654] AST2600 secure boot disabled
+[    2.030742] SCSI subsystem initialized
+[    2.034378] usbcore: registered new interface driver usbfs
+[    2.035298] usbcore: registered new interface driver hub
+[    2.035775] usbcore: registered new device driver usb
+[    2.037257] mc: Linux media interface: v0.10
+[    2.037599] videodev: Linux video capture interface: v2.00
+[    2.038019] pps_core: LinuxPPS API ver. 1 registered
+[    2.038089] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    2.038350] PTP clock support registered
+[    2.038613] EDAC MC: Ver: 3.0.0
+[    2.098341] clocksource: Switched to clocksource arch_sys_counter
+[    2.289186] NET: Registered PF_INET protocol family
+[    2.292573] IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    2.306244] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes, linear)
+[    2.306504] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    2.307107] TCP established hash table entries: 8192 (order: 3, 32768 bytes, linear)
+[    2.307594] TCP bind hash table entries: 8192 (order: 5, 131072 bytes, linear)
+[    2.308345] TCP: Hash tables configured (established 8192 bind 8192)
+[    2.310820] UDP hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    2.311302] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    2.314563] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    2.336015] Unpacking initramfs...
+[    2.413165] workingset: timestamp_bits=30 max_order=18 bucket_order=0
+[    2.442701] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    2.444389] jffs2: version 2.2. (SUMMARY)  © 2001-2006 Red Hat, Inc.
+[    2.473249] NET: Registered PF_ALG protocol family
+[    2.474631] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
+[    2.588271] Serial: 8250/16550 driver, 6 ports, IRQ sharing enabled
+[    2.640139] printk: console [ttyS4] disabled
+[    2.671755] 1e784000.serial: ttyS4 at MMIO 0x1e784000 (irq = 33, base_baud = 1500000) is a 16550A
+[    2.925327] printk: console [ttyS4] enabled
+[    2.960548] timeriomem_rng 1e6e2524.hwrng: 32bits from 0x(ptrval) @ 1us
+[    2.983442] aspeed_gfx 1e6e6000.display: assigned reserved memory node framebuffer
+[    3.057116] random: crng init done
+[    3.090781] [drm] Initialized aspeed-gfx-drm 1.0.0 20180319 for 1e6e6000.display on minor 0
+[    3.186014] loop: module loaded
+[    3.370120] spi-nor spi0.0: mx25u51245g (65536 Kbytes)
+[    3.567932] spi-aspeed-smc 1e620000.spi: CE0 read buswidth:4 [0x406c0641]
+[    3.740949] 5 fixed-partitions partitions found on MTD device bmc
+[    3.742010] Creating 5 MTD partitions on "bmc":
+[    3.743045] 0x000000000000-0x0000000e0000 : "u-boot"
+[    3.763324] 0x0000000e0000-0x000000100000 : "u-boot-env"
+[    3.769499] 0x000000100000-0x000000a00000 : "kernel"
+[    3.782048] 0x000000a00000-0x000002a00000 : "rofs"
+[    3.799545] 0x000002a00000-0x000004000000 : "rwfs"
+[    3.824478] spi-nor spi1.0: mx25u51245g (65536 Kbytes)
+[    3.833733] spi-aspeed-smc 1e630000.spi: Calibration area too uniform, using low speed
+[    3.835133] spi-aspeed-smc 1e630000.spi: CE0 read buswidth:4 [0x406c0041]
+[    3.913676] ftgmac100 1e660000.ftgmac: Read MAC address 26:f5:e9:fc:66:26 from chip
+[    3.918180] RTL8211E Gigabit Ethernet 1e650000.mdio-1:00: attached PHY driver (mii_bus:phy_addr=1e650000.mdio-1:00, irq=POLL)
+[    3.924394] ftgmac100 1e660000.ftgmac eth0: irq 35, mapped at (ptrval)
+[    3.928119] ftgmac100 1e680000.ftgmac: Read MAC address 0e:59:ea:3c:a2:90 from chip
+[    3.930060] RTL8211E Gigabit Ethernet 1e650008.mdio-1:00: attached PHY driver (mii_bus:phy_addr=1e650008.mdio-1:00, irq=POLL)
+[    3.940428] ftgmac100 1e680000.ftgmac eth1: irq 36, mapped at (ptrval)
+[    3.944053] ftgmac100 1e670000.ftgmac: Read MAC address 6e:b5:9c:43:38:89 from chip
+[    3.947722] RTL8211E Gigabit Ethernet 1e650010.mdio-1:00: attached PHY driver (mii_bus:phy_addr=1e650010.mdio-1:00, irq=POLL)
+[    3.951765] ftgmac100 1e670000.ftgmac eth2: irq 37, mapped at (ptrval)
+[    3.954910] ftgmac100 1e690000.ftgmac: Read MAC address 56:4b:8e:16:48:eb from chip
+[    3.958703] RTL8211E Gigabit Ethernet 1e650018.mdio-1:00: attached PHY driver (mii_bus:phy_addr=1e650018.mdio-1:00, irq=POLL)
+[    3.963466] ftgmac100 1e690000.ftgmac eth3: irq 38, mapped at (ptrval)
+[    3.967300] PPP generic driver version 2.4.2
+[    4.058877] PPP BSD Compression module registered
+[    4.059976] PPP Deflate Compression module registered
+[    4.059976] PPP Deflate Compression module registered
+[    4.092169] PPP MPPE Compression module registered
+[    4.095066] usbcore: registered new interface driver usb-storage
+[    4.128748] ehci-platform 1e6a3000.usb: EHCI Host Controller
+[    4.130683] ehci-platform 1e6a3000.usb: new USB bus registered, assigned bus number 1
+number 1                                                                        [    4.180374] aspeed_vhub 1e6a0000.usb-vhub: Initialized virtual hub in USB2 mo
+de
+[    4.192896] ehci-platform 1e6a3000.usb: irq 40, io mem 0x1e6a3000
+[    4.219189] ehci-platform 1e6a3000.usb: USB 2.0 started, EHCI 1.00
+[    4.225832] aspeed-rtc 1e781000.rtc: registered as rtc0
+[    4.227657] aspeed-rtc 1e781000.rtc: hctosys: unable to read the hardware clock
+[    4.229940] i2c_dev: i2c /dev entries driver
+[    4.368416] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.01
+[    4.369729] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.370877] usb usb1: Product: EHCI Host Controller
+[    4.371673] usb usb1: Manufacturer: Linux 6.1.15-580639a ehci_hcd
+[    4.372694] usb usb1: SerialNumber: 1e6a3000.usb
+[    4.379529] aspeed-i2c-bus 1e78a080.i2c-bus: i2c bus 0 registered, irq 41
+[    4.387897] aspeed-i2c-bus 1e78a100.i2c-bus: i2c bus 1 registered, irq 42
+[    4.402317] aspeed-i2c-bus 1e78a180.i2c-bus: i2c bus 2 registered, irq 43
+[    4.420607] hub 1-0:1.0: USB hub found
+[    4.423774] aspeed-i2c-bus 1e78a200.i2c-bus: i2c bus 3 registered, irq 44
+[    4.428468] hub 1-0:1.0: 6 ports detected
+[    4.437026] aspeed-i2c-bus 1e78a280.i2c-bus: i2c bus 4 registered, irq 45
+[    4.448332] aspeed-i2c-bus 1e78a300.i2c-bus: i2c bus 5 registered, irq 46
+[    4.456667] aspeed-i2c-bus 1e78a380.i2c-bus: i2c bus 6 registered, irq 47
+[    4.483752] at24 7-0050: 1024 byte 24c08 EEPROM, writable, 16 bytes/write
+[    4.485351] aspeed-i2c-bus 1e78a400.i2c-bus: i2c bus 7 registered, irq 48
+[    4.499540] Freeing initrd memory: 1016K
+[    4.501807] aspeed-i2c-bus 1e78a480.i2c-bus: i2c bus 8 registered, irq 49
+[    4.505654] aspeed-i2c-bus 1e78a500.i2c-bus: i2c bus 9 registered, irq 50
+[    4.510270] aspeed-i2c-bus 1e78a680.i2c-bus: i2c bus 12 registered, irq 51
+[    4.513966] aspeed-i2c-bus 1e78a700.i2c-bus: i2c bus 13 registered, irq 52
+[    4.520616] aspeed-i2c-bus 1e78a780.i2c-bus: i2c bus 14 registered, irq 53
+[    4.524407] aspeed-i2c-bus 1e78a800.i2c-bus: i2c bus 15 registered, irq 54
+[    4.531334] aspeed-video 1e700000.video: irq 55
+[    4.532442] aspeed-video 1e700000.video: assigned reserved memory node video
+[    4.540200] aspeed-video 1e700000.video: alloc mem size(24576) at 0xba000000 for jpeg header
+[    4.559668] Driver for 1-wire Dallas network protocol.
+[    4.584792] lm75 8-004d: hwmon0: sensor 'lm75'
+[    4.592202] device-mapper: ioctl: 4.47.0-ioctl (2022-07-28) initialised: dm-devel@redhat.com
+[    4.595885] aspeed-edac 1e6e0000.sdram: ECC mode is not configured in u-boot
+[    4.597532] aspeed-edac: probe of 1e6e0000.sdram failed with error -1
+[    4.603307] sdhci: Secure Digital Host Controller Interface driver
+[    4.604123] sdhci: Copyright(c) Pierre Ossman
+[    4.604815] sdhci-pltfm: SDHCI platform and OF driver helper
+[    4.609852] usbcore: registered new interface driver usbhid
+[    4.610804] usbhid: USB HID core driver
+[    4.612621] SPI driver bmp280 has no spi_device_id for bosch,bmp085
+[    4.629605] fsi-master-aspeed 1e79b000.fsi: failed to read hub version
+[    4.631661] fsi-master-aspeed: probe of 1e79b000.fsi failed with error -110
+[    4.662445] sdhci-aspeed 1e750100.sdhci: Configured for slot 0
+[    4.703883] NET: Registered PF_INET6 protocol family
+[    4.730387] Segment Routing with IPv6
+[    4.733786] In-situ OAM (IOAM) with IPv6
+[    4.733786] In-situ OAM (IOAM) with IPv6
+[    4.736765] NET: Registered PF_PACKET protocol family
+[    4.738076] 8021q: 802.1Q VLAN Support v1.8
+[    4.740329] Registering SWP/SWPB emulation handler
+[    4.745069] mmc0: SDHCI controller on 1e750100.sdhci [1e750100.sdhci] using ADMA
+DMA
+[    4.809151] sdhci-aspeed 1e740100.sdhci: Configured for slot 0
+[    4.812636] sdhci-aspeed 1e740200.sdhci: Configured for slot 1
+[    4.815437] printk: console [netcon0] enabled
+[    4.816405] netconsole: network logging started
+[    4.864462] mmc1: SDHCI controller on 1e740100.sdhci [1e740100.sdhci] using ADMA
+[    4.872662] mmc2: SDHCI controller on 1e740200.sdhci [1e740200.sdhci] using ADMA
+[    4.953280] Freeing unused kernel image (initmem) memory: 1024K
+[    5.022381] Checked W+X mappings: passed, no W+X pages found
+[    5.023711] Run /init as init process
+rofs = mtd4 squashfs   rwfs = mtd5 jffs2
+[   10.126660] jffs2: notice: (119) jffs2_build_xattr_subsystem: complete building xattr subsystem, 0 of xdatum (0 unchecked, 0 orphan) and 0 of xref (0 dead, 0 orphan) found.
+find: run/initramfs/rw/cow/var/lib/systemd/random-seed: No such file or directory
+Fri Mar  9 12:35:01 UTC 2018
+[   10.827862] overlayfs: upper fs does not support tmpfile.
+[   10.847930] overlayfs: upper fs does not support RENAME_WHITEOUT.
+[   15.993692] systemd[1]: System time before build time, advancing clock.
+[   15.993692] systemd[1]: System time before build time, advancing clock.      [   16.471099] systemd[1]: systemd 253.1^ running in system mode (+PAM -AUDIT -SELINUX -APPARMOR -IMA -SMACK +SECCOMP -GCRYPT -GNUTLS -OPENSSL -ACL +BLKID -CURL -ELFUTILS -FIDO2 -IDN2 -IDN -IPTC -KMOD -LIBCRYPTSETUP +LIBFDISK -PCRE2 -PWQUALITY -P11KIT -QRENCODE -TPM2 -BZIP2 -LZ4 -XZ -ZLIB +ZSTD -BPF_FRAMEWORK -XKBCOMMO
+N -UTMP -SYSVINIT default-hierarchy=unified)
+[   16.493946] systemd[1]: Detected architecture arm.
+Welcome to Phosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) 2.15.0-dev!
+[   16.638941] systemd[1]: Hostname set to <evb-ast2600>.
+[   16.757971] systemd[1]: Initializing machine ID from random generator.
+[   16.757971] systemd[1]: Initializing machine ID from random generator.       [   20.598394] systemd[1]: Using hardware watchdog 'aspeed_wdt', version 0, devi
+ce /dev/watchdog0
+[   20.648357] systemd[1]: Watchdog running with a timeout of 2min.
+[   20.650637] systemd[1]: Watchdog: reading from /sys/dev/char/247:0/pretimeout_governor
+[   20.653705] systemd[1]: Watchdog: failed to read pretimeout governor: No such file or directory
+[   20.655694] systemd[1]: Watchdog: setting pretimeout_governor to 'panic' via '/sys/dev/char/247:0/pretimeout_governor'
+[   20.660261] systemd[1]: Failed to set pretimeout_governor to 'panic': No such file or directory
+[   20.661899] systemd[1]: Failed to set watchdog pretimeout governor to 'panic', ignoring: No such file or directory
+[   30.572015] systemd[1]: /lib/systemd/system/phosphor-ipmi-net@.socket:6: Invalid interface name, ignoring: sys-subsystem-net-devices-%i.device
+[   31.080263] systemd[1]: Queued start job for default target Multi-User System.
+[   31.169602] systemd[1]: Created slice Slice /system/getty.
+[  OK  ] Created slice Slice /system/getty.
+[   31.193772] systemd[1]: Created slice Slice /system/mapper-wait.
+[  OK  ] Created slice Slice /system/mapper-wait.
+[   31.212206] systemd[1]: Created slice Slice /system/modprobe.
+[  OK  ] Created slice Slice /system/modprobe.
+[   31.246566] systemd[1]: Created slice Slice /system/obmc-led-group-start.
+[   31.246566] systemd[1]: Created slice Slice /system/obmc-led-group-start.    [  OK  ] Created slice Slice /system/obmc-led-group-start.
+[   31.267646] systemd[1]: Created slice Slice /system/phosphor-certificate-manager.
+ger.                                                                            [  OK  ] Created slice Slice /system/phosphor-certificate-manager.
+[  OK  ] Created slice Slice /system/phosphor-certificate-manager.              [   31.287119] systemd[1]: Created slice Slice /system/phosphor-discover-system-
+state.
+state.                                                                          [  OK  ] Created slice Slice /syste…hosphor-discover-system-state.
+[   31.309402] systemd[1]: Created slice Slice /system/phosphor-ipmi-net.
+[  OK  ] Created slice Slice /system/phosphor-ipmi-net.
+[   31.329555] systemd[1]: Created slice Slice /system/phosphor-reset-chassis-on.
+.                                                                               [  OK  ] Created slice Slice /system/phosphor-reset-chassis-on.
+[   31.358594] systemd[1]: Created slice Slice /system/phosphor-reset-chassis-running.
+nning.                                                                          [  OK  ] Created slice Slice /syste…hosphor-reset-chassis-running.
+[   31.384241] systemd[1]: Created slice Slice /system/phosphor-reset-host-running.
+ng.                                                                             [  OK  ] Created slice Slice /system/phosphor-reset-host-running.
+[   31.416260] systemd[1]: Created slice Slice /system/serial-getty.
+[  OK  ] Created slice Slice /system/serial-getty.
+[   31.448890] systemd[1]: Created slice Slice /system/xyz.openbmc_project.State.Chassis.
+.Chassis.                                                                       [  OK  ] Created slice Slice /syste…openbmc_project.State.Chassis.
+[   31.469697] systemd[1]: Created slice Slice /system/xyz.openbmc_project.State.Host.
+.Host.                                                                          [  OK  ] Created slice Slice /syste…yz.openbmc_project.State.Host.
+[  OK  ] Created slice Slice /syste…yz.openbmc_project.State.Host.              [   31.484951] systemd[1]: Started Dispatch Password Requests to Console Directo
+ry Watch.
+ry Watch.                                                                       [  OK  ] Started Dispatch Password …ts to Console Directory Watch.
+[   31.504406] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+atch.                                                                           [  OK  ] Started Forward Password R…uests to Wall Directory Watch.
+[   31.518896] systemd[1]: Reached target Host0 running after reset.
+[  OK  ] Reached target Host0 running after reset.
+[   31.525126] systemd[1]: Reached target Path Units.
+[  OK  ] Reached target Path Units.
+[   31.533387] systemd[1]: Reached target Remote File Systems.
+[  OK  ] Reached target Remote File Systems.
+[   31.540382] systemd[1]: Reached target Slice Units.
+[  OK  ] Reached target Slice Units.
+[   31.551466] systemd[1]: Reached target Swaps.
+[  OK  ] Reached target Swaps.
+[   31.600954] systemd[1]: Listening on Syslog Socket.
+[  OK  ] Listening on Syslog Socket.
+[   31.708323] systemd[1]: Listening on Process Core Dump Socket.
+[  OK  ] Listening on Process Core Dump Socket.
+[   31.722710] systemd[1]: Journal Audit Socket was skipped because of an unmet condition check (ConditionSecurity=audit).
+[   31.739467] systemd[1]: Listening on Journal Socket (/dev/log).
+[  OK  ] Listening on Journal Socket (/dev/log).
+[   31.755104] systemd[1]: Listening on Journal Socket.
+[  OK  ] Listening on Journal Socket.
+[   31.785095] systemd[1]: Listening on Network Service Netlink Socket.
+[  OK  ] Listening on Network Service Netlink Socket.
+[   31.813972] systemd[1]: Listening on udev Control Socket.
+[  OK  ] Listening on udev Control Socket.
+[   31.830213] systemd[1]: Listening on udev Kernel Socket.
+[  OK  ] Listening on udev Kernel Socket.
+[   31.850277] systemd[1]: Huge Pages File System was skipped because of an unmet condition check (ConditionPathExists=/sys/kernel/mm/hugepages).
+[   31.860338] systemd[1]: POSIX Message Queue File System was skipped because of an unmet condition check (ConditionPathExists=/proc/sys/fs/mqueue).
+f an unmet condition check (ConditionPathExists=/proc/sys/fs/mqueue).
+[   31.962042] systemd[1]: Mounting Kernel Debug File System...
+         Mounting Kernel Debug File System...
+[   32.140821] systemd[1]: Mounting Kernel Trace File System...
+         Mounting Kernel Trace File System...
+[   32.310691] systemd[1]: Mounting Temporary Directory /tmp...
+         Mounting Temporary Directory /tmp...
+[   32.556351] systemd[1]: Starting Load Kernel Module configfs...
+         Starting Load Kernel Module configfs...
+[   33.315288] systemd[1]: Starting Load Kernel Module efi_pstore...
+         Starting Load Kernel Module efi_pstore...
+         Starting Load Kernel Module efi_pstore...
+[   33.699915] systemd[1]: Starting Load Kernel Module fuse...
+         Starting Load Kernel Module fuse...
+         Starting Load Kernel Module fuse...                                    [   33.835549] systemd[1]: File System Check on Root Device was skipped because
+of an unmet condition check (ConditionPathIsReadWrite=!/).
+[   34.595770] systemd[1]: Starting Journal Service...
+         Starting Journal Service...
+[   34.772963] systemd[1]: Starting Generate network units from Kernel command line...
+         Starting Generate network …ts from Kernel command line...
+[   34.952834] systemd[1]: Starting Remount Root and Kernel File Systems...
+         Starting Remount Root and Kernel File Systems...
+[   35.143529] systemd[1]: Starting Apply Kernel Variables...
+         Starting Apply Kernel Variables...
+[   35.373298] systemd[1]: Starting Coldplug All udev Devices...
+         Starting Coldplug All udev Devices...
+[   37.700874] systemd[1]: Mounted Kernel Debug File System.
+[  OK  ] Mounted Kernel Debug File System.
+[   37.857485] systemd[1]: Mounted Kernel Trace File System.
+[  OK  ] Mounted Kernel Trace File System.
+[   37.875303] systemd[1]: Mounted Temporary Directory /tmp.
+[   37.889817] systemd-journald[149]: Collecting audit messages is disabled.
+[  OK  ] Mounted Temporary Directory /tmp.
+[   38.022108] systemd[1]: modprobe@configfs.service: Deactivated successfully.
+[   38.080886] systemd[1]: Finished Load Kernel Module configfs.
+[  OK  ] Finished Load Kernel Module configfs.
+[   38.513436] systemd[1]: modprobe@efi_pstore.service: Deactivated successfully.
+[   38.621905] systemd[1]: Finished Load Kernel Module efi_pstore.
+[  OK  ] Finished Load Kernel Module efi_pstore.
+[   38.755152] systemd[1]: modprobe@fuse.service: Deactivated successfully.
+[   38.755152] systemd[1]: modprobe@fuse.service: Deactivated successfully.
+[   38.830433] systemd[1]: Finished Load Kernel Module fuse.
+[  OK  ] Finished Load Kernel Module fuse.
+[   38.919245] systemd[1]: Finished Generate network units from Kernel command line.
+ine.                                                                            [  OK  ] Finished Generate network units from Kernel command line.
+[   39.018555] systemd[1]: Finished Remount Root and Kernel File Systems.
+[  OK  ] Finished Remount Root and Kernel File Systems.
+[   39.098398] systemd[1]: Finished Apply Kernel Variables.
+[  OK  ] Finished Apply Kernel Variables.
+[   39.193689] systemd[1]: Reached target Preparation for Network.
+[  OK  ] Reached target Preparation for Network.
+[   39.254879] systemd[1]: FUSE Control File System was skipped because of an unmet condition check (ConditionPathExists=/sys/fs/fuse/connections).
+[   39.595429] systemd[1]: Mounting Kernel Configuration File System...
+         Mounting Kernel Configuration File System...
+[   40.045778] systemd[1]: Starting Rebuild Hardware Database...
+         Starting Rebuild Hardware Database...
+[   40.114535] systemd[1]: Platform Persistent Storage Archival was skipped because of an unmet condition check (ConditionDirectoryNotEmpty=/sys/fs/pstore).
+[   40.453808] systemd[1]: Starting Create System Users...
+         Starting Create System Users...
+[   41.523448] systemd[1]: Mounted Kernel Configuration File System.
+[  OK  ] Mounted Kernel Configuration File System.
+[   41.618826] systemd[1]: Finished Rebuild Hardware Database.
+[  OK  ] Finished Rebuild Hardware Database.
+[   43.400361] systemd[1]: Finished Create System Users.
+[  OK  ] Finished Create System Users.
+[   43.543330] systemd[1]: Starting Create Static Device Nodes in /dev...
+         Starting Create Static Device Nodes in /dev...
+         Starting Create Static Device Nodes in /dev...
+[   44.243241] systemd[1]: Started Journal Service.
+[  OK  ] Started Journal Service.
+         Starting Flush Journal to Persistent Storage...
+         Starting Flush Journal to Persistent Storage...                        [   45.375863] systemd-journald[149]: Received client request to flush runtime j
+ournal.
+[  OK  ] Finished Flush Journal to Persistent Storage.
+[  OK  ] Finished Create Static Device Nodes in /dev.
+[  OK  ] Finished Create Static Device Nodes in /dev.                           [  OK  ] Reached target Preparation for Local File Systems.
+         Mounting /var/volatile...
+         Mounting /var/volatile...
+         Starting Rule-based Manage…for Device Events and Files...
+[  OK  ] Mounted /var/volatile.
+         Starting Load/Save OS Random Seed...
+[  OK  ] Reached target Local File Systems.
+         Starting Create Volatile Files and Directories...
+[  OK  ] Finished Load/Save OS Random Seed.
+[  OK  ] Finished Load/Save OS Random Seed.                                     [  OK  ] Started Rule-based Manager for Device Events and Files.
+         Starting Network Configuration...
+[  OK  ] Finished Create Volatile Files and Directories.
+         Starting Rebuild Journal Catalog...
+         Starting Network Name Resolution...
+         Starting Network Time Synchronization...
+         Starting Network Time Synchronization...                               [*     ] (1 of 6) A start job is running for…e Synchronization (22s / no limit)
+[*     ] (1 of 6) A start job is running for…e Synchronization (22s / no limit)
+         Starting Network Time Synchronization...                               [**    ] (1 of 6) A start job is running for…e Synchronization (23s / no limit)
+[**    ] (1 of 6) A start job is running for…e Synchronization (23s / no limit)
+[  OK  ] Finished Rebuild Journal Catalog.
+         Starting Update is Completed...
+         Starting Update is Completed...                                        [***   ] (1 of 6) A start job is running for…e Synchronization (25s / no limit)
+[***   ] (1 of 6) A start job is running for…e Synchronization (25s / no limit)
+[  OK  ] Finished Update is Completed.
+[  OK  ] Finished Update is Completed.                                          [ ***  ] (2 of 5) A start job is running for…/net/devices/eth0 (28s / no limit)
+[ ***  ] (2 of 5) A start job is running for…/net/devices/eth0 (28s / no limit)
+[  OK  ] Finished Update is Completed.                                          [  *** ] (2 of 5) A start job is running for…/net/devices/eth0 (28s / no limit)
+[  *** ] (2 of 5) A start job is running for…/net/devices/eth0 (28s / no limit)
+[  OK  ] Finished Update is Completed.                                          [   ***] (2 of 5) A start job is running for…/net/devices/eth0 (29s / no limit)
+[   ***] (2 of 5) A start job is running for…/net/devices/eth0 (29s / no limit)
+[  OK  ] Finished Update is Completed.                                          [    **] (3 of 5) A start job is running for… All udev Devices (29s / no limit)
+[    **] (3 of 5) A start job is running for… All udev Devices (29s / no limit)
+[  OK  ] Finished Update is Completed.                                          [     *] (3 of 5) A start job is running for… All udev Devices (30s / no limit)
+[     *] (3 of 5) A start job is running for… All udev Devices (30s / no limit)
+[  OK  ] Finished Update is Completed.                                          [    **] (3 of 5) A start job is running for… All udev Devices (30s / no limit)
+[    **] (3 of 5) A start job is running for… All udev Devices (30s / no limit)
+[  OK  ] Finished Update is Completed.                                          [   ***] (4 of 5) A start job is running for…ork Configuration (31s / no limit)
+[   ***] (4 of 5) A start job is running for…ork Configuration (31s / no limit)
+[  OK  ] Finished Update is Completed.                                          [  *** ] (4 of 5) A start job is running for…ork Configuration (31s / no limit)
+[  *** ] (4 of 5) A start job is running for…ork Configuration (31s / no limit)
+[  OK  ] Started Network Time Synchronization.
+[  OK  ] Reached target System Time Set.
+[  OK  ] Started Network Configuration.
+         Starting Wait for Network to be Configured...
+[  OK  ] Started Network Name Resolution.
+[  OK  ] Reached target Network.
+[  OK  ] Reached target Host and Network Name Lookups.
+[  OK  ] Reached target Host and Network Name Lookups.                          [ ***  ] (1 of 3) A start job is running for…/net/devices/eth0 (35s / no limit)
+[ ***  ] (1 of 3) A start job is running for…/net/devices/eth0 (35s / no limit)
+[  OK  ] Reached target Host and Network Name Lookups.                          [***   ] (2 of 3) A start job is running for… All udev Devices (35s / no limit)
+[***   ] (2 of 3) A start job is running for… All udev Devices (35s / no limit)
+[  OK  ] Reached target Host and Network Name Lookups.                          [**    ] (2 of 3) A start job is running for… All udev Devices (36s / no limit)
+[**    ] (2 of 3) A start job is running for… All udev Devices (36s / no limit)
+[  OK  ] Reached target Host and Network Name Lookups.                          [*     ] (2 of 3) A start job is running for… All udev Devices (37s / no limit)
+[*     ] (2 of 3) A start job is running for… All udev Devices (37s / no limit)
+[  OK  ] Reached target Host and Network Name Lookups.                          [**    ] (3 of 3) A start job is running for… to be Configured (38s / no limit)
+[**    ] (3 of 3) A start job is running for… to be Configured (38s / no limit)
+[  OK  ] Finished Coldplug All udev Devices.
+[  OK  ] Finished Coldplug All udev Devices.                                    [***   ] (2 of 2) A start job is running for… to be Configured (41s / no limit)
+[   73.804352] ftgmac100 1e660000.ftgmac eth0: Link is Up - 100Mbps/Full - flow control rx/tx
+control rx/tx
+[   73.804352] ftgmac100 1e660000.ftgmac eth0: Link is Up - 100Mbps/Full - flow [ ***  ] (2 of 2) A start job is running for… to be Configured (42s / no limit)
+[   73.870196] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[   73.870196] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[ ***  ] (2 of 2) A start job is running for… to be Configured (42s / no limit) [  *** ] (1 of 2) A start job is running for…/net/devices/eth0 (43s / no limit)
+[  *** ] (1 of 2) A start job is running for…/net/devices/eth0 (43s / no limit) [   74.543234] ftgmac100 1e670000.ftgmac eth2: Link is Up - 100Mbps/Full - flow
+control rx/tx
+[   74.557460] IPv6: ADDRCONF(NETDEV_CHANGE): eth2: link becomes ready
+[   74.557460] IPv6: ADDRCONF(NETDEV_CHANGE): eth2: link becomes ready
+control rx/tx                                                                   [   ***] (1 of 2) A start job is running for…/net/devices/eth0 (43s / no limit)
+[   75.254541] ftgmac100 1e690000.ftgmac eth3: Link is Up - 100Mbps/Full - flow control rx/tx
+[   75.333853] IPv6: ADDRCONF(NETDEV_CHANGE): eth3: link becomes ready
+[   75.333853] IPv6: ADDRCONF(NETDEV_CHANGE): eth3: link becomes ready
+control rx/tx                                                                   [    **] (1 of 2) A start job is running for…/net/devices/eth0 (44s / no limit)
+[    **] (1 of 2) A start job is running for…/net/devices/eth0 (44s / no limit)
+control rx/tx                                                                   [     *] (2 of 2) A start job is running for… to be Configured (45s / no limit)
+[   76.490359] ftgmac100 1e680000.ftgmac eth1: Link is Up - 100Mbps/Full - flow control rx/tx
+[   76.523870] IPv6: ADDRCONF(NETDEV_CHANGE): eth1: link becomes ready
+[   76.523870] IPv6: ADDRCONF(NETDEV_CHANGE): eth1: link becomes ready
+control rx/tx                                                                   [    **] (2 of 2) A start job is running for… to be Configured (46s / no limit)
+[    **] (2 of 2) A start job is running for… to be Configured (46s / no limit)
+control rx/tx                                                                   [   ***] (2 of 2) A start job is running for… to be Configured (47s / no limit)
+[   ***] (2 of 2) A start job is running for… to be Configured (47s / no limit)
+control rx/tx                                                                   [  *** ] (1 of 2) A start job is running for…/net/devices/eth0 (48s / no limit)
+[  *** ] (1 of 2) A start job is running for…/net/devices/eth0 (48s / no limit)
+control rx/tx                                                                   [ ***  ] (1 of 2) A start job is running for…/net/devices/eth0 (49s / no limit)
+[ ***  ] (1 of 2) A start job is running for…/net/devices/eth0 (49s / no limit)
+control rx/tx                                                                   [***   ] (1 of 2) A start job is running for…/net/devices/eth0 (50s / no limit)
+[***   ] (1 of 2) A start job is running for…/net/devices/eth0 (50s / no limit)
+control rx/tx                                                                   [  OK  ] Found device /sys/subsystem/net/devices/eth0.
+[  OK  ] Found device /sys/subsystem/net/devices/eth0.                          [**    ] A start job is running for Wait for… to be Configured (53s / no limit)
+[**    ] A start job is running for Wait for… to be Configured (53s / no limit)
+[  OK  ] Found device /sys/subsystem/net/devices/eth0.                          [*     ] A start job is running for Wait for… to be Configured (53s / no limit)
+[*     ] A start job is running for Wait for… to be Configured (53s / no limit)
+[  OK  ] Found device /sys/subsystem/net/devices/eth0.                          [**    ] A start job is running for Wait for… to be Configured (55s / no limit)
+[**    ] A start job is running for Wait for… to be Configured (55s / no limit)
+[  OK  ] Finished Wait for Network to be Configured.
+[  OK  ] Finished Wait for Network to be Configured.                            [  OK  ] Created slice Slice /syste…penbmc_project.led.controller.
+[  OK  ] Reached target Network is Online.
+[  OK  ] Reached target Hardware activated USB gadget.
+         Starting Load Kernel Module efi_pstore...
+         Starting Load Kernel Module fuse...
+[  OK  ] Finished Load Kernel Module efi_pstore.
+[  OK  ] Finished Load Kernel Module efi_pstore.
+[  OK  ] Finished Load Kernel Module fuse.
+[  OK  ] Reached target System Initialization.
+[  OK  ] Started Daily rotation of log files.
+[  OK  ] Started Daily Cleanup of Temporary Directories.
+[  OK  ] Reached target Timer Units.
+[  OK  ] Reached target Timer Units.                                            [  OK  ] Listening on Avahi mDNS/DNS-SD Stack Activation Socket.
+[  OK  ] Listening on BMC Webserver socket.
+[  OK  ] Listening on D-Bus System Message Bus Socket.
+[  OK  ] Listening on dropbear.socket.
+[  OK  ] Listening on dropbear.socket.                                          [  OK  ] Listening on Phosphor Host…ole SSH Per-Connection socket.
+[  OK  ] Listening on phosphor-ipmi-net@eth0.socket.
+[  OK  ] Reached target Socket Units.
+         Starting D-Bus System Message Bus...
+         Starting D-Bus System Message Bus...                                   [  OK  ] Created slice Slice /system/xyz.openbmc_project.Hwmon.
+[  OK  ] Started D-Bus System Message Bus.
+[  OK  ] Reached target Basic System.
+         Starting Avahi mDNS/DNS-SD Stack...
+[  OK  ] Started Start bmcweb server.
+[  OK  ] Started Start bmcweb server.
+         Starting Clear one time boot overrides...
+         Starting SSH Key Generation...
+         Starting Name Service Cache Daemon...
+         Starting LDAP daemon...
+[  OK  ] Started Phosphor Dump core monitor..
+[  OK  ] Started Phosphor Dump core monitor..                                   [  OK  ] Started Phosphor certificate manager for authority.
+[  OK  ] Started Phosphor certificate manager for authority.                    [  OK  ] Started Phosphor certificate manager for bmcweb.
+[  OK  ] Started Phosphor certificate manager for nslcd.
+         Starting BMC health monitoring...
+         Starting System Logging Service...
+[  OK  ] Started Lightweight SLP Server.
+         Starting OpenBMC ipKVM daemon...
+         Starting Permit User Sessions...
+         Starting Enable Linux trace events in the boot loader...
+         Starting Phosphor Dump Manager...
+[  OK  ] Started Fru Device.
+[  OK  ] Started Fru Device.
+         Starting Phosphor Inventory Manager...
+         Starting Phosphor LED Group Management Daemon...
+         Starting Phosphor Log Manager...
+         Starting Phosphor Network Manager...
+         Starting Phosphor DBus Service Discovery Manager...
+         Starting Phosphor Settings Daemon...
+         Starting OpenBMC Software Update Manager...
+         Starting Phosphor Download Manager...
+         Starting Phosphor Chassis0 State Manager...
+         Starting Rsyslog config updater...
+         Starting Rsyslog config updater...
+         Starting Telemetry...
+         Starting Phosphor User Manager...
+[  OK  ] Started Phosphor sysfs LED controller.
+[  OK  ] Started Phosphor sysfs LED controller.
+[  OK  ] Started Phosphor sysfs LED controller.
+[  OK  ] Started Phosphor sysfs LED controller.
+[  OK  ] Started Phosphor sysfs LED controller.
+[  OK  ] Started System Logging Service.
+[  OK  ] Started Name Service Cache Daemon.
+[  OK  ] Started OpenBMC ipKVM daemon.
+[  OK  ] Finished Permit User Sessions.
+[  OK  ] Finished Permit User Sessions.                                         [  OK  ] Finished Enable Linux trace events in the boot loader.
+[  OK  ] Finished Clear one time boot overrides.
+[  OK  ] Finished Clear one time boot overrides.                                [***   ] (11 of 17) A start job is running f… User Manager (2min 1s / no limit)
+[***   ] (11 of 17) A start job is running f… User Manager (2min 1s / no limit)
+[  OK  ] Finished Clear one time boot overrides.                                [ ***  ] (11 of 17) A start job is running f… User Manager (2min 2s / no limit)
+[ ***  ] (11 of 17) A start job is running f… User Manager (2min 2s / no limit)
+[  OK  ] Started Phosphor Network Manager.
+[  OK  ] Started Rsyslog config updater.
+[  OK  ] Started Avahi mDNS/DNS-SD Stack.
+[  OK  ] Started Phosphor Log Manager.
+[  OK  ] Started Phosphor Log Manager.                                          [  OK  ] Started Phosphor DBus Service Discovery Manager.
+[  OK  ] Started Phosphor Settings Daemon.
+[  OK  ] Started Phosphor Inventory Manager.
+[  OK  ] Started Phosphor Download Manager.
+[  OK  ] Started LDAP daemon.
+[  OK  ] Started Phosphor Dump Manager.
+[  OK  ] Started Telemetry.
+[  OK  ] Started BMC health monitoring.
+[  OK  ] Started OpenBMC Software Update Manager.
+[  OK  ] Started OpenBMC Software Update Manager.                               [  *** ] (3 of 4) A start job is running for…gement Daemon (2min 8s / no limit)
+[  *** ] (3 of 4) A start job is running for…gement Daemon (2min 8s / no limit)
+[  OK  ] Started phosphor systemd target monitor.
+[  OK  ] Started Serial Getty on ttyS4.
+[  OK  ] Reached target Login Prompts.
+         Starting Hostname Service...
+         Starting Phosphor Ldap config updater...
+         Starting Wait for /org/openbmc/control/power0...
+         Starting Wait for /xyz/ope…t/control/host0/auto_reboot...
+         Starting Wait for /xyz/ope…control/host0/boot/one_time...
+         Starting Wait for /xyz/ope…_project/control/host0/boot...
+         Starting Wait for /xyz/ope…/host0/power_restore_policy...
+         Starting Wait for /xyz/ope…trol/host0/restriction_mode...
+         Starting Wait for /xyz/ope…trol/host0/restriction_mode...
+Phosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) nodistro.0 evb-ast2600 ttyS4
+evb-ast2600 login:
+{"event": "boot_login", "ts": "2026-04-03T01:58:53.360094+00:00"}
+{"event": "operation_stage", "ts": "2026-04-03T01:58:53.360256+00:00", "op": "Login", "stage": "waiting_for_quiescence"}
+evb-ast2600 login:          Starting Wait for /xyz/ope…oject/led/groups/bmc_booted...
+         Starting Wait for /xyz/openbmc_project/state/bmc0...
+         Starting Wait for /xyz/openbmc_project/state/host0...
+         Starting Wait for /xyz/ope…mc_project/time/sync_method...
+         Starting Phosphor Version Software Manager...
+         Starting Phosphor Version Software Manager...                          [  OK  ] Finished Wait for /xyz/ope…ect/control/host0/auto_reboot.
+[  OK  ] Finished Wait for /xyz/ope…ect/control/host0/auto_reboot.              [  OK  ] Finished Wait for /xyz/ope…t/control/host0/boot/one_time.
+[  OK  ] Finished Wait for /xyz/ope…t/control/host0/boot/one_time.              [  OK  ] Finished Wait for /xyz/ope…mc_project/control/host0/boot.
+[  OK  ] Finished Wait for /xyz/ope…mc_project/control/host0/boot.              [  OK  ] Finished Wait for /xyz/ope…ol/host0/power_restore_policy.
+[  OK  ] Finished Wait for /xyz/ope…ol/host0/power_restore_policy.              [  OK  ] Finished Wait for /xyz/ope…ontrol/host0/restriction_mode.
+[  OK  ] Finished Wait for /xyz/ope…ontrol/host0/restriction_mode.              [  OK  ] Finished Wait for /xyz/openbmc_project/time/sync_method.
+{"event": "operation_stage", "ts": "2026-04-03T01:59:06.636680+00:00", "op": "Login", "stage": "refreshing_login_prompt"}
+[  OK  ] Finished Wait for /xyz/openbmc_project/time/sync_method.
+evb-ast2600 login:
+{"event": "operation_stage", "ts": "2026-04-03T01:59:07.638091+00:00", "op": "Login", "stage": "sending_username"}
+evb-ast2600 login: root
+{"event": "operation_stage", "ts": "2026-04-03T01:59:08.638828+00:00", "op": "Login", "stage": "waiting_for_password_or_shell"}
+Password:
+{"event": "operation_stage", "ts": "2026-04-03T01:59:15.297290+00:00", "op": "Login", "stage": "sending_password"}
+evb-ast2600 login: root
+Password:
+{"event": "operation_stage", "ts": "2026-04-03T01:59:16.298642+00:00", "op": "Login", "stage": "waiting_for_shell"}
+oot@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-04-03T01:59:30.486605+00:00"}
+{"event": "operation_stage", "ts": "2026-04-03T01:59:30.487297+00:00", "op": "Login", "stage": "shell_setup_dmesg"}
+                                                                               r
+oot@evb-ast2600:~# dmesg -n 1
+{"event": "operation_stage", "ts": "2026-04-03T01:59:30.988550+00:00", "op": "Login", "stage": "shell_setup_stty"}
+stty cols 200
+{"event": "operation_stage", "ts": "2026-04-03T01:59:31.290621+00:00", "op": "Login", "stage": "shell_setup_sync"}
+stty cols 200
+echo __MCP_SETUP_26527__
+{"event": "login_complete", "ts": "2026-04-03T01:59:31.793099+00:00"}
+{"event": "operation_ended", "ts": "2026-04-03T01:59:31.793182+00:00", "op": "Login", "success": true}
+root@evb-ast2600:~#
+root@evb-ast2600:~# stty cols 200
+{"event": "operation_started", "ts": "2026-04-03T01:59:32.879978+00:00", "op": "ConsoleCommand"}
+{"event": "command_started", "ts": "2026-04-03T01:59:32.880227+00:00", "command_id": "net-2280", "command": "if [ -e /tmp/skip_test.sh ]; then crc32 /tmp/skip_test.sh | awk '{print $1}'; else echo NOFILE; fi"}
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-04-03T01:59:35.140725+00:00"}
+root@evb-ast2600:~# echo __MCP_SETUP_26527__
+root@evb-ast2600:~# echo __MCP_SETUP_26527__
+__MCP_SETUP_26527__
+__MCP_SETUP_26527__
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+root@evb-ast2600:~# cat > /tmp/_mcp_98118.sh <<'__MCP_SCRIPT_98118__'
+root@evb-ast2600:~# cat > /tmp/_mcp_98118.sh <<'__MCP_SCRIPT_98118__'
+root@evb-ast2600:~# cat > /tmp/_mcp_98118.sh <<'__MCP_SCRIPT_98118__'
+root@evb-ast2600:~# cat > /tmp/_mcp_98118.sh <<'__MCP_SCRIPT_98118__'
+>
+>
+> if [ -e /tmp/skip_test.sh ]; then crc32 /tmp/skip_test.sh | awk '{print $1}'; else echo NOFILE; fi
+> if [ -e /tmp/skip_test.sh ]; then crc32 /tmp/skip_test.sh | awk '{print $1}'; else echo NOFILE; fi
+>
+>
+> __MCP_SCRIPT_98118__
+> __MCP_SCRIPT_98118__
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+rm -f /tmp/_mcp_98118.sh; echo __MCP_MARKER_98118__${__MCP_EC}
+root@evb-ast2600:~# echo __MCP_PID_$$__; sh -x /tmp/_mcp_98118.sh; __MCP_EC=$?; rm -f /tmp/_mcp_98118.sh; echo __MCP_MARKER_98118__${__MCP_EC}
+rm -f /tmp/_mcp_98118.sh; echo __MCP_MARKER_98118__${__MCP_EC}
+root@evb-ast2600:~# echo __MCP_PID_$$__; sh -x /tmp/_mcp_98118.sh; __MCP_EC=$?; rm -f /tmp/_mcp_98118.sh; echo __MCP_MARKER_98118__${__MCP_EC}
+__MCP_PID_334__
+__MCP_PID_334__
+__MCP_PID_334__
++ '[' -e /tmp/skip_test.sh ']'
++ '[' -e /tmp/skip_test.sh ']'
++ '[' -e /tmp/skip_test.sh ']'
++ echo NOFILE
++ echo NOFILE
+NOFILE
+NOFILE
+__MCP_MARKER_98118__0
+__MCP_MARKER_98118__0
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+{"event": "command_ended", "ts": "2026-04-03T01:59:41.198841+00:00", "command_id": "net-2280", "command": "if [ -e /tmp/skip_test.sh ]; then crc32 /tmp/skip_test.sh | awk '{print $1}'; else echo NOFILE; fi", "exit_code": 0, "status": "completed"}
+{"event": "operation_ended", "ts": "2026-04-03T01:59:41.199124+00:00", "op": "ConsoleCommand", "success": true}
+root@evb-ast2600:~# cat > /tmp/skip_test.sh <<'__HEREDOC_EOF__'
+root@evb-ast2600:~# cat > /tmp/skip_test.sh <<'__HEREDOC_EOF__'
+>
+> #!/bin/sh
+> echo skip_test
+> exit 0
+> echo skip_test
+> exit 0
+>
+> exit 0
+> __HEREDOC_EOF__
+root@evb-ast2600:~#
+t $1}')__
+t $1}')__
+__HEREDOC_28649__4153cfbf__
+{"event": "operation_started", "ts": "2026-04-03T01:59:43.942203+00:00", "op": "ConsoleCommand"}
+{"event": "command_started", "ts": "2026-04-03T01:59:43.942351+00:00", "command_id": "net-2550", "command": "if [ -e /tmp/skip_test.sh ]; then crc32 /tmp/skip_test.sh | awk '{print $1}'; else echo NOFILE; fi"}
+cat > /tmp/_mcp_87414.sh <<'__MCP_SCRIPT_87414__'
+cat > /tmp/_mcp_87414.sh <<'__MCP_SCRIPT_87414__'
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-04-03T01:59:44.068611+00:00"}
+cat > /tmp/_mcp_87414.sh <<'__MCP_SCRIPT_87414__'
+root@evb-ast2600:~# cat > /tmp/_mcp_87414.sh <<'__MCP_SCRIPT_87414__'
+root@evb-ast2600:~# cat > /tmp/_mcp_87414.sh <<'__MCP_SCRIPT_87414__'
+root@evb-ast2600:~# cat > /tmp/_mcp_87414.sh <<'__MCP_SCRIPT_87414__'
+>
+>
+else echo NOFILE; fi
+> if [ -e /tmp/skip_test.sh ]; then crc32 /tmp/skip_test.sh | awk '{print $1}'; else echo NOFILE; fi
+else echo NOFILE; fi
+> if [ -e /tmp/skip_test.sh ]; then crc32 /tmp/skip_test.sh | awk '{print $1}'; else echo NOFILE; fi
+>
+>
+> __MCP_SCRIPT_87414__
+> __MCP_SCRIPT_87414__
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+root@evb-ast2600:~# echo __MCP_PID_$$__; sh -x /tmp/_mcp_87414.sh; __MCP_EC=$?; rm -f /tmp/_mcp_87414.sh; echo __MCP_MARKER_87414__${__MCP_EC}
+root@evb-ast2600:~# echo __MCP_PID_$$__; sh -x /tmp/_mcp_87414.sh; __MCP_EC=$?; rm -f /tmp/_mcp_87414.sh; echo __MCP_MARKER_87414__${__MCP_EC}
+__MCP_PID_334__
+__MCP_PID_334__
+__MCP_PID_334__
++ '[' -e /tmp/skip_test.sh ']'
++ '[' -e /tmp/skip_test.sh ']'
++ '[' -e /tmp/skip_test.sh ']'
++ crc32 /tmp/skip_test.sh
++ crc32 /tmp/skip_test.sh
++ awk '{print $1}'
++ awk '{print $1}'
+4153cfbf
+4153cfbf
+__MCP_MARKER_87414__0
+__MCP_MARKER_87414__0
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+{"event": "command_ended", "ts": "2026-04-03T01:59:50.410223+00:00", "command_id": "net-2550", "command": "if [ -e /tmp/skip_test.sh ]; then crc32 /tmp/skip_test.sh | awk '{print $1}'; else echo NOFILE; fi", "exit_code": 0, "status": "completed"}
+{"event": "operation_ended", "ts": "2026-04-03T01:59:50.410858+00:00", "op": "ConsoleCommand", "success": true}
+__MCP_MARKER_87414__0
+root@evb-ast2600:~# cat > /tmp/skip_test.sh <<'__HEREDOC_EOF__'
+>
+> #!/bin/sh
+> echo skip_test
+> echo skip_test
+>
+> echo skip_test
+> exit 0
+>
+> __HEREDOC_EOF__
+root@evb-ast2600:~#
+root@evb-ast2600:~# echo __HEREDOC_29874__$(crc32 /tmp/skip_test.sh | awk '{print $1}')__
+__HEREDOC_29874__4153cfbf__
+root@evb-ast2600:~#
+

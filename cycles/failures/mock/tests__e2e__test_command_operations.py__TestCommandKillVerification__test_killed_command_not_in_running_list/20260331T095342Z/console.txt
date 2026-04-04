@@ -1,0 +1,49 @@
+Phosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) nodistro.0 evb-ast2600 ttyS4
+evb-ast2600 login:
+{"event": "boot_login", "ts": "2026-03-31T09:53:31.018982+00:00"}
+{"event": "operation_started", "ts": "2026-03-31T09:53:31.019163+00:00", "op": "Login"}
+{"event": "operation_stage", "ts": "2026-03-31T09:53:31.019185+00:00", "op": "Login", "stage": "checking_boot_state"}
+{"event": "operation_stage", "ts": "2026-03-31T09:53:31.019199+00:00", "op": "Login", "stage": "waiting_for_login_prompt"}
+{"event": "operation_stage", "ts": "2026-03-31T09:53:31.019208+00:00", "op": "Login", "stage": "waiting_for_quiescence"}
+{"event": "operation_stage", "ts": "2026-03-31T09:53:36.020179+00:00", "op": "Login", "stage": "refreshing_login_prompt"}
+evb-ast2600 login:
+Phosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) nodistro.0 evb-ast2600 ttyS4
+evb-ast2600 login:
+{"event": "operation_stage", "ts": "2026-03-31T09:53:37.020934+00:00", "op": "Login", "stage": "sending_username"}
+evb-ast2600 login: root
+root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-03-31T09:53:37.357889+00:00"}
+{"event": "operation_stage", "ts": "2026-03-31T09:53:38.022044+00:00", "op": "Login", "stage": "waiting_for_password_or_shell"}
+{"event": "operation_stage", "ts": "2026-03-31T09:53:38.022126+00:00", "op": "Login", "stage": "shell_setup_dmesg"}
+root@evb-ast2600:~# dmesg -n 1
+root@evb-ast2600:~#
+{"event": "operation_stage", "ts": "2026-03-31T09:53:38.522549+00:00", "op": "Login", "stage": "shell_setup_stty"}
+root@evb-ast2600:~# stty cols 200
+root@evb-ast2600:~#
+{"event": "login_complete", "ts": "2026-03-31T09:53:38.823286+00:00"}
+{"event": "operation_ended", "ts": "2026-03-31T09:53:38.823367+00:00", "op": "Login", "success": true}
+{"event": "operation_started", "ts": "2026-03-31T09:53:39.876155+00:00", "op": "ConsoleCommand"}
+{"event": "command_started", "ts": "2026-03-31T09:53:39.876306+00:00", "command_id": "d99804fb", "command": "sleep 120"}
+root@evb-ast2600:~# cat > /tmp/_mcp_67992.sh <<'__MCP_SCRIPT_67992__'
+cat > /tmp/_mcp_67992.sh <<'__MCP_SCRIPT_67992__'
+sleep 120
+sleep 120
+__MCP_SCRIPT_67992__
+__MCP_SCRIPT_67992__
+echo __MCP_PID_$$__; sh /tmp/_mcp_67992.sh; __MCP_EC=$?; rm -f /tmp/_mcp_67992.sh; echo __MCP_MARKER_67992__${__MCP_EC}
+__MCP_PID_1234__
+sleep 120
+echo __MCP_PID_$$__; sh /tmp/_mcp_67992.sh; __MCP_EC=$?; rm -f /tmp/_mcp_67992.sh; echo __MCP_MARKER_67992__${__MCP_EC}
+__MCP_PID_1234__
+sleep 120
+__MCP_MARKER_67992__0
+root@evb-ast2600:~#
+__MCP_MARKER_67992__0
+root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-03-31T09:53:41.900641+00:00"}
+root@evb-ast2600:~# root@evb-ast2600:~#
+root@evb-ast2600:~# root@evb-ast2600:~#
+{"event": "command_ended", "ts": "2026-03-31T09:53:42.357530+00:00", "command_id": "d99804fb", "command": "sleep 120", "exit_code": 0, "status": "completed"}
+{"event": "operation_ended", "ts": "2026-03-31T09:53:42.358062+00:00", "op": "ConsoleCommand", "success": true}
+{"event": "command_ended", "ts": "2026-03-31T09:53:42.358482+00:00", "command_id": "d99804fb", "command": "sleep 120", "status": "killed"}
+

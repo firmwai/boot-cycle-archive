@@ -1,0 +1,60 @@
+self = <tests.e2e.qemu_server.test_network.TestNetworkEmulated object at 0xf69d189bfad0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:41199', 'container': <Container: 16462dca8490>, 'container_name': 'test-qemu-c28516af', ...}
+
+    async def test_network_connect_after_reboot(self, qemu_container):
+        """Network can be re-established after reboot."""
+        info = qemu_container
+        timeout = e2e_timeout(30, 300)
+    
+        await _boot_and_login(info)
+    
+        # Connect network
+        result1 = await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "network",
+            {"op": "connect"},
+            timeout=timeout,
+        )
+        assert result1["status"] == "connected"
+    
+        # Reboot
+        await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "target",
+            {
+                "op": "reboot",
+                "start_operation": "login_shell",
+                "timeout": e2e_timeout(300, 500),
+            },
+        )
+        wait_timeout = e2e_timeout(60, 520)
+        result = await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "wait_for_event",
+            {"event_types": ["shell_ready", "operation_ended"], "timeout": wait_timeout},
+            timeout=wait_timeout + 10,
+        )
+        if result.get("status") != "matched":
+            pytest.fail(f"Login did not complete within {wait_timeout}s after reboot")
+        events = result.get("events", [])
+        if not any(e.get("event_type") == "shell_ready" for e in events):
+            pytest.fail("Login after reboot ended without shell_ready — boot stalled")
+    
+        # Reconnect network
+        result2 = await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "network",
+            {"op": "connect"},
+            timeout=timeout,
+        )
+>       assert result2["status"] == "connected"
+E       AssertionError: assert 'error' == 'connected'
+E         
+E         - connected
+E         + error
+
+tests/e2e/qemu_server/test_network.py:333: AssertionError

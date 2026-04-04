@@ -1,0 +1,46 @@
+600 ttyS4
+evb-ast2600 login:
+{"event": "boot_login", "ts": "2026-03-29T07:50:43.434889+00:00"}
+{"event": "operation_started", "ts": "2026-03-29T07:50:43.435014+00:00", "op": "Login"}
+{"event": "operation_stage", "ts": "2026-03-29T07:50:43.435033+00:00", "op": "Login", "stage": "checking_boot_state"}
+{"event": "operation_stage", "ts": "2026-03-29T07:50:43.435044+00:00", "op": "Login", "stage": "waiting_for_login_prompt"}
+{"event": "operation_stage", "ts": "2026-03-29T07:50:43.435053+00:00", "op": "Login", "stage": "waiting_for_quiescence"}
+{"event": "operation_stage", "ts": "2026-03-29T07:50:48.436158+00:00", "op": "Login", "stage": "refreshing_login_prompt"}
+evb-ast2600 login:
+600 ttyS4
+evb-ast2600 login:
+{"event": "operation_stage", "ts": "2026-03-29T07:50:49.438360+00:00", "op": "Login", "stage": "sending_username"}
+evb-ast2600 login: root
+root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-03-29T07:50:49.447138+00:00"}
+{"event": "operation_stage", "ts": "2026-03-29T07:50:50.439667+00:00", "op": "Login", "stage": "waiting_for_password_or_shell"}
+{"event": "operation_stage", "ts": "2026-03-29T07:50:50.439741+00:00", "op": "Login", "stage": "shell_setup_dmesg"}
+root@evb-ast2600:~# dmesg -n 1
+root@evb-ast2600:~#
+{"event": "operation_stage", "ts": "2026-03-29T07:50:50.940569+00:00", "op": "Login", "stage": "shell_setup_stty"}
+root@evb-ast2600:~# stty cols 200
+root@evb-ast2600:~#
+{"event": "login_complete", "ts": "2026-03-29T07:50:51.241633+00:00"}
+{"event": "operation_ended", "ts": "2026-03-29T07:50:51.241713+00:00", "op": "Login", "success": true}
+{"event": "operation_started", "ts": "2026-03-29T07:50:52.292974+00:00", "op": "ConsoleCommand"}
+{"event": "command_started", "ts": "2026-03-29T07:50:52.293183+00:00", "command_id": "d049d33e", "command": "echo hello_from_test"}
+root@evb-ast2600:~# cat > /tmp/_mcp_57635.sh <<'__MCP_SCRIPT_57635__'
+cat > /tmp/_mcp_57635.sh <<'__MCP_SCRIPT_57635__'
+echo hello_from_test
+echo hello_from_test
+__MCP_SCRIPT_57635__
+root@evb-ast2600:~#
+__MCP_SCRIPT_57635__
+root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-03-29T07:50:52.343241+00:00"}
+root@evb-ast2600:~# echo __MCP_PID_$$__; sh /tmp/_mcp_57635.sh; __MCP_EC=$?; rm -f /tmp/_mcp_57635.sh; echo __MCP_MARKER_57635__${__MCP_EC}
+__MCP_PID_1234__
+root@evb-ast2600:~# echo __MCP_PID_$$__; sh /tmp/_mcp_57635.sh; __MCP_EC=$?; rm -f /tmp/_mcp_57635.sh; echo __MCP_MARKER_57635__${__MCP_EC}
+__MCP_PID_1234__
+__MCP_MARKER_57635__0
+root@evb-ast2600:~#
+__MCP_MARKER_57635__0
+root@evb-ast2600:~#
+{"event": "command_ended", "ts": "2026-03-29T07:50:52.536820+00:00", "command_id": "d049d33e", "command": "echo hello_from_test", "exit_code": 0, "status": "completed"}
+{"event": "operation_ended", "ts": "2026-03-29T07:50:52.537289+00:00", "op": "ConsoleCommand", "success": true}
+

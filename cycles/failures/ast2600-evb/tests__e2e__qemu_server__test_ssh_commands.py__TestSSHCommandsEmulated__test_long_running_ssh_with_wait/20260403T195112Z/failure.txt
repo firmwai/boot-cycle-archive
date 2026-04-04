@@ -1,0 +1,13 @@
+self = <tests.e2e.qemu_server.test_ssh_commands.TestSSHCommandsEmulated object at 0xef93e9cbdb50>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:33495', 'container': <Container: bdef40005055>, 'container_name': 'test-qemu-ecf9847c', ...}
+
+    async def test_long_running_ssh_with_wait(self, qemu_container):
+        """Long-running SSH command with command_wait."""
+        info = qemu_container
+        connect_result = await _boot_login_and_connect(info)
+>       assert connect_result.get("ssh") is True
+E       assert None is True
+E        +  where None = <built-in method get of dict object at 0xef93e8a58f80>('ssh')
+E        +    where <built-in method get of dict object at 0xef93e8a58f80> = {'interface': 'tap', 'message': "TAP target config timed out: 'ip link set eth0 up' — console may be unresponsive. output=''", 'status': 'error'}.get
+
+tests/e2e/qemu_server/test_ssh_commands.py:533: AssertionError

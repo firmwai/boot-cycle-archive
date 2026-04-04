@@ -1,0 +1,56 @@
+self = <tests.e2e.test_binary_transfer.TestBinaryOverBash object at 0xef93e9bd2690>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:58503', 'container': <Container: f9b4641ef4d5>, 'container_name': 'test-qemu-39bdfa5b', ...}
+minio_service = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:40099', 'internal_url': 'http://lab-mcp-minio-9f02659c:9000', ...}
+
+    async def test_put_and_get_medium(self, qemu_container, minio_service):
+        """PUT and GET 2KB file."""
+        info = qemu_container
+        minio = minio_service
+        await _boot_and_login(info)
+    
+        test_data = os.urandom(2048)
+        timeout = e2e_timeout(60, 120)
+    
+>       await self._put_via_minio(
+            info, minio, test_data, "/tmp/bob_2k.bin", timeout
+        )
+
+tests/e2e/test_binary_transfer.py:147: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tests.e2e.test_binary_transfer.TestBinaryOverBash object at 0xef93e9bd2690>
+info = {'api_key': 'test-key', 'base_url': 'http://localhost:58503', 'container': <Container: f9b4641ef4d5>, 'container_name': 'test-qemu-39bdfa5b', ...}
+minio = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:40099', 'internal_url': 'http://lab-mcp-minio-9f02659c:9000', ...}
+test_data = b'\xc1\x01\xebg-\xac\xa2N\x0c_\xb2\n\xefb\n\x80d\xddp\x03\xfb\xf6\xa8\x9eJ\x15\n\xf7\xa65\x9f\xe5\xe7\xd4C\xde \xe3\x0...07\xe0\x89lJ\x84\xffE^7l\x0b\xa2\xe04\x04R\x0c\x8b\xb8\xc0\x15@\x9dx\xfe\x03O\xa8\x7fV4j[\x97\xf0\xdc\xd2bZ`8\xa0\xc9q'
+dest_path = '/tmp/bob_2k.bin', timeout_sec = 120.0
+
+    async def _put_via_minio(self, info, minio, test_data, dest_path, timeout_sec):
+        """Upload test data to MinIO, presign, transfer to target via serial."""
+        s3_key = f"test-bob-put/{len(test_data)}.bin"
+        with tempfile.NamedTemporaryFile(suffix=".bin", delete=False) as tmp:
+            tmp.write(test_data)
+            tmp_path = tmp.name
+        try:
+            await upload_to_minio(minio, tmp_path, s3_key)
+        finally:
+            os.unlink(tmp_path)
+        get_url = await generate_presigned_url(minio, s3_key)
+    
+        result = await call_tool(
+            info["base_url"], info["api_key"], "file_transfer",
+            {
+                "op": "put",
+                "method": "binary-over-bash",
+                "url": get_url,
+                "destination": dest_path,
+            },
+            timeout=timeout_sec,
+        )
+>       assert result.get("status") == "completed", f"Put {len(test_data)}B failed: {result}"
+E       AssertionError: Put 2048B failed: {'status': 'error', 'error': 'No ACK received for 10s — broken link', 'frames_sent': 10, 'destination': '/tmp/bob_2k.bin'}
+E       assert 'error' == 'completed'
+E         
+E         - completed
+E         + error
+
+tests/e2e/test_binary_transfer.py:89: AssertionError

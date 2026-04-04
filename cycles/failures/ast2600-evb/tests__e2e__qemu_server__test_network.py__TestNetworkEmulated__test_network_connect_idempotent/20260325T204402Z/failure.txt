@@ -1,0 +1,58 @@
+self = <tests.e2e.qemu_server.test_network.TestNetworkEmulated object at 0xfc8b917ef5f0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:54051', 'container': <Container: 48772e883074>, 'container_name': 'test-qemu-40df0e8b', ...}
+
+    async def test_network_connect_idempotent(self, qemu_container):
+        """network_connect when already connected returns already_connected."""
+        info = qemu_container
+        timeout = e2e_timeout(30, 300)
+    
+>       await _boot_and_login(info)
+
+tests/e2e/qemu_server/test_network.py:228: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+info = {'api_key': 'test-key', 'base_url': 'http://localhost:54051', 'container': <Container: 48772e883074>, 'container_name': 'test-qemu-40df0e8b', ...}
+
+    async def _boot_and_login(info):
+        """Boot target and wait for shell.
+    
+        Waits for shell_ready or operation_ended. In emulated mode,
+        boot can take 300-500s, so the wait timeout must match the operation timeout.
+        """
+        base_url = info["base_url"]
+        api_key = info["api_key"]
+    
+        await configure_credentials(base_url, api_key)
+    
+        await call_tool(
+            base_url,
+            api_key,
+            "target",
+            {
+                "op": "reboot",
+                "start_operation": "login_shell",
+                "timeout": e2e_timeout(300, 500),
+            },
+        )
+    
+        # Wait for shell_ready or operation_ended. The timeout must cover the full
+        # login operation (up to 500s emulated) plus margin.
+        wait_timeout = e2e_timeout(60, 520)
+        result = await call_tool(
+            base_url,
+            api_key,
+            "wait_for_event",
+            {"event_types": ["shell_ready", "operation_ended"], "timeout": wait_timeout},
+            timeout=wait_timeout + 10,
+        )
+    
+        # If login failed (boot stalled), skip the test rather than failing on
+        # a network assertion that can't succeed without a shell.
+        if result.get("status") != "matched":
+            pytest.fail(f"Login did not complete within {wait_timeout}s — boot too slow")
+        events = result.get("events", [])
+        if not any(e.get("event_type") == "shell_ready" for e in events):
+>           pytest.fail("Login operation ended without shell_ready — boot stalled")
+E           Failed: Login operation ended without shell_ready — boot stalled
+
+tests/e2e/qemu_server/test_network.py:53: Failed

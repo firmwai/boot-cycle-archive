@@ -1,0 +1,28 @@
+self = <tests.e2e.test_command_operations.TestTempScriptProtocol object at 0xe3f0fae97c80>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:53203', 'container': <Container: 500331bed748>, 'container_name': 'test-qemu-shared-73822769', ...}
+
+    async def test_multiline_command(self, qemu_container):
+        """Multi-line script (echo line1\\necho line2) — each line executes."""
+        base_url = qemu_container["base_url"]
+        api_key = qemu_container["api_key"]
+    
+        if not await _boot_and_login(base_url, api_key):
+            pytest.fail("Login failed (boot stalled)")
+    
+        result = await call_tool(
+            base_url,
+            api_key,
+            "command",
+            {"op": "run", "command": "echo line1\necho line2", "wait_timeout": e2e_timeout(30, 60)},
+            timeout=e2e_timeout(35.0, 65.0),
+        )
+    
+        assert result.get("status") in ("completed", "running"), f"Unexpected: {result}"
+    
+        if result["status"] == "completed":
+            assert result.get("exit_code") == 0
+            output = result.get("output", "")
+>           assert "line1" in output
+E           AssertionError: assert 'line1' in 'root@evb-ast2600:~#'
+
+tests/e2e/test_command_operations.py:628: AssertionError

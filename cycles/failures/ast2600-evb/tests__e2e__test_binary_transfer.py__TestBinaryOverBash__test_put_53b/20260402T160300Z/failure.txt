@@ -1,0 +1,9 @@
+tests/e2e/test_binary_transfer.py:111: in test_put_53b
+    await self._put_and_verify(qemu_container, 53, e2e_timeout(60, 120))
+tests/e2e/test_binary_transfer.py:74: in _put_and_verify
+    assert result.get("status") == "completed", f"Put {size}B failed: {result}"
+E   AssertionError: Put 53B failed: {'status': 'error', 'error': 'Source file not found: /tmp/test_put_53.bin'}
+E   assert 'error' == 'completed'
+E     
+E     - completed
+E     + error

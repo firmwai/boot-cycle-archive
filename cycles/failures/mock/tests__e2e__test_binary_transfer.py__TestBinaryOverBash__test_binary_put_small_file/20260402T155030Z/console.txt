@@ -1,0 +1,25 @@
+Phosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) nodistro.0 evb-ast2600 ttyS4
+evb-ast2600 login:
+{"event": "boot_login", "ts": "2026-04-02T15:50:21.557125+00:00"}
+{"event": "operation_started", "ts": "2026-04-02T15:50:21.557305+00:00", "op": "Login"}
+{"event": "operation_stage", "ts": "2026-04-02T15:50:21.557326+00:00", "op": "Login", "stage": "checking_boot_state"}
+{"event": "operation_stage", "ts": "2026-04-02T15:50:21.557340+00:00", "op": "Login", "stage": "waiting_for_login_prompt"}
+{"event": "operation_stage", "ts": "2026-04-02T15:50:21.557350+00:00", "op": "Login", "stage": "waiting_for_quiescence"}
+{"event": "operation_stage", "ts": "2026-04-02T15:50:26.559205+00:00", "op": "Login", "stage": "refreshing_login_prompt"}
+evb-ast2600 login:
+Phosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) nodistro.0 evb-ast2600 ttyS4
+evb-ast2600 login:
+{"event": "operation_stage", "ts": "2026-04-02T15:50:27.560612+00:00", "op": "Login", "stage": "sending_username"}
+evb-ast2600 login: root
+root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-04-02T15:50:27.629957+00:00"}
+{"event": "operation_stage", "ts": "2026-04-02T15:50:28.561249+00:00", "op": "Login", "stage": "waiting_for_password_or_shell"}
+{"event": "operation_stage", "ts": "2026-04-02T15:50:28.561324+00:00", "op": "Login", "stage": "shell_setup_dmesg"}
+root@evb-ast2600:~# dmesg -n 1
+root@evb-ast2600:~#
+{"event": "operation_stage", "ts": "2026-04-02T15:50:29.062075+00:00", "op": "Login", "stage": "shell_setup_stty"}
+root@evb-ast2600:~# stty cols 200
+root@evb-ast2600:~#
+{"event": "login_complete", "ts": "2026-04-02T15:50:29.362372+00:00"}
+{"event": "operation_ended", "ts": "2026-04-02T15:50:29.362489+00:00", "op": "Login", "success": true}
+

@@ -1,0 +1,19 @@
+self = <tests.e2e.qemu_server.test_ssh_commands.TestSSHCommands object at 0xec83e3a03920>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:47307', 'container': <Container: 50b9c4987cff>, 'container_name': 'test-qemu-50853469', ...}
+
+    async def test_target_bash_auto_uses_ssh_after_connect(self, qemu_container):
+        """target_bash(method='auto') uses SSH when network is connected."""
+        info = qemu_container
+        timeout = e2e_timeout(30, 180)
+    
+        connect_result = await _boot_login_and_connect(info, timeout=timeout)
+>       assert connect_result.get("status") in (
+            "connected",
+            "already_connected",
+        ), f"Connect failed: {connect_result}"
+E       AssertionError: Connect failed: {'status': 'error', 'message': "TAP target config timed out: 'ip addr flush dev eth0' — console may be unresponsive. output=''", 'interface': 'tap'}
+E       assert 'error' in ('connected', 'already_connected')
+E        +  where 'error' = <built-in method get of dict object at 0xec83e307ee80>('status')
+E        +    where <built-in method get of dict object at 0xec83e307ee80> = {'interface': 'tap', 'message': "TAP target config timed out: 'ip addr flush dev eth0' — console may be unresponsive. output=''", 'status': 'error'}.get
+
+tests/e2e/qemu_server/test_ssh_commands.py:93: AssertionError

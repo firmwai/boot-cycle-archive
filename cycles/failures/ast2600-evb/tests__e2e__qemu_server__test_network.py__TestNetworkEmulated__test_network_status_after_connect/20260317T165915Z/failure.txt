@@ -1,0 +1,70 @@
+self = <tests.e2e.qemu_server.test_network.TestNetworkEmulated object at 0xe84ffa6d87a0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:47391', 'container': <Container: 190e81f87206>, 'container_name': 'test-qemu-757f1f9e', ...}
+
+    async def test_network_status_after_connect(self, qemu_container):
+        """network_status shows TAP as connected after network_connect."""
+        info = qemu_container
+        timeout = e2e_timeout(30, 300)
+    
+        await _boot_and_login(info)
+    
+        await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "network",
+            {"op": "connect"},
+            timeout=timeout,
+        )
+    
+        # Poll network_status — TAP interface configuration may not complete
+        # instantly after network_connect returns, especially under load.
+        async def _tap_connected():
+            result = await call_tool(info["base_url"], info["api_key"], "network", {"op": "status"})
+            tap = next((i for i in result["interfaces"] if i["name"] == "tap"), None)
+            return tap is not None and tap.get("connected", False), result
+    
+>       result = await wait_until(
+            _tap_connected,
+            timeout=e2e_timeout(5, 30),
+            description="tap connected",
+        )
+
+tests/e2e/qemu_server/test_network.py:178: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+check_fn = <function TestNetworkEmulated.test_network_status_after_connect.<locals>._tap_connected at 0xe84ffa4a5f80>
+timeout = 30.0, interval = 1.0, description = 'tap connected'
+
+    async def wait_until(
+        check_fn,
+        timeout: float,
+        interval: float = 1.0,
+        description: str = "condition",
+    ) -> dict:
+        """Poll until a condition is met or timeout expires.
+    
+        Replaces bare ``asyncio.sleep(N)`` + immediate check with adaptive polling.
+        The check function is called every *interval* seconds. It must return a
+        ``(bool, result_dict)`` tuple. When the bool is True, the result dict is
+        returned immediately. On timeout, raises ``TimeoutError`` with the last result.
+    
+        Args:
+            check_fn: Async callable returning ``(satisfied: bool, result: dict)``.
+            timeout: Maximum seconds to wait.
+            interval: Seconds between polls.
+            description: Human-readable label for error messages.
+        """
+        deadline = asyncio.get_running_loop().time() + timeout
+        last_result: dict = {}
+        while True:
+            satisfied, last_result = await check_fn()
+            if satisfied:
+                return last_result
+            remaining = deadline - asyncio.get_running_loop().time()
+            if remaining <= 0:
+>               raise TimeoutError(
+                    f"wait_until({description}) timed out after {timeout}s. Last result: {last_result}"
+                )
+E               TimeoutError: wait_until(tap connected) timed out after 30.0s. Last result: {'interfaces': [{'name': 'ppp', 'priority': 'ppp', 'connected': False, 'is_default': False, 'host_ip': None, 'guest_ip': None}, {'name': 'tap', 'priority': 'wired', 'connected': False, 'is_default': False, 'host_ip': None, 'guest_ip': None}], 'count': 2}
+
+tests/e2e/conftest.py:496: TimeoutError

@@ -1,0 +1,13 @@
+self = <tests.e2e.qemu_server.test_ssh_commands.TestSSHCommandsEmulated object at 0xef93e9cbd610>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:58409', 'container': <Container: 2fb49d76da12>, 'container_name': 'test-qemu-5fb2d55d', ...}
+
+    async def test_concurrent_serial_and_ssh(self, qemu_container):
+        """Serial and SSH commands can run concurrently."""
+        info = qemu_container
+        connect_result = await _boot_login_and_connect(info)
+>       assert connect_result.get("ssh") is True
+E       assert None is True
+E        +  where None = <built-in method get of dict object at 0xef93e89f8480>('ssh')
+E        +    where <built-in method get of dict object at 0xef93e89f8480> = {'interface': 'tap', 'message': "TAP target config timed out: 'ip link set eth0 up' — console may be unresponsive. output=''", 'status': 'error'}.get
+
+tests/e2e/qemu_server/test_ssh_commands.py:496: AssertionError

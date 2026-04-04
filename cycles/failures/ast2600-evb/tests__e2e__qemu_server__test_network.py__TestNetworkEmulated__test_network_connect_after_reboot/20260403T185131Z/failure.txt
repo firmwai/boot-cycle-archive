@@ -1,0 +1,25 @@
+self = <tests.e2e.qemu_server.test_network.TestNetworkEmulated object at 0xef93e9e7fc50>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:40675', 'container': <Container: dc276801d70e>, 'container_name': 'test-qemu-2b540938', ...}
+
+    async def test_network_connect_after_reboot(self, qemu_container):
+        """Network can be re-established after reboot."""
+        info = qemu_container
+        timeout = e2e_timeout(30, 300)
+    
+        await _boot_and_login(info)
+    
+        # Connect network
+        result1 = await call_tool(
+            info["base_url"],
+            info["api_key"],
+            "network",
+            {"op": "connect"},
+            timeout=timeout,
+        )
+>       assert result1["status"] == "connected"
+E       AssertionError: assert 'error' == 'connected'
+E         
+E         - connected
+E         + error
+
+tests/e2e/qemu_server/test_network.py:298: AssertionError

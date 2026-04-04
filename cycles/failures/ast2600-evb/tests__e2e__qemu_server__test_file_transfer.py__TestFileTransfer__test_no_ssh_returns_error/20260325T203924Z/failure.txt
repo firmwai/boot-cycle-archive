@@ -1,0 +1,49 @@
+self = <tests.e2e.qemu_server.test_file_transfer.TestFileTransfer object at 0xefed3a398710>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:43011', 'container': <Container: 3f702d6c4bcf>, 'container_name': 'test-qemu-3c9861af', ...}
+
+    async def test_no_ssh_returns_error(self, qemu_container):
+        """Requirement: file_transfer without SSH connection returns error."""
+        info = qemu_container
+        timeout = e2e_timeout(30, 180)
+    
+>       await _boot_and_login(info, timeout=timeout)
+
+tests/e2e/qemu_server/test_file_transfer.py:377: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+info = {'api_key': 'test-key', 'base_url': 'http://localhost:43011', 'container': <Container: 3f702d6c4bcf>, 'container_name': 'test-qemu-3c9861af', ...}
+timeout = 180.0
+
+    async def _boot_and_login(info, timeout=None):
+        """Boot target and wait for shell."""
+        if timeout is None:
+            timeout = e2e_timeout(60, 520)
+        base_url = info["base_url"]
+        api_key = info["api_key"]
+    
+        await configure_credentials(base_url, api_key)
+    
+        await call_tool(
+            base_url,
+            api_key,
+            "target",
+            {
+                "op": "reboot",
+                "start_operation": "login_shell",
+                "timeout": e2e_timeout(300, 500),
+            },
+        )
+    
+        result = await call_tool(
+            base_url,
+            api_key,
+            "wait_for_event",
+            {"event_types": ["shell_ready", "operation_ended"], "timeout": timeout},
+            timeout=timeout + 10,
+        )
+    
+        if result.get("status") != "matched":
+>           pytest.fail(f"Login did not complete within {timeout}s — boot too slow")
+E           Failed: Login did not complete within 180.0s — boot too slow
+
+tests/e2e/qemu_server/test_file_transfer.py:64: Failed

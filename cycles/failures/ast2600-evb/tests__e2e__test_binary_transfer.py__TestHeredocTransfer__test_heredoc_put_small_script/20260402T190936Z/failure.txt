@@ -1,0 +1,29 @@
+self = <tests.e2e.test_binary_transfer.TestHeredocTransfer object at 0xea7417b36180>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:51453', 'container': <Container: dae0c9571db9>, 'container_name': 'test-qemu-dbf614d7', ...}
+
+    async def test_heredoc_put_small_script(self, qemu_container):
+        """Transfer a small shell script via heredoc and verify content."""
+        info = qemu_container
+        await _boot_and_login(info)
+    
+        script_content = '#!/bin/sh\necho "HEREDOC_TEST_OK"\n'
+    
+        result = await call_tool(
+            info["base_url"], info["api_key"], "file_transfer",
+            {
+                "op": "put",
+                "method": "heredoc",
+                "content": script_content,
+                "destination": "/tmp/heredoc_test.sh",
+                "checksum": "none",
+            },
+            timeout=e2e_timeout(30, 60),
+        )
+>       assert result.get("status") == "completed", f"Heredoc put failed: {result}"
+E       AssertionError: Heredoc put failed: {'status': 'error', 'error': "Heredoc transfer timed out: ''"}
+E       assert 'error' == 'completed'
+E         
+E         - completed
+E         + error
+
+tests/e2e/test_binary_transfer.py:177: AssertionError

@@ -1,0 +1,79 @@
+Phosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) nodistro.0 evb-ast2600 ttyS4
+evb-ast2600 login:
+{"event": "boot_login", "ts": "2026-04-01T14:53:15.912795+00:00"}
+{"event": "operation_started", "ts": "2026-04-01T14:53:15.912968+00:00", "op": "Login"}
+{"event": "operation_stage", "ts": "2026-04-01T14:53:15.912990+00:00", "op": "Login", "stage": "checking_boot_state"}
+{"event": "operation_stage", "ts": "2026-04-01T14:53:15.913005+00:00", "op": "Login", "stage": "waiting_for_login_prompt"}
+{"event": "operation_stage", "ts": "2026-04-01T14:53:15.913016+00:00", "op": "Login", "stage": "waiting_for_quiescence"}
+{"event": "operation_stage", "ts": "2026-04-01T14:53:20.913739+00:00", "op": "Login", "stage": "refreshing_login_prompt"}
+evb-ast2600 login:
+Phosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) nodistro.0 evb-ast2600 ttyS4
+evb-ast2600 login:
+{"event": "operation_stage", "ts": "2026-04-01T14:53:21.914635+00:00", "op": "Login", "stage": "sending_username"}
+evb-ast2600 login: root
+root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-04-01T14:53:21.983107+00:00"}
+{"event": "operation_stage", "ts": "2026-04-01T14:53:22.915283+00:00", "op": "Login", "stage": "waiting_for_password_or_shell"}
+{"event": "operation_stage", "ts": "2026-04-01T14:53:22.915357+00:00", "op": "Login", "stage": "shell_setup_dmesg"}
+root@evb-ast2600:~# dmesg -n 1
+root@evb-ast2600:~#
+{"event": "operation_stage", "ts": "2026-04-01T14:53:23.416557+00:00", "op": "Login", "stage": "shell_setup_stty"}
+root@evb-ast2600:~# stty cols 200
+root@evb-ast2600:~#
+{"event": "login_complete", "ts": "2026-04-01T14:53:23.716984+00:00"}
+{"event": "operation_ended", "ts": "2026-04-01T14:53:23.717065+00:00", "op": "Login", "success": true}
+{"event": "operation_started", "ts": "2026-04-01T14:53:24.775023+00:00", "op": "ConsoleCommand"}
+{"event": "command_started", "ts": "2026-04-01T14:53:24.775256+00:00", "command_id": "net-4c00", "command": "cat > /tmp/heredoc_test.sh <<'__HEREDOC_EOF__'\n#!/bin/sh\necho \"HEREDOC_TEST_OK\"\n\n__HEREDOC_EOF__"}
+root@evb-ast2600:~# cat > /tmp/_mcp_86542.sh <<'__MCP_SCRIPT_86542__'
+cat > /tmp/_mcp_86542.sh <<'__MCP_SCRIPT_86542__'
+cat > /tmp/heredoc_test.sh <<'__HEREDOC_EOF__'
+cat > /tmp/heredoc_test.sh <<'__HEREDOC_EOF__'
+#!/bin/sh
+#!/bin/sh
+echo "HEREDOC_TEST_OK"
+echo "HEREDOC_TEST_OK"
+__HEREDOC_EOF__
+__HEREDOC_EOF__
+__MCP_SCRIPT_86542__
+__MCP_SCRIPT_86542__
+echo __MCP_PID_$$__; sh /tmp/_mcp_86542.sh; __MCP_EC=$?; rm -f /tmp/_mcp_86542.sh; echo __MCP_MARKER_86542__${__MCP_EC}
+__MCP_PID_1234__
+cat > /tmp/heredoc_test.sh <<'__HEREDOC_EOF__'
+#!/bin/sh
+echo "HEREDOC_TEST_OK"
+__HEREDOC_EOF__
+echo __MCP_PID_$$__; sh /tmp/_mcp_86542.sh; __MCP_EC=$?; rm -f /tmp/_mcp_86542.sh; echo __MCP_MARKER_86542__${__MCP_EC}
+__MCP_PID_1234__
+cat > /tmp/heredoc_test.sh <<'__HEREDOC_EOF__'
+#!/bin/sh
+echo "HEREDOC_TEST_OK"
+__HEREDOC_EOF__
+__MCP_MARKER_86542__0
+root@evb-ast2600:~#
+__MCP_MARKER_86542__0
+root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-04-01T14:53:25.650867+00:00"}
+{"event": "command_ended", "ts": "2026-04-01T14:53:25.873274+00:00", "command_id": "net-4c00", "command": "cat > /tmp/heredoc_test.sh <<'__HEREDOC_EOF__'\n#!/bin/sh\necho \"HEREDOC_TEST_OK\"\n\n__HEREDOC_EOF__", "exit_code": 0, "status": "completed"}
+{"event": "operation_ended", "ts": "2026-04-01T14:53:25.873617+00:00", "op": "ConsoleCommand", "success": true}
+{"event": "operation_started", "ts": "2026-04-01T14:53:25.935353+00:00", "op": "ConsoleCommand"}
+{"event": "command_started", "ts": "2026-04-01T14:53:25.935520+00:00", "command_id": "8228e392", "command": "chmod +x /tmp/heredoc_test.sh && sh /tmp/heredoc_test.sh"}
+root@evb-ast2600:~# cat > /tmp/_mcp_44783.sh <<'__MCP_SCRIPT_44783__'
+cat > /tmp/_mcp_44783.sh <<'__MCP_SCRIPT_44783__'
+chmod +x /tmp/heredoc_test.sh && sh /tmp/heredoc_test.sh
+chmod +x /tmp/heredoc_test.sh && sh /tmp/heredoc_test.sh
+__MCP_SCRIPT_44783__
+__MCP_SCRIPT_44783__
+echo __MCP_PID_$$__; sh /tmp/_mcp_44783.sh; __MCP_EC=$?; rm -f /tmp/_mcp_44783.sh; echo __MCP_MARKER_44783__${__MCP_EC}
+__MCP_PID_1234__
+chmod +x /tmp/heredoc_test.sh && sh /tmp/heredoc_test.sh
+echo __MCP_PID_$$__; sh /tmp/_mcp_44783.sh; __MCP_EC=$?; rm -f /tmp/_mcp_44783.sh; echo __MCP_MARKER_44783__${__MCP_EC}
+__MCP_PID_1234__
+chmod +x /tmp/heredoc_test.sh && sh /tmp/heredoc_test.sh
+__MCP_MARKER_44783__0
+root@evb-ast2600:~#
+__MCP_MARKER_44783__0
+root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-04-01T14:53:26.352514+00:00"}
+{"event": "command_ended", "ts": "2026-04-01T14:53:26.490048+00:00", "command_id": "8228e392", "command": "chmod +x /tmp/heredoc_test.sh && sh /tmp/heredoc_test.sh", "exit_code": 0, "status": "completed"}
+{"event": "operation_ended", "ts": "2026-04-01T14:53:26.490350+00:00", "op": "ConsoleCommand", "success": true}
+
