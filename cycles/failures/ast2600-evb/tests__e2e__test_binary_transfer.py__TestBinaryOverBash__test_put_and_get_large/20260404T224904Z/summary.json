@@ -1,0 +1,5666 @@
+{
+  "test_name": "tests/e2e/test_binary_transfer.py::TestBinaryOverBash::test_put_and_get_large",
+  "machine_type": "ast2600-evb",
+  "timestamp": "20260404T224904Z",
+  "result": "fail",
+  "boot_count": 1,
+  "boots": [
+    {
+      "boot_id": "9ad0fde5-b17c-406e-bd1a-3c684c1c9f88",
+      "boot_timestamp": "2026-04-04T22:41:34.994369+00:00",
+      "entry_count": 2526,
+      "key_events": [
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:35.540761+00:00"
+        },
+        {
+          "event_type": "boot_firmware",
+          "timestamp": "2026-04-04T22:41:35.613139+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:35.627943+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:35.748015+00:00"
+        },
+        {
+          "event_type": "boot_uboot",
+          "timestamp": "2026-04-04T22:41:35.830713+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:35.748015+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:35.748015+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:35.748015+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:35.748015+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:35.748015+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.151066+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.228095+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.313203+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.313203+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.372576+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.432653+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.432653+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.432653+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.432653+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.432653+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.432653+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.432653+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.432653+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.432653+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.432653+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.432653+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.432653+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.432653+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:36.432653+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:37.814497+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:39.019223+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:39.035829+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.464401+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:41.480254+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.689009+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.706227+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.740639+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:49.773022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:57.846093+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:58.946043+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:58.961802+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:59.338580+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:59.699697+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:59.818411+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:59.833465+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:41:59.833465+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:06.404755+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:06.424542+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:06.927000+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:06.983682+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:07.112956+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:07.177893+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:07.289317+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:12.016775+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:12.098422+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:12.117418+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:12.117418+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:12.117418+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:12.223073+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:12.223073+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:12.223073+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:23.606828+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.210818+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.323003+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.375474+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.375474+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.375474+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.375474+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.375474+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.375474+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.375474+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.575818+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.575818+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.575818+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.575818+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.575818+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.575818+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.575818+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.575818+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.575818+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.575818+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:24.846565+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:25.590968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:26.156381+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:26.156381+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:26.156381+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:26.156381+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:26.613477+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:26.747035+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:27.342980+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:27.383246+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:27.455406+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:27.470840+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:28.170928+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:28.203264+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:28.506547+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:28.542670+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:28.797272+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:28.848900+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:29.083793+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:29.123353+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:29.457671+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:29.457671+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:32.263375+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:32.321535+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:32.364288+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:32.528224+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:32.569607+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:32.610579+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:32.625289+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:32.625289+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:32.793609+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:32.815723+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:33.230250+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:33.329845+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:33.698267+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:33.750986+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:33.750986+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:33.861534+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:33.938772+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:33.975093+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:34.086246+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:34.086246+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:34.176241+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:34.207950+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:34.261543+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:34.306279+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:34.417465+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:34.453463+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:34.494527+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:34.926269+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:34.952341+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:34.952341+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:35.481869+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:35.523601+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:35.569069+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:35.911972+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:35.948875+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:37.155030+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:37.193236+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:37.272201+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:37.302801+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:39.397022+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:39.454231+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:39.548627+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:39.587600+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:40.267231+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:40.323970+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:40.563116+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:41.638733+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:41.954262+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:42.313126+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:42.359640+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:42.471693+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:42.761930+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:43.080839+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:43.684283+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:44.072208+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:44.772808+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:46.212959+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:48.942822+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:48.984927+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:49.545480+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:49.665561+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:49.905306+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:50.292952+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:50.605278+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:52.240830+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:52.452958+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:52.777101+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:52.798877+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:55.027271+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:55.699936+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:58.241536+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:58.842978+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:42:59.440995+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:00.195588+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:00.645581+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:01.240632+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:01.846157+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:02.319059+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:02.740571+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:03.038720+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:03.145015+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:04.956676+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:05.012218+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:05.161831+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:05.231189+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:05.617097+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:07.891286+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:08.491604+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:09.041423+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:09.642681+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:10.843402+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:11.613976+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:12.301486+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:15.375255+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:16.492557+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:17.179850+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:17.258998+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:17.600834+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:17.935697+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:17.972587+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:19.254210+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:19.767510+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:19.908105+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:19.923712+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:19.959529+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:20.344600+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:20.375793+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:20.442563+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:21.990109+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:23.289271+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:24.368492+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:25.425897+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:26.732519+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:29.949968+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:30.630587+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:32.355870+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:34.431844+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:34.480024+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:34.534685+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:34.872746+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:35.125259+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:35.731146+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:35.827139+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:36.204563+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:36.411009+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:36.607846+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:36.956344+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:37.076306+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:37.266093+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:37.344593+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:37.376123+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:37.376123+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:37.465280+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:37.608704+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:37.705189+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:37.960705+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:38.246033+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:38.365604+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:38.398712+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:38.984821+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:41.551534+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:42.134975+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:42.429709+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:42.728858+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:43.213512+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:43.233480+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:43.815634+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:44.124896+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:44.729950+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:45.412056+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:46.286171+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:48.851426+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:50.373300+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:51.443863+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:52.358194+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:53.268647+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:54.216704+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:55.083597+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:58.187483+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:43:59.343224+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:00.697975+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:03.072422+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:04.202262+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:04.221737+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:05.268972+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:05.297634+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:06.216765+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:09.364413+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:11.409824+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:12.397286+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:15.041172+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:17.129048+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:18.253413+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:20.923589+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:22.534268+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:24.870895+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:27.471359+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:31.591512+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:39.943451+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:43.485472+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:44.962071+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:45.649215+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:46.404631+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:48.706321+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:54.163930+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:55.545047+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:56.566527+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:56.992695+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:57.228662+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:57.348753+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:57.542264+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:57.660516+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:57.758824+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:57.931015+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:58.021551+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:58.135342+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:58.291100+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:58.513905+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:58.587034+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:44:58.619304+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:02.779315+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:04.138007+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:05.628384+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:06.564595+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:06.722925+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:09.316216+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:10.530933+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:10.547706+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:11.331474+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:12.052607+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:12.854962+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:15.996090+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:19.016273+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:19.490765+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:19.547338+00:00"
+        },
+        {
+          "event_type": "boot_login",
+          "timestamp": "2026-04-04T22:45:19.573537+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:20.079028+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:22.445326+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:23.021245+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:23.412925+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:23.844742+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:25.536915+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:27.832488+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:28.114525+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:28.315600+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:28.445579+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:28.648159+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:28.788417+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:28.911465+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:29.468199+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:34.563490+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:35.533209+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:35.533209+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:40.451200+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:40.484141+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:55.677512+00:00"
+        },
+        {
+          "event_type": "shell_ready",
+          "timestamp": "2026-04-04T22:45:57.051505+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:57.134680+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:58.598902+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:58.629074+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:58.983593+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:59.365602+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:59.430959+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:59.512847+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:59.528555+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:45:59.557389+00:00"
+        },
+        {
+          "event_type": "operation_ended",
+          "timestamp": "2026-04-04T22:46:09.322343+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:09.901955+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:09.901955+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:09.970006+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:09.970006+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.050666+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.050666+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.124536+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.124536+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.183807+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.183807+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.427991+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.427991+00:00"
+        },
+        {
+          "event_type": "shell_ready",
+          "timestamp": "2026-04-04T22:46:10.468866+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.514006+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.514006+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.573353+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.573353+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.774566+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.774566+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.840408+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.840408+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.840408+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.840408+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.964588+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:10.964588+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:11.023396+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:11.023396+00:00"
+        },
+        {
+          "event_type": "operation_ended",
+          "timestamp": "2026-04-04T22:46:11.104256+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:11.147542+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:11.147542+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:11.209728+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:11.209728+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:11.209728+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:11.209728+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:11.209728+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:11.209728+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:11.209728+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:11.209728+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:13.283323+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "shell_ready",
+          "timestamp": "2026-04-04T22:46:22.658554+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:14.075495+00:00"
+        },
+        {
+          "event_type": "operation_ended",
+          "timestamp": "2026-04-04T22:46:26.003366+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:27.921032+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:27.921032+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:27.983489+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:27.983489+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:28.049657+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:28.049657+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:28.127955+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:28.127955+00:00"
+        },
+        {
+          "event_type": "shell_ready",
+          "timestamp": "2026-04-04T22:46:28.167527+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:28.202117+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:28.202117+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:28.262473+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:28.262473+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:28.391979+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:28.391979+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:28.448852+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:28.448852+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:28.505737+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:28.505737+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:28.795366+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:28.795366+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:29.200189+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:29.200189+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:29.270570+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:29.270570+00:00"
+        },
+        {
+          "event_type": "operation_ended",
+          "timestamp": "2026-04-04T22:46:29.324455+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:31.520573+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:31.548538+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:46:33.185752+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.205963+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.205963+00:00"
+        },
+        {
+          "event_type": "shell_ready",
+          "timestamp": "2026-04-04T22:47:46.248553+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.248841+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.248841+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.304791+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.304791+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.369931+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.369931+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.460788+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.460788+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.523338+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.523338+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.583707+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.583707+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.701080+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.701080+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.760975+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.760975+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.760975+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.760975+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.870392+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.870392+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.870392+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:46.870392+00:00"
+        },
+        {
+          "event_type": "operation_ended",
+          "timestamp": "2026-04-04T22:47:47.006538+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.758164+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.758164+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.814695+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.814695+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.885233+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.885233+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.943820+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.943820+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:48.999700+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "shell_ready",
+          "timestamp": "2026-04-04T22:47:57.266739+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:47:51.073616+00:00"
+        },
+        {
+          "event_type": "operation_ended",
+          "timestamp": "2026-04-04T22:48:00.173390+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:00.413693+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:00.413693+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:00.516582+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:00.516582+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:00.516582+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:00.516582+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:00.646937+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:00.646937+00:00"
+        },
+        {
+          "event_type": "shell_ready",
+          "timestamp": "2026-04-04T22:48:00.692744+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:00.713056+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:00.713056+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:00.777854+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:00.777854+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:01.053342+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:01.053342+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:01.338587+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:01.338587+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:01.423080+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:01.423080+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:01.720130+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:01.720130+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:01.925566+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:01.925566+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:01.997077+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:01.997077+00:00"
+        },
+        {
+          "event_type": "operation_ended",
+          "timestamp": "2026-04-04T22:48:02.039139+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:02.590279+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:48:03.858036+00:00"
+        },
+        {
+          "event_type": "terminal_clean",
+          "timestamp": "2026-04-04T22:49:04.128074+00:00"
+        }
+      ]
+    }
+  ],
+  "workers": 1,
+  "failure_type": "tests/e2e/test_binary_transfer.py:110: AssertionError"
+}

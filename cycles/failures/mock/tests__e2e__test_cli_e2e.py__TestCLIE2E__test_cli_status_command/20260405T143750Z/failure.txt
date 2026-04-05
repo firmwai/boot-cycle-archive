@@ -1,0 +1,115 @@
+self = <tests.e2e.test_cli_e2e.TestCLIE2E object at 0xfc842bcc89b0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:50111', 'container': <Container: e252036b5dc5>, 'container_name': 'test-qemu-shared-06b952e4', ...}
+
+    def test_cli_status_command(self, qemu_container):
+        """
+        Requirement: CLI status command shows QEMU state.
+        """
+        result = subprocess.run(
+            ["uv", "run", "lab-mcp", "--url", qemu_container["base_url"], "status"],
+            capture_output=True,
+            text=True,
+            env={**os.environ, "MCP_API_KEY": qemu_container["api_key"]},
+            timeout=30,
+        )
+>       assert result.returncode == 0, f"stderr: {result.stderr}"
+E       AssertionError: stderr:   + Exception Group Traceback (most recent call last):
+E           |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/bin/lab-mcp", line 10, in <module>
+E           |     sys.exit(main())
+E           |              ^^^^^^
+E           |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/src/lab_mcp_cli/cli.py", line 218, in main
+E           |     asyncio.run(run_command(args))
+E           |   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+E           |     return runner.run(main)
+E           |            ^^^^^^^^^^^^^^^^
+E           |   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+E           |     return self._loop.run_until_complete(task)
+E           |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           |   File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+E           |     return future.result()
+E           |            ^^^^^^^^^^^^^^^
+E           |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/src/lab_mcp_cli/cli.py", line 290, in run_command
+E           |     await cmd_status(url, api_key)
+E           |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/src/lab_mcp_cli/cli.py", line 362, in cmd_status
+E           |     async with client.connect():
+E           |   File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+E           |     return await anext(self.gen)
+E           |            ^^^^^^^^^^^^^^^^^^^^^
+E           |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/src/lab_mcp_cli/client.py", line 65, in connect
+E           |     async with streamable_http_client(
+E           |   File "/usr/lib/python3.12/contextlib.py", line 231, in __aexit__
+E           |     await self.gen.athrow(value)
+E           |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/mcp/client/streamable_http.py", line 647, in streamable_http_client
+E           |     async with anyio.create_task_group() as tg:
+E           |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 783, in __aexit__
+E           |     raise BaseExceptionGroup(
+E           | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+E           +-+---------------- 1 ----------------
+E             | Traceback (most recent call last):
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+E             |     yield
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+E             |     resp = await self._pool.handle_async_request(req)
+E             |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+E             |     raise exc from None
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+E             |     response = await connection.handle_async_request(
+E             |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+E             |     raise exc
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+E             |     stream = await self._connect(request)
+E             |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpcore/_async/connection.py", line 124, in _connect
+E             |     stream = await self._network_backend.connect_tcp(**kwargs)
+E             |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+E             |     return await self._backend.connect_tcp(
+E             |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+E             |     with map_exceptions(exc_map):
+E             |   File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+E             |     self.gen.throw(value)
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+E             |     raise to_exc(exc) from exc
+E             | httpcore.ConnectError: All connection attempts failed
+E             | 
+E             | The above exception was the direct cause of the following exception:
+E             | 
+E             | Traceback (most recent call last):
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/mcp/client/streamable_http.py", line 565, in handle_request_async
+E             |     await self._handle_post_request(ctx)
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/mcp/client/streamable_http.py", line 340, in _handle_post_request
+E             |     async with ctx.client.stream(
+E             |   File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+E             |     return await anext(self.gen)
+E             |            ^^^^^^^^^^^^^^^^^^^^^
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1583, in stream
+E             |     response = await self.send(
+E             |                ^^^^^^^^^^^^^^^^
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1629, in send
+E             |     response = await self._send_handling_auth(
+E             |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+E             |     response = await self._send_handling_redirects(
+E             |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+E             |     response = await self._send_single_request(request)
+E             |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1730, in _send_single_request
+E             |     response = await transport.handle_async_request(request)
+E             |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+E             |     with map_httpcore_exceptions():
+E             |   File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+E             |     self.gen.throw(value)
+E             |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+E             |     raise mapped_exc(message) from exc
+E             | httpx.ConnectError: All connection attempts failed
+E             +------------------------------------
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['uv', 'run', 'lab-mcp', '--url', 'http://localhost:50111', 'status'], returncode=1, stdout='', stderr='  + Exception Group Traceback (most recent call last):\n  |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/bin/lab-mcp", line 10, in <module>\n  |     sys.exit(main())\n  |              ^^^^^^\n  |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/src/lab_mcp_cli/cli.py", line 218, in main\n  |     asyncio.run(run_command(args))\n  |   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run\n  |     return runner.run(main)\n  |            ^^^^^^^^^^^^^^^^\n  |   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run\n  |     return self._loop.run_until_complete(task)\n  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  |   File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete\n  |     return future.result()\n  |            ^^^^^^^^^^^^^^^\n  |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/src/lab_mcp_cli/cli.py", line 290, in run_command\n  |     await cmd_stat...ne 1694, in _send_handling_redirects\n    |     response = await self._send_single_request(request)\n    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1730, in _send_single_request\n    |     response = await transport.handle_async_request(request)\n    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 393, in handle_async_request\n    |     with map_httpcore_exceptions():\n    |   File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__\n    |     self.gen.throw(value)\n    |   File "/home/ubuntu/git/firmwai-platform-repos/lab_mcp/.claude/worktrees/qemu-service-split-v2/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions\n    |     raise mapped_exc(message) from exc\n    | httpx.ConnectError: All connection attempts failed\n    +------------------------------------\n').returncode
+
+tests/e2e/test_cli_e2e.py:76: AssertionError

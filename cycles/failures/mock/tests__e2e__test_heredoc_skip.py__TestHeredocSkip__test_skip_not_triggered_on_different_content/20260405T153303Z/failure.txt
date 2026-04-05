@@ -1,0 +1,21 @@
+self = <tests.e2e.test_heredoc_skip.TestHeredocSkip object at 0xfa94991adee0>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:33049', 'container': <Container: e33d5020877e>, 'container_name': 'test-qemu-shared-45b14ea8', ...}
+
+    async def test_skip_not_triggered_on_different_content(self, qemu_container):
+        """PUT different content to same path — must NOT skip."""
+        info = qemu_container
+        await _boot_and_login(info)
+    
+        r1 = await call_tool(
+            info["base_url"], info["api_key"], "file_transfer",
+            {"op": "put", "method": "heredoc", "content": "version_1\n",
+             "destination": "/tmp/skip_diff_test.txt"},
+            timeout=e2e_timeout(30, 120),
+        )
+>       assert r1.get("status") == "completed"
+E       AssertionError: assert 'error' == 'completed'
+E         
+E         - completed
+E         + error
+
+tests/e2e/test_heredoc_skip.py:81: AssertionError

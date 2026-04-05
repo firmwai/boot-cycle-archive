@@ -1,0 +1,38 @@
+self = <tests.e2e.test_boot_operations.TestWaitForEventWithHistory object at 0xf73f69696960>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:37705', 'container': <Container: 7067c2c44f46>, 'container_name': 'test-qemu-shared-9513360a', ...}
+
+    async def test_wait_for_event_finds_operation_ended(self, qemu_container):
+        """wait_for_event should find operation_ended events.
+    
+        Tests that OPERATION_ENDED events are published and findable.
+        In mock mode, operation completes quickly (times out waiting for
+        events that were emitted before subscription).
+        """
+        # Start boot with a short-timeout operation
+        await call_tool(
+            qemu_container["base_url"],
+            qemu_container["api_key"],
+            "target",
+            {"op": "reboot", "start_operation": "catch_uboot"},
+        )
+    
+        # Wait for operation_ended - in mock mode, operation times out quickly
+        # because boot events are emitted before operation subscribes.
+        # Under parallel load, the operation may take longer (lab-TD-010 fix).
+        op_timeout = e2e_timeout(200, 350)
+        result = await call_tool(
+            qemu_container["base_url"],
+            qemu_container["api_key"],
+            "wait_for_event",
+            {"event_types": ["operation_ended"], "timeout": op_timeout},
+            timeout=op_timeout + 10,
+        )
+    
+>       assert result.get("status") == "matched", f"Expected matched, got: {result}"
+E       AssertionError: Expected matched, got: {'status': 'timeout', 'waited_seconds': 200, 'boot_state': 'login', 'events': [], 'console_tail': 'Phosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) nodistro.0 evb-ast2600 ttyS4\nevb-ast2600 login:\nevb-ast2600 login:\nLogin timed out\nPhosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) nodistro.0 evb-ast2600 ttyS4\nevb-ast2600 login:\nevb-ast2600 login:\nLogin timed out\nPhosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) nodistro.0 evb-ast2600 ttyS4\nevb-ast2600 login:\nevb-ast2600 login:\nLogin timed out', 'seconds_since_last_output': 200.1, 'hint': "Login prompt is visible but login hasn't completed. Check credentials with configuration(op='get', key='target.*'). The login operation may have failed — try target(op='reboot', start_operation='login_shell') to retry."}
+E       assert 'timeout' == 'matched'
+E         
+E         - matched
+E         + timeout
+
+tests/e2e/test_boot_operations.py:81: AssertionError

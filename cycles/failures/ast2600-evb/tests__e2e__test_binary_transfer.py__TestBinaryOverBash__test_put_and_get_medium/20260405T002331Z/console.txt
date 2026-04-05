@@ -1,0 +1,1524 @@
+{"event": "error", "ts": "2026-04-05T00:19:59.170961+00:00"}
+{"event": "error", "ts": "2026-04-05T00:19:59.171074+00:00"}
+{"event": "error", "ts": "2026-04-05T00:19:59.171115+00:00"}
+{"event": "operation_started", "ts": "2026-04-05T00:19:59.461561+00:00", "op": "Login"}
+{"event": "operation_stage", "ts": "2026-04-05T00:19:59.461619+00:00", "op": "Login", "stage": "checking_boot_state"}
+{"event": "operation_stage", "ts": "2026-04-05T00:19:59.461638+00:00", "op": "Login", "stage": "waiting_for_login_prompt"}
+U-Boot SPL 2019.04 (Mar 10 2023 - 01:54:10 +0000)
+{"event": "boot_firmware", "ts": "2026-04-05T00:19:59.630416+00:00"}
+Trying to boot from RAM
+U-Boot 2019.04 (Mar 10 2023 - 01:54:10 +0000)
+{"event": "boot_uboot", "ts": "2026-04-05T00:19:59.912055+00:00"}
+SOC: AST2600-A3
+eSPI Mode: SIO:Enable : SuperIO-2e
+Eth: MAC0: RGMII, MAC1: RGMII, MAC2: RGMII, MAC3: RGMII
+Model: AST2600 EVB
+DRAM:  already initialized, 1008 MiB (capacity:1024 MiB, VGA:64 MiB, ECC:off)
+MMC:
+MMC:
+sdhci_slot0@100: 1, sdhci_slot1@200: 2, emmc_slot0@100: 0
+Loading Environment from SPI Flash... SF: Detected mx66u51235f with page size 256 Bytes, erase size 4 KiB, total 64 MiB
+*** Warning - bad CRC, using default environment
+In:    serial@1e784000
+Out:   serial@1e784000
+Err:   serial@1e784000
+Model: AST2600 EVB
+Net:
+Warning: ftgmac@1e660000 (eth0) using random MAC address - 0e:7f:55:58:0e:02
+eth0: ftgmac@1e660000
+Warning: ftgmac@1e680000 (eth1) using random MAC address - 4e:92:e6:68:45:cb
+, eth1: ftgmac@1e680000
+Warning: ftgmac@1e670000 (eth2) using random MAC address - b2:cf:9d:c2:82:87
+, eth2: ftgmac@1e670000
+Warning: ftgmac@1e690000 (eth3) using random MAC address - ba:62:5b:4d:97:e1
+, eth3: ftgmac@1e690000
+Hit any key to stop autoboot:  2
+Hit any key to stop autoboot:  1
+Hit any key to stop autoboot:  0
+## Loading kernel from FIT Image at 83000000 ...
+## Loading kernel from FIT Image at 83000000 ...
+   Using 'conf-aspeed-ast2600-evb.dtb' configuration
+   Verifying Hash Integrity ... OK
+   Trying 'kernel-1' kernel subimage
+     Description:  Linux kernel
+     Type:         Kernel Image
+     Compression:  uncompressed
+     Data Start:   0x8300012c
+     Data Size:    3834512 Bytes = 3.7 MiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: 0x80001000
+     Entry Point:  0x80001000
+     Hash algo:    sha256
+     Hash value:   75f525ccd675e3add2b93fa68a5eb8f55a63e45df4e55ca29346b5855b5964ed
+   Verifying Hash Integrity ... sha256+ OK
+## Loading ramdisk from FIT Image at 83000000 ...
+   Using 'conf-aspeed-ast2600-evb.dtb' configuration
+   Verifying Hash Integrity ... OK
+   Trying 'ramdisk-1' ramdisk subimage
+     Description:  obmc-phosphor-initramfs
+     Type:         RAMDisk Image
+     Compression:  uncompressed
+     Data Start:   0x833b2058
+     Data Size:    1039504 Bytes = 1015.1 KiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: unavailable
+     Entry Point:  unavailable
+     Hash algo:    sha256
+     Hash value:   5e1a3fd9d769b8f6a240ca792926612e39a3a5383016d45f7b2979252bae066f
+   Verifying Hash Integrity ... sha256+ OK
+## Loading fdt from FIT Image at 83000000 ...
+   Using 'conf-aspeed-ast2600-evb.dtb' configuration
+   Verifying Hash Integrity ... OK
+   Trying 'fdt-aspeed-ast2600-evb.dtb' fdt subimage
+     Description:  Flattened Device Tree blob
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x833a84d0
+     Data Size:    39612 Bytes = 38.7 KiB
+     Architecture: ARM
+     Hash algo:    sha256
+     Hash value:   1bfd8771ac4774eb68abaeb8137238a44bdb18bde906ca060ea7ee41ff1e63a4
+   Verifying Hash Integrity ... sha256+ OK
+   Booting using the fdt blob at 0x833a84d0
+   Loading Kernel Image ... OK
+   Loading Ramdisk to 8ff02000, end 8ffffc90 ... OK
+   Loading Device Tree to 8fef5000, end 8ff01abb ... OK
+Starting kernel ...
+[    0.000000] Booting Linux on physical CPU 0xf00
+[    0.000000] Linux version 6.1.15-580639a (oe-user@oe-host) (arm-openbmc-linux-gnueabi-gcc (GCC) 12.2.0, GNU ld (GNU Binutils) 2.40.20230119) #1 SMP Thu Apr  6 00:55:09 UTC 2023
+[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c5387d
+[    0.000000] CPU: div instructions available: patching division code
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] OF: fdt: Machine model: AST2600 EVB
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] Reserved memory: created CMA memory pool at 0xbe000000, size 16 MiB
+[    0.000000] OF: reserved mem: initialized node framebuffer, compatible id shared-dma-pool
+[    0.000000] Reserved memory: created CMA memory pool at 0xba000000, size 64 MiB
+[    0.000000] OF: reserved mem: initialized node video, compatible id shared-dma-pool
+[    0.000000] cma: Reserved 16 MiB at 0xb9000000
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000080000000-0x00000000beffffff]
+[    0.000000]   HighMem  empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000080000000-0x00000000beffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000080000000-0x00000000beffffff]
+[    0.000000] percpu: Embedded 14 pages/cpu s36500 r0 d20844 u57344
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 256032
+[    0.000000] Kernel command line: console=ttyS4,115200n8 root=/dev/ram rw
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] Memory: 909212K/1032192K available (9216K kernel code, 811K rwdata, 1852K rodata, 1024K init, 179K bss, 24676K reserved, 98304K cma-reserved, 0K highmem)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] ftrace: allocating 29055 entries in 57 pages
+[    0.000000] ftrace: allocated 57 pages with 4 groups
+[    0.000000] trace event string verifier disabled
+[    0.000000] rcu: Hierarchical RCU implementation.
+[    0.000000] rcu:     RCU event tracing is enabled.
+[    0.000000]  Rude variant of Tasks RCU enabled.
+[    0.000000]  Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] arch_timer: cp15 timer(s) running at 1200.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0x1fffffffffffffff max_cycles: 0x114c1bbbeec, max_idle_ns: 440795229572 ns
+[    0.000241] sched_clock: 61 bits at 1200MHz, resolution 0ns, wraps every 2199023255551ns
+[    0.000646] Switching to timer-based delay loop, resolution 0ns
+[    0.014284] Calibrating delay loop (skipped), value calculated using timer frequency.. 2400.00 BogoMIPS (lpj=12000000)
+[    0.014673] pid_max: default: 32768 minimum: 301
+[    0.020033] Mount-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
+[    0.020150] Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
+[    0.043338] CPU: Testing write buffer coherency: ok
+[    0.072923] cblist_init_generic: Setting adjustable number of callback queues.
+[    0.073279] cblist_init_generic: Setting shift to 1 and lim to 1.
+[    0.074610] cblist_init_generic: Setting shift to 1 and lim to 1.
+[    0.076163] Setting up static identity map for 0x80100000 - 0x80100060
+[    0.077669] rcu: Hierarchical SRCU implementation.
+[    0.077749] rcu:     Max phase no-delay instances is 1000.
+[    0.084347] ASPEED AST2600 rev A3 (05030303)
+[    0.089155] smp: Bringing up secondary CPUs ...
+[    0.103697] smp: Brought up 1 node, 2 CPUs
+[    0.103885] SMP: Total of 2 processors activated (4800.00 BogoMIPS).
+[    0.103984] CPU: All CPU(s) started in SVC mode.
+[    0.127279] devtmpfs: initialized
+[    0.187310] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+[    0.212462] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.213615] futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    0.224647] pinctrl core: initialized pinctrl subsystem
+[    0.251761] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.285714] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.297293] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.297443] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.487431] AST2600 secure boot disabled
+[    0.491768] SCSI subsystem initialized
+[    0.493440] usbcore: registered new interface driver usbfs
+[    0.493973] usbcore: registered new interface driver hub
+[    0.494376] usbcore: registered new device driver usb
+[    0.495279] mc: Linux media interface: v0.10
+[    0.495494] videodev: Linux video capture interface: v2.00
+[    0.495756] pps_core: LinuxPPS API ver. 1 registered
+[    0.495794] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.495945] PTP clock support registered
+[    0.496120] EDAC MC: Ver: 3.0.0
+[    0.534595] clocksource: Switched to clocksource arch_sys_counter
+[    0.680650] NET: Registered PF_INET protocol family
+[    0.682995] IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.692397] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes, linear)
+[    0.692598] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.692722] TCP established hash table entries: 8192 (order: 3, 32768 bytes, linear)
+[    0.693814] TCP bind hash table entries: 8192 (order: 5, 131072 bytes, linear)
+[    0.694851] TCP: Hash tables configured (established 8192 bind 8192)
+[    0.696762] UDP hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    0.697190] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    0.699429] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.708981] Unpacking initramfs...
+[    0.710949] workingset: timestamp_bits=30 max_order=18 bucket_order=0
+[    0.737963] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.739119] jffs2: version 2.2. (SUMMARY)  © 2001-2006 Red Hat, Inc.
+[    0.744168] NET: Registered PF_ALG protocol family
+[    0.745555] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
+[    0.792629] Serial: 8250/16550 driver, 6 ports, IRQ sharing enabled
+[    0.816205] printk: console [ttyS4] disabled
+[    0.843879] 1e784000.serial: ttyS4 at MMIO 0x1e784000 (irq = 33, base_baud = 1500000) is a 16550A
+[    0.928365] printk: console [ttyS4] enabled
+[    0.938184] timeriomem_rng 1e6e2524.hwrng: 32bits from 0x(ptrval) @ 1us
+[    0.945089] aspeed_gfx 1e6e6000.display: assigned reserved memory node framebuffer
+[    0.979450] [drm] Initialized aspeed-gfx-drm 1.0.0 20180319 for 1e6e6000.display on minor 0
+[    1.088835] loop: module loaded
+[    1.109827] random: crng init done
+[    1.219071] spi-nor spi0.0: mx25u51245g (65536 Kbytes)
+[    1.289112] spi-aspeed-smc 1e620000.spi: CE0 read buswidth:4 [0x406c0641]
+[    1.300311] 5 fixed-partitions partitions found on MTD device bmc
+[    1.301408] Creating 5 MTD partitions on "bmc":
+[    1.302535] 0x000000000000-0x0000000e0000 : "u-boot"
+[    1.309788] 0x0000000e0000-0x000000100000 : "u-boot-env"
+[    1.315775] 0x000000100000-0x000000a00000 : "kernel"
+[    1.321631] 0x000000a00000-0x000002a00000 : "rofs"
+[    1.328396] 0x000002a00000-0x000004000000 : "rwfs"
+[    1.364850] spi-nor spi1.0: mx25u51245g (65536 Kbytes)
+[    1.380873] spi-aspeed-smc 1e630000.spi: Calibration area too uniform, using low speed
+[    1.382772] spi-aspeed-smc 1e630000.spi: CE0 read buswidth:4 [0x406c0041]
+[    1.486970] ftgmac100 1e660000.ftgmac: Read MAC address 0e:7f:55:58:0e:02 from chip
+[    1.490652] RTL8211E Gigabit Ethernet 1e650000.mdio-1:00: attached PHY driver (mii_bus:phy_addr=1e650000.mdio-1:00, irq=POLL)
+[    1.506777] ftgmac100 1e660000.ftgmac eth0: irq 35, mapped at (ptrval)
+[    1.509448] ftgmac100 1e680000.ftgmac: Read MAC address 4e:92:e6:68:45:cb from chip
+[    1.510795] RTL8211E Gigabit Ethernet 1e650008.mdio-1:00: attached PHY driver (mii_bus:phy_addr=1e650008.mdio-1:00, irq=POLL)
+[    1.515254] ftgmac100 1e680000.ftgmac eth1: irq 36, mapped at (ptrval)
+[    1.517542] ftgmac100 1e670000.ftgmac: Read MAC address b2:cf:9d:c2:82:87 from chip
+[    1.518583] RTL8211E Gigabit Ethernet 1e650010.mdio-1:00: attached PHY driver (mii_bus:phy_addr=1e650010.mdio-1:00, irq=POLL)
+[    1.522121] ftgmac100 1e670000.ftgmac eth2: irq 37, mapped at (ptrval)
+[    1.525363] ftgmac100 1e690000.ftgmac: Read MAC address ba:62:5b:4d:97:e1 from chip
+[    1.526756] RTL8211E Gigabit Ethernet 1e650018.mdio-1:00: attached PHY driver (mii_bus:phy_addr=1e650018.mdio-1:00, irq=POLL)
+[    1.530245] ftgmac100 1e690000.ftgmac eth3: irq 38, mapped at (ptrval)
+[    1.531858] PPP generic driver version 2.4.2
+[    1.536532] PPP BSD Compression module registered
+[    1.537427] PPP Deflate Compression module registered
+[    1.556724] PPP MPPE Compression module registered
+[    1.560032] usbcore: registered new interface driver usb-storage
+[    1.603806] ehci-platform 1e6a3000.usb: EHCI Host Controller
+[    1.610442] ehci-platform 1e6a3000.usb: new USB bus registered, assigned bus number 1
+[    1.721455] aspeed_vhub 1e6a0000.usb-vhub: Initialized virtual hub in USB2 mode
+[    1.731892] ehci-platform 1e6a3000.usb: irq 40, io mem 0x1e6a3000
+[    1.754408] aspeed-rtc 1e781000.rtc: registered as rtc0
+[    1.755398] aspeed-rtc 1e781000.rtc: hctosys: unable to read the hardware clock
+[    1.757601] i2c_dev: i2c /dev entries driver
+[    1.766304] ehci-platform 1e6a3000.usb: USB 2.0 started, EHCI 1.00
+[    1.768088] aspeed-i2c-bus 1e78a080.i2c-bus: i2c bus 0 registered, irq 41
+[    1.772447] aspeed-i2c-bus 1e78a100.i2c-bus: i2c bus 1 registered, irq 42
+[    1.776688] aspeed-i2c-bus 1e78a180.i2c-bus: i2c bus 2 registered, irq 43
+[    1.780364] aspeed-i2c-bus 1e78a200.i2c-bus: i2c bus 3 registered, irq 44
+[    1.785055] aspeed-i2c-bus 1e78a280.i2c-bus: i2c bus 4 registered, irq 45
+[    1.785315] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.01
+[    1.786941] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.788111] usb usb1: Product: EHCI Host Controller
+[    1.788951] usb usb1: Manufacturer: Linux 6.1.15-580639a ehci_hcd
+[    1.789937] usb usb1: SerialNumber: 1e6a3000.usb
+[    1.790653] aspeed-i2c-bus 1e78a300.i2c-bus: i2c bus 5 registered, irq 46
+[    1.796156] aspeed-i2c-bus 1e78a380.i2c-bus: i2c bus 6 registered, irq 47
+[    1.798750] Freeing initrd memory: 1016K
+[    1.805718] hub 1-0:1.0: USB hub found
+[    1.807413] hub 1-0:1.0: 6 ports detected
+[    1.813937] at24 7-0050: 1024 byte 24c08 EEPROM, writable, 16 bytes/write
+[    1.815710] aspeed-i2c-bus 1e78a400.i2c-bus: i2c bus 7 registered, irq 48
+[    1.820260] aspeed-i2c-bus 1e78a480.i2c-bus: i2c bus 8 registered, irq 49
+[    1.824430] aspeed-i2c-bus 1e78a500.i2c-bus: i2c bus 9 registered, irq 50
+[    1.828089] aspeed-i2c-bus 1e78a680.i2c-bus: i2c bus 12 registered, irq 51
+[    1.831578] aspeed-i2c-bus 1e78a700.i2c-bus: i2c bus 13 registered, irq 52
+[    1.835530] aspeed-i2c-bus 1e78a780.i2c-bus: i2c bus 14 registered, irq 53
+[    1.839105] aspeed-i2c-bus 1e78a800.i2c-bus: i2c bus 15 registered, irq 54
+[    1.848193] aspeed-video 1e700000.video: irq 55
+[    1.849258] aspeed-video 1e700000.video: assigned reserved memory node video
+[    1.854800] aspeed-video 1e700000.video: alloc mem size(24576) at 0xba000000 for jpeg header
+[    1.862502] Driver for 1-wire Dallas network protocol.
+[    1.870632] lm75 8-004d: hwmon0: sensor 'lm75'
+[    1.881065] device-mapper: ioctl: 4.47.0-ioctl (2022-07-28) initialised: dm-devel@redhat.com
+[    1.886485] aspeed-edac 1e6e0000.sdram: ECC mode is not configured in u-boot
+[    1.887657] aspeed-edac: probe of 1e6e0000.sdram failed with error -1
+[    1.894788] sdhci: Secure Digital Host Controller Interface driver
+[    1.895393] sdhci: Copyright(c) Pierre Ossman
+[    1.896061] sdhci-pltfm: SDHCI platform and OF driver helper
+[    1.900299] usbcore: registered new interface driver usbhid
+[    1.901130] usbhid: USB HID core driver
+[    1.903591] SPI driver bmp280 has no spi_device_id for bosch,bmp085
+[    1.922983] fsi-master-aspeed 1e79b000.fsi: failed to read hub version
+[    1.924811] fsi-master-aspeed: probe of 1e79b000.fsi failed with error -110
+[    1.932977] sdhci-aspeed 1e750100.sdhci: Configured for slot 0
+[    1.947468] NET: Registered PF_INET6 protocol family
+[    1.969828] Segment Routing with IPv6
+[    1.970712] In-situ OAM (IOAM) with IPv6
+[    1.973244] NET: Registered PF_PACKET protocol family
+[    1.974647] 8021q: 802.1Q VLAN Support v1.8
+[    1.977035] Registering SWP/SWPB emulation handler
+[    1.989391] mmc0: SDHCI controller on 1e750100.sdhci [1e750100.sdhci] using ADMA
+[    2.029009] sdhci-aspeed 1e740100.sdhci: Configured for slot 0
+[    2.029248] sdhci-aspeed 1e740200.sdhci: Configured for slot 1
+[    2.035146] printk: console [netcon0] enabled
+[    2.035941] netconsole: network logging started
+[    2.060621] mmc2: SDHCI controller on 1e740200.sdhci [1e740200.sdhci] using ADMA
+[    2.077971] mmc1: SDHCI controller on 1e740100.sdhci [1e740100.sdhci] using ADMA
+[    2.121616] Freeing unused kernel image (initmem) memory: 1024K
+[    2.188811] Checked W+X mappings: passed, no W+X pages found
+[    2.190225] Run /init as init process
+rofs = mtd4 squashfs   rwfs = mtd5 jffs2
+[    5.593922] jffs2: notice: (123) jffs2_build_xattr_subsystem: complete building xattr subsystem, 0 of xdatum (0 unchecked, 0 orphan) and 0 of xref (0 dead, 0 orphan) found.
+[    5.593922] jffs2: notice: (123) jffs2_build_xattr_subsystem: complete building xattr subsystem, 0 of xdatum (0 unchecked, 0 orphan) and 0 of xref (0 dead, 0 orphan) found.
+find: run/initramfs/rw/cow/var/lib/systemd/random-seed: No such file or directory
+Fri Mar  9 12:35:01 UTC 2018
+[    6.252413] overlayfs: upper fs does not support tmpfile.
+[    6.267583] overlayfs: upper fs does not support RENAME_WHITEOUT.
+[   12.460477] systemd[1]: System time before build time, advancing clock.
+[   12.775069] systemd[1]: systemd 253.1^ running in system mode (+PAM -AUDIT -SELINUX -APPARMOR -IMA -SMACK +SECCOMP -GCRYPT -GNUTLS -OPENSSL -ACL +BLKID -CURL -ELFUTILS -FIDO2 -IDN2 -IDN -IPTC -KMOD -LIBCRYPTSETUP +LIBFDISK -PCRE2 -PWQUALITY -P11KIT -QRENCODE -TPM2 -BZIP2 -LZ4 -XZ -ZLIB +ZSTD -BPF_FRAMEWORK -XKBCOMMON -UTMP -SYSVINIT default-hierarchy=unified)
+[   12.791495] systemd[1]: Detected architecture arm.
+Welcome to Phosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) 2.15.0-dev!
+[   12.917811] systemd[1]: Hostname set to <evb-ast2600>.
+[   12.995317] systemd[1]: Initializing machine ID from random generator.
+[   14.981986] systemd[1]: Using hardware watchdog 'aspeed_wdt', version 0, device /dev/watchdog0
+[   14.981986] systemd[1]: Using hardware watchdog 'aspeed_wdt', version 0, device /dev/watchdog0
+[   15.028919] systemd[1]: Watchdog running with a timeout of 2min.
+[   15.028919] systemd[1]: Watchdog running with a timeout of 2min.
+[   15.031133] systemd[1]: Watchdog: reading from /sys/dev/char/247:0/pretimeout_governor
+[   15.034826] systemd[1]: Watchdog: failed to read pretimeout governor: No such file or directory
+[   15.036920] systemd[1]: Watchdog: setting pretimeout_governor to 'panic' via '/sys/dev/char/247:0/pretimeout_governor'
+[   15.039766] systemd[1]: Failed to set pretimeout_governor to 'panic': No such file or directory
+[   15.041252] systemd[1]: Failed to set watchdog pretimeout governor to 'panic', ignoring: No such file or directory
+[   23.959412] systemd[1]: /lib/systemd/system/phosphor-ipmi-net@.socket:6: Invalid interface name, ignoring: sys-subsystem-net-devices-%i.device
+[   24.380241] systemd[1]: Queued start job for default target Multi-User System.
+[   24.461669] systemd[1]: Created slice Slice /system/getty.
+[  OK  ] Created slice Slice /system/getty.
+[   24.495910] systemd[1]: Created slice Slice /system/mapper-wait.
+[  OK  ] Created slice Slice /system/mapper-wait.
+[   24.513049] systemd[1]: Created slice Slice /system/modprobe.
+[  OK  ] Created slice Slice /system/modprobe.
+[   24.529982] systemd[1]: Created slice Slice /system/obmc-led-group-start.
+[  OK  ] Created slice Slice /system/obmc-led-group-start.
+[   24.548473] systemd[1]: Created slice Slice /system/phosphor-certificate-manager.
+[  OK  ] Created slice Slice /system/phosphor-certificate-manager.
+[   24.566638] systemd[1]: Created slice Slice /system/phosphor-discover-system-state.
+[  OK  ] Created slice Slice /syste…hosphor-discover-system-state.
+[   24.586604] systemd[1]: Created slice Slice /system/phosphor-ipmi-net.
+[  OK  ] Created slice Slice /system/phosphor-ipmi-net.
+[   24.606069] systemd[1]: Created slice Slice /system/phosphor-reset-chassis-on.
+[  OK  ] Created slice Slice /system/phosphor-reset-chassis-on.
+[   24.624027] systemd[1]: Created slice Slice /system/phosphor-reset-chassis-running.
+[  OK  ] Created slice Slice /syste…hosphor-reset-chassis-running.
+[   24.641951] systemd[1]: Created slice Slice /system/phosphor-reset-host-running.
+[  OK  ] Created slice Slice /system/phosphor-reset-host-running.
+[   24.659044] systemd[1]: Created slice Slice /system/serial-getty.
+[  OK  ] Created slice Slice /system/serial-getty.
+[   24.681215] systemd[1]: Created slice Slice /system/xyz.openbmc_project.State.Chassis.
+[  OK  ] Created slice Slice /syste…openbmc_project.State.Chassis.
+[   24.700355] systemd[1]: Created slice Slice /system/xyz.openbmc_project.State.Host.
+[  OK  ] Created slice Slice /syste…yz.openbmc_project.State.Host.
+[   24.712714] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[  OK  ] Started Dispatch Password …ts to Console Directory Watch.
+[   24.723061] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[  OK  ] Started Forward Password R…uests to Wall Directory Watch.
+[   24.733769] systemd[1]: Reached target Host0 running after reset.
+[  OK  ] Reached target Host0 running after reset.
+[   24.738947] systemd[1]: Reached target Path Units.
+[  OK  ] Reached target Path Units.
+[   24.743888] systemd[1]: Reached target Remote File Systems.
+[  OK  ] Reached target Remote File Systems.
+[   24.748437] systemd[1]: Reached target Slice Units.
+[  OK  ] Reached target Slice Units.
+[   24.754602] systemd[1]: Reached target Swaps.
+[  OK  ] Reached target Swaps.
+[   24.780412] systemd[1]: Listening on Syslog Socket.
+[  OK  ] Listening on Syslog Socket.
+[   24.859244] systemd[1]: Listening on Process Core Dump Socket.
+[  OK  ] Listening on Process Core Dump Socket.
+[   24.871139] systemd[1]: Journal Audit Socket was skipped because of an unmet condition check (ConditionSecurity=audit).
+[   24.882520] systemd[1]: Listening on Journal Socket (/dev/log).
+[  OK  ] Listening on Journal Socket (/dev/log).
+[   24.937042] systemd[1]: Listening on Journal Socket.
+[  OK  ] Listening on Journal Socket.
+[   24.955313] systemd[1]: Listening on Network Service Netlink Socket.
+[  OK  ] Listening on Network Service Netlink Socket.
+[   24.981255] systemd[1]: Listening on udev Control Socket.
+[  OK  ] Listening on udev Control Socket.
+[   24.995666] systemd[1]: Listening on udev Kernel Socket.
+[  OK  ] Listening on udev Kernel Socket.
+[   25.011106] systemd[1]: Huge Pages File System was skipped because of an unmet condition check (ConditionPathExists=/sys/kernel/mm/hugepages).
+[   25.019383] systemd[1]: POSIX Message Queue File System was skipped because of an unmet condition check (ConditionPathExists=/proc/sys/fs/mqueue).
+[   25.139128] systemd[1]: Mounting Kernel Debug File System...
+         Mounting Kernel Debug File System...
+[   25.192506] systemd[1]: Mounting Kernel Trace File System...
+         Mounting Kernel Trace File System...
+[   25.277598] systemd[1]: Mounting Temporary Directory /tmp...
+         Mounting Temporary Directory /tmp...
+[   25.462776] systemd[1]: Starting Load Kernel Module configfs...
+         Starting Load Kernel Module configfs...
+[   25.508320] systemd[1]: Starting Load Kernel Module efi_pstore...
+         Starting Load Kernel Module efi_pstore...
+[   25.599283] systemd[1]: Starting Load Kernel Module fuse...
+         Starting Load Kernel Module fuse...
+[   25.650706] systemd[1]: File System Check on Root Device was skipped because of an unmet condition check (ConditionPathIsReadWrite=!/).
+[   25.860691] systemd[1]: Starting Journal Service...
+         Starting Journal Service...
+[   26.142370] systemd[1]: Starting Generate network units from Kernel command line...
+         Starting Generate network …ts from Kernel command line...
+[   26.430220] systemd[1]: Starting Remount Root and Kernel File Systems...
+         Starting Remount Root and Kernel File Systems...
+[   26.596375] systemd[1]: Starting Apply Kernel Variables...
+         Starting Apply Kernel Variables...
+[   26.722976] systemd[1]: Starting Coldplug All udev Devices...
+         Starting Coldplug All udev Devices...
+[   27.328393] systemd-journald[153]: Collecting audit messages is disabled.
+[   28.198611] systemd[1]: Mounted Kernel Debug File System.
+[  OK  ] Mounted Kernel Debug File System.
+[   28.244463] systemd[1]: Mounted Kernel Trace File System.
+[  OK  ] Mounted Kernel Trace File System.
+[   28.264460] systemd[1]: Mounted Temporary Directory /tmp.
+[  OK  ] Mounted Temporary Directory /tmp.
+[   28.304953] systemd[1]: modprobe@configfs.service: Deactivated successfully.
+[   28.330134] systemd[1]: Finished Load Kernel Module configfs.
+[  OK  ] Finished Load Kernel Module configfs.
+[   28.368952] systemd[1]: modprobe@efi_pstore.service: Deactivated successfully.
+[   28.395258] systemd[1]: Finished Load Kernel Module efi_pstore.
+[  OK  ] Finished Load Kernel Module efi_pstore.
+[   28.449766] systemd[1]: modprobe@fuse.service: Deactivated successfully.
+[   28.481411] systemd[1]: Finished Load Kernel Module fuse.
+[  OK  ] Finished Load Kernel Module fuse.
+[   28.520498] systemd[1]: Finished Generate network units from Kernel command line.
+[  OK  ] Finished Generate network units from Kernel command line.
+[   28.537624] systemd[1]: Finished Remount Root and Kernel File Systems.
+[  OK  ] Finished Remount Root and Kernel File Systems.
+[   28.554309] systemd[1]: Finished Apply Kernel Variables.
+[  OK  ] Finished Apply Kernel Variables.
+[   28.579573] systemd[1]: Reached target Preparation for Network.
+[  OK  ] Reached target Preparation for Network.
+[   28.596740] systemd[1]: FUSE Control File System was skipped because of an unmet condition check (ConditionPathExists=/sys/fs/fuse/connections).
+[   28.785012] systemd[1]: Mounting Kernel Configuration File System...
+         Mounting Kernel Configuration File System...
+[   28.942689] systemd[1]: Starting Rebuild Hardware Database...
+         Starting Rebuild Hardware Database...
+[   28.976401] systemd[1]: Platform Persistent Storage Archival was skipped because of an unmet condition check (ConditionDirectoryNotEmpty=/sys/fs/pstore).
+[   29.336530] systemd[1]: Starting Create System Users...
+         Starting Create System Users...
+[   29.693778] systemd[1]: Mounted Kernel Configuration File System.
+[   29.693778] systemd[1]: Mounted Kernel Configuration File System.
+[  OK  ] Mounted Kernel Configuration File System.
+[   29.733909] systemd[1]: Finished Rebuild Hardware Database.
+[  OK  ] Finished Rebuild Hardware Database.
+[   30.729455] systemd[1]: Finished Create System Users.
+[  OK  ] Finished Create System Users.
+[   31.032683] systemd[1]: Starting Create Static Device Nodes in /dev...
+         Starting Create Static Device Nodes in /dev...
+[   31.091016] systemd[1]: Started Journal Service.
+[  OK  ] Started Journal Service.
+         Starting Flush Journal to Persistent Storage...
+[  OK  ] Finished Create Static Device Nodes in /dev.
+[   31.924058] systemd-journald[153]: Received client request to flush runtime journal.
+[  OK  ] Reached target Preparation for Local File Systems.
+         Mounting /var/volatile...
+         Starting Rule-based Manage…for Device Events and Files...
+[  OK  ] Finished Flush Journal to Persistent Storage.
+[  OK  ] Mounted /var/volatile.
+         Starting Load/Save OS Random Seed...
+[  OK  ] Reached target Local File Systems.
+         Starting Create Volatile Files and Directories...
+[  OK  ] Finished Load/Save OS Random Seed.
+[  OK  ] Started Rule-based Manager for Device Events and Files.
+         Starting Network Configuration...
+[  OK  ] Finished Create Volatile Files and Directories.
+         Starting Rebuild Journal Catalog...
+         Starting Network Name Resolution...
+         Starting Network Time Synchronization...
+[  OK  ] Finished Rebuild Journal Catalog.
+         Starting Update is Completed...
+[  OK  ] Finished Update is Completed.
+[*     ] (1 of 5) A start job is running for…ork Configuration (14s / no limit)
+[  OK  ] Started Network Configuration.
+         Starting Wait for Network to be Configured...
+         Starting Wait for Network to be Configured...
+[  OK  ] Started Network Time Synchronization.
+[  OK  ] Reached target System Time Set.
+[  OK  ] Started Network Name Resolution.
+[  OK  ] Reached target Network.
+[  OK  ] Reached target Host and Network Name Lookups.
+[**    ] (1 of 3) A start job is running for… to be Configured (18s / no limit)
+[  OK  ] Finished Coldplug All udev Devices.
+[   45.339349] ftgmac100 1e690000.ftgmac eth3: Link is Up - 100Mbps/Full - flow control rx/tx
+[   45.379697] IPv6: ADDRCONF(NETDEV_CHANGE): eth3: link becomes ready
+[   45.788885] ftgmac100 1e670000.ftgmac eth2: Link is Up - 100Mbps/Full - flow control rx/tx
+[   45.806262] IPv6: ADDRCONF(NETDEV_CHANGE): eth2: link becomes ready
+[   46.183236] ftgmac100 1e660000.ftgmac eth0: Link is Up - 100Mbps/Full - flow control rx/tx
+[   46.191481] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[   46.387661] ftgmac100 1e680000.ftgmac eth1: Link is Up - 100Mbps/Full - flow control rx/tx
+[   46.391307] IPv6: ADDRCONF(NETDEV_CHANGE): eth1: link becomes ready
+[***   ] (1 of 2) A start job is running for… to be Configured (22s / no limit)
+[ ***  ] (2 of 2) A start job is running for…/net/devices/eth0 (22s / no limit)
+[  *** ] (2 of 2) A start job is running for…/net/devices/eth0 (23s / no limit)
+[   ***] (2 of 2) A start job is running for…/net/devices/eth0 (24s / no limit)
+[    **] (1 of 2) A start job is running for… to be Configured (25s / no limit)
+[     *] (1 of 2) A start job is running for… to be Configured (25s / no limit)
+[  OK  ] Found device /sys/subsystem/net/devices/eth0.
+[  OK  ] Created slice Slice /syste…penbmc_project.led.controller.
+[  OK  ] Reached target Hardware activated USB gadget.
+         Starting Load Kernel Module efi_pstore...
+         Starting Load Kernel Module fuse...
+[  OK  ] Finished Load Kernel Module efi_pstore.
+[  OK  ] Finished Load Kernel Module fuse.
+[  OK  ] Created slice Slice /system/xyz.openbmc_project.Hwmon.
+         Starting Load Kernel Module efi_pstore...
+         Starting Load Kernel Module fuse...
+         Starting Load Kernel Module fuse...
+[  OK  ] Finished Load Kernel Module efi_pstore.
+[  OK  ] Finished Load Kernel Module fuse.
+[  OK  ] Reached target System Initialization.
+[  OK  ] Started Daily rotation of log files.
+[  OK  ] Started Daily Cleanup of Temporary Directories.
+[  OK  ] Reached target Timer Units.
+[  OK  ] Listening on Avahi mDNS/DNS-SD Stack Activation Socket.
+[  OK  ] Listening on BMC Webserver socket.
+[  OK  ] Listening on D-Bus System Message Bus Socket.
+[  OK  ] Listening on dropbear.socket.
+[  OK  ] Listening on Phosphor Host…ole SSH Per-Connection socket.
+[  OK  ] Listening on phosphor-ipmi-net@eth0.socket.
+[  OK  ] Reached target Socket Units.
+         Starting D-Bus System Message Bus...
+[  OK  ] Finished Wait for Network to be Configured.
+[  OK  ] Reached target Network is Online.
+[  OK  ] Started D-Bus System Message Bus.
+[  OK  ] Reached target Basic System.
+         Starting Avahi mDNS/DNS-SD Stack...
+[  OK  ] Started Start bmcweb server.
+         Starting Clear one time boot overrides...
+         Starting SSH Key Generation...
+         Starting Name Service Cache Daemon...
+         Starting LDAP daemon...
+[  OK  ] Started Phosphor Dump core monitor..
+[  OK  ] Started Phosphor certificate manager for authority.
+[  OK  ] Started Phosphor certificate manager for bmcweb.
+[  OK  ] Started Phosphor certificate manager for nslcd.
+         Starting BMC health monitoring...
+         Starting System Logging Service...
+[  OK  ] Started Lightweight SLP Server.
+         Starting OpenBMC ipKVM daemon...
+         Starting Permit User Sessions...
+         Starting Enable Linux trace events in the boot loader...
+         Starting Phosphor Dump Manager...
+[  OK  ] Started Fru Device.
+         Starting Phosphor Inventory Manager...
+         Starting Phosphor LED Group Management Daemon...
+         Starting Phosphor Log Manager...
+         Starting Phosphor Network Manager...
+         Starting Phosphor DBus Service Discovery Manager...
+         Starting Phosphor Settings Daemon...
+         Starting OpenBMC Software Update Manager...
+         Starting Phosphor Download Manager...
+         Starting Phosphor Chassis0 State Manager...
+         Starting Rsyslog config updater...
+         Starting Telemetry...
+         Starting Phosphor User Manager...
+         Starting Phosphor User Manager...
+[  OK  ] Started Phosphor sysfs LED controller.
+[  OK  ] Started Phosphor sysfs LED controller.
+[  OK  ] Started Phosphor sysfs LED controller.
+[  OK  ] Started System Logging Service.
+[  OK  ] Started Name Service Cache Daemon.
+[  OK  ] Started OpenBMC ipKVM daemon.
+[  OK  ] Finished Permit User Sessions.
+[  OK  ] Finished Enable Linux trace events in the boot loader.
+[  OK  ] Finished Clear one time boot overrides.
+[  OK  ] Started Phosphor Log Manager.
+[  OK  ] Started Phosphor DBus Service Discovery Manager.
+[  OK  ] Started LDAP daemon.
+[  OK  ] Started Telemetry.
+[  OK  ] Started OpenBMC Software Update Manager.
+[  OK  ] Started Phosphor Inventory Manager.
+[  OK  ] Started Rsyslog config updater.
+[  OK  ] Started BMC health monitoring.
+[  OK  ] Started Phosphor Download Manager.
+[  OK  ] Started Phosphor Settings Daemon.
+[  OK  ] Started Phosphor Dump Manager.
+[  OK  ] Started Avahi mDNS/DNS-SD Stack.
+[  OK  ] Started Phosphor Chassis0 State Manager.
+[  OK  ] Started phosphor systemd target monitor.
+[  OK  ] Started Serial Getty on ttyS4.
+[  OK  ] Reached target Login Prompts.
+         Starting Hostname Service...
+         Starting Phosphor Ldap config updater...
+         Starting Wait for /org/openbmc/control/power0...
+         Starting Wait for /xyz/ope…t/control/host0/auto_reboot...
+         Starting Wait for /xyz/ope…control/host0/boot/one_time...
+         Starting Wait for /xyz/ope…_project/control/host0/boot...
+         Starting Wait for /xyz/ope…/host0/power_restore_policy...
+         Starting Wait for /xyz/ope…trol/host0/restriction_mode...
+         Starting Wait for /xyz/ope…oject/led/groups/bmc_booted...
+         Starting Wait for /xyz/openbmc_project/state/bmc0...
+         Starting Wait for /xyz/openbmc_project/state/chassis0...
+         Starting Wait for /xyz/openbmc_project/state/host0...
+         Starting Wait for /xyz/ope…mc_project/time/sync_method...
+         Starting Phosphor Version Software Manager...
+         Starting Phosphor BMC State Manager...
+[  OK  ] Finished Wait for /xyz/ope…ect/control/host0/auto_reboot.
+Phosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) nodistro.0 evb-ast2600 ttyS4
+evb-ast2600 login:
+{"event": "boot_login", "ts": "2026-04-05T00:22:02.283191+00:00"}
+{"event": "operation_stage", "ts": "2026-04-05T00:22:02.283516+00:00", "op": "Login", "stage": "waiting_for_quiescence"}
+evb-ast2600 login: [  OK  ] Finished Wait for /xyz/ope…t/control/host0/boot/one_time.
+[  OK  ] Finished Wait for /xyz/ope…mc_project/control/host0/boot.
+[  OK  ] Finished Wait for /xyz/ope…ol/host0/power_restore_policy.
+[  OK  ] Finished Wait for /xyz/ope…ontrol/host0/restriction_mode.
+[  OK  ] Finished Wait for /xyz/openbmc_project/state/chassis0.
+[  OK  ] Finished Wait for /xyz/openbmc_project/time/sync_method.
+[  OK  ] Finished SSH Key Generation.
+{"event": "operation_stage", "ts": "2026-04-05T00:22:09.199827+00:00", "op": "Login", "stage": "refreshing_login_prompt"}
+evb-ast2600 login:
+{"event": "operation_stage", "ts": "2026-04-05T00:22:10.201519+00:00", "op": "Login", "stage": "sending_username"}
+evb-ast2600 login: root
+evb-ast2600 login: root
+{"event": "operation_stage", "ts": "2026-04-05T00:22:11.202836+00:00", "op": "Login", "stage": "waiting_for_password_or_shell"}
+Password:
+{"event": "operation_stage", "ts": "2026-04-05T00:22:12.571686+00:00", "op": "Login", "stage": "sending_password"}
+Password:
+{"event": "operation_stage", "ts": "2026-04-05T00:22:13.573533+00:00", "op": "Login", "stage": "waiting_for_shell"}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-04-05T00:22:21.449557+00:00"}
+{"event": "operation_stage", "ts": "2026-04-05T00:22:21.449922+00:00", "op": "Login", "stage": "shell_setup_dmesg"}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       root@evb-ast2600:~# dmesg -n 1
+{"event": "operation_stage", "ts": "2026-04-05T00:22:22.778937+00:00", "op": "Login", "stage": "shell_setup_stty"}
+root@evb-ast2600:~#
+root@evb-ast2600:~# stty cols 200
+root@evb-ast2600:~#
+{"event": "operation_stage", "ts": "2026-04-05T00:22:23.082719+00:00", "op": "Login", "stage": "shell_setup_sync"}
+root@evb-ast2600:~# echo __MCP_SETUP_84077__
+__MCP_SETUP_84077__
+root@evb-ast2600:~#
+{"event": "login_complete", "ts": "2026-04-05T00:22:33.378136+00:00"}
+{"event": "operation_ended", "ts": "2026-04-05T00:22:33.378227+00:00", "op": "Login", "success": true}
+{"event": "operation_started", "ts": "2026-04-05T00:22:33.378929+00:00", "op": "ConsoleCommand"}
+{"event": "command_started", "ts": "2026-04-05T00:22:33.379160+00:00", "command_id": "net-e670", "command": "if [ -e /tmp/bin_recv.sh ]; then crc32 /tmp/bin_recv.sh | awk '{print $1}'; else echo NOFILE; fi"}
+root@evb-ast2600:~# cat > /tmp/_mcp_52259.sh <<'__MCP_SCRIPT_52259__'
+cat > /tmp/_mcp_52259.sh <<'__MCP_SCRIPT_52259__'
+>
+>
+> if [ -e /tmp/bin_recv.sh ]; then crc32 /tmp/bin_recv.sh | awk '{print $1}'; else echo NOFILE; fi
+> if [ -e /tmp/bin_recv.sh ]; then crc32 /tmp/bin_recv.sh | awk '{print $1}'; else echo NOFILE; fi
+> __MCP_SCRIPT_52259__
+> __MCP_SCRIPT_52259__
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-04-05T00:22:33.858508+00:00"}
+root@evb-ast2600:~# echo __MCP_PID_$$__; sh -x /tmp/_mcp_52259.sh; __MCP_EC=$?; rm -f /tmp/_mcp_52259.sh; echo __MCP_MARKER_52259__${__MCP_EC}
+root@evb-ast2600:~# echo __MCP_PID_$$__; sh -x /tmp/_mcp_52259.sh; __MCP_EC=$?; rm -f /tmp/_mcp_52259.sh; echo __MCP_MARKER_52259__${__MCP_EC}
+__MCP_PID_345__
+__MCP_PID_345__
++ '[' -e /tmp/bin_recv.sh ']'
++ '[' -e /tmp/bin_recv.sh ']'
++ echo NOFILE
+NOFILE
++ echo NOFILE
+NOFILE
+__MCP_MARKER_52259__0
+__MCP_MARKER_52259__0
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+{"event": "command_ended", "ts": "2026-04-05T00:22:34.376478+00:00", "command_id": "net-e670", "command": "if [ -e /tmp/bin_recv.sh ]; then crc32 /tmp/bin_recv.sh | awk '{print $1}'; else echo NOFILE; fi", "exit_code": 0, "status": "completed"}
+{"event": "operation_ended", "ts": "2026-04-05T00:22:34.376794+00:00", "op": "ConsoleCommand", "success": true}
+{"event": "operation_started", "ts": "2026-04-05T00:22:34.377286+00:00", "op": "ConsoleCommand"}
+{"event": "command_started", "ts": "2026-04-05T00:22:34.377404+00:00", "command_id": "net-4390", "command": "cat > /tmp/bin_recv.sh <<'__HEREDOC_EOF__'\n#!/bin/bash\n\nOUTPUT=\"$1\"\nEXPECTED_FILE_SIZE=\"$2\"\nCHECKSUM_TOOL=\"${3:-auto}\"\n\nif [ -z \"$OUTPUT\" ]; then\n    echo \"FAIL:usage:bin_recv.sh <output_path> [expected_size] [checksum_tool]\"\n    exit 1\nfi\n\nif [ -n \"$EXPECTED_FILE_SIZE\" ] && [ \"$EXPECTED_FILE_SIZE\" -gt 0 ] 2>/dev/null; then\n    OUTDIR=$(dirname \"$OUTPUT\")\n    [ -d \"$OUTDIR\" ] || OUTDIR=/tmp\n    AVAIL_KB=$(df -k \"$OUTDIR\" 2>/dev/null | awk 'NR==2{print $4}')\n    NEED_KB=$(( (EXPECTED_FILE_SIZE / 1024) + 1 ))\n    if [ -n \"$AVAIL_KB\" ] && [ \"$NEED_KB\" -gt \"$AVAIL_KB\" ]; then\n        echo \"FAIL:disk_full:need=${NEED_KB}kb:avail=${AVAIL_KB}kb\"\n        exit 1\n    fi\nfi\n\nif command -v xxd >/dev/null 2>&1; then\n    _hex_decode() { xxd -r -p; }\nelse\n    _hex_decode() { sed 's/../\\\\x&/g' | xargs printf 2>/dev/null; }\nfi\n\n\nif command -v crc32 >/dev/null 2>&1; then\n    _file_crc32() { crc32 /dev/stdin 2>/dev/null | awk '{print $1}'; }\nelif command -v python3 >/dev/null 2>&1; then\n    _file_crc32() { python3 -c \"import sys,zlib;d=sys.stdin.buffer.read();print(format(zlib.crc32(d)&0xFFFFFFFF,'08x'))\"; }\nelse\n    _file_crc32() { cat >/dev/null; echo \"00000000\"; }\nfi\n\ncase \"$CHECKSUM_TOOL\" in\n    none)\n        FRAME_CHECK_MODE=\"none\"\n        ;;\n    crc32)\n        FRAME_CHECK_MODE=\"crc32\"\n        ;;\n    python3)\n        FRAME_CHECK_MODE=\"crc32\"\n        ;;\n    *)  # auto \u2014 length check (no subprocess, catches truncation)\n        FRAME_CHECK_MODE=\"len\"\n        ;;\nesac\n\nEXPECTED_OFFSET=0\nTMPFILE=\"${OUTPUT}.recv\"\n\nrm -f \"$TMPFILE\"\ntouch \"$TMPFILE\"\n\nTTY_DEV=$(tty 2>/dev/null)\nif [ -n \"$TTY_DEV\" ] && [ \"$TTY_DEV\" != \"not a tty\" ]; then\n    stty -echo 2>/dev/null\n    trap 'stty echo 2>/dev/null; rm -f \"${OUTPUT}.recv\"' EXIT\nelse\n    trap 'rm -f \"${OUTPUT}.recv\"' EXIT\nfi\n\necho \"READY\"\n\nIDLE_COUNT=0\nMAX_IDLE=5\n\nwhile true; do\n    if ! IFS= read -t 5 -r LINE; then\n        IDLE_COUNT=$((IDLE_COUNT + 1))\n        if [ \"$IDLE_COUNT\" -ge \"$MAX_IDLE\" ]; then\n            echo \"FAIL:idle_timeout:${MAX_IDLE}x5s\"\n            exit 1\n        fi\n        echo \"NACK:${EXPECTED_OFFSET}\"\n        continue\n    fi\n\n    LINE=$(printf '%s' \"$LINE\" | tr -d '\\r')\n\n    IDLE_COUNT=0\n\n    case \"$LINE\" in\n        F:*)\n            FRAME_OFFSET=$(echo \"$LINE\" | cut -d: -f2)\n            DATA=$(echo \"$LINE\" | cut -d: -f3)\n            RECV_CRC=$(echo \"$LINE\" | cut -d: -f4)\n\n            if [ -z \"$FRAME_OFFSET\" ] || [ -z \"$DATA\" ] || [ -z \"$RECV_CRC\" ]; then\n                echo \"NACK:${EXPECTED_OFFSET}\"\n                continue\n            fi\n\n            if [ \"$FRAME_OFFSET\" != \"$EXPECTED_OFFSET\" ]; then\n                echo \"NACK:${EXPECTED_OFFSET}\"\n                continue\n            fi\n\n            case \"$FRAME_CHECK_MODE\" in\n                crc32)\n                    CALC_CRC=$(printf '%s' \"$DATA\" | _hex_decode | _file_crc32)\n                    if [ \"$CALC_CRC\" != \"$RECV_CRC\" ]; then\n                        echo \"NACK:${EXPECTED_OFFSET}\"\n                        continue\n                    fi\n                    ;;\n                len)\n                    HEX_LEN=$(printf '%s' \"$DATA\" | wc -c)\n                    if [ \"$HEX_LEN\" != \"$RECV_CRC\" ]; then\n                        echo \"NACK:${EXPECTED_OFFSET}\"\n                        continue\n                    fi\n                    ;;\n            esac\n\n            CHUNK_BYTES=$(( $(printf '%s' \"$DATA\" | wc -c) / 2 ))\n            printf '%s' \"$DATA\" | _hex_decode >> \"$TMPFILE\"\n\n            ACTUAL_SIZE=$(wc -c < \"$TMPFILE\")\n            EXPECTED_AFTER=$((EXPECTED_OFFSET + CHUNK_BYTES))\n            if [ \"$ACTUAL_SIZE\" != \"$EXPECTED_AFTER\" ]; then\n                echo \"FAIL:disk_full:expected=${EXPECTED_AFTER}:actual=${ACTUAL_SIZE}\"\n                exit 1\n            fi\n\n            EXPECTED_OFFSET=$EXPECTED_AFTER\n            echo \"ACK:F:${EXPECTED_OFFSET}\"\n            ;;\n\n        EOF:*)\n            EXPECTED_SIZE=$(echo \"$LINE\" | cut -d: -f2)\n            EXPECTED_CRC=$(echo \"$LINE\" | cut -d: -f3)\n\n            mv \"$TMPFILE\" \"$OUTPUT\"\n\n            ACTUAL_SIZE=$(wc -c < \"$OUTPUT\")\n            ACTUAL_CRC=$(cat \"$OUTPUT\" | _file_crc32)\n\n            if [ \"$ACTUAL_SIZE\" != \"$EXPECTED_SIZE\" ]; then\n                echo \"FAIL:size_mismatch:expected=${EXPECTED_SIZE}:actual=${ACTUAL_SIZE}\"\n                exit 1\n            fi\n\n            if [ -n \"$EXPECTED_CRC\" ] && [ \"$EXPECTED_CRC\" != \"none\" ]; then\n                if [ \"$ACTUAL_CRC\" = \"$EXPECTED_CRC\" ]; then\n                    echo \"DONE:${ACTUAL_CRC}\"\n                else\n                    echo \"FAIL:crc_mismatch:expected=${EXPECTED_CRC}:actual=${ACTUAL_CRC}\"\n                    exit 1\n                fi\n            else\n                echo \"DONE:${ACTUAL_CRC}\"\n            fi\n            exit 0\n            ;;\n\n        C:STOP*)\n            rm -f \"$TMPFILE\"\n            echo \"STOPPED\"\n            exit 1\n            ;;\n\n        *)\n            ;;\n    esac\ndone\n__HEREDOC_EOF__"}
+root@evb-ast2600:~# cat > /tmp/_mcp_53543.sh <<'__MCP_SCRIPT_53543__'
+cat > /tmp/_mcp_53543.sh <<'__MCP_SCRIPT_53543__'
+> cat > /tmp/bin_recv.sh <<'__HEREDOC_EOF__'
+> cat > /tmp/bin_recv.sh <<'__HEREDOC_EOF__'
+> #!/bin/bash
+> #!/bin/bash
+>
+>
+>
+> OUTPUT="$1"
+>
+> OUTPUT="$1"
+>
+>
+> EXPECTED_FILE_SIZE="$2"
+> CHECKSUM_TOOL="${3:-auto}"
+> EXPECTED_FILE_SIZE="$2"
+> CHECKSUM_TOOL="${3:-auto}"
+>
+>
+>
+>
+> if [ -z "$OUTPUT" ]; then
+> if [ -z "$OUTPUT" ]; then
+>
+>
+>     echo "FAIL:usage:bin_recv.sh <output_path> [expected_size] [checksum_tool]"
+>     echo "FAIL:usage:bin_recv.sh <output_path> [expected_size] [checksum_tool]"
+>     echo "FAIL:usage:bin_recv.sh <output_path> [expected_size] [checksum_tool]"
+>     exit 1
+>     echo "FAIL:usage:bin_recv.sh <output_path> [expected_size] [checksum_tool]"
+>     exit 1
+>
+>
+> fi
+> fi
+>
+>
+>
+>
+> if [ -n "$EXPECTED_FILE_SIZE" ] && [ "$EXPECTED_FILE_SIZE" -gt 0 ] 2>/dev/null; then
+> if [ -n "$EXPECTED_FILE_SIZE" ] && [ "$EXPECTED_FILE_SIZE" -gt 0 ] 2>/dev/null; then
+>     OUTDIR=$(dirname "$OUTPUT")
+>     OUTDIR=$(dirname "$OUTPUT")
+>     [ -d "$OUTDIR" ] || OUTDIR=/tmp
+>     [ -d "$OUTDIR" ] || OUTDIR=/tmp
+>
+>
+>     AVAIL_KB=$(df -k "$OUTDIR" 2>/dev/null | awk 'NR==2{print $4}')
+>     AVAIL_KB=$(df -k "$OUTDIR" 2>/dev/null | awk 'NR==2{print $4}')
+>     NEED_KB=$(( (EXPECTED_FILE_SIZE / 1024) + 1 ))
+>     NEED_KB=$(( (EXPECTED_FILE_SIZE / 1024) + 1 ))
+>     if [ -n "$AVAIL_KB" ] && [ "$NEED_KB" -gt "$AVAIL_KB" ]; then
+>     if [ -n "$AVAIL_KB" ] && [ "$NEED_KB" -gt "$AVAIL_KB" ]; then
+>
+>
+>         echo "FAIL:disk_full:need=${NEED_KB}kb:avail=${AVAIL_KB}kb"
+>         echo "FAIL:disk_full:need=${NEED_KB}kb:avail=${AVAIL_KB}kb"
+>         exit 1
+>         exit 1
+>     fi
+>     fi
+>
+>
+> fi
+>
+> fi
+>
+>
+>
+> if command -v xxd >/dev/null 2>&1; then
+> if command -v xxd >/dev/null 2>&1; then
+>     _hex_decode() { xxd -r -p; }
+>     _hex_decode() { xxd -r -p; }
+>
+>
+> else
+> else
+>     _hex_decode() { sed 's/../\\x&/g' | xargs printf 2>/dev/null; }
+>     _hex_decode() { sed 's/../\\x&/g' | xargs printf 2>/dev/null; }
+> fi
+> fi
+>
+>
+>
+>
+>
+>
+> if command -v crc32 >/dev/null 2>&1; then
+> if command -v crc32 >/dev/null 2>&1; then
+>
+>
+>     _file_crc32() { crc32 /dev/stdin 2>/dev/null | awk '{print $1}'; }
+>     _file_crc32() { crc32 /dev/stdin 2>/dev/null | awk '{print $1}'; }
+> elif command -v python3 >/dev/null 2>&1; then
+> elif command -v python3 >/dev/null 2>&1; then
+>     _file_crc32() { python3 -c "import sys,zlib;d=sys.stdin.buffer.read();print(format(zlib.crc32(d)&0xFFFFFFFF,'08x'))"; }
+>     _file_crc32() { python3 -c "import sys,zlib;d=sys.stdin.buffer.read();print(format(zlib.crc32(d)&0xFFFFFFFF,'08x'))"; }
+>
+>
+> else
+> else
+>     _file_crc32() { cat >/dev/null; echo "00000000"; }
+>     _file_crc32() { cat >/dev/null; echo "00000000"; }
+>
+>
+> fi
+>
+> fi
+>
+>
+>
+> case "$CHECKSUM_TOOL" in
+>     none)
+> case "$CHECKSUM_TOOL" in
+>     none)
+>
+>
+>         FRAME_CHECK_MODE="none"
+        ;;
+>         ;;
+>         FRAME_CHECK_MODE="none"
+        ;;
+>         ;;
+>
+>
+>     crc32)
+>     crc32)
+>         FRAME_CHECK_MODE="crc32"
+>         FRAME_CHECK_MODE="crc32"
+>         ;;
+>         ;;
+>     python3)
+>     python3)
+>
+>
+>         FRAME_CHECK_MODE="crc32"
+        ;;
+>         ;;
+>         FRAME_CHECK_MODE="crc32"
+        ;;
+>         ;;
+>
+>
+>     *)  # auto \342\200\224 length check (no subprocess, catches truncation)
+>     *)  # auto \342\200\224 length check (no subprocess, catches truncation)
+>         FRAME_CHECK_MODE="len"
+>         FRAME_CHECK_MODE="len"
+>         ;;
+>         ;;
+>
+>
+> esac
+> esac
+>
+>
+> EXPECTED_OFFSET=0
+> EXPECTED_OFFSET=0
+>
+>
+> TMPFILE="${OUTPUT}.recv"
+>
+> TMPFILE="${OUTPUT}.recv"
+>
+>
+>
+> rm -f "$TMPFILE"
+> rm -f "$TMPFILE"
+> touch "$TMPFILE"
+> touch "$TMPFILE"
+>
+>
+>
+>
+> TTY_DEV=$(tty 2>/dev/null)
+> TTY_DEV=$(tty 2>/dev/null)
+>
+>
+> if [ -n "$TTY_DEV" ] && [ "$TTY_DEV" != "not a tty" ]; then
+> if [ -n "$TTY_DEV" ] && [ "$TTY_DEV" != "not a tty" ]; then
+>
+>
+>     stty -echo 2>/dev/null
+>     stty -echo 2>/dev/null
+>
+>
+>     trap 'stty echo 2>/dev/null; rm -f "${OUTPUT}.recv"' EXIT
+>     trap 'stty echo 2>/dev/null; rm -f "${OUTPUT}.recv"' EXIT
+> else
+> else
+>
+>
+>     trap 'rm -f "${OUTPUT}.recv"' EXIT
+>     trap 'rm -f "${OUTPUT}.recv"' EXIT
+>
+>
+> fi
+> fi
+>
+>
+>
+>
+>
+>
+> echo "READY"
+> echo "READY"
+>
+>
+> IDLE_COUNT=0
+> IDLE_COUNT=0
+>
+>
+> MAX_IDLE=5
+> MAX_IDLE=5
+>
+>
+>
+>
+> while true; do
+> while true; do
+>
+>
+>     if ! IFS= read -t 5 -r LINE; then
+>     if ! IFS= read -t 5 -r LINE; then
+>
+>
+>         IDLE_COUNT=$((IDLE_COUNT + 1))
+>         IDLE_COUNT=$((IDLE_COUNT + 1))
+>
+>
+>         if [ "$IDLE_COUNT" -ge "$MAX_IDLE" ]; then
+>         if [ "$IDLE_COUNT" -ge "$MAX_IDLE" ]; then
+>
+>
+>             echo "FAIL:idle_timeout:${MAX_IDLE}x5s"
+>             echo "FAIL:idle_timeout:${MAX_IDLE}x5s"
+>
+>
+>             exit 1
+>             exit 1
+>             exit 1
+>             exit 1
+>
+>
+>         fi
+>         fi
+>
+>
+>         echo "NACK:${EXPECTED_OFFSET}"
+>         echo "NACK:${EXPECTED_OFFSET}"
+>
+>
+>         continue
+>         continue
+>     fi
+>     fi
+>
+>
+>
+>
+>     LINE=$(printf '%s' "$LINE" | tr -d '\r')
+>     LINE=$(printf '%s' "$LINE" | tr -d '\r')
+>
+>
+>
+>
+>     IDLE_COUNT=0
+>     IDLE_COUNT=0
+>
+>
+>
+>
+>     case "$LINE" in
+>     case "$LINE" in
+>         F:*)
+>         F:*)
+>
+>
+>             FRAME_OFFSET=$(echo "$LINE" | cut -d: -f2)
+>             FRAME_OFFSET=$(echo "$LINE" | cut -d: -f2)
+>
+>
+>             DATA=$(echo "$LINE" | cut -d: -f3)
+>             DATA=$(echo "$LINE" | cut -d: -f3)
+>
+>
+>             RECV_CRC=$(echo "$LINE" | cut -d: -f4)
+>             RECV_CRC=$(echo "$LINE" | cut -d: -f4)
+>
+>
+>
+>
+>             if [ -z "$FRAME_OFFSET" ] || [ -z "$DATA" ] || [ -z "$RECV_CRC" ]; then
+>             if [ -z "$FRAME_OFFSET" ] || [ -z "$DATA" ] || [ -z "$RECV_CRC" ]; then
+>
+>
+>                 echo "NACK:${EXPECTED_OFFSET}"
+>                 echo "NACK:${EXPECTED_OFFSET}"
+>
+>
+>                 continue
+>                 continue
+>             fi
+>
+>             fi
+>
+>
+>
+>             if [ "$FRAME_OFFSET" != "$EXPECTED_OFFSET" ]; then
+>             if [ "$FRAME_OFFSET" != "$EXPECTED_OFFSET" ]; then
+>
+>
+>                 echo "NACK:${EXPECTED_OFFSET}"
+>                 echo "NACK:${EXPECTED_OFFSET}"
+>
+>
+>                 continue
+>                 continue
+>
+>
+>             fi
+>             fi
+>
+>
+>
+>
+>             case "$FRAME_CHECK_MODE" in
+>             case "$FRAME_CHECK_MODE" in
+>
+>
+>                 crc32)
+>                 crc32)
+>
+>
+>                     CALC_CRC=$(printf '%s' "$DATA" | _hex_decode | _file_crc32)
+>                     CALC_CRC=$(printf '%s' "$DATA" | _hex_decode | _file_crc32)
+>
+>
+>                     if [ "$CALC_CRC" != "$RECV_CRC" ]; then
+>                     if [ "$CALC_CRC" != "$RECV_CRC" ]; then
+>
+>
+>                         echo "NACK:${EXPECTED_OFFSET}"
+>                         echo "NACK:${EXPECTED_OFFSET}"
+>
+>
+>                         continue
+>                         continue
+>
+>
+>                     fi
+>                     fi
+>
+>
+>                     ;;
+>                     ;;
+>                     ;;
+>                     ;;
+>
+>
+>                 len)
+>                 len)
+>
+>
+>                     HEX_LEN=$(printf '%s' "$DATA" | wc -c)
+>                     HEX_LEN=$(printf '%s' "$DATA" | wc -c)
+>                     HEX_LEN=$(printf '%s' "$DATA" | wc -c)
+>                     HEX_LEN=$(printf '%s' "$DATA" | wc -c)
+>
+>
+>                     if [ "$HEX_LEN" != "$RECV_CRC" ]; then
+>                     if [ "$HEX_LEN" != "$RECV_CRC" ]; then
+>
+>
+>                         echo "NACK:${EXPECTED_OFFSET}"
+>                         echo "NACK:${EXPECTED_OFFSET}"
+>
+>
+>                         continue
+>                         continue
+>
+>
+>                     fi
+>                     fi
+>
+>
+>                     ;;
+>                     ;;
+>                     ;;
+>                     ;;
+>
+>
+>             esac
+>             esac
+>
+>
+>
+>
+>             CHUNK_BYTES=$(( $(printf '%s' "$DATA" | wc -c) / 2 ))
+>             CHUNK_BYTES=$(( $(printf '%s' "$DATA" | wc -c) / 2 ))
+>
+>
+>             printf '%s' "$DATA" | _hex_decode >> "$TMPFILE"
+>             printf '%s' "$DATA" | _hex_decode >> "$TMPFILE"
+>
+>
+>
+>
+>             ACTUAL_SIZE=$(wc -c < "$TMPFILE")
+>             ACTUAL_SIZE=$(wc -c < "$TMPFILE")
+>
+>
+>             EXPECTED_AFTER=$((EXPECTED_OFFSET + CHUNK_BYTES))
+>             EXPECTED_AFTER=$((EXPECTED_OFFSET + CHUNK_BYTES))
+>             if [ "$ACTUAL_SIZE" != "$EXPECTED_AFTER" ]; then
+>             if [ "$ACTUAL_SIZE" != "$EXPECTED_AFTER" ]; then
+>                 echo "FAIL:disk_full:expected=${EXPECTED_AFTER}:actual=${ACTUAL_SIZE}"
+>                 exit 1
+>             fi
+>
+>                 echo "FAIL:disk_full:expected=${EXPECTED_AFTER}:actual=${ACTUAL_SIZE}"
+>                 exit 1
+>             fi
+>
+>             EXPECTED_OFFSET=$EXPECTED_AFTER
+>             echo "ACK:F:${EXPECTED_OFFSET}"
+>             ;;
+>
+>         EOF:*)
+>             EXPECTED_OFFSET=$EXPECTED_AFTER
+>             echo "ACK:F:${EXPECTED_OFFSET}"
+>             ;;
+>
+>         EOF:*)
+>             EXPECTED_SIZE=$(echo "$LINE" | cut -d: -f2)
+>             EXPECTED_SIZE=$(echo "$LINE" | cut -d: -f2)
+>             EXPECTED_CRC=$(echo "$LINE" | cut -d: -f3)
+>             EXPECTED_CRC=$(echo "$LINE" | cut -d: -f3)
+>
+>
+>
+>
+>             mv "$TMPFILE" "$OUTPUT"
+>             mv "$TMPFILE" "$OUTPUT"
+>
+>
+>
+>
+>             ACTUAL_SIZE=$(wc -c < "$OUTPUT")
+>             ACTUAL_SIZE=$(wc -c < "$OUTPUT")
+>
+>
+>             ACTUAL_CRC=$(cat "$OUTPUT" | _file_crc32)
+>             ACTUAL_CRC=$(cat "$OUTPUT" | _file_crc32)
+>
+>
+>
+>
+>             if [ "$ACTUAL_SIZE" != "$EXPECTED_SIZE" ]; then
+>             if [ "$ACTUAL_SIZE" != "$EXPECTED_SIZE" ]; then
+>
+>
+>                 echo "FAIL:size_mismatch:expected=${EXPECTED_SIZE}:actual=${ACTUAL_SIZE}"
+>                 echo "FAIL:size_mismatch:expected=${EXPECTED_SIZE}:actual=${ACTUAL_SIZE}"
+>
+>
+>                 exit 1
+>                 exit 1
+>
+>
+>             fi
+>             fi
+>
+>
+>
+>
+>             if [ -n "$EXPECTED_CRC" ] && [ "$EXPECTED_CRC" != "none" ]; then
+>             if [ -n "$EXPECTED_CRC" ] && [ "$EXPECTED_CRC" != "none" ]; then
+>
+>
+>                 if [ "$ACTUAL_CRC" = "$EXPECTED_CRC" ]; then
+>                 if [ "$ACTUAL_CRC" = "$EXPECTED_CRC" ]; then
+>
+>
+>                     echo "DONE:${ACTUAL_CRC}"
+>                     echo "DONE:${ACTUAL_CRC}"
+>
+>
+>                 else
+>                 else
+>
+>
+>                     echo "FAIL:crc_mismatch:expected=${EXPECTED_CRC}:actual=${ACTUAL_CRC}"
+>                     echo "FAIL:crc_mismatch:expected=${EXPECTED_CRC}:actual=${ACTUAL_CRC}"
+>
+>
+>                     exit 1
+>                     exit 1
+>
+>
+>                 fi
+>                 fi
+>             else
+>             else
+>
+>
+>                 echo "DONE:${ACTUAL_CRC}"
+>                 echo "DONE:${ACTUAL_CRC}"
+>
+>
+>             fi
+>             fi
+>
+>
+>             exit 0
+>             exit 0
+>
+>
+>             ;;
+>             ;;
+>
+>
+>
+>
+>         C:STOP*)
+>         C:STOP*)
+>
+>
+>             rm -f "$TMPFILE"
+>             rm -f "$TMPFILE"
+>
+>
+>             echo "STOPPED"
+>             echo "STOPPED"
+>
+>
+>             exit 1
+>             exit 1
+>
+>
+>             ;;
+>             ;;
+>
+>
+>
+>
+>         *)
+>         *)
+>
+>
+>             ;;
+>             ;;
+>             ;;
+>             ;;
+>
+>
+>     esac
+>     esac
+>
+>
+> done
+> done
+> done
+> done
+>
+>
+> __HEREDOC_EOF__
+> __HEREDOC_EOF__
+> __HEREDOC_EOF__
+> __HEREDOC_EOF__
+> __MCP_SCRIPT_53543__
+> __MCP_SCRIPT_53543__
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-04-05T00:23:08.144722+00:00"}
+root@evb-ast2600:~# echo __MCP_PID_$$__; sh -x /tmp/_mcp_53543.sh; __MCP_EC=$?; rm -f /tmp/_mcp_53543.sh; echo __MCP_MARKER_53543__${__MCP_EC}
+root@evb-ast2600:~# echo __MCP_PID_$$__; sh -x /tmp/_mcp_53543.sh; __MCP_EC=$?; rm -f /tmp/_mcp_53543.sh; echo __MCP_MARKER_53543__${__MCP_EC}
+__MCP_PID_345__
+__MCP_PID_345__
++ cat
++ cat
+__MCP_MARKER_53543__0
+__MCP_MARKER_53543__0
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+{"event": "command_ended", "ts": "2026-04-05T00:23:09.239534+00:00", "command_id": "net-4390", "command": "cat > /tmp/bin_recv.sh <<'__HEREDOC_EOF__'\n#!/bin/bash\n\nOUTPUT=\"$1\"\nEXPECTED_FILE_SIZE=\"$2\"\nCHECKSUM_TOOL=\"${3:-auto}\"\n\nif [ -z \"$OUTPUT\" ]; then\n    echo \"FAIL:usage:bin_recv.sh <output_path> [expected_size] [checksum_tool]\"\n    exit 1\nfi\n\nif [ -n \"$EXPECTED_FILE_SIZE\" ] && [ \"$EXPECTED_FILE_SIZE\" -gt 0 ] 2>/dev/null; then\n    OUTDIR=$(dirname \"$OUTPUT\")\n    [ -d \"$OUTDIR\" ] || OUTDIR=/tmp\n    AVAIL_KB=$(df -k \"$OUTDIR\" 2>/dev/null | awk 'NR==2{print $4}')\n    NEED_KB=$(( (EXPECTED_FILE_SIZE / 1024) + 1 ))\n    if [ -n \"$AVAIL_KB\" ] && [ \"$NEED_KB\" -gt \"$AVAIL_KB\" ]; then\n        echo \"FAIL:disk_full:need=${NEED_KB}kb:avail=${AVAIL_KB}kb\"\n        exit 1\n    fi\nfi\n\nif command -v xxd >/dev/null 2>&1; then\n    _hex_decode() { xxd -r -p; }\nelse\n    _hex_decode() { sed 's/../\\\\x&/g' | xargs printf 2>/dev/null; }\nfi\n\n\nif command -v crc32 >/dev/null 2>&1; then\n    _file_crc32() { crc32 /dev/stdin 2>/dev/null | awk '{print $1}'; }\nelif command -v python3 >/dev/null 2>&1; then\n    _file_crc32() { python3 -c \"import sys,zlib;d=sys.stdin.buffer.read();print(format(zlib.crc32(d)&0xFFFFFFFF,'08x'))\"; }\nelse\n    _file_crc32() { cat >/dev/null; echo \"00000000\"; }\nfi\n\ncase \"$CHECKSUM_TOOL\" in\n    none)\n        FRAME_CHECK_MODE=\"none\"\n        ;;\n    crc32)\n        FRAME_CHECK_MODE=\"crc32\"\n        ;;\n    python3)\n        FRAME_CHECK_MODE=\"crc32\"\n        ;;\n    *)  # auto \u2014 length check (no subprocess, catches truncation)\n        FRAME_CHECK_MODE=\"len\"\n        ;;\nesac\n\nEXPECTED_OFFSET=0\nTMPFILE=\"${OUTPUT}.recv\"\n\nrm -f \"$TMPFILE\"\ntouch \"$TMPFILE\"\n\nTTY_DEV=$(tty 2>/dev/null)\nif [ -n \"$TTY_DEV\" ] && [ \"$TTY_DEV\" != \"not a tty\" ]; then\n    stty -echo 2>/dev/null\n    trap 'stty echo 2>/dev/null; rm -f \"${OUTPUT}.recv\"' EXIT\nelse\n    trap 'rm -f \"${OUTPUT}.recv\"' EXIT\nfi\n\necho \"READY\"\n\nIDLE_COUNT=0\nMAX_IDLE=5\n\nwhile true; do\n    if ! IFS= read -t 5 -r LINE; then\n        IDLE_COUNT=$((IDLE_COUNT + 1))\n        if [ \"$IDLE_COUNT\" -ge \"$MAX_IDLE\" ]; then\n            echo \"FAIL:idle_timeout:${MAX_IDLE}x5s\"\n            exit 1\n        fi\n        echo \"NACK:${EXPECTED_OFFSET}\"\n        continue\n    fi\n\n    LINE=$(printf '%s' \"$LINE\" | tr -d '\\r')\n\n    IDLE_COUNT=0\n\n    case \"$LINE\" in\n        F:*)\n            FRAME_OFFSET=$(echo \"$LINE\" | cut -d: -f2)\n            DATA=$(echo \"$LINE\" | cut -d: -f3)\n            RECV_CRC=$(echo \"$LINE\" | cut -d: -f4)\n\n            if [ -z \"$FRAME_OFFSET\" ] || [ -z \"$DATA\" ] || [ -z \"$RECV_CRC\" ]; then\n                echo \"NACK:${EXPECTED_OFFSET}\"\n                continue\n            fi\n\n            if [ \"$FRAME_OFFSET\" != \"$EXPECTED_OFFSET\" ]; then\n                echo \"NACK:${EXPECTED_OFFSET}\"\n                continue\n            fi\n\n            case \"$FRAME_CHECK_MODE\" in\n                crc32)\n                    CALC_CRC=$(printf '%s' \"$DATA\" | _hex_decode | _file_crc32)\n                    if [ \"$CALC_CRC\" != \"$RECV_CRC\" ]; then\n                        echo \"NACK:${EXPECTED_OFFSET}\"\n                        continue\n                    fi\n                    ;;\n                len)\n                    HEX_LEN=$(printf '%s' \"$DATA\" | wc -c)\n                    if [ \"$HEX_LEN\" != \"$RECV_CRC\" ]; then\n                        echo \"NACK:${EXPECTED_OFFSET}\"\n                        continue\n                    fi\n                    ;;\n            esac\n\n            CHUNK_BYTES=$(( $(printf '%s' \"$DATA\" | wc -c) / 2 ))\n            printf '%s' \"$DATA\" | _hex_decode >> \"$TMPFILE\"\n\n            ACTUAL_SIZE=$(wc -c < \"$TMPFILE\")\n            EXPECTED_AFTER=$((EXPECTED_OFFSET + CHUNK_BYTES))\n            if [ \"$ACTUAL_SIZE\" != \"$EXPECTED_AFTER\" ]; then\n                echo \"FAIL:disk_full:expected=${EXPECTED_AFTER}:actual=${ACTUAL_SIZE}\"\n                exit 1\n            fi\n\n            EXPECTED_OFFSET=$EXPECTED_AFTER\n            echo \"ACK:F:${EXPECTED_OFFSET}\"\n            ;;\n\n        EOF:*)\n            EXPECTED_SIZE=$(echo \"$LINE\" | cut -d: -f2)\n            EXPECTED_CRC=$(echo \"$LINE\" | cut -d: -f3)\n\n            mv \"$TMPFILE\" \"$OUTPUT\"\n\n            ACTUAL_SIZE=$(wc -c < \"$OUTPUT\")\n            ACTUAL_CRC=$(cat \"$OUTPUT\" | _file_crc32)\n\n            if [ \"$ACTUAL_SIZE\" != \"$EXPECTED_SIZE\" ]; then\n                echo \"FAIL:size_mismatch:expected=${EXPECTED_SIZE}:actual=${ACTUAL_SIZE}\"\n                exit 1\n            fi\n\n            if [ -n \"$EXPECTED_CRC\" ] && [ \"$EXPECTED_CRC\" != \"none\" ]; then\n                if [ \"$ACTUAL_CRC\" = \"$EXPECTED_CRC\" ]; then\n                    echo \"DONE:${ACTUAL_CRC}\"\n                else\n                    echo \"FAIL:crc_mismatch:expected=${EXPECTED_CRC}:actual=${ACTUAL_CRC}\"\n                    exit 1\n                fi\n            else\n                echo \"DONE:${ACTUAL_CRC}\"\n            fi\n            exit 0\n            ;;\n\n        C:STOP*)\n            rm -f \"$TMPFILE\"\n            echo \"STOPPED\"\n            exit 1\n            ;;\n\n        *)\n            ;;\n    esac\ndone\n__HEREDOC_EOF__", "exit_code": 0, "status": "completed"}
+{"event": "operation_ended", "ts": "2026-04-05T00:23:09.240028+00:00", "op": "ConsoleCommand", "success": true}
+{"event": "operation_started", "ts": "2026-04-05T00:23:09.240207+00:00", "op": "ConsoleCommand"}
+{"event": "command_started", "ts": "2026-04-05T00:23:09.240369+00:00", "command_id": "net-ee50", "command": "if [ -e /tmp/bin_recv.sh ]; then crc32 /tmp/bin_recv.sh | awk '{print $1}'; else echo NOFILE; fi"}
+root@evb-ast2600:~# cat > /tmp/_mcp_37625.sh <<'__MCP_SCRIPT_37625__'
+cat > /tmp/_mcp_37625.sh <<'__MCP_SCRIPT_37625__'
+root@evb-ast2600:~# cat > /tmp/_mcp_37625.sh <<'__MCP_SCRIPT_37625__'
+cat > /tmp/_mcp_37625.sh <<'__MCP_SCRIPT_37625__'
+> if [ -e /tmp/bin_recv.sh ]; then crc32 /tmp/bin_recv.sh | awk '{print $1}'; else echo NOFILE; fi
+> if [ -e /tmp/bin_recv.sh ]; then crc32 /tmp/bin_recv.sh | awk '{print $1}'; else echo NOFILE; fi
+> __MCP_SCRIPT_37625__
+> __MCP_SCRIPT_37625__
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-04-05T00:23:09.595202+00:00"}
+root@evb-ast2600:~# echo __MCP_PID_$$__; sh -x /tmp/_mcp_37625.sh; __MCP_EC=$?; rm -f /tmp/_mcp_37625.sh; echo __MCP_MARKER_37625__${__MCP_EC}
+root@evb-ast2600:~# echo __MCP_PID_$$__; sh -x /tmp/_mcp_37625.sh; __MCP_EC=$?; rm -f /tmp/_mcp_37625.sh; echo __MCP_MARKER_37625__${__MCP_EC}
+__MCP_PID_345__
+__MCP_PID_345__
++ '[' -e /tmp/bin_recv.sh ']'
++ '[' -e /tmp/bin_recv.sh ']'
++ awk '{print $1}'
++ crc32 /tmp/bin_recv.sh
++ awk '{print $1}'
++ crc32 /tmp/bin_recv.sh
+8508acf0
+8508acf0
+__MCP_MARKER_37625__0
+__MCP_MARKER_37625__0
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+{"event": "command_ended", "ts": "2026-04-05T00:23:10.187632+00:00", "command_id": "net-ee50", "command": "if [ -e /tmp/bin_recv.sh ]; then crc32 /tmp/bin_recv.sh | awk '{print $1}'; else echo NOFILE; fi", "exit_code": 0, "status": "completed"}
+{"event": "operation_ended", "ts": "2026-04-05T00:23:10.187945+00:00", "op": "ConsoleCommand", "success": true}
+root@evb-ast2600:~# chmod +x /tmp/bin_recv.sh && /tmp/bin_recv.sh '/tmp/bob_2k.bin' '2048' 'auto'
+READY
+{"event": "operation_started", "ts": "2026-04-05T00:23:19.058247+00:00", "op": "ConsoleCommand"}
+{"event": "command_started", "ts": "2026-04-05T00:23:19.058388+00:00", "command_id": "net-e9d0", "command": "if [ -e /tmp/bin_send.sh ]; then crc32 /tmp/bin_send.sh | awk '{print $1}'; else echo NOFILE; fi"}
+cat > /tmp/_mcp_61919.sh <<'__MCP_SCRIPT_61919__'
+cat > /tmp/_mcp_61919.sh <<'__MCP_SCRIPT_61919__'
+if [ -e /tmp/bin_send.sh ]; then crc32 /tmp/bin_send.sh | awk '{print $1}'; else echo NOFILE; fi
+if [ -e /tmp/bin_send.sh ]; then crc32 /tmp/bin_send.sh | awk '{print $1}'; else echo NOFILE; fi
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-04-05T00:23:19.227396+00:00"}
+root@evb-ast2600:~# cat > /tmp/_mcp_61919.sh <<'__MCP_SCRIPT_61919__'
+root@evb-ast2600:~# cat > /tmp/_mcp_61919.sh <<'__MCP_SCRIPT_61919__'
+> if [ -e /tmp/bin_send.sh ]; then crc32 /tmp/bin_send.sh | awk '{print $1}'; else echo NOFILE; fi
+> __MCP_SCRIPT_61919__
+> if [ -e /tmp/bin_send.sh ]; then crc32 /tmp/bin_send.sh | awk '{print $1}'; else echo NOFILE; fi
+> __MCP_SCRIPT_61919__
+echo __MCP_PID_$$__; sh -x /tmp/_mcp_61919.sh; __MCP_EC=$?; rm -f /tmp/_mcp_61919.sh; echo __MCP_MARKER_61919__${__MCP_EC}
+echo __MCP_PID_$$__; sh -x /tmp/_mcp_61919.sh; __MCP_EC=$?; rm -f /tmp/_mcp_61919.sh; echo __MCP_MARKER_61919__${__MCP_EC}
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+root@evb-ast2600:~# echo __MCP_PID_$$__; sh -x /tmp/_mcp_61919.sh; __MCP_EC=$?; rm -f /tmp/_mcp_61919.sh; echo __MCP_MARKER_61919__${__MCP_EC}
+__MCP_PID_345__
+root@evb-ast2600:~# echo __MCP_PID_$$__; sh -x /tmp/_mcp_61919.sh; __MCP_EC=$?; rm -f /tmp/_mcp_61919.sh; echo __MCP_MARKER_61919__${__MCP_EC}
+__MCP_PID_345__
++ '[' -e /tmp/bin_send.sh ']'
++ '[' -e /tmp/bin_send.sh ']'
++ echo NOFILE
+NOFILE
++ echo NOFILE
+NOFILE
+__MCP_MARKER_61919__0
+__MCP_MARKER_61919__0
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+{"event": "command_ended", "ts": "2026-04-05T00:23:20.092090+00:00", "command_id": "net-e9d0", "command": "if [ -e /tmp/bin_send.sh ]; then crc32 /tmp/bin_send.sh | awk '{print $1}'; else echo NOFILE; fi", "exit_code": 0, "status": "completed"}
+{"event": "operation_ended", "ts": "2026-04-05T00:23:20.092393+00:00", "op": "ConsoleCommand", "success": true}
+{"event": "operation_started", "ts": "2026-04-05T00:23:20.092822+00:00", "op": "ConsoleCommand"}
+{"event": "command_started", "ts": "2026-04-05T00:23:20.092957+00:00", "command_id": "net-6f30", "command": "cat > /tmp/bin_send.sh <<'__HEREDOC_EOF__'\n#!/bin/bash\nif [ \"${BOB_DEBUG:-0}\" = \"1\" ]; then\n    LOG=/tmp/bin_send_debug.log\n    _log() { echo \"[$(date +%H:%M:%S)] $*\" >> \"$LOG\"; }\nelse\n    _log() { :; }\nfi\n\nINPUT=\"$1\"\nCHUNK_SIZE=\"${2:-512}\"\nCHECKSUM_TOOL=\"${3:-auto}\"\n\nif [ -z \"$INPUT\" ] || [ ! -f \"$INPUT\" ]; then\n    echo \"FAIL:file_not_found\"\n    exit 1\nfi\n\nif command -v xxd >/dev/null 2>&1; then\n    _hex_encode() { xxd -p | tr -d '\\n'; }\nelse\n    _hex_encode() { hexdump -v -e '/1 \"%02x\"'; }\nfi\n\nif command -v crc32 >/dev/null 2>&1; then\n    _file_crc32() { crc32 /dev/stdin 2>/dev/null | awk '{print $1}'; }\nelif command -v python3 >/dev/null 2>&1; then\n    _file_crc32() { python3 -c \"import sys,zlib;d=sys.stdin.buffer.read();print(format(zlib.crc32(d)&0xFFFFFFFF,'08x'))\"; }\nelse\n    _file_crc32() { cat >/dev/null; echo \"00000000\"; }\nfi\n\ncase \"$CHECKSUM_TOOL\" in\n    none)  FRAME_CHECK_MODE=\"none\" ;;\n    crc32) FRAME_CHECK_MODE=\"crc32\" ;;\n    python3) FRAME_CHECK_MODE=\"crc32\" ;;\n    *)     FRAME_CHECK_MODE=\"len\" ;;\nesac\n\nTTY_DEV=$(tty 2>/dev/null)\nif [ -n \"$TTY_DEV\" ] && [ \"$TTY_DEV\" != \"not a tty\" ]; then\n    stty -echo 2>/dev/null\n    trap 'stty echo 2>/dev/null' EXIT\nfi\n\nFILE_SIZE=$(wc -c < \"$INPUT\")\nTOTAL_CRC=$(cat \"$INPUT\" | _file_crc32)\n\necho \"SENDING:${FILE_SIZE}:${TOTAL_CRC}\"\n\nWAIT=0\n_log \"Waiting for READY (stdin=$(readlink /proc/self/fd/0 2>/dev/null || echo unknown))\"\n_log \"tty=$(tty 2>/dev/null) pid=$$\"\nwhile [ \"$WAIT\" -lt 30 ]; do\n    if IFS= read -t 5 -r RESP; then\n        _log \"RECV: '$(printf '%s' \"$RESP\" | xxd -p | head -c 200)'\"\n        RESP=$(printf '%s' \"$RESP\" | tr -d '\\r')\n        case \"$RESP\" in\n            READY)\n                _log \"Got READY \u2014 starting transfer\"\n                break\n                ;;\n            C:STOP)\n                echo \"STOPPED\"\n                exit 1\n                ;;\n            *)\n                _log \"Ignoring: '$RESP'\"\n                ;;\n        esac\n    else\n        _log \"read timeout/eof [$WAIT] (rc=$?)\"\n    fi\n    WAIT=$((WAIT + 1))\ndone\n\nif [ \"$WAIT\" -ge 30 ]; then\n    echo \"FAIL:no_ready:timeout_30s\"\n    exit 1\nfi\n\nOFFSET=0\nLAST_ACK_TIME=$(date +%s)\nMAX_SILENCE=10\n\nwhile [ \"$OFFSET\" -lt \"$FILE_SIZE\" ]; do\n    CHUNK_HEX=$(dd if=\"$INPUT\" bs=1 skip=\"$OFFSET\" count=\"$CHUNK_SIZE\" 2>/dev/null | _hex_encode)\n    if [ -z \"$CHUNK_HEX\" ]; then\n        break\n    fi\n\n    CHUNK_BYTES=$(( $(printf '%s' \"$CHUNK_HEX\" | wc -c) / 2 ))\n\n    case \"$FRAME_CHECK_MODE\" in\n        crc32) FRAME_CHECK=$(dd if=\"$INPUT\" bs=1 skip=\"$OFFSET\" count=\"$CHUNK_BYTES\" 2>/dev/null | _file_crc32) ;;\n        len)   FRAME_CHECK=$(printf '%s' \"$CHUNK_HEX\" | wc -c) ;;\n        *)     FRAME_CHECK=\"00000000\" ;;\n    esac\n\n    echo \"F:${OFFSET}:${CHUNK_HEX}:${FRAME_CHECK}\"\n\n    if IFS= read -t 1 RESP 2>/dev/null; then\n        RESP=$(printf '%s' \"$RESP\" | tr -d '\\r')\n        case \"$RESP\" in\n            NACK:*)\n                NACK_OFFSET=$(echo \"$RESP\" | cut -d: -f2)\n                OFFSET=\"$NACK_OFFSET\"\n                LAST_ACK_TIME=$(date +%s)\n                continue\n                ;;\n            ACK:*)\n                LAST_ACK_TIME=$(date +%s)\n                ;;\n            C:STOP)\n                echo \"STOPPED\"\n                exit 1\n                ;;\n        esac\n    fi\n\n    NOW=$(date +%s)\n    if [ $((NOW - LAST_ACK_TIME)) -gt \"$MAX_SILENCE\" ]; then\n        echo \"FAIL:no_ack:silence=${MAX_SILENCE}s\"\n        exit 1\n    fi\n\n    OFFSET=$((OFFSET + CHUNK_BYTES))\ndone\n\necho \"EOF:${FILE_SIZE}:${TOTAL_CRC}\"\n\nWAIT=0\nwhile [ \"$WAIT\" -lt 30 ]; do\n    if IFS= read -t 2 RESP 2>/dev/null; then\n        RESP=$(printf '%s' \"$RESP\" | tr -d '\\r')\n        case \"$RESP\" in\n            DONE*)\n                _log \"Got DONE \u2014 transfer complete\"\n                exit 0\n                ;;\n            FAIL*)\n                _log \"Got FAIL: $RESP\"\n                exit 1\n                ;;\n            ACK:*)\n                WAIT=0\n                ;;\n            C:STOP)\n                echo \"STOPPED\"\n                exit 1\n                ;;\n        esac\n    fi\n    WAIT=$((WAIT + 1))\ndone\n\n_log \"DONE not received after 60s\"\nexit 1\n__HEREDOC_EOF__"}
+root@evb-ast2600:~# cat > /tmp/_mcp_40377.sh <<'__MCP_SCRIPT_40377__'
+cat > /tmp/_mcp_40377.sh <<'__MCP_SCRIPT_40377__'
+> cat > /tmp/bin_send.sh <<'__HEREDOC_EOF__'
+> cat > /tmp/bin_send.sh <<'__HEREDOC_EOF__'
+> #!/bin/bash
+> #!/bin/bash
+>
+>
+> if [ "${BOB_DEBUG:-0}" = "1" ]; then
+{"event": "kernel_panic", "ts": "2026-04-05T00:23:20.339791+00:00"}
+> if [ "${BOB_DEBUG:-0}" = "1" ]; then
+{"event": "kernel_panic", "ts": "2026-04-05T00:23:20.366493+00:00"}
+>     LOG=/tmp/bin_send_debug.log
+>     LOG=/tmp/bin_send_debug.log
+>     _log() { echo "[$(date +%H:%M:%S)] $*" >> "$LOG"; }
+>     _log() { echo "[$(date +%H:%M:%S)] $*" >> "$LOG"; }
+>
+>
+> else
+>     _log() { :; }
+> else
+>     _log() { :; }
+>
+>
+> fi
+>
+> fi
+>
+>
+>
+> INPUT="$1"
+> INPUT="$1"
+> CHUNK_SIZE="${2:-512}"
+> CHUNK_SIZE="${2:-512}"
+>
+>
+> CHECKSUM_TOOL="${3:-auto}"
+>
+> CHECKSUM_TOOL="${3:-auto}"
+>
+>
+>
+> if [ -z "$INPUT" ] || [ ! -f "$INPUT" ]; then
+>     echo "FAIL:file_not_found"
+> if [ -z "$INPUT" ] || [ ! -f "$INPUT" ]; then
+>     echo "FAIL:file_not_found"
+>     exit 1
+>     exit 1
+>
+>
+> fi
+>
+> fi
+>
+>
+>
+> if command -v xxd >/dev/null 2>&1; then
+> if command -v xxd >/dev/null 2>&1; then
+>     _hex_encode() { xxd -p | tr -d '\n'; }
+>     _hex_encode() { xxd -p | tr -d '\n'; }
+>
+>
+> else
+> else
+>     _hex_encode() { hexdump -v -e '/1 "%02x"'; }
+>     _hex_encode() { hexdump -v -e '/1 "%02x"'; }
+> fi
+> fi
+>
+>
+>
+>
+> if command -v crc32 >/dev/null 2>&1; then
+> if command -v crc32 >/dev/null 2>&1; then
+>
+>
+>     _file_crc32() { crc32 /dev/stdin 2>/dev/null | awk '{print $1}'; }
+>     _file_crc32() { crc32 /dev/stdin 2>/dev/null | awk '{print $1}'; }
+> elif command -v python3 >/dev/null 2>&1; then
+> elif command -v python3 >/dev/null 2>&1; then
+>     _file_crc32() { python3 -c "import sys,zlib;d=sys.stdin.buffer.read();print(format(zlib.crc32(d)&0xFFFFFFFF,'08x'))"; }
+>     _file_crc32() { python3 -c "import sys,zlib;d=sys.stdin.buffer.read();print(format(zlib.crc32(d)&0xFFFFFFFF,'08x'))"; }
+> else
+> else
+>
+>
+>     _file_crc32() { cat >/dev/null; echo "00000000"; }
+>     _file_crc32() { cat >/dev/null; echo "00000000"; }
+> fi
+> fi
+>
+>
+>
+>
+> case "$CHECKSUM_TOOL" in
+> case "$CHECKSUM_TOOL" in
+>     none)  FRAME_CHECK_MODE="none" ;;
+>     none)  FRAME_CHECK_MODE="none" ;;
+>
+>
+>     crc32) FRAME_CHECK_MODE="crc32" ;;
+>     crc32) FRAME_CHECK_MODE="crc32" ;;
+>     python3) FRAME_CHECK_MODE="crc32" ;;
+>     python3) FRAME_CHECK_MODE="crc32" ;;
+>     *)     FRAME_CHECK_MODE="len" ;;
+>     *)     FRAME_CHECK_MODE="len" ;;
+>
+>
+> esac
+>
+> esac
+>
+>
+>
+> TTY_DEV=$(tty 2>/dev/null)
+> TTY_DEV=$(tty 2>/dev/null)
+> if [ -n "$TTY_DEV" ] && [ "$TTY_DEV" != "not a tty" ]; then
+> if [ -n "$TTY_DEV" ] && [ "$TTY_DEV" != "not a tty" ]; then
+>     stty -echo 2>/dev/null
+>     stty -echo 2>/dev/null
+>
+>
+>     trap 'stty echo 2>/dev/null' EXIT
+>     trap 'stty echo 2>/dev/null' EXIT
+> fi
+> fi
+>
+>
+>
+>
+> FILE_SIZE=$(wc -c < "$INPUT")
+> FILE_SIZE=$(wc -c < "$INPUT")
+>
+>
+> TOTAL_CRC=$(cat "$INPUT" | _file_crc32)
+>
+> TOTAL_CRC=$(cat "$INPUT" | _file_crc32)
+>
+>
+>
+> echo "SENDING:${FILE_SIZE}:${TOTAL_CRC}"
+>
+> echo "SENDING:${FILE_SIZE}:${TOTAL_CRC}"
+>
+>
+>
+> WAIT=0
+ 2>/dev/null || echo unknown))"
+> WAIT=0
+ 2>/dev/null || echo unknown))"
+> _log "Waiting for READY (stdin=$(readlink /proc/self/fd/0 2>/dev/null || echo unknown))"
+> _log "Waiting for READY (stdin=$(readlink /proc/self/fd/0 2>/dev/null || echo unknown))"
+> _log "tty=$(tty 2>/dev/null) pid=$$"
+> _log "tty=$(tty 2>/dev/null) pid=$$"
+>
+>
+> while [ "$WAIT" -lt 30 ]; do
+> while [ "$WAIT" -lt 30 ]; do
+>     if IFS= read -t 5 -r RESP; then
+>     if IFS= read -t 5 -r RESP; then
+>         _log "RECV: '$(printf '%s' "$RESP" | xxd -p | head -c 200)'"
+>         _log "RECV: '$(printf '%s' "$RESP" | xxd -p | head -c 200)'"
+>
+>
+>         RESP=$(printf '%s' "$RESP" | tr -d '\r')
+>         RESP=$(printf '%s' "$RESP" | tr -d '\r')
+>         case "$RESP" in
+>         case "$RESP" in
+>             READY)
+>             READY)
+>
+>
+>                 _log "Got READY \342\200\224 starting transfer"
+>                 _log "Got READY \342\200\224 starting transfer"
+>                 break
+>                 break
+>
+>
+>                 ;;
+>             C:STOP)
+>                 ;;
+>             C:STOP)
+>
+>
+>                 echo "STOPPED"
+>                 echo "STOPPED"
+>                 exit 1
+>                 exit 1
+>                 ;;
+>                 ;;
+>             *)
+>             *)
+>
+>
+>                 _log "Ignoring: '$RESP'"
+>                 ;;
+>                 _log "Ignoring: '$RESP'"
+>                 ;;
+>         esac
+>         esac
+>     else
+>     else
+>
+>
+>         _log "read timeout/eof [$WAIT] (rc=$?)"
+>     fi
+>         _log "read timeout/eof [$WAIT] (rc=$?)"
+>     fi
+>
+>
+>     WAIT=$((WAIT + 1))
+>     WAIT=$((WAIT + 1))
+> done
+> done
+>
+>
+>
+>
+> if [ "$WAIT" -ge 30 ]; then
+> if [ "$WAIT" -ge 30 ]; then
+>     echo "FAIL:no_ready:timeout_30s"
+>     echo "FAIL:no_ready:timeout_30s"
+

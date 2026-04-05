@@ -1,0 +1,56 @@
+self = <tests.e2e.test_binary_transfer.TestBinaryOverBash object at 0xf13ad2c7cb30>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:40535', 'container': <Container: 918fb9d0a58e>, 'container_name': 'test-qemu-aef0de2a', ...}
+minio_service = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:43301', 'internal_url': 'http://lab-mcp-minio-9f02659c:9000', ...}
+
+    async def test_put_and_get_large(self, qemu_container, minio_service):
+        """PUT and GET 10KB file.
+    
+        Hex encoding doubles the data, and emulated QEMU serial is slow
+        (~15 KB/s over pipes, much less over emulated PTY). 10KB is large
+        enough to exercise multi-frame streaming without timing out.
+        """
+        info = qemu_container
+        minio = minio_service
+        await _boot_and_login(info)
+    
+        test_data = os.urandom(10240)
+        timeout = e2e_timeout(300, 900)
+    
+        await self._put_via_minio(
+            info, minio, test_data, "/tmp/bob_10k.bin", timeout
+        )
+>       await self._get_via_minio(
+            info, minio, "/tmp/bob_10k.bin", 10240, timeout
+        )
+
+tests/e2e/test_binary_transfer.py:172: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tests.e2e.test_binary_transfer.TestBinaryOverBash object at 0xf13ad2c7cb30>
+info = {'api_key': 'test-key', 'base_url': 'http://localhost:40535', 'container': <Container: 918fb9d0a58e>, 'container_name': 'test-qemu-aef0de2a', ...}
+minio = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:43301', 'internal_url': 'http://lab-mcp-minio-9f02659c:9000', ...}
+remote_path = '/tmp/bob_10k.bin', size = 10240, timeout_sec = 900.0
+
+    async def _get_via_minio(self, info, minio, remote_path, size, timeout_sec):
+        """Retrieve file from target via serial, upload to MinIO, verify."""
+        s3_key = f"test-bob-get/{size}.bin"
+        put_url = await generate_presigned_put_url(minio, s3_key)
+    
+        result = await call_tool(
+            info["base_url"], info["api_key"], "file_transfer",
+            {
+                "op": "get",
+                "method": "binary-over-bash",
+                "remote_path": remote_path,
+                "upload_url": put_url,
+            },
+            timeout=timeout_sec,
+        )
+>       assert result.get("status") == "completed", f"Get {size}B failed: {result}"
+E       AssertionError: Get 10240B failed: {'status': 'error', 'error': 'Failed to deploy bin_send.sh: {\'status\': \'error\', \'error\': \'Heredoc transfer timed out: Command timed out after 60s: \\\'cat > /tmp/bin_send.sh <<\\\\\\\'__HEREDOC_EOF__\\\\\\\'\\\\n#!/bin/bash\\\\nif [ "${BOB_DEBUG:-0}" = "1" ]; then\\\\n    LOG=/tmp/bin_send_debug.log\\\\n    _log() { echo "[$(date +%H:%M:%S)] $*" >> "$LOG"; }\\\\nelse\\\\n    _log() { :; }\\\\nfi\\\\n\\\\nINPUT="$1"\\\\nCHUNK_SIZE="${2:-512}"\\\\nCHECKSUM_TOOL="${3:-auto}"\\\\n\\\\nif [ -z "$INPUT" ] || [ ! -f "$INPUT" ]; then\\\\n    echo "FAIL:file_not_found"\\\\n    exit 1\\\\nfi\\\\n\\\\nif command -v xxd >/dev/null 2>&1; then\\\\n    _hex_encode() { xxd -p | tr -d \\\\\\\'\\\\\\\\n\\\\\\\'; }\\\\nelse\\\\n    _hex_encode() { hexdump -v -e \\\\\\\'/1 "%02x"\\\\\\\'; }\\\\nfi\\\\n\\\\nif command -v crc32 >/dev/null 2>&1; then\\\\n    _file_crc32() { crc32 /dev/stdin 2>/dev/null | awk \\\\\\\'{print $1}\\\\\\\'; }\\\\nelif command -v python3 >/dev/null 2>&1; then\\\\n    _file_crc32() { python3 -c "import sys,zlib;d=sys.stdin.buffer.read();print(format(zlib.crc32(d)&0xFFFFFFFF,\\\\\\\'08x\\\\\\\'))"; }\\\\nelse\\\\n    _file_crc32() { cat >/dev/null; echo "00000000"; }\\\\nfi\\\\n\\\\ncase "$CHECKSUM_TOOL" in\\\\n    none)  FRAME_CHECK_MODE="none" ;;\\\\n    crc32) FRAME_CHECK_MODE="crc32" ;;\\\\n    python3) FRAME_CHECK_MODE="crc32" ;;\\\\n    *)     FRAME_CHECK_MODE="len" ;;\\\\nesac\\\\n\\\\nTTY_DEV=$(tty 2>/dev/null)\\\\nif [ -n "$TTY_DEV" ] && [ "$TTY_DEV" != "not a tty" ]; then\\\\n    stty -echo 2>/dev/null\\\\n    trap \\\\\\\'stty echo 2>/dev/null\\\\\\\' EXIT\\\\nfi\\\\n\\\\nFILE_SIZE=$(wc -c < "$INPUT")\\\\nTOTAL_CRC=$(cat "$INPUT" | _file_crc32)\\\\n\\\\necho "SENDING:${FILE_SIZE}:${TOTAL_CRC}"\\\\n\\\\nWAIT=0\\\\n_log "Waiting for READY (stdin=$(readlink /proc/self/fd/0 2>/dev/null || echo unknown))"\\\\n_log "tty=$(tty 2>/dev/null) pid=$$"\\\\nwhile [ "$WAIT" -lt 30 ]; do\\\\n    if IFS= read -t 5 -r RESP; then\\\\n        _log "RECV: \\\\\\\'$(printf \\\\\\\'%s\\\\\\\' "$RESP" | xxd -p | head -c 200)\\\\\\\'"\\\\n        RESP=$(printf \\\\\\\'%s\\\\\\\' "$RESP" | tr -d \\\\\\\'\\\\\\\\r\\\\\\\')\\\\n        case "$RESP" in\\\\n            READY)\\\\n                _log "Got READY — starting transfer"\\\\n                break\\\\n                ;;\\\\n            C:STOP)\\\\n                echo "STOPPED"\\\\n                exit 1\\\\n                ;;\\\\n            *)\\\\n                _log "Ignoring: \\\\\\\'$RESP\\\\\\\'"\\\\n                ;;\\\\n        esac\\\\n    else\\\\n        _log "read timeout/eof [$WAIT] (rc=$?)"\\\\n    fi\\\\n    WAIT=$((WAIT + 1))\\\\ndone\\\\n\\\\nif [ "$WAIT" -ge 30 ]; then\\\\n    echo "FAIL:no_ready:timeout_30s"\\\\n    exit 1\\\\nfi\\\\n\\\\nOFFSET=0\\\\nLAST_ACK_TIME=$(date +%s)\\\\nMAX_SILENCE=10\\\\n\\\\nwhile [ "$OFFSET" -lt "$FILE_SIZE" ]; do\\\\n    CHUNK_HEX=$(dd if="$INPUT" bs=1 skip="$OFFSET" count="$CHUNK_SIZE" 2>/dev/null | _hex_encode)\\\\n    if [ -z "$CHUNK_HEX" ]; then\\\\n        break\\\\n    fi\\\\n\\\\n    CHUNK_BYTES=$(( $(printf \\\\\\\'%s\\\\\\\' "$CHUNK_HEX" | wc -c) / 2 ))\\\\n\\\\n    case "$FRAME_CHECK_MODE" in\\\\n        crc32) FRAME_CHECK=$(dd if="$INPUT" bs=1 skip="$OFFSET" count="$CHUNK_BYTES" 2>/dev/null | _file_crc32) ;;\\\\n        len)   FRAME_CHECK=$(printf \\\\\\\'%s\\\\\\\' "$CHUNK_HEX" | wc -c) ;;\\\\n        *)     FRAME_CHECK="00000000" ;;\\\\n    esac\\\\n\\\\n    echo "F:${OFFSET}:${CHUNK_HEX}:${FRAME_CHECK}"\\\\n\\\\n    if IFS= read -t 1 RESP 2>/dev/null; then\\\\n        RESP=$(printf \\\\\\\'%s\\\\\\\' "$RESP" | tr -d \\\\\\\'\\\\\\\\r\\\\\\\')\\\\n        case "$RESP" in\\\\n            NACK:*)\\\\n                NACK_OFFSET=$(echo "$RESP" | cut -d: -f2)\\\\n                OFFSET="$NACK_OFFSET"\\\\n                LAST_ACK_TIME=$(date +%s)\\\\n                continue\\\\n                ;;\\\\n            ACK:*)\\\\n                LAST_ACK_TIME=$(date +%s)\\\\n                ;;\\\\n            C:STOP)\\\\n                echo "STOPPED"\\\\n                exit 1\\\\n                ;;\\\\n        esac\\\\n    fi\\\\n\\\\n    NOW=$(date +%s)\\\\n    if [ $((NOW - LAST_ACK_TIME)) -gt "$MAX_SILENCE" ]; then\\\\n        echo "FAIL:no_ack:silence=${MAX_SILENCE}s"\\\\n        exit 1\\\\n    fi\\\\n\\\\n    OFFSET=$((OFFSET + CHUNK_BYTES))\\\\ndone\\\\n\\\\necho "EOF:${FILE_SIZE}:${TOTAL_CRC}"\\\\n\\\\nWAIT=0\\\\nwhile [ "$WAIT" -lt 30 ]; do\\\\n    if IFS= read -t 2 RESP 2>/dev/null; then\\\\n        RESP=$(printf \\\\\\\'%s\\\\\\\' "$RESP" | tr -d \\\\\\\'\\\\\\\\r\\\\\\\')\\\\n        case "$RESP" in\\\\n            DONE*)\\\\n                _log "Got DONE — transfer complete"\\\\n                exit 0\\\\n                ;;\\\\n            FAIL*)\\\\n                _log "Got FAIL: $RESP"\\\\n                exit 1\\\\n                ;;\\\\n            ACK:*)\\\\n                WAIT=0\\\\n                ;;\\\\n            C:STOP)\\\\n                echo "STOPPED"\\\\n                exit 1\\\\n                ;;\\\\n        esac\\\\n    fi\\\\n    WAIT=$((WAIT + 1))\\\\ndone\\\\n\\\\n_log "DONE not received after 60s"\\\\nexit 1\\\\n__HEREDOC_EOF__\\\' — serial console may be unresponsive\', \'destination\': \'/tmp/bin_send.sh\'}'}
+E       assert 'error' == 'completed'
+E         
+E         - completed
+E         + error
+
+tests/e2e/test_binary_transfer.py:109: AssertionError

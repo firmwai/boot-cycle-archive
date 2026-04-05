@@ -1,0 +1,25 @@
+self = <tests.e2e.test_heredoc_skip.TestHeredocSkip object at 0xfb046765af60>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:33527', 'container': <Container: 21520b0d29c9>, 'container_name': 'test-qemu-shared-f0210761', ...}
+
+    async def test_skip_returns_skipped_flag(self, qemu_container):
+        """PUT same content twice — second call must have skipped=True."""
+        info = qemu_container
+        await _boot_and_login(info)
+    
+        content = "#!/bin/sh\necho test_skip_flag\n"
+    
+        # First put
+        r1 = await call_tool(
+            info["base_url"], info["api_key"], "file_transfer",
+            {"op": "put", "method": "heredoc", "content": content,
+             "destination": "/tmp/skip_flag_test.sh"},
+            timeout=e2e_timeout(30, 120),
+        )
+>       assert r1.get("status") == "completed", f"First put failed: {r1}"
+E       AssertionError: First put failed: {'status': 'error', 'error': 'Heredoc transfer timed out waiting for marker', 'destination': '/tmp/skip_flag_test.sh'}
+E       assert 'error' == 'completed'
+E         
+E         - completed
+E         + error
+
+tests/e2e/test_heredoc_skip.py:57: AssertionError

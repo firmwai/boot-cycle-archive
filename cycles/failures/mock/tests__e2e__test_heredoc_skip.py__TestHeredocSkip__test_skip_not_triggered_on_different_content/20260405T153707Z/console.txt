@@ -1,0 +1,39 @@
+Phosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) nodistro.0 evb-ast2600 ttyS4
+evb-ast2600 login:
+{"event": "boot_login", "ts": "2026-04-05T15:35:18.934488+00:00"}
+{"event": "operation_started", "ts": "2026-04-05T15:35:18.934658+00:00", "op": "Login"}
+{"event": "operation_stage", "ts": "2026-04-05T15:35:18.934681+00:00", "op": "Login", "stage": "checking_boot_state"}
+{"event": "operation_stage", "ts": "2026-04-05T15:35:18.934694+00:00", "op": "Login", "stage": "waiting_for_login_prompt"}
+{"event": "operation_stage", "ts": "2026-04-05T15:35:18.934703+00:00", "op": "Login", "stage": "waiting_for_quiescence"}
+{"event": "operation_stage", "ts": "2026-04-05T15:35:23.935743+00:00", "op": "Login", "stage": "refreshing_login_prompt"}
+evb-ast2600 login:
+Phosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) nodistro.0 evb-ast2600 ttyS4
+evb-ast2600 login:
+{"event": "operation_stage", "ts": "2026-04-05T15:35:24.936578+00:00", "op": "Login", "stage": "sending_username"}
+evb-ast2600 login: root
+root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-04-05T15:35:25.010822+00:00"}
+{"event": "operation_stage", "ts": "2026-04-05T15:35:25.937606+00:00", "op": "Login", "stage": "waiting_for_password_or_shell"}
+{"event": "operation_stage", "ts": "2026-04-05T15:35:25.937683+00:00", "op": "Login", "stage": "shell_setup_dmesg"}
+root@evb-ast2600:~# dmesg -n 1
+root@evb-ast2600:~#
+{"event": "operation_stage", "ts": "2026-04-05T15:35:26.438629+00:00", "op": "Login", "stage": "shell_setup_stty"}
+root@evb-ast2600:~# stty cols 200
+root@evb-ast2600:~#
+{"event": "operation_stage", "ts": "2026-04-05T15:35:26.739297+00:00", "op": "Login", "stage": "shell_setup_sync"}
+root@evb-ast2600:~# echo __MCP_SETUP_70674__
+root@evb-ast2600:~#
+{"event": "login_complete", "ts": "2026-04-05T15:35:37.036154+00:00"}
+{"event": "operation_ended", "ts": "2026-04-05T15:35:37.036229+00:00", "op": "Login", "success": true}
+root@evb-ast2600:~# if [ -e /tmp/skip_diff_test.txt ]; then echo __SKIP_83132__$(crc32 /tmp/skip_diff_test.txt | awk '{print $1}')__; else echo __SKIP_83132__NOFILE__; fi
+root@evb-ast2600:~#
+root@evb-ast2600:~# cat > /tmp/skip_diff_test.txt <<'__HEREDOC_EOF__'
+root@evb-ast2600:~#
+root@evb-ast2600:~# version_1
+root@evb-ast2600:~#
+root@evb-ast2600:~# __HEREDOC_EOF__
+root@evb-ast2600:~#
+root@evb-ast2600:~# echo __HEREDOC_83132__$(crc32 /tmp/skip_diff_test.txt | awk '{print $1}')__
+root@evb-ast2600:~#
+root@evb-ast2600:~# root@evb-ast2600:~#
+

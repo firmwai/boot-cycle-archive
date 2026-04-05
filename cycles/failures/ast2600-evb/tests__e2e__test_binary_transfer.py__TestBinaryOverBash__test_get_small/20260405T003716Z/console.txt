@@ -1,0 +1,672 @@
+{"event": "error", "ts": "2026-04-05T00:34:19.085528+00:00"}
+{"event": "error", "ts": "2026-04-05T00:34:19.085639+00:00"}
+{"event": "error", "ts": "2026-04-05T00:34:19.085682+00:00"}
+{"event": "operation_started", "ts": "2026-04-05T00:34:19.316249+00:00", "op": "Login"}
+{"event": "operation_stage", "ts": "2026-04-05T00:34:19.316295+00:00", "op": "Login", "stage": "checking_boot_state"}
+{"event": "operation_stage", "ts": "2026-04-05T00:34:19.316314+00:00", "op": "Login", "stage": "waiting_for_login_prompt"}
+U-Boot SPL 2019.04 (Mar 10 2023 - 01:54:10 +0000)
+{"event": "boot_firmware", "ts": "2026-04-05T00:34:19.490660+00:00"}
+Trying to boot from RAM
+U-Boot 2019.04 (Mar 10 2023 - 01:54:10 +0000)
+{"event": "boot_uboot", "ts": "2026-04-05T00:34:19.772991+00:00"}
+SOC: AST2600-A3
+eSPI Mode: SIO:Enable : SuperIO-2e
+Eth: MAC0: RGMII, MAC1: RGMII, MAC2: RGMII, MAC3: RGMII
+Model: AST2600 EVB
+DRAM:  already initialized, 1008 MiB (capacity:1024 MiB, VGA:64 MiB, ECC:off)
+MMC:
+MMC:
+sdhci_slot0@100: 1, sdhci_slot1@200: 2, emmc_slot0@100: 0
+Loading Environment from SPI Flash... SF: Detected mx66u51235f with page size 256 Bytes, erase size 4 KiB, total 64 MiB
+*** Warning - bad CRC, using default environment
+In:    serial@1e784000
+Out:   serial@1e784000
+Err:   serial@1e784000
+Model: AST2600 EVB
+Net:
+Warning: ftgmac@1e660000 (eth0) using random MAC address - 7e:e7:8d:d6:8c:5d
+eth0: ftgmac@1e660000
+Warning: ftgmac@1e680000 (eth1) using random MAC address - 26:bf:37:3f:ae:a6
+, eth1: ftgmac@1e680000
+Warning: ftgmac@1e670000 (eth2) using random MAC address - 8a:17:30:f3:5e:77
+, eth2: ftgmac@1e670000
+Warning: ftgmac@1e690000 (eth3) using random MAC address - 8e:4a:23:45:d7:c5
+, eth3: ftgmac@1e690000
+Hit any key to stop autoboot:  2
+Hit any key to stop autoboot:  1
+Hit any key to stop autoboot:  0
+## Loading kernel from FIT Image at 83000000 ...
+   Using 'conf-aspeed-ast2600-evb.dtb' configuration
+   Verifying Hash Integrity ... OK
+   Trying 'kernel-1' kernel subimage
+     Description:  Linux kernel
+     Type:         Kernel Image
+     Compression:  uncompressed
+     Data Start:   0x8300012c
+     Data Size:    3834512 Bytes = 3.7 MiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: 0x80001000
+     Entry Point:  0x80001000
+     Hash algo:    sha256
+     Hash value:   75f525ccd675e3add2b93fa68a5eb8f55a63e45df4e55ca29346b5855b5964ed
+   Verifying Hash Integrity ... sha256+ OK
+## Loading ramdisk from FIT Image at 83000000 ...
+   Using 'conf-aspeed-ast2600-evb.dtb' configuration
+   Verifying Hash Integrity ... OK
+   Trying 'ramdisk-1' ramdisk subimage
+     Description:  obmc-phosphor-initramfs
+     Type:         RAMDisk Image
+     Compression:  uncompressed
+     Data Start:   0x833b2058
+     Data Size:    1039504 Bytes = 1015.1 KiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: unavailable
+     Entry Point:  unavailable
+     Hash algo:    sha256
+     Hash value:   5e1a3fd9d769b8f6a240ca792926612e39a3a5383016d45f7b2979252bae066f
+   Verifying Hash Integrity ... sha256+ OK
+## Loading fdt from FIT Image at 83000000 ...
+   Using 'conf-aspeed-ast2600-evb.dtb' configuration
+   Verifying Hash Integrity ... OK
+   Trying 'fdt-aspeed-ast2600-evb.dtb' fdt subimage
+     Description:  Flattened Device Tree blob
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x833a84d0
+     Data Size:    39612 Bytes = 38.7 KiB
+     Architecture: ARM
+     Hash algo:    sha256
+     Hash value:   1bfd8771ac4774eb68abaeb8137238a44bdb18bde906ca060ea7ee41ff1e63a4
+   Verifying Hash Integrity ... sha256+ OK
+   Booting using the fdt blob at 0x833a84d0
+   Loading Kernel Image ... OK
+   Loading Ramdisk to 8ff02000, end 8ffffc90 ... OK
+   Loading Device Tree to 8fef5000, end 8ff01abb ... OK
+Starting kernel ...
+[    0.000000] Booting Linux on physical CPU 0xf00
+[    0.000000] Linux version 6.1.15-580639a (oe-user@oe-host) (arm-openbmc-linux-gnueabi-gcc (GCC) 12.2.0, GNU ld (GNU Binutils) 2.40.20230119) #1 SMP Thu Apr  6 00:55:09 UTC 2023
+[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c5387d
+[    0.000000] CPU: div instructions available: patching division code
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] OF: fdt: Machine model: AST2600 EVB
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] Reserved memory: created CMA memory pool at 0xbe000000, size 16 MiB
+[    0.000000] OF: reserved mem: initialized node framebuffer, compatible id shared-dma-pool
+[    0.000000] Reserved memory: created CMA memory pool at 0xba000000, size 64 MiB
+[    0.000000] OF: reserved mem: initialized node video, compatible id shared-dma-pool
+[    0.000000] cma: Reserved 16 MiB at 0xb9000000
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000080000000-0x00000000beffffff]
+[    0.000000]   HighMem  empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000080000000-0x00000000beffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000080000000-0x00000000beffffff]
+[    0.000000] percpu: Embedded 14 pages/cpu s36500 r0 d20844 u57344
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 256032
+[    0.000000] Kernel command line: console=ttyS4,115200n8 root=/dev/ram rw
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] Memory: 909212K/1032192K available (9216K kernel code, 811K rwdata, 1852K rodata, 1024K init, 179K bss, 24676K reserved, 98304K cma-reserved, 0K highmem)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] ftrace: allocating 29055 entries in 57 pages
+[    0.000000] ftrace: allocated 57 pages with 4 groups
+[    0.000000] trace event string verifier disabled
+[    0.000000] rcu: Hierarchical RCU implementation.
+[    0.000000] rcu:     RCU event tracing is enabled.
+[    0.000000]  Rude variant of Tasks RCU enabled.
+[    0.000000]  Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] arch_timer: cp15 timer(s) running at 1200.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0x1fffffffffffffff max_cycles: 0x114c1bbbeec, max_idle_ns: 440795229572 ns
+[    0.000237] sched_clock: 61 bits at 1200MHz, resolution 0ns, wraps every 2199023255551ns
+[    0.000638] Switching to timer-based delay loop, resolution 0ns
+[    0.012489] Calibrating delay loop (skipped), value calculated using timer frequency.. 2400.00 BogoMIPS (lpj=12000000)
+[    0.012889] pid_max: default: 32768 minimum: 301
+[    0.018349] Mount-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
+[    0.018471] Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
+[    0.040923] CPU: Testing write buffer coherency: ok
+[    0.071231] cblist_init_generic: Setting adjustable number of callback queues.
+[    0.071579] cblist_init_generic: Setting shift to 1 and lim to 1.
+[    0.072276] cblist_init_generic: Setting shift to 1 and lim to 1.
+[    0.074287] Setting up static identity map for 0x80100000 - 0x80100060
+[    0.076084] rcu: Hierarchical SRCU implementation.
+[    0.076171] rcu:     Max phase no-delay instances is 1000.
+[    0.082811] ASPEED AST2600 rev A3 (05030303)
+[    0.088218] smp: Bringing up secondary CPUs ...
+[    0.102911] smp: Brought up 1 node, 2 CPUs
+[    0.103102] SMP: Total of 2 processors activated (4800.00 BogoMIPS).
+[    0.103203] CPU: All CPU(s) started in SVC mode.
+[    0.125310] devtmpfs: initialized
+[    0.201483] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+[    0.231089] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.232769] futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    0.245016] pinctrl core: initialized pinctrl subsystem
+[    0.274765] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.298654] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.313885] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.314047] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.583499] AST2600 secure boot disabled
+[    0.595208] SCSI subsystem initialized
+[    0.597563] usbcore: registered new interface driver usbfs
+[    0.598031] usbcore: registered new interface driver hub
+[    0.598414] usbcore: registered new device driver usb
+[    0.599960] mc: Linux media interface: v0.10
+[    0.600218] videodev: Linux video capture interface: v2.00
+[    0.600494] pps_core: LinuxPPS API ver. 1 registered
+[    0.600558] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.600717] PTP clock support registered
+[    0.600873] EDAC MC: Ver: 3.0.0
+[    0.643726] clocksource: Switched to clocksource arch_sys_counter
+[    0.802441] NET: Registered PF_INET protocol family
+[    0.807365] IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.817685] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes, linear)
+[    0.817890] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.818034] TCP established hash table entries: 8192 (order: 3, 32768 bytes, linear)
+[    0.818414] TCP bind hash table entries: 8192 (order: 5, 131072 bytes, linear)
+[    0.819152] TCP: Hash tables configured (established 8192 bind 8192)
+[    0.820980] UDP hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    0.821329] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    0.824262] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.841675] Unpacking initramfs...
+[    0.844521] workingset: timestamp_bits=30 max_order=18 bucket_order=0
+[    0.869863] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.870879] jffs2: version 2.2. (SUMMARY)  © 2001-2006 Red Hat, Inc.
+[    0.876629] NET: Registered PF_ALG protocol family
+[    0.877791] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
+[    0.937249] Serial: 8250/16550 driver, 6 ports, IRQ sharing enabled
+[    0.957631] printk: console [ttyS4] disabled
+[    0.983748] 1e784000.serial: ttyS4 at MMIO 0x1e784000 (irq = 33, base_baud = 1500000) is a 16550A
+[    1.090821] printk: console [ttyS4] enabled
+[    1.117068] timeriomem_rng 1e6e2524.hwrng: 32bits from 0x(ptrval) @ 1us
+[    1.123965] aspeed_gfx 1e6e6000.display: assigned reserved memory node framebuffer
+[    1.157245] [drm] Initialized aspeed-gfx-drm 1.0.0 20180319 for 1e6e6000.display on minor 0
+[    1.219754] loop: module loaded
+[    1.229472] random: crng init done
+[    1.427156] spi-nor spi0.0: mx25u51245g (65536 Kbytes)
+[    1.502390] spi-aspeed-smc 1e620000.spi: CE0 read buswidth:4 [0x406c0641]
+[    1.515334] 5 fixed-partitions partitions found on MTD device bmc
+[    1.516740] Creating 5 MTD partitions on "bmc":
+[    1.517753] 0x000000000000-0x0000000e0000 : "u-boot"
+[    1.525807] 0x0000000e0000-0x000000100000 : "u-boot-env"
+[    1.535046] 0x000000100000-0x000000a00000 : "kernel"
+[    1.541410] 0x000000a00000-0x000002a00000 : "rofs"
+[    1.548585] 0x000002a00000-0x000004000000 : "rwfs"
+[    1.573322] spi-nor spi1.0: mx25u51245g (65536 Kbytes)
+[    1.578202] spi-aspeed-smc 1e630000.spi: Calibration area too uniform, using low speed
+[    1.579470] spi-aspeed-smc 1e630000.spi: CE0 read buswidth:4 [0x406c0041]
+[    1.623441] ftgmac100 1e660000.ftgmac: Read MAC address 7e:e7:8d:d6:8c:5d from chip
+[    1.629709] RTL8211E Gigabit Ethernet 1e650000.mdio-1:00: attached PHY driver (mii_bus:phy_addr=1e650000.mdio-1:00, irq=POLL)
+[    1.638253] ftgmac100 1e660000.ftgmac eth0: irq 35, mapped at (ptrval)
+[    1.640535] ftgmac100 1e680000.ftgmac: Read MAC address 26:bf:37:3f:ae:a6 from chip
+[    1.642011] RTL8211E Gigabit Ethernet 1e650008.mdio-1:00: attached PHY driver (mii_bus:phy_addr=1e650008.mdio-1:00, irq=POLL)
+[    1.647026] ftgmac100 1e680000.ftgmac eth1: irq 36, mapped at (ptrval)
+[    1.649445] ftgmac100 1e670000.ftgmac: Read MAC address 8a:17:30:f3:5e:77 from chip
+[    1.650860] RTL8211E Gigabit Ethernet 1e650010.mdio-1:00: attached PHY driver (mii_bus:phy_addr=1e650010.mdio-1:00, irq=POLL)
+[    1.655216] ftgmac100 1e670000.ftgmac eth2: irq 37, mapped at (ptrval)
+[    1.657889] ftgmac100 1e690000.ftgmac: Read MAC address 8e:4a:23:45:d7:c5 from chip
+[    1.659374] RTL8211E Gigabit Ethernet 1e650018.mdio-1:00: attached PHY driver (mii_bus:phy_addr=1e650018.mdio-1:00, irq=POLL)
+[    1.665675] ftgmac100 1e690000.ftgmac eth3: irq 38, mapped at (ptrval)
+[    1.667523] PPP generic driver version 2.4.2
+[    1.671872] PPP BSD Compression module registered
+[    1.673356] PPP Deflate Compression module registered
+[    1.689032] PPP MPPE Compression module registered
+[    1.693269] usbcore: registered new interface driver usb-storage
+[    1.729484] ehci-platform 1e6a3000.usb: EHCI Host Controller
+[    1.731534] ehci-platform 1e6a3000.usb: new USB bus registered, assigned bus number 1
+[    1.754896] aspeed_vhub 1e6a0000.usb-vhub: Initialized virtual hub in USB2 mode
+[    1.763324] aspeed-rtc 1e781000.rtc: registered as rtc0
+[    1.764249] aspeed-rtc 1e781000.rtc: hctosys: unable to read the hardware clock
+[    1.766497] i2c_dev: i2c /dev entries driver
+[    1.775690] aspeed-i2c-bus 1e78a080.i2c-bus: i2c bus 0 registered, irq 41
+[    1.781833] ehci-platform 1e6a3000.usb: irq 40, io mem 0x1e6a3000
+[    1.784239] aspeed-i2c-bus 1e78a100.i2c-bus: i2c bus 1 registered, irq 42
+[    1.788428] aspeed-i2c-bus 1e78a180.i2c-bus: i2c bus 2 registered, irq 43
+[    1.792197] aspeed-i2c-bus 1e78a200.i2c-bus: i2c bus 3 registered, irq 44
+[    1.797480] aspeed-i2c-bus 1e78a280.i2c-bus: i2c bus 4 registered, irq 45
+[    1.801199] aspeed-i2c-bus 1e78a300.i2c-bus: i2c bus 5 registered, irq 46
+[    1.805195] aspeed-i2c-bus 1e78a380.i2c-bus: i2c bus 6 registered, irq 47
+[    1.823235] ehci-platform 1e6a3000.usb: USB 2.0 started, EHCI 1.00
+[    1.848391] at24 7-0050: 1024 byte 24c08 EEPROM, writable, 16 bytes/write
+[    1.854105] aspeed-i2c-bus 1e78a400.i2c-bus: i2c bus 7 registered, irq 48
+[    1.890576] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.01
+[    1.894172] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.897494] usb usb1: Product: EHCI Host Controller
+[    1.900059] usb usb1: Manufacturer: Linux 6.1.15-580639a ehci_hcd
+[    1.903606] usb usb1: SerialNumber: 1e6a3000.usb
+[    1.931652] aspeed-i2c-bus 1e78a480.i2c-bus: i2c bus 8 registered, irq 49
+[    1.954569] hub 1-0:1.0: USB hub found
+[    1.956055] hub 1-0:1.0: 6 ports detected
+[    1.966570] aspeed-i2c-bus 1e78a500.i2c-bus: i2c bus 9 registered, irq 50
+[    1.970641] aspeed-i2c-bus 1e78a680.i2c-bus: i2c bus 12 registered, irq 51
+[    1.974418] aspeed-i2c-bus 1e78a700.i2c-bus: i2c bus 13 registered, irq 52
+[    1.978716] aspeed-i2c-bus 1e78a780.i2c-bus: i2c bus 14 registered, irq 53
+[    1.982692] aspeed-i2c-bus 1e78a800.i2c-bus: i2c bus 15 registered, irq 54
+[    1.988856] aspeed-video 1e700000.video: irq 55
+[    1.989978] aspeed-video 1e700000.video: assigned reserved memory node video
+[    1.995681] aspeed-video 1e700000.video: alloc mem size(24576) at 0xba000000 for jpeg header
+[    1.999371] Freeing initrd memory: 1016K
+[    2.010418] Driver for 1-wire Dallas network protocol.
+[    2.020320] lm75 8-004d: hwmon0: sensor 'lm75'
+[    2.027200] device-mapper: ioctl: 4.47.0-ioctl (2022-07-28) initialised: dm-devel@redhat.com
+[    2.031522] aspeed-edac 1e6e0000.sdram: ECC mode is not configured in u-boot
+[    2.033315] aspeed-edac: probe of 1e6e0000.sdram failed with error -1
+[    2.039412] sdhci: Secure Digital Host Controller Interface driver
+[    2.040326] sdhci: Copyright(c) Pierre Ossman
+[    2.041041] sdhci-pltfm: SDHCI platform and OF driver helper
+[    2.045742] usbcore: registered new interface driver usbhid
+[    2.046654] usbhid: USB HID core driver
+[    2.048703] SPI driver bmp280 has no spi_device_id for bosch,bmp085
+[    2.066682] fsi-master-aspeed 1e79b000.fsi: failed to read hub version
+[    2.068041] fsi-master-aspeed: probe of 1e79b000.fsi failed with error -110
+[    2.077168] sdhci-aspeed 1e750100.sdhci: Configured for slot 0
+[    2.089202] NET: Registered PF_INET6 protocol family
+[    2.113714] Segment Routing with IPv6
+[    2.114803] In-situ OAM (IOAM) with IPv6
+[    2.117535] NET: Registered PF_PACKET protocol family
+[    2.118406] 8021q: 802.1Q VLAN Support v1.8
+[    2.120317] Registering SWP/SWPB emulation handler
+[    2.133242] mmc0: SDHCI controller on 1e750100.sdhci [1e750100.sdhci] using ADMA
+[    2.175717] printk: console [netcon0] enabled
+[    2.176390] netconsole: network logging started
+[    2.176841] sdhci-aspeed 1e740100.sdhci: Configured for slot 0
+[    2.180820] sdhci-aspeed 1e740200.sdhci: Configured for slot 1
+[    2.215863] mmc1: SDHCI controller on 1e740100.sdhci [1e740100.sdhci] using ADMA
+[    2.223775] mmc2: SDHCI controller on 1e740200.sdhci [1e740200.sdhci] using ADMA
+[    2.279708] Freeing unused kernel image (initmem) memory: 1024K
+[    2.339909] Checked W+X mappings: passed, no W+X pages found
+[    2.341233] Run /init as init process
+rofs = mtd4 squashfs   rwfs = mtd5 jffs2
+[    5.664065] jffs2: notice: (120) jffs2_build_xattr_subsystem: complete building xattr subsystem, 0 of xdatum (0 unchecked, 0 orphan) and 0 of xref (0 dead, 0 orphan) found.
+find: run/initramfs/rw/cow/var/lib/systemd/random-seed: No such file or directory
+Fri Mar  9 12:35:01 UTC 2018
+[    6.325558] overlayfs: upper fs does not support tmpfile.
+[    6.335249] overlayfs: upper fs does not support RENAME_WHITEOUT.
+[   12.482399] systemd[1]: System time before build time, advancing clock.
+[   12.863690] systemd[1]: systemd 253.1^ running in system mode (+PAM -AUDIT -SELINUX -APPARMOR -IMA -SMACK +SECCOMP -GCRYPT -GNUTLS -OPENSSL -ACL +BLKID -CURL -ELFUTILS -FIDO2 -IDN2 -IDN -IPTC -KMOD -LIBCRYPTSETUP +LIBFDISK -PCRE2 -PWQUALITY -P11KIT -QRENCODE -TPM2 -BZIP2 -LZ4 -XZ -ZLIB +ZSTD -BPF_FRAMEWORK -XKBCOMMON -UTMP -SYSVINIT default-hierarchy=unified)
+[   12.888504] systemd[1]: Detected architecture arm.
+Welcome to Phosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) 2.15.0-dev!
+[   12.996887] systemd[1]: Hostname set to <evb-ast2600>.
+[   13.065668] systemd[1]: Initializing machine ID from random generator.
+[   14.873979] systemd[1]: Using hardware watchdog 'aspeed_wdt', version 0, device /dev/watchdog0
+[   14.918168] systemd[1]: Watchdog running with a timeout of 2min.
+[   14.920225] systemd[1]: Watchdog: reading from /sys/dev/char/247:0/pretimeout_governor
+[   14.923649] systemd[1]: Watchdog: failed to read pretimeout governor: No such file or directory
+[   14.925319] systemd[1]: Watchdog: setting pretimeout_governor to 'panic' via '/sys/dev/char/247:0/pretimeout_governor'
+[   14.927845] systemd[1]: Failed to set pretimeout_governor to 'panic': No such file or directory
+[   14.929133] systemd[1]: Failed to set watchdog pretimeout governor to 'panic', ignoring: No such file or directory
+[   23.656619] systemd[1]: /lib/systemd/system/phosphor-ipmi-net@.socket:6: Invalid interface name, ignoring: sys-subsystem-net-devices-%i.device
+[   24.065398] systemd[1]: Queued start job for default target Multi-User System.
+[   24.150927] systemd[1]: Created slice Slice /system/getty.
+[  OK  ] Created slice Slice /system/getty.
+[   24.185138] systemd[1]: Created slice Slice /system/mapper-wait.
+[  OK  ] Created slice Slice /system/mapper-wait.
+[   24.202012] systemd[1]: Created slice Slice /system/modprobe.
+[  OK  ] Created slice Slice /system/modprobe.
+[   24.223172] systemd[1]: Created slice Slice /system/obmc-led-group-start.
+[  OK  ] Created slice Slice /system/obmc-led-group-start.
+[   24.241034] systemd[1]: Created slice Slice /system/phosphor-certificate-manager.
+[  OK  ] Created slice Slice /system/phosphor-certificate-manager.
+[   24.261238] systemd[1]: Created slice Slice /system/phosphor-discover-system-state.
+[  OK  ] Created slice Slice /syste…hosphor-discover-system-state.
+[   24.288807] systemd[1]: Created slice Slice /system/phosphor-ipmi-net.
+[  OK  ] Created slice Slice /system/phosphor-ipmi-net.
+[   24.317276] systemd[1]: Created slice Slice /system/phosphor-reset-chassis-on.
+[  OK  ] Created slice Slice /system/phosphor-reset-chassis-on.
+[   24.337870] systemd[1]: Created slice Slice /system/phosphor-reset-chassis-running.
+[  OK  ] Created slice Slice /syste…hosphor-reset-chassis-running.
+[   24.356564] systemd[1]: Created slice Slice /system/phosphor-reset-host-running.
+[  OK  ] Created slice Slice /system/phosphor-reset-host-running.
+[   24.376317] systemd[1]: Created slice Slice /system/serial-getty.
+[  OK  ] Created slice Slice /system/serial-getty.
+[   24.395276] systemd[1]: Created slice Slice /system/xyz.openbmc_project.State.Chassis.
+[  OK  ] Created slice Slice /syste…openbmc_project.State.Chassis.
+[   24.413689] systemd[1]: Created slice Slice /system/xyz.openbmc_project.State.Host.
+[  OK  ] Created slice Slice /syste…yz.openbmc_project.State.Host.
+[   24.426176] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[  OK  ] Started Dispatch Password …ts to Console Directory Watch.
+[   24.435789] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[  OK  ] Started Forward Password R…uests to Wall Directory Watch.
+[   24.446294] systemd[1]: Reached target Host0 running after reset.
+[  OK  ] Reached target Host0 running after reset.
+[   24.451611] systemd[1]: Reached target Path Units.
+[  OK  ] Reached target Path Units.
+[   24.456553] systemd[1]: Reached target Remote File Systems.
+[  OK  ] Reached target Remote File Systems.
+[   24.460759] systemd[1]: Reached target Slice Units.
+[  OK  ] Reached target Slice Units.
+[   24.467118] systemd[1]: Reached target Swaps.
+[  OK  ] Reached target Swaps.
+[   24.491135] systemd[1]: Listening on Syslog Socket.
+[  OK  ] Listening on Syslog Socket.
+[   24.565294] systemd[1]: Listening on Process Core Dump Socket.
+[  OK  ] Listening on Process Core Dump Socket.
+[   24.576037] systemd[1]: Journal Audit Socket was skipped because of an unmet condition check (ConditionSecurity=audit).
+[   24.586957] systemd[1]: Listening on Journal Socket (/dev/log).
+[  OK  ] Listening on Journal Socket (/dev/log).
+[   24.600286] systemd[1]: Listening on Journal Socket.
+[  OK  ] Listening on Journal Socket.
+[   24.617000] systemd[1]: Listening on Network Service Netlink Socket.
+[  OK  ] Listening on Network Service Netlink Socket.
+[   24.640193] systemd[1]: Listening on udev Control Socket.
+[  OK  ] Listening on udev Control Socket.
+[   24.652937] systemd[1]: Listening on udev Kernel Socket.
+[  OK  ] Listening on udev Kernel Socket.
+[   24.667163] systemd[1]: Huge Pages File System was skipped because of an unmet condition check (ConditionPathExists=/sys/kernel/mm/hugepages).
+[   24.675907] systemd[1]: POSIX Message Queue File System was skipped because of an unmet condition check (ConditionPathExists=/proc/sys/fs/mqueue).
+[   24.776674] systemd[1]: Mounting Kernel Debug File System...
+         Mounting Kernel Debug File System...
+[   24.820073] systemd[1]: Mounting Kernel Trace File System...
+         Mounting Kernel Trace File System...
+[   24.916035] systemd[1]: Mounting Temporary Directory /tmp...
+         Mounting Temporary Directory /tmp...
+[   25.071383] systemd[1]: Starting Load Kernel Module configfs...
+         Starting Load Kernel Module configfs...
+[   25.157806] systemd[1]: Starting Load Kernel Module efi_pstore...
+         Starting Load Kernel Module efi_pstore...
+[   25.660027] systemd[1]: Starting Load Kernel Module fuse...
+         Starting Load Kernel Module fuse...
+[   25.697501] systemd[1]: File System Check on Root Device was skipped because of an unmet condition check (ConditionPathIsReadWrite=!/).
+[   26.069155] systemd[1]: Starting Journal Service...
+         Starting Journal Service...
+[   26.160051] systemd[1]: Starting Generate network units from Kernel command line...
+[   26.160051] systemd[1]: Starting Generate network units from Kernel command line...
+         Starting Generate network …ts from Kernel command line...
+[   26.308784] systemd[1]: Starting Remount Root and Kernel File Systems...
+         Starting Remount Root and Kernel File Systems...
+[   26.410990] systemd[1]: Starting Apply Kernel Variables...
+         Starting Apply Kernel Variables...
+[   26.589665] systemd[1]: Starting Coldplug All udev Devices...
+         Starting Coldplug All udev Devices...
+[   27.605345] systemd-journald[151]: Collecting audit messages is disabled.
+[   28.048036] systemd[1]: Mounted Kernel Debug File System.
+[  OK  ] Mounted Kernel Debug File System.
+[   28.103651] systemd[1]: Mounted Kernel Trace File System.
+[  OK  ] Mounted Kernel Trace File System.
+[   28.129471] systemd[1]: Mounted Temporary Directory /tmp.
+[  OK  ] Mounted Temporary Directory /tmp.
+[   28.182549] systemd[1]: modprobe@configfs.service: Deactivated successfully.
+[   28.206836] systemd[1]: Finished Load Kernel Module configfs.
+[  OK  ] Finished Load Kernel Module configfs.
+[   28.261101] systemd[1]: modprobe@efi_pstore.service: Deactivated successfully.
+[   28.296593] systemd[1]: Finished Load Kernel Module efi_pstore.
+[  OK  ] Finished Load Kernel Module efi_pstore.
+[   28.361372] systemd[1]: modprobe@fuse.service: Deactivated successfully.
+[   28.418171] systemd[1]: Finished Load Kernel Module fuse.
+[  OK  ] Finished Load Kernel Module fuse.
+[   28.458607] systemd[1]: Finished Generate network units from Kernel command line.
+[  OK  ] Finished Generate network units from Kernel command line.
+[   28.490917] systemd[1]: Finished Remount Root and Kernel File Systems.
+[  OK  ] Finished Remount Root and Kernel File Systems.
+[   28.517299] systemd[1]: Finished Apply Kernel Variables.
+[  OK  ] Finished Apply Kernel Variables.
+[   28.596772] systemd[1]: Reached target Preparation for Network.
+[  OK  ] Reached target Preparation for Network.
+[   28.635914] systemd[1]: FUSE Control File System was skipped because of an unmet condition check (ConditionPathExists=/sys/fs/fuse/connections).
+[   28.770935] systemd[1]: Mounting Kernel Configuration File System...
+         Mounting Kernel Configuration File System...
+[   28.910473] systemd[1]: Starting Rebuild Hardware Database...
+[   28.910473] systemd[1]: Starting Rebuild Hardware Database...
+         Starting Rebuild Hardware Database...
+[   28.929846] systemd[1]: Platform Persistent Storage Archival was skipped because of an unmet condition check (ConditionDirectoryNotEmpty=/sys/fs/pstore).
+[   29.089313] systemd[1]: Starting Create System Users...
+         Starting Create System Users...
+[   29.504705] systemd[1]: Mounted Kernel Configuration File System.
+[  OK  ] Mounted Kernel Configuration File System.
+[   29.535538] systemd[1]: Finished Rebuild Hardware Database.
+[  OK  ] Finished Rebuild Hardware Database.
+[   30.663702] systemd[1]: Finished Create System Users.
+[  OK  ] Finished Create System Users.
+[   30.902061] systemd[1]: Starting Create Static Device Nodes in /dev...
+         Starting Create Static Device Nodes in /dev...
+[   30.959760] systemd[1]: Started Journal Service.
+[   30.959760] systemd[1]: Started Journal Service.
+[  OK  ] Started Journal Service.
+         Starting Flush Journal to Persistent Storage...
+[  OK  ] Finished Create Static Device Nodes in /dev.
+[   31.887123] systemd-journald[151]: Received client request to flush runtime journal.
+[  OK  ] Reached target Preparation for Local File Systems.
+         Mounting /var/volatile...
+         Starting Rule-based Manage…for Device Events and Files...
+[  OK  ] Finished Flush Journal to Persistent Storage.
+[  OK  ] Mounted /var/volatile.
+         Starting Load/Save OS Random Seed...
+[  OK  ] Reached target Local File Systems.
+         Starting Create Volatile Files and Directories...
+         Starting Create Volatile Files and Directories...
+[  OK  ] Finished Load/Save OS Random Seed.
+[  OK  ] Started Rule-based Manager for Device Events and Files.
+         Starting Network Configuration...
+[  OK  ] Finished Create Volatile Files and Directories.
+         Starting Rebuild Journal Catalog...
+         Starting Network Name Resolution...
+         Starting Network Time Synchronization...
+[  OK  ] Finished Rebuild Journal Catalog.
+         Starting Update is Completed...
+[  OK  ] Finished Update is Completed.
+[*     ] (1 of 5) A start job is running for…k Name Resolution (15s / no limit)
+[*     ] (1 of 5) A start job is running for…k Name Resolution (15s / no limit)
+[  OK  ] Started Network Configuration.
+         Starting Wait for Network to be Configured...
+[  OK  ] Started Network Time Synchronization.
+[  OK  ] Reached target System Time Set.
+[  OK  ] Started Network Name Resolution.
+[  OK  ] Started Network Name Resolution.
+[  OK  ] Reached target Network.
+[  OK  ] Reached target Host and Network Name Lookups.
+[  OK  ] Finished Coldplug All udev Devices.
+[   44.581197] ftgmac100 1e690000.ftgmac eth3: Link is Up - 100Mbps/Full - flow control rx/tx
+[   44.606482] IPv6: ADDRCONF(NETDEV_CHANGE): eth3: link becomes ready
+[   44.759319] ftgmac100 1e660000.ftgmac eth0: Link is Up - 100Mbps/Full - flow control rx/tx
+[   44.764202] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[**    ] (1 of 2) A start job is running for… to be Configured (20s / no limit)
+[   45.243253] ftgmac100 1e670000.ftgmac eth2: Link is Up - 100Mbps/Full - flow control rx/tx
+[   45.246933] IPv6: ADDRCONF(NETDEV_CHANGE): eth2: link becomes ready
+[***   ] (1 of 2) A start job is running for… to be Configured (21s / no limit)
+[   45.355404] ftgmac100 1e680000.ftgmac eth1: Link is Up - 100Mbps/Full - flow control rx/tx
+[   45.359369] IPv6: ADDRCONF(NETDEV_CHANGE): eth1: link becomes ready
+[ ***  ] (2 of 2) A start job is running for…/net/devices/eth0 (21s / no limit)
+[  *** ] (2 of 2) A start job is running for…/net/devices/eth0 (22s / no limit)
+[   ***] (2 of 2) A start job is running for…/net/devices/eth0 (22s / no limit)
+[    **] (1 of 2) A start job is running for… to be Configured (23s / no limit)
+[     *] (1 of 2) A start job is running for… to be Configured (24s / no limit)
+[    **] (1 of 2) A start job is running for… to be Configured (24s / no limit)
+[  OK  ] Found device /sys/subsystem/net/devices/eth0.
+[  OK  ] Created slice Slice /system/xyz.openbmc_project.Hwmon.
+[  OK  ] Created slice Slice /syste…penbmc_project.led.controller.
+[  OK  ] Reached target Hardware activated USB gadget.
+         Starting Load Kernel Module efi_pstore...
+         Starting Load Kernel Module fuse...
+         Starting Load Kernel Module fuse...
+[  OK  ] Finished Load Kernel Module efi_pstore.
+[  OK  ] Finished Load Kernel Module efi_pstore.
+[  OK  ] Finished Load Kernel Module fuse.
+[  OK  ] Reached target System Initialization.
+[  OK  ] Started Daily rotation of log files.
+[  OK  ] Started Daily Cleanup of Temporary Directories.
+[  OK  ] Reached target Timer Units.
+[  OK  ] Listening on Avahi mDNS/DNS-SD Stack Activation Socket.
+[  OK  ] Listening on BMC Webserver socket.
+[  OK  ] Listening on BMC Webserver socket.
+[  OK  ] Listening on D-Bus System Message Bus Socket.
+[  OK  ] Listening on D-Bus System Message Bus Socket.
+[  OK  ] Listening on dropbear.socket.
+[  OK  ] Listening on Phosphor Host…ole SSH Per-Connection socket.
+[  OK  ] Listening on phosphor-ipmi-net@eth0.socket.
+[  OK  ] Reached target Socket Units.
+         Starting D-Bus System Message Bus...
+[  OK  ] Finished Wait for Network to be Configured.
+[  OK  ] Reached target Network is Online.
+[  OK  ] Started D-Bus System Message Bus.
+[  OK  ] Reached target Basic System.
+         Starting Avahi mDNS/DNS-SD Stack...
+[  OK  ] Started Start bmcweb server.
+         Starting Clear one time boot overrides...
+         Starting SSH Key Generation...
+         Starting Name Service Cache Daemon...
+         Starting LDAP daemon...
+[  OK  ] Started Phosphor Dump core monitor..
+[  OK  ] Started Phosphor Dump core monitor..
+[  OK  ] Started Phosphor certificate manager for authority.
+[  OK  ] Started Phosphor certificate manager for bmcweb.
+[  OK  ] Started Phosphor certificate manager for nslcd.
+         Starting BMC health monitoring...
+         Starting BMC health monitoring...
+         Starting System Logging Service...
+[  OK  ] Started Lightweight SLP Server.
+         Starting OpenBMC ipKVM daemon...
+         Starting Permit User Sessions...
+         Starting Enable Linux trace events in the boot loader...
+         Starting Phosphor Dump Manager...
+[  OK  ] Started Fru Device.
+         Starting Phosphor Inventory Manager...
+         Starting Phosphor LED Group Management Daemon...
+         Starting Phosphor Log Manager...
+         Starting Phosphor Network Manager...
+         Starting Phosphor DBus Service Discovery Manager...
+         Starting Phosphor Settings Daemon...
+         Starting OpenBMC Software Update Manager...
+         Starting Phosphor Download Manager...
+         Starting Phosphor Chassis0 State Manager...
+         Starting Rsyslog config updater...
+         Starting Rsyslog config updater...
+         Starting Telemetry...
+         Starting Phosphor User Manager...
+[  OK  ] Started Phosphor sysfs LED controller.
+[  OK  ] Started Phosphor sysfs LED controller.
+[  OK  ] Started Phosphor sysfs LED controller.
+[  OK  ] Started System Logging Service.
+[  OK  ] Finished SSH Key Generation.
+[  OK  ] Started Name Service Cache Daemon.
+[  OK  ] Started OpenBMC ipKVM daemon.
+[  OK  ] Finished Permit User Sessions.
+[  OK  ] Finished Enable Linux trace events in the boot loader.
+[  OK  ] Finished Clear one time boot overrides.
+[  OK  ] Started OpenBMC Software Update Manager.
+[  OK  ] Started Phosphor Inventory Manager.
+[  OK  ] Started Phosphor Download Manager.
+[  OK  ] Started Phosphor Log Manager.
+[  OK  ] Started BMC health monitoring.
+[  OK  ] Started LDAP daemon.
+[  OK  ] Started Rsyslog config updater.
+[  OK  ] Started Telemetry.
+[  OK  ] Started Phosphor DBus Service Discovery Manager.
+[  OK  ] Started Phosphor Settings Daemon.
+[  OK  ] Started Phosphor Dump Manager.
+[  OK  ] Started Phosphor Dump Manager.
+[  OK  ] Started Avahi mDNS/DNS-SD Stack.
+[  OK  ] Started phosphor systemd target monitor.
+[  OK  ] Started Serial Getty on ttyS4.
+[  OK  ] Reached target Login Prompts.
+         Starting Hostname Service...
+         Starting Phosphor Ldap config updater...
+         Starting Wait for /org/openbmc/control/power0...
+         Starting Wait for /xyz/ope…t/control/host0/auto_reboot...
+         Starting Wait for /xyz/ope…control/host0/boot/one_time...
+         Starting Wait for /xyz/ope…_project/control/host0/boot...
+         Starting Wait for /xyz/ope…/host0/power_restore_policy...
+         Starting Wait for /xyz/ope…trol/host0/restriction_mode...
+         Starting Wait for /xyz/ope…oject/led/groups/bmc_booted...
+         Starting Wait for /xyz/openbmc_project/state/bmc0...
+         Starting Wait for /xyz/openbmc_project/state/host0...
+         Starting Wait for /xyz/ope…mc_project/time/sync_method...
+         Starting Phosphor Version Software Manager...
+[  OK  ] Finished Wait for /xyz/ope…ect/control/host0/auto_reboot.
+[  OK  ] Finished Wait for /xyz/ope…t/control/host0/boot/one_time.
+[  OK  ] Finished Wait for /xyz/ope…mc_project/control/host0/boot.
+[  OK  ] Finished Wait for /xyz/ope…ol/host0/power_restore_policy.
+[  OK  ] Finished Wait for /xyz/ope…ontrol/host0/restriction_mode.
+[  OK  ] Finished Wait for /xyz/openbmc_project/time/sync_method.
+[  OK  ] Started Phosphor Chassis0 State Manager.
+Phosphor OpenBMC (Phosphor OpenBMC Project Reference Distro) nodistro.0 evb-ast2600 ttyS4
+evb-ast2600 login:
+{"event": "boot_login", "ts": "2026-04-05T00:36:19.969168+00:00"}
+{"event": "operation_stage", "ts": "2026-04-05T00:36:19.969372+00:00", "op": "Login", "stage": "waiting_for_quiescence"}
+{"event": "operation_stage", "ts": "2026-04-05T00:36:24.970596+00:00", "op": "Login", "stage": "refreshing_login_prompt"}
+evb-ast2600 login:
+evb-ast2600 login:
+{"event": "operation_stage", "ts": "2026-04-05T00:36:25.971928+00:00", "op": "Login", "stage": "sending_username"}
+evb-ast2600 login: root
+evb-ast2600 login: root
+{"event": "operation_stage", "ts": "2026-04-05T00:36:26.973568+00:00", "op": "Login", "stage": "waiting_for_password_or_shell"}
+Password:
+{"event": "operation_stage", "ts": "2026-04-05T00:36:27.930749+00:00", "op": "Login", "stage": "sending_password"}
+Password:
+{"event": "operation_stage", "ts": "2026-04-05T00:36:28.932226+00:00", "op": "Login", "stage": "waiting_for_shell"}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-04-05T00:36:37.528355+00:00"}
+{"event": "operation_stage", "ts": "2026-04-05T00:36:37.528727+00:00", "op": "Login", "stage": "shell_setup_dmesg"}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       root@evb-ast2600:~# dmesg -n 1
+{"event": "operation_stage", "ts": "2026-04-05T00:36:38.869871+00:00", "op": "Login", "stage": "shell_setup_stty"}
+root@evb-ast2600:~#
+root@evb-ast2600:~# stty cols 200
+root@evb-ast2600:~# stty cols 200
+root@evb-ast2600:~#
+{"event": "operation_stage", "ts": "2026-04-05T00:36:39.171755+00:00", "op": "Login", "stage": "shell_setup_sync"}
+root@evb-ast2600:~# echo __MCP_SETUP_37456__
+__MCP_SETUP_37456__
+root@evb-ast2600:~#
+{"event": "login_complete", "ts": "2026-04-05T00:36:49.461045+00:00"}
+{"event": "operation_ended", "ts": "2026-04-05T00:36:49.461126+00:00", "op": "Login", "success": true}
+{"event": "operation_started", "ts": "2026-04-05T00:37:09.231899+00:00", "op": "ConsoleCommand"}
+{"event": "command_started", "ts": "2026-04-05T00:37:09.232147+00:00", "command_id": "net-f000", "command": "if [ -e /tmp/bin_send.sh ]; then crc32 /tmp/bin_send.sh | awk '{print $1}'; else echo NOFILE; fi"}
+root@evb-ast2600:~# cat > /tmp/_mcp_39738.sh <<'__MCP_SCRIPT_39738__'
+cat > /tmp/_mcp_39738.sh <<'__MCP_SCRIPT_39738__'
+>
+>
+> if [ -e /tmp/bin_send.sh ]; then crc32 /tmp/bin_send.sh | awk '{print $1}'; else echo NOFILE; fi
+> if [ -e /tmp/bin_send.sh ]; then crc32 /tmp/bin_send.sh | awk '{print $1}'; else echo NOFILE; fi
+>
+>
+> __MCP_SCRIPT_39738__
+> __MCP_SCRIPT_39738__
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+{"event": "shell_ready", "ts": "2026-04-05T00:37:11.861206+00:00"}
+root@evb-ast2600:~# echo __MCP_PID_$$__; sh -x /tmp/_mcp_39738.sh; __MCP_EC=$?; rm -f /tmp/_mcp_39738.sh; echo __MCP_MARKER_39738__${__MCP_EC}
+root@evb-ast2600:~# echo __MCP_PID_$$__; sh -x /tmp/_mcp_39738.sh; __MCP_EC=$?; rm -f /tmp/_mcp_39738.sh; echo __MCP_MARKER_39738__${__MCP_EC}
+__MCP_PID_342__
+__MCP_PID_342__
++ '[' -e /tmp/bin_send.sh ']'
++ '[' -e /tmp/bin_send.sh ']'
++ echo NOFILE
++ echo NOFILE
+NOFILE
+NOFILE
+__MCP_MARKER_39738__0
+__MCP_MARKER_39738__0
+root@evb-ast2600:~#
+root@evb-ast2600:~#
+{"event": "command_ended", "ts": "2026-04-05T00:37:14.629795+00:00", "command_id": "net-f000", "command": "if [ -e /tmp/bin_send.sh ]; then crc32 /tmp/bin_send.sh | awk '{print $1}'; else echo NOFILE; fi", "exit_code": 0, "status": "completed"}
+{"event": "operation_ended", "ts": "2026-04-05T00:37:14.630077+00:00", "op": "ConsoleCommand", "success": true}
+{"event": "operation_started", "ts": "2026-04-05T00:37:14.630668+00:00", "op": "ConsoleCommand"}
+{"event": "command_started", "ts": "2026-04-05T00:37:14.630819+00:00", "command_id": "net-ed90", "command": "cat > /tmp/bin_send.sh <<'__HEREDOC_EOF__'\n#!/bin/bash\nif [ \"${BOB_DEBUG:-0}\" = \"1\" ]; then\n    LOG=/tmp/bin_send_debug.log\n    _log() { echo \"[$(date +%H:%M:%S)] $*\" >> \"$LOG\"; }\nelse\n    _log() { :; }\nfi\n\nINPUT=\"$1\"\nCHUNK_SIZE=\"${2:-512}\"\nCHECKSUM_TOOL=\"${3:-auto}\"\n\nif [ -z \"$INPUT\" ] || [ ! -f \"$INPUT\" ]; then\n    echo \"FAIL:file_not_found\"\n    exit 1\nfi\n\nif command -v xxd >/dev/null 2>&1; then\n    _hex_encode() { xxd -p | tr -d '\\n'; }\nelse\n    _hex_encode() { hexdump -v -e '/1 \"%02x\"'; }\nfi\n\nif command -v crc32 >/dev/null 2>&1; then\n    _file_crc32() { crc32 /dev/stdin 2>/dev/null | awk '{print $1}'; }\nelif command -v python3 >/dev/null 2>&1; then\n    _file_crc32() { python3 -c \"import sys,zlib;d=sys.stdin.buffer.read();print(format(zlib.crc32(d)&0xFFFFFFFF,'08x'))\"; }\nelse\n    _file_crc32() { cat >/dev/null; echo \"00000000\"; }\nfi\n\ncase \"$CHECKSUM_TOOL\" in\n    none)  FRAME_CHECK_MODE=\"none\" ;;\n    crc32) FRAME_CHECK_MODE=\"crc32\" ;;\n    python3) FRAME_CHECK_MODE=\"crc32\" ;;\n    *)     FRAME_CHECK_MODE=\"len\" ;;\nesac\n\nTTY_DEV=$(tty 2>/dev/null)\nif [ -n \"$TTY_DEV\" ] && [ \"$TTY_DEV\" != \"not a tty\" ]; then\n    stty -echo 2>/dev/null\n    trap 'stty echo 2>/dev/null' EXIT\nfi\n\nFILE_SIZE=$(wc -c < \"$INPUT\")\nTOTAL_CRC=$(cat \"$INPUT\" | _file_crc32)\n\necho \"SENDING:${FILE_SIZE}:${TOTAL_CRC}\"\n\nWAIT=0\n_log \"Waiting for READY (stdin=$(readlink /proc/self/fd/0 2>/dev/null || echo unknown))\"\n_log \"tty=$(tty 2>/dev/null) pid=$$\"\nwhile [ \"$WAIT\" -lt 30 ]; do\n    if IFS= read -t 5 -r RESP; then\n        _log \"RECV: '$(printf '%s' \"$RESP\" | xxd -p | head -c 200)'\"\n        RESP=$(printf '%s' \"$RESP\" | tr -d '\\r')\n        case \"$RESP\" in\n            READY)\n                _log \"Got READY \u2014 starting transfer\"\n                break\n                ;;\n            C:STOP)\n                echo \"STOPPED\"\n                exit 1\n                ;;\n            *)\n                _log \"Ignoring: '$RESP'\"\n                ;;\n        esac\n    else\n        _log \"read timeout/eof [$WAIT] (rc=$?)\"\n    fi\n    WAIT=$((WAIT + 1))\ndone\n\nif [ \"$WAIT\" -ge 30 ]; then\n    echo \"FAIL:no_ready:timeout_30s\"\n    exit 1\nfi\n\nOFFSET=0\nLAST_ACK_TIME=$(date +%s)\nMAX_SILENCE=10\n\nwhile [ \"$OFFSET\" -lt \"$FILE_SIZE\" ]; do\n    CHUNK_HEX=$(dd if=\"$INPUT\" bs=1 skip=\"$OFFSET\" count=\"$CHUNK_SIZE\" 2>/dev/null | _hex_encode)\n    if [ -z \"$CHUNK_HEX\" ]; then\n        break\n    fi\n\n    CHUNK_BYTES=$(( $(printf '%s' \"$CHUNK_HEX\" | wc -c) / 2 ))\n\n    case \"$FRAME_CHECK_MODE\" in\n        crc32) FRAME_CHECK=$(dd if=\"$INPUT\" bs=1 skip=\"$OFFSET\" count=\"$CHUNK_BYTES\" 2>/dev/null | _file_crc32) ;;\n        len)   FRAME_CHECK=$(printf '%s' \"$CHUNK_HEX\" | wc -c) ;;\n        *)     FRAME_CHECK=\"00000000\" ;;\n    esac\n\n    echo \"F:${OFFSET}:${CHUNK_HEX}:${FRAME_CHECK}\"\n\n    if IFS= read -t 1 RESP 2>/dev/null; then\n        RESP=$(printf '%s' \"$RESP\" | tr -d '\\r')\n        case \"$RESP\" in\n            NACK:*)\n                NACK_OFFSET=$(echo \"$RESP\" | cut -d: -f2)\n                OFFSET=\"$NACK_OFFSET\"\n                LAST_ACK_TIME=$(date +%s)\n                continue\n                ;;\n            ACK:*)\n                LAST_ACK_TIME=$(date +%s)\n                ;;\n            C:STOP)\n                echo \"STOPPED\"\n                exit 1\n                ;;\n        esac\n    fi\n\n    NOW=$(date +%s)\n    if [ $((NOW - LAST_ACK_TIME)) -gt \"$MAX_SILENCE\" ]; then\n        echo \"FAIL:no_ack:silence=${MAX_SILENCE}s\"\n        exit 1\n    fi\n\n    OFFSET=$((OFFSET + CHUNK_BYTES))\ndone\n\necho \"EOF:${FILE_SIZE}:${TOTAL_CRC}\"\n\nWAIT=0\nwhile [ \"$WAIT\" -lt 30 ]; do\n    if IFS= read -t 2 RESP 2>/dev/null; then\n        RESP=$(printf '%s' \"$RESP\" | tr -d '\\r')\n        case \"$RESP\" in\n            DONE*)\n                _log \"Got DONE \u2014 transfer complete\"\n                exit 0\n                ;;\n            FAIL*)\n                _log \"Got FAIL: $RESP\"\n                exit 1\n                ;;\n            ACK:*)\n                WAIT=0\n                ;;\n            C:STOP)\n                echo \"STOPPED\"\n                exit 1\n                ;;\n        esac\n    fi\n    WAIT=$((WAIT + 1))\ndone\n\n_log \"DONE not received after 60s\"\nexit 1\n__HEREDOC_EOF__"}
+root@evb-ast2600:~# cat > /tmp/_mcp_80827.sh <<'__MCP_SCRIPT_80827__'
+cat > /tmp/_mcp_80827.sh <<'__MCP_SCRIPT_80827__'
+root@evb-ast2600:~# cat > /tmp/_mcp_80827.sh <<'__MCP_SCRIPT_80827__'
+cat > /tmp/_mcp_80827.sh <<'__MCP_SCRIPT_80827__'
+        esac
+        esac
+    else
+    else
+>
+>
+> cat > /tmp/bin_send.sh <<'__HEREDOC_EOF__'
+> cat > /tmp/bin_send.sh <<'__HEREDOC_EOF__'
+> #!/bin/bash
+> #!/bin/bash
+>
+>
+> if [ "${BOB_DEBUG:-0}" = "1" ]; then
+{"event": "kernel_panic", "ts": "2026-04-05T00:37:16.382496+00:00"}
+> if [ "${BOB_DEBUG:-0}" = "1" ]; then
+{"event": "kernel_panic", "ts": "2026-04-05T00:37:16.409939+00:00"}
+>
+>
+{"event": "operation_ended", "ts": "2026-04-05T00:37:16.813674+00:00", "op": "ConsoleCommand", "success": false}
+

@@ -1,0 +1,53 @@
+self = <tests.e2e.test_binary_transfer.TestBinaryOverBash object at 0xf039d55f9340>
+qemu_container = {'api_key': 'test-key', 'base_url': 'http://localhost:34305', 'container': <Container: 09902ef2478c>, 'container_name': 'test-qemu-73219f55', ...}
+minio_service = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:41185', 'internal_url': 'http://lab-mcp-minio-9f02659c:9000', ...}
+
+    async def test_get_small(self, qemu_container, minio_service):
+        """GET 53-byte file (separate boot — heredoc deploy is slow on emulated QEMU)."""
+        info = qemu_container
+        minio = minio_service
+        await _boot_and_login(info)
+    
+        # Create file on target first
+        await call_tool(
+            info["base_url"], info["api_key"], "command",
+            {"op": "run", "command": "dd if=/dev/urandom bs=53 count=1 of=/tmp/bob_get_53.bin 2>/dev/null",
+             "wait_timeout": e2e_timeout(10, 30)},
+            timeout=e2e_timeout(15, 35),
+        )
+    
+>       await self._get_via_minio(
+            info, minio, "/tmp/bob_get_53.bin", 53, e2e_timeout(60, 300)
+        )
+
+tests/e2e/test_binary_transfer.py:150: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tests.e2e.test_binary_transfer.TestBinaryOverBash object at 0xf039d55f9340>
+info = {'api_key': 'test-key', 'base_url': 'http://localhost:34305', 'container': <Container: 09902ef2478c>, 'container_name': 'test-qemu-73219f55', ...}
+minio = {'access_key': 'minioadmin', 'bucket': 'test-images', 'host_url': 'http://localhost:41185', 'internal_url': 'http://lab-mcp-minio-9f02659c:9000', ...}
+remote_path = '/tmp/bob_get_53.bin', size = 53, timeout_sec = 300.0
+
+    async def _get_via_minio(self, info, minio, remote_path, size, timeout_sec):
+        """Retrieve file from target via serial, upload to MinIO, verify."""
+        s3_key = f"test-bob-get/{size}.bin"
+        put_url = await generate_presigned_put_url(minio, s3_key)
+    
+        result = await call_tool(
+            info["base_url"], info["api_key"], "file_transfer",
+            {
+                "op": "get",
+                "method": "binary-over-bash",
+                "remote_path": remote_path,
+                "upload_url": put_url,
+            },
+            timeout=timeout_sec,
+        )
+>       assert result.get("status") == "completed", f"Get {size}B failed: {result}"
+E       AssertionError: Get 53B failed: {'status': 'error', 'error': "bin_send.sh failed: chmod +x /tmp/bin_send.sh && /tmp/bin_send.sh '/tmp/bob_get_53.bin' '512' 'auto'\r\nFAIL:file_not_found\r\nroot@evb-ast2600:~# "}
+E       assert 'error' == 'completed'
+E         
+E         - completed
+E         + error
+
+tests/e2e/test_binary_transfer.py:109: AssertionError
