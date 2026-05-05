@@ -1,0 +1,843 @@
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd083]
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd083]
+[    0.000000] Linux version 6.6.52-g5a0a5e71d2bd (builder@be4f2913a3c5) (gcc (Debian 14.2.0-19) 14.2.0, GNU ld (GNU Binutils for Debian) 2.44) #2 SMP PREEMPT Mon May  4 22:57:59 UTC 2026
+[    0.000000] KASLR enabled
+[    0.000000] random: crng init done
+[    0.000000] Machine model: linux,dummy-virt
+[    0.000000] earlycon: pl11 at MMIO 0x0000000009000000 (options '')
+[    0.000000] printk: bootconsole [pl11] enabled
+[    0.000000] efi: UEFI not found.
+[    0.000000] NUMA: No NUMA configuration found
+[    0.000000] NUMA: Faking a node at [mem 0x0000000040000000-0x000000007fffffff]
+[    0.000000] NUMA: NODE_DATA [mem 0x7fdf26c0-0x7fdf4fff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000040000000-0x000000007fffffff]
+[    0.000000]   DMA32    empty
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000040000000-0x000000007fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000040000000-0x000000007fffffff]
+[    0.000000] cma: Reserved 32 MiB at 0x000000007cc00000 on node -1
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: Trusted OS migration not required
+[    0.000000] psci: SMC Calling Convention v1.0
+[    0.000000] percpu: Embedded 22 pages/cpu s50920 r8192 d31000 u90112
+[    0.000000] Detected PIPT I-cache on CPU0
+[    0.000000] CPU features: detected: Spectre-v2
+[    0.000000] CPU features: detected: Spectre-v3a
+[    0.000000] CPU features: detected: Spectre-v4
+[    0.000000] CPU features: detected: Spectre-BHB
+[    0.000000] CPU features: kernel page table isolation forced ON by KASLR
+[    0.000000] CPU features: detected: Kernel page table isolation (KPTI)
+[    0.000000] CPU features: detected: ARM erratum 1742098
+[    0.000000] CPU features: detected: ARM errata 1165522, 1319367, or 1530923
+[    0.000000] alternatives: applying boot alternatives
+[    0.000000] Kernel command line: console=ttyAMA0 earlycon=pl011,0x09000000 root=/dev/vda2 rw rootwait init=/usr/lib/systemd/systemd
+[    0.000000] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.000000] Fallback order for Node 0: 0 
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 258048
+[    0.000000] Policy zone: DMA
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] software IO TLB: area num 1.
+[    0.000000] software IO TLB: mapped [mem 0x0000000078c00000-0x000000007cc00000] (64MB)
+[    0.000000] Memory: 894836K/1048576K available (21248K kernel code, 1646K rwdata, 7812K rodata, 1984K init, 643K bss, 120972K reserved, 32768K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=1.
+[    0.000000] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] Root IRQ handler: gic_handle_irq
+[    0.000000] GICv2m: range[mem 0x08020000-0x08020fff], SPI[80:143]
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] arch_timer: cp15 timer(s) running at 62.50MHz (virt).
+[    0.000000] clocksource: arch_sys_counter: mask: 0x1ffffffffffffff max_cycles: 0x1cd42e208c, max_idle_ns: 881590405314 ns
+[    0.000141] sched_clock: 57 bits at 63MHz, resolution 16ns, wraps every 4398046511096ns
+[    0.025967] Console: colour dummy device 80x25
+[    0.033273] Calibrating delay loop (skipped), value calculated using timer frequency.. 125.00 BogoMIPS (lpj=250000)
+[    0.035540] pid_max: default: 32768 minimum: 301
+[    0.041664] LSM: initializing lsm=capability,integrity
+[    0.049190] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.050189] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.136662] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    0.136662] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    0.169007] RCU Tasks: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1.
+[    0.173162] RCU Tasks Trace: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1.
+[    0.181367] rcu: Hierarchical SRCU implementation.
+[    0.182179] rcu: 	Max phase no-delay instances is 1000.
+[    0.200201] EFI services will not be available.
+[    0.203005] smp: Bringing up secondary CPUs ...
+[    0.206362] smp: Brought up 1 node, 1 CPU
+[    0.206814] SMP: Total of 1 processors activated.
+[    0.207441] CPU features: detected: 32-bit EL0 Support
+[    0.208619] CPU features: detected: 32-bit EL1 Support
+[    0.209403] CPU features: detected: CRC32 instructions
+[    0.217287] CPU: All CPU(s) started at EL1
+[    0.218352] alternatives: applying system-wide alternatives
+[    0.275177] devtmpfs: initialized
+[    0.320308] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.321738] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+[    0.340573] pinctrl core: initialized pinctrl subsystem
+[    0.364679] DMI not present or invalid.
+[    0.406097] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.437837] DMA: preallocated 128 KiB GFP_KERNEL pool for atomic allocations
+[    0.441347] DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    0.444903] DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    0.446628] audit: initializing netlink subsys (disabled)
+[    0.454337] audit: type=2000 audit(0.376:1): state=initialized audit_enabled=0 res=1
+[    0.471657] thermal_sys: Registered thermal governor 'step_wise'
+[    0.471810] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.473284] cpuidle: using governor menu
+[    0.479969] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.482371] ASID allocator initialised with 32768 entries
+[    0.493073] Serial: AMBA PL011 UART driver
+[    0.495027] imx mu driver is registered.
+[    0.495858] imx rpmsg driver is registered.
+[    0.614243] 9000000.pl011: ttyAMA0 at MMIO 0x9000000 (irq = 13, base_baud = 0) is a PL011 rev1
+[    0.621351] printk: console [ttyAMA0] enabled
+[    0.621351] printk: console [ttyAMA0] enabled
+[    0.623652] printk: bootconsole [pl11] disabled
+[    0.623652] printk: bootconsole [pl11] disabled
+[    0.684119] Modules: 2G module region forced by RANDOMIZE_MODULE_REGION_FULL
+[    0.685025] Modules: 0 pages in range for non-PLT usage
+[    0.685106] Modules: 515904 pages in range for PLT usage
+[    0.704508] HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
+[    0.707551] HugeTLB: 0 KiB vmemmap can be freed for a 1.00 GiB page
+[    0.708216] HugeTLB: registered 32.0 MiB page size, pre-allocated 0 pages
+[    0.708844] HugeTLB: 0 KiB vmemmap can be freed for a 32.0 MiB page
+[    0.709350] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.710651] HugeTLB: 0 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.711792] HugeTLB: registered 64.0 KiB page size, pre-allocated 0 pages
+[    0.712972] HugeTLB: 0 KiB vmemmap can be freed for a 64.0 KiB page
+[    0.750519] ACPI: Interpreter disabled.
+[    0.750519] ACPI: Interpreter disabled.
+[    0.756819] iommu: Default domain type: Translated
+[    0.757569] iommu: DMA domain TLB invalidation policy: strict mode
+[    0.762339] SCSI subsystem initialized
+[    0.772071] usbcore: registered new interface driver usbfs
+[    0.773457] usbcore: registered new interface driver hub
+[    0.774744] usbcore: registered new device driver usb
+[    0.782316] mc: Linux media interface: v0.10
+[    0.783614] videodev: Linux video capture interface: v2.00
+[    0.785827] pps_core: LinuxPPS API ver. 1 registered
+[    0.786545] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.787855] PTP clock support registered
+[    0.795037] EDAC MC: Ver: 3.0.0
+[    0.802083] scmi_core: SCMI protocol bus registered
+[    0.809269] FPGA manager framework
+[    0.812350] Advanced Linux Sound Architecture Driver Initialized.
+[    0.849965] Bluetooth: Core ver 2.22
+[    0.851505] NET: Registered PF_BLUETOOTH protocol family
+[    0.852197] Bluetooth: HCI device and connection manager initialized
+[    0.853962] Bluetooth: HCI socket layer initialized
+[    0.854819] Bluetooth: L2CAP socket layer initialized
+[    0.855935] Bluetooth: SCO socket layer initialized
+[    0.861330] vgaarb: loaded
+[    0.871866] clocksource: Switched to clocksource arch_sys_counter
+[    0.877224] VFS: Disk quotas dquot_6.6.0
+[    0.878185] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.889757] pnp: PnP ACPI: disabled
+[    0.972847] NET: Registered PF_INET protocol family
+[    0.978627] IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.994941] tcp_listen_portaddr_hash hash table entries: 512 (order: 1, 8192 bytes, linear)
+[    0.996600] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.997689] TCP established hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.999164] TCP bind hash table entries: 8192 (order: 6, 262144 bytes, linear)
+[    1.000744] TCP: Hash tables configured (established 8192 bind 8192)
+[    1.004293] UDP hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    1.005769] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    1.011061] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    1.018523] RPC: Registered named UNIX socket transport module.
+[    1.019539] RPC: Registered udp transport module.
+[    1.020956] RPC: Registered tcp transport module.
+[    1.021415] RPC: Registered tcp-with-tls transport module.
+[    1.025152] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    1.032601] PCI: CLS 0 bytes, default 64
+[    1.045991] kvm [1]: HYP mode not available
+[    1.073418] Initialise system trusted keyrings
+[    1.077562] workingset: timestamp_bits=42 max_order=18 bucket_order=0
+[    1.086595] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    1.099968] NFS: Registering the id_resolver key type
+[    1.101447] Key type id_resolver registered
+[    1.102042] Key type id_legacy registered
+[    1.103478] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    1.104557] nfs4flexfilelayout_init: NFSv4 Flexfile Layout Driver Registering...
+[    1.106060] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    1.110947] 9p: Installing v9fs 9p2000 file system support
+[    1.213833] Key type asymmetric registered
+[    1.214656] Asymmetric key parser 'x509' registered
+[    1.216545] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 243)
+[    1.220756] io scheduler mq-deadline registered
+[    1.221888] io scheduler kyber registered
+[    1.223752] io scheduler bfq registered
+[    1.266701] pl061_gpio 9030000.pl061: PL061 GPIO chip registered
+[    1.266701] pl061_gpio 9030000.pl061: PL061 GPIO chip registered
+[    1.284115] pci-host-generic 4010000000.pcie: host bridge /pcie@10000000 ranges:
+[    1.286247] pci-host-generic 4010000000.pcie:       IO 0x003eff0000..0x003effffff -> 0x0000000000
+[    1.288678] pci-host-generic 4010000000.pcie:      MEM 0x0010000000..0x003efeffff -> 0x0010000000
+[    1.290067] pci-host-generic 4010000000.pcie:      MEM 0x8000000000..0xffffffffff -> 0x8000000000
+[    1.292566] pci-host-generic 4010000000.pcie: Memory resource size exceeds max for 32 bits
+[    1.297513] pci-host-generic 4010000000.pcie: ECAM at [mem 0x4010000000-0x401fffffff] for [bus 00-ff]
+[    1.302615] pci-host-generic 4010000000.pcie: PCI host bridge to bus 0000:00
+[    1.304510] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    1.305406] pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+[    1.306377] pci_bus 0000:00: root bus resource [mem 0x10000000-0x3efeffff]
+[    1.307145] pci_bus 0000:00: root bus resource [mem 0x8000000000-0xffffffffff]
+[    1.312979] pci 0000:00:00.0: [1b36:0008] type 00 class 0x060000
+[    1.328614] pci 0000:00:01.0: [1af4:1000] type 00 class 0x020000
+[    1.329888] pci 0000:00:01.0: reg 0x10: [io  0x0000-0x001f]
+[    1.330530] pci 0000:00:01.0: reg 0x14: [mem 0x00000000-0x00000fff]
+[    1.331170] pci 0000:00:01.0: reg 0x20: [mem 0x00000000-0x00003fff 64bit pref]
+[    1.332503] pci 0000:00:01.0: reg 0x30: [mem 0x00000000-0x0007ffff pref]
+[    1.334995] pci 0000:00:02.0: [1af4:1001] type 00 class 0x010000
+[    1.336185] pci 0000:00:02.0: reg 0x10: [io  0x0000-0x007f]
+[    1.336918] pci 0000:00:02.0: reg 0x14: [mem 0x00000000-0x00000fff]
+[    1.337610] pci 0000:00:02.0: reg 0x20: [mem 0x00000000-0x00003fff 64bit pref]
+[    1.345850] pci 0000:00:01.0: BAR 6: assigned [mem 0x10000000-0x1007ffff pref]
+[    1.347707] pci 0000:00:01.0: BAR 4: assigned [mem 0x8000000000-0x8000003fff 64bit pref]
+[    1.349119] pci 0000:00:02.0: BAR 4: assigned [mem 0x8000004000-0x8000007fff 64bit pref]
+[    1.350092] pci 0000:00:01.0: BAR 1: assigned [mem 0x10080000-0x10080fff]
+[    1.351223] pci 0000:00:02.0: BAR 1: assigned [mem 0x10081000-0x10081fff]
+[    1.352382] pci 0000:00:02.0: BAR 0: assigned [io  0x1000-0x107f]
+[    1.353223] pci 0000:00:01.0: BAR 0: assigned [io  0x1080-0x109f]
+[    1.398896] EINJ: ACPI disabled.
+[    1.430383] Bus freq driver module loaded
+[    1.458555] virtio-pci 0000:00:01.0: enabling device (0000 -> 0003)
+[    1.468213] virtio-pci 0000:00:02.0: enabling device (0000 -> 0003)
+[    1.509374] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    1.637792] loop: module loaded
+[    1.640601] virtio_blk virtio1: 1/0/0 default/read/poll queues
+[    1.667093] virtio_blk virtio1: [vda] 2392064 512-byte logical blocks (1.22 GB/1.14 GiB)
+[    1.717580]  vda: vda1 vda2
+[    1.750710] megasas: 07.725.01.00-rc1
+[    1.779004] physmap-flash 0.flash: physmap platform flash device: [mem 0x00000000-0x03ffffff]
+[    1.785971] 0.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+[    1.789738] Intel/Sharp Extended Query Table at 0x0031
+[    1.793701] Using buffer write method
+[    1.796337] physmap-flash 0.flash: physmap platform flash device: [mem 0x04000000-0x07ffffff]
+[    1.798850] 0.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+[    1.801140] Intel/Sharp Extended Query Table at 0x0031
+[    1.802889] Using buffer write method
+[    1.803998] Concatenating MTD devices:
+[    1.804549] (0): "0.flash"
+[    1.804912] (1): "0.flash"
+[    1.805317] into device "0.flash"
+[    1.928841] tun: Universal TUN/TAP device driver, 1.6
+[    1.963110] thunder_xcv, ver 1.0
+[    1.964752] thunder_bgx, ver 1.0
+[    1.965890] nicpf, ver 1.0
+[    1.977650] hns3: Hisilicon Ethernet Network Driver for Hip08 Family - version
+[    1.978290] hns3: Copyright (c) 2017 Huawei Corporation.
+[    1.980346] hclge is initializing
+[    1.981449] e1000: Intel(R) PRO/1000 Network Driver
+[    1.982453] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    1.984354] e1000e: Intel(R) PRO/1000 Network Driver
+[    1.985302] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[    1.986774] igb: Intel(R) Gigabit Ethernet Network Driver
+[    1.988306] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    1.989833] igbvf: Intel(R) Gigabit Virtual Function Network Driver
+[    1.991059] igbvf: Copyright (c) 2009 - 2012 Intel Corporation.
+[    1.993338] sky2: driver version 1.30
+[    1.999173] usbcore: registered new device driver r8152-cfgselector
+[    2.001197] usbcore: registered new interface driver r8152
+[    2.006652] VFIO - User Level meta-driver version: 0.3
+[    2.023111] usbcore: registered new interface driver uas
+[    2.024953] usbcore: registered new interface driver usb-storage
+[    2.027144] usbcore: registered new interface driver usbserial_generic
+[    2.029327] usbserial: USB Serial support registered for generic
+[    2.030872] usbcore: registered new interface driver ftdi_sio
+[    2.033953] usbserial: USB Serial support registered for FTDI USB Serial Device
+[    2.035966] usbcore: registered new interface driver usb_serial_simple
+[    2.037391] usbserial: USB Serial support registered for carelink
+[    2.038755] usbserial: USB Serial support registered for flashloader
+[    2.039956] usbserial: USB Serial support registered for funsoft
+[    2.041579] usbserial: USB Serial support registered for google
+[    2.042981] usbserial: USB Serial support registered for hp4x
+[    2.044684] usbserial: USB Serial support registered for kaufmann
+[    2.046131] usbserial: USB Serial support registered for libtransistor
+[    2.047833] usbserial: USB Serial support registered for moto_modem
+[    2.049246] usbserial: USB Serial support registered for motorola_tetra
+[    2.050703] usbserial: USB Serial support registered for nokia
+[    2.052486] usbserial: USB Serial support registered for novatel_gps
+[    2.053948] usbserial: USB Serial support registered for siemens_mpi
+[    2.055704] usbserial: USB Serial support registered for suunto
+[    2.056748] usbserial: USB Serial support registered for vivopay
+[    2.057525] usbserial: USB Serial support registered for zio
+[    2.058347] usbcore: registered new interface driver usb_ehset_test
+[    2.086431] rtc-pl031 9010000.pl031: registered as rtc0
+[    2.089700] rtc-pl031 9010000.pl031: setting system clock to 2026-05-04T23:00:10 UTC (1777935610)
+[    2.094624] i2c_dev: i2c /dev entries driver
+[    2.122282] Bluetooth: HCI UART driver ver 2.3
+[    2.124062] Bluetooth: HCI UART protocol H4 registered
+[    2.125025] Bluetooth: HCI UART protocol BCSP registered
+[    2.126458] Bluetooth: HCI UART protocol LL registered
+[    2.127658] Bluetooth: HCI UART protocol ATH3K registered
+[    2.128844] Bluetooth: HCI UART protocol Three-wire (H5) registered
+[    2.130151] Bluetooth: HCI UART protocol Broadcom registered
+[    2.131931] Bluetooth: HCI UART protocol QCA registered
+[    2.141802] sdhci: Secure Digital Host Controller Interface driver
+[    2.143021] sdhci: Copyright(c) Pierre Ossman
+[    2.146791] Synopsys Designware Multimedia Card Interface Driver
+[    2.151657] sdhci-pltfm: SDHCI platform and OF driver helper
+[    2.165336] ledtrig-cpu: registered to indicate activity on CPUs
+[    2.182843] usbcore: registered new interface driver usbhid
+[    2.183962] usbhid: USB HID core driver
+[    2.213550] hw perfevents: enabled with armv8_pmuv3 PMU driver, 7 counters available
+[    2.228973]  cs_system_cfg: CoreSight Configuration manager initialised
+[    2.255865] NET: Registered PF_LLC protocol family
+[    2.261003] u32 classifier
+[    2.261500]     input device check on
+[    2.261889]     Actions configured
+[    2.269687] NET: Registered PF_INET6 protocol family
+[    2.291018] Segment Routing with IPv6
+[    2.293769] In-situ OAM (IOAM) with IPv6
+[    2.296482] NET: Registered PF_PACKET protocol family
+[    2.298883] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+[    2.302912] Bluetooth: RFCOMM TTY layer initialized
+[    2.310363] Bluetooth: RFCOMM socket layer initialized
+[    2.311913] Bluetooth: RFCOMM ver 1.11
+[    2.312995] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    2.313958] Bluetooth: BNEP filters: protocol multicast
+[    2.315159] Bluetooth: BNEP socket layer initialized
+[    2.316571] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[    2.317952] Bluetooth: HIDP socket layer initialized
+[    2.322100] 8021q: 802.1Q VLAN Support v1.8
+[    2.324397] lib80211: common routines for IEEE802.11 drivers
+[    2.329074] 9pnet: Installing 9P2000 support
+[    2.331598] Key type dns_resolver registered
+[    2.334105] NET: Registered PF_VSOCK protocol family
+[    2.592733] registered taskstats version 1
+[    2.601988] Loading compiled-in X.509 certificates
+[    2.740668] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    2.763181] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[    2.809284] Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[    2.812527] Loaded X.509 cert 'wens: 61c038651aabdcf94bd0ac7ff06c7248db18c600'
+[    2.814615] clk: Disabling unused clocks
+[    2.821006] ALSA device list:
+[    2.821709]   No soundcards found.
+[    2.826510] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+[    2.831993] platform regulatory.0: Falling back to sysfs fallback for: regulatory.db
+[    2.843862] uart-pl011 9000000.pl011: no DMA platform data
+[    7.237149] EXT4-fs (vda2): mounted filesystem cfd02a67-b5ad-4f80-97f8-b5c3072b1309 r/w with ordered data mode. Quota mode: none.
+[    7.240025] VFS: Mounted root (ext4 filesystem) on device 254:2.
+[    7.246898] devtmpfs: mounted
+[    7.334296] Freeing unused kernel memory: 1984K
+[    7.334296] Freeing unused kernel memory: 1984K
+[    7.336835] Run /usr/lib/systemd/systemd as init process
+[    8.274484] systemd[1]: Failed to initialize kmod context: Operation not supported
+p[    8.559049] systemd[1]: systemd 257.9-1~deb13u1 running in system mode (+PAM +AUDIT +SELINUX +APPARMOR +IMA +IPE +SMACK +SECCOMP +GCRYPT -GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETUP +LIBCRYPTSETUP_PLUGINS +LIBFDISK +PCRE2 +PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD +BPF_FRAMEWORK +BTF -XKBCOMMON -UTMP +SYSVINIT +LIBARCHIVE)
+[    8.576609] systemd[1]: Detected virtualization qemu.
+[    8.578494] systemd[1]: Detected architecture arm64.
+Welcome to Debian GNU/Linux 13 (trixie)!
+[    8.645526] systemd[1]: Hostname set to <debuerreotype>.
+[    8.661874] systemd[1]: Initializing machine ID from D-Bus machine ID.
+[    9.222110] systemd[1]: memfd_create() called without MFD_EXEC or MFD_NOEXEC_SEAL set
+[   10.918038] systemd[1]: bpf-restrict-fs: BPF LSM hook not enabled in the kernel, BPF LSM not supported.
+[   19.772644] systemd[1]: Queued start job for default target graphical.target.
+[   19.984100] systemd[1]: Created slice system-getty.slice - Slice /system/getty.
+[  OK  ] Created slice system-getty.slice - Slice /system/getty.
+[  OK  ] Created slice system-getty.slice - Slice /system/getty.
+[   20.034288] systemd[1]: Created slice system-modprobe.slice - Slice /system/modprobe.
+[  OK  ] Created slice system-modprobe.slice - Slice /system/modprobe.
+[   20.066570] systemd[1]: Created slice system-serial\x2dgetty.slice - Slice /system/serial-getty.
+[  OK  ] Created slice system-serial\x2dget…slice - Slice /system/serial-getty.
+[   20.099072] systemd[1]: Created slice user.slice - User and Session Slice.
+[  OK  ] Created slice user.slice - User and Session Slice.
+[   20.114180] systemd[1]: Started systemd-ask-password-console.path - Dispatch Password Requests to Console Directory Watch.
+[  OK  ] Started systemd-ask-password-conso…equests to Console Directory Watch.
+[   20.125192] systemd[1]: Started systemd-ask-password-wall.path - Forward Password Requests to Wall Directory Watch.
+[  OK  ] Started systemd-ask-password-wall.…d Requests to Wall Directory Watch.
+[   20.134295] systemd[1]: proc-sys-fs-binfmt_misc.automount - Arbitrary Executable File Formats File System Automount Point was skipped because of an unmet condition check (ConditionPathExists=/proc/sys/fs/binfmt_misc).
+[   20.141451] systemd[1]: Expecting device dev-ttyAMA0.device - /dev/ttyAMA0...
+         Expecting device dev-ttyAMA0.device - /dev/ttyAMA0...
+[   20.147199] systemd[1]: Reached target paths.target - Path Units.
+[  OK  ] Reached target paths.target - Path Units.
+[   20.153920] systemd[1]: Reached target remote-fs.target - Remote File Systems.
+[  OK  ] Reached target remote-fs.target - Remote File Systems.
+[   20.160039] systemd[1]: Reached target slices.target - Slice Units.
+[  OK  ] Reached target slices.target - Slice Units.
+[   20.165320] systemd[1]: Reached target swap.target - Swaps.
+[  OK  ] Reached target swap.target - Swaps.
+[   20.216899] systemd[1]: Listening on systemd-creds.socket - Credential Encryption/Decryption.
+[  OK  ] Listening on systemd-creds.socket - Credential Encryption/Decryption.
+[   20.231854] systemd[1]: Listening on systemd-initctl.socket - initctl Compatibility Named Pipe.
+[  OK  ] Listening on systemd-initctl.socke…- initctl Compatibility Named Pipe.
+[   20.246683] systemd[1]: Listening on systemd-journald-dev-log.socket - Journal Socket (/dev/log).
+[  OK  ] Listening on systemd-journald-dev-…socket - Journal Socket (/dev/log).
+[   20.261574] systemd[1]: Listening on systemd-journald.socket - Journal Sockets.
+[  OK  ] Listening on systemd-journald.socket - Journal Sockets.
+[   20.269568] systemd[1]: systemd-pcrextend.socket - TPM PCR Measurements was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[   20.273140] systemd[1]: systemd-pcrlock.socket - Make TPM PCR Policy was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[   20.413029] systemd[1]: Mounting dev-hugepages.mount - Huge Pages File System...
+         Mounting dev-hugepages.mount - Huge Pages File System...
+[   20.552920] systemd[1]: Mounting dev-mqueue.mount - POSIX Message Queue File System...
+         Mounting dev-mqueue.mount - POSIX Message Queue File System...
+         Mounting dev-mqueue.mount - POSIX Message Queue File System...
+[   20.754072] systemd[1]: Mounting run-lock.mount - Legacy Locks Directory /run/lock...
+         Mounting run-lock.mount - Legacy Locks Directory /run/lock...
+[   21.040602] systemd[1]: Mounting sys-kernel-debug.mount - Kernel Debug File System...
+         Mounting sys-kernel-debug.mount - Kernel Debug File System...
+[   21.100827] systemd[1]: sys-kernel-tracing.mount - Kernel Trace File System was skipped because of an unmet condition check (ConditionPathExists=/sys/kernel/tracing).
+[   21.424115] systemd[1]: Mounting tmp.mount - Temporary Directory /tmp...
+         Mounting tmp.mount - Temporary Directory /tmp...
+[   21.464441] systemd[1]: kmod-static-nodes.service - Create List of Static Device Nodes was skipped because of an unmet condition check (ConditionPathExists=/usr/bin/kmod).
+[   21.958550] systemd[1]: Starting modprobe@configfs.service - Load Kernel Module configfs...
+         Starting modprobe@configfs.service - Load Kernel Module configfs...
+         Starting modprobe@configfs.service - Load Kernel Module configfs...
+[   22.452245] systemd[1]: Starting modprobe@drm.service - Load Kernel Module drm...
+[   22.452245] systemd[1]: Starting modprobe@drm.service - Load Kernel Module drm...
+         Starting modprobe@drm.service - Load Kernel Module drm...
+         Starting modprobe@drm.service - Load Kernel Module drm...
+[   23.002993] systemd[1]: Starting modprobe@efi_pstore.service - Load Kernel Module efi_pstore...
+         Starting modprobe@efi_pstore.servi… - Load Kernel Module efi_pstore...
+         Starting modprobe@efi_pstore.servi… - Load Kernel Module efi_pstore...
+[   23.682025] systemd[1]: Starting modprobe@fuse.service - Load Kernel Module fuse...
+         Starting modprobe@fuse.service - Load Kernel Module fuse...
+         Starting modprobe@fuse.service - Load Kernel Module fuse...
+[   23.730368] systemd[1]: systemd-hibernate-clear.service - Clear Stale Hibernate Storage Info was skipped because of an unmet condition check (ConditionPathExists=/sys/firmware/efi/efivars/HibernateLocation-8cf2644b-4b0b-428f-9387-6d876050dc67).
+[   25.920867] (modprobe)[83]: modprobe@configfs.service: Unable to locate executable '/sbin/modprobe': No such file or directory
+[   26.450653] (modprobe)[84]: modprobe@drm.service: Unable to locate executable '/sbin/modprobe': No such file or directory
+[   26.884658] systemd[1]: Starting systemd-journald.service - Journal Service...
+         Starting systemd-journald.service - Journal Service...
+         Starting systemd-journald.service - Journal Service...
+[   27.144143] (modprobe)[85]: modprobe@efi_pstore.service: Unable to locate executable '/sbin/modprobe': No such file or directory
+[   27.501481] (modprobe)[86]: modprobe@fuse.service: Unable to locate executable '/sbin/modprobe': No such file or directory
+[   27.501481] (modprobe)[86]: modprobe@fuse.service: Unable to locate executable '/sbin/modprobe': No such file or directory
+[   27.566209] systemd[1]: Starting systemd-modules-load.service - Load Kernel Modules...
+         Starting systemd-modules-load.service - Load Kernel Modules...
+         Starting systemd-modules-load.service - Load Kernel Modules...
+[   27.590560] systemd[1]: systemd-pcrmachine.service - TPM PCR Machine ID Measurement was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[   27.812522] systemd[1]: Starting systemd-remount-fs.service - Remount Root and Kernel File Systems...
+[   27.812522] systemd[1]: Starting systemd-remount-fs.service - Remount Root and Kernel File Systems...
+         Starting systemd-remount-fs.servic…unt Root and Kernel File Systems...
+[   28.112534] systemd[1]: Starting systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully...
+         Starting systemd-tmpfiles-setup-de… Device Nodes in /dev gracefully...
+         Starting systemd-tmpfiles-setup-de… Device Nodes in /dev gracefully...
+[   28.138167] systemd[1]: systemd-tpm2-setup-early.service - Early TPM SRK Setup was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[   29.538024] systemd[1]: Mounted dev-hugepages.mount - Huge Pages File System.
+[  OK  ] Mounted dev-hugepages.mount - Huge Pages File System.
+[  OK  ] Mounted dev-hugepages.mount - Huge Pages File System.
+[   30.294999] systemd[1]: Mounted dev-mqueue.mount - POSIX Message Queue File System.
+[  OK  ] Mounted dev-mqueue.mount - POSIX Message Queue File System.
+[  OK  ] Mounted dev-mqueue.mount - POSIX Message Queue File System.
+[   31.396061] systemd[1]: Mounted run-lock.mount - Legacy Locks Directory /run/lock.
+[  OK  ] Mounted run-lock.mount - Legacy Locks Directory /run/lock.
+[  OK  ] Mounted run-lock.mount - Legacy Locks Directory /run/lock.
+[   31.446805] systemd[1]: Mounted sys-kernel-debug.mount - Kernel Debug File System.
+[  OK  ] Mounted sys-kernel-debug.mount - Kernel Debug File System.
+[   31.517802] systemd[1]: Mounted tmp.mount - Temporary Directory /tmp.
+[  OK  ] Mounted tmp.mount - Temporary Directory /tmp.
+[   31.692614] systemd[1]: modprobe@configfs.service: Deactivated successfully.
+[   31.831136] systemd[1]: Finished modprobe@configfs.service - Load Kernel Module configfs.
+[  OK  ] Finished modprobe@configfs.service - Load Kernel Module configfs.
+[  OK  ] Finished modprobe@configfs.service - Load Kernel Module configfs.
+[   32.210525] systemd[1]: modprobe@drm.service: Deactivated successfully.
+[   32.270938] systemd[1]: Finished modprobe@drm.service - Load Kernel Module drm.
+[  OK  ] Finished modprobe@drm.service - Load Kernel Module drm.
+[   32.377343] systemd[1]: modprobe@efi_pstore.service: Deactivated successfully.
+[   32.425884] systemd[1]: Finished modprobe@efi_pstore.service - Load Kernel Module efi_pstore.
+[  OK  ] Finished modprobe@efi_pstore.service - Load Kernel Module efi_pstore.
+[   32.529860] systemd[1]: modprobe@fuse.service: Deactivated successfully.
+[   32.585048] systemd[1]: Finished modprobe@fuse.service - Load Kernel Module fuse.
+[   32.585048] systemd[1]: Finished modprobe@fuse.service - Load Kernel Module fuse.
+[  OK  ] Finished modprobe@fuse.service - Load Kernel Module fuse.
+[  OK  ] Finished modprobe@fuse.service - Load Kernel Module fuse.
+[   32.638920] systemd[1]: systemd-modules-load.service: Main process exited, code=exited, status=1/FAILURE
+[   32.690998] systemd[1]: systemd-modules-load.service: Failed with result 'exit-code'.
+[   32.756374] systemd[1]: Failed to start systemd-modules-load.service - Load Kernel Modules.
+[FAILED] Failed to start systemd-modules-load.service - Load Kernel Modules.
+See 'systemctl status systemd-modules-load.service' for details.
+See 'systemctl status systemd-modules-load.service' for details.
+[   32.866345] systemd[1]: Finished systemd-remount-fs.service - Remount Root and Kernel File Systems.
+[  OK  ] Finished systemd-remount-fs.servic…mount Root and Kernel File Systems.
+[   33.059109] systemd[1]: sys-fs-fuse-connections.mount - FUSE Control File System was skipped because of an unmet condition check (ConditionPathExists=/sys/fs/fuse/connections).
+[   33.232289] systemd-journald[87]: Collecting audit messages is disabled.
+[   33.608782] systemd[1]: Mounting sys-kernel-config.mount - Kernel Configuration File System...
+         Mounting sys-kernel-config.mount - Kernel Configuration File System...
+         Mounting sys-kernel-config.mount - Kernel Configuration File System...
+[   33.643230] systemd[1]: systemd-pstore.service - Platform Persistent Storage Archival was skipped because of an unmet condition check (ConditionDirectoryNotEmpty=/sys/fs/pstore).
+[   33.996786] systemd[1]: Starting systemd-random-seed.service - Load/Save OS Random Seed...
+         Starting systemd-random-seed.service - Load/Save OS Random Seed...
+         Starting systemd-random-seed.service - Load/Save OS Random Seed...
+[   34.420182] systemd[1]: Starting systemd-sysctl.service - Apply Kernel Variables...
+         Starting systemd-sysctl.service - Apply Kernel Variables...
+         Starting systemd-sysctl.service - Apply Kernel Variables...
+[   34.473159] systemd[1]: systemd-tpm2-setup.service - TPM SRK Setup was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[   34.810352] systemd[1]: Finished systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully.
+[  OK  ] Finished systemd-tmpfiles-setup-de…ic Device Nodes in /dev gracefully.
+[  OK  ] Finished systemd-tmpfiles-setup-de…ic Device Nodes in /dev gracefully.
+[   35.708944] systemd[1]: Starting systemd-sysusers.service - Create System Users...
+         Starting systemd-sysusers.service - Create System Users...
+         Starting systemd-sysusers.service - Create System Users...
+[*     ] (1 of 6) Job systemd-random-seed.se…ce/start running (17s / 10min 13s)
+[*     ] (1 of 6) Job systemd-random-seed.se…ce/start running (17s / 10min 13s)
+[   37.354492] systemd[1]: Started systemd-journald.service - Journal Service.
+[  OK  ] Started systemd-journald.service - Journal Service.
+[  OK  ] Mounted sys-kernel-config.mount - Kernel Configuration File System.
+[  OK  ] Mounted sys-kernel-config.mount - Kernel Configuration File System.
+[  OK  ] Finished systemd-random-seed.service - Load/Save OS Random Seed.
+[  OK  ] Finished systemd-random-seed.service - Load/Save OS Random Seed.
+[  OK  ] Finished systemd-sysctl.service - Apply Kernel Variables.
+[  OK  ] Finished systemd-sysctl.service - Apply Kernel Variables.
+         Starting systemd-journal-flush.ser…sh Journal to Persistent Storage...
+         Starting systemd-journal-flush.ser…sh Journal to Persistent Storage...
+[  OK  ] Finished systemd-sysusers.service - Create System Users.
+[  OK  ] Finished systemd-sysusers.service - Create System Users.
+         Starting systemd-tmpfiles-setup-de…eate Static Device Nodes in /dev...
+         Starting systemd-tmpfiles-setup-de…eate Static Device Nodes in /dev...
+[   43.588066] systemd-journald[87]: Received client request to flush runtime journal.
+[**    ] (1 of 3) Job systemd-journal-flush.…ice/start running (24s / 1min 51s)
+[**    ] (1 of 3) Job systemd-journal-flush.…ice/start running (24s / 1min 51s)
+[  OK  ] Finished systemd-tmpfiles-setup-de…Create Static Device Nodes in /dev.
+[  OK  ] Finished systemd-journal-flush.ser…lush Journal to Persistent Storage.
+[  OK  ] Finished systemd-journal-flush.ser…lush Journal to Persistent Storage.
+[  OK  ] Reached target local-fs-pre.target…Preparation for Local File Systems.
+[  OK  ] Reached target local-fs-pre.target…Preparation for Local File Systems.
+[  OK  ] Reached target local-fs.target - Local File Systems.
+[  OK  ] Reached target local-fs.target - Local File Systems.
+[  OK  ] Listening on systemd-sysext.socket… System Extension Image Management.
+[  OK  ] Listening on systemd-sysext.socket… System Extension Image Management.
+         Starting systemd-tmpfiles-setup.se…ate System Files and Directories...
+         Starting systemd-tmpfiles-setup.se…ate System Files and Directories...
+[***   ] (1 of 2) Job dev-ttyAMA0.device/start running (27s / 1min 30s)
+[***   ] (1 of 2) Job dev-ttyAMA0.device/start running (27s / 1min 30s)
+[ ***  ] (2 of 2) Job systemd-tmpfiles-setup…ice/start running (28s / no limit)
+[  OK  ] Finished systemd-tmpfiles-setup.se…reate System Files and Directories.
+         Starting ldconfig.service - Rebuild Dynamic Linker Cache...
+         Starting ldconfig.service - Rebuild Dynamic Linker Cache...
+         Starting systemd-journal-catalog-u…ervice - Rebuild Journal Catalog...
+         Starting systemd-journal-catalog-u…ervice - Rebuild Journal Catalog...
+[  *** ] (2 of 3) Job systemd-journal-catalo…ice/start running (31s / 1min 58s)
+[  *** ] (2 of 3) Job systemd-journal-catalo…ice/start running (31s / 1min 58s)
+[   ***] (2 of 3) Job systemd-journal-catalo…ice/start running (31s / 1min 58s)
+[  OK  ] Finished ldconfig.service - Rebuild Dynamic Linker Cache.
+[  OK  ] Finished systemd-journal-catalog-u….service - Rebuild Journal Catalog.
+[  OK  ] Finished systemd-journal-catalog-u….service - Rebuild Journal Catalog.
+         Starting systemd-update-done.service - Update is Completed...
+[  OK  ] Finished systemd-update-done.service - Update is Completed.
+[  OK  ] Finished systemd-update-done.service - Update is Completed.
+[  OK  ] Reached target sysinit.target - System Initialization.
+[  OK  ] Started apt-daily.timer - Daily apt download activities.
+[  OK  ] Started apt-daily-upgrade.timer - …y apt upgrade and clean activities.
+[  OK  ] Started dpkg-db-backup.timer - Daily dpkg database backup timer.
+[  OK  ] Started fstrim.timer - Discard unused filesystem blocks once a week.
+[  OK  ] Started systemd-tmpfiles-clean.tim…y Cleanup of Temporary Directories.
+[  OK  ] Reached target timers.target - Timer Units.
+[  OK  ] Listening on dbus.socket - D-Bus System Message Bus Socket.
+[  OK  ] Listening on sshd-unix-local.socke…temd-ssh-generator, AF_UNIX Local).
+[  OK  ] Listening on sshd-vsock.socket - O… (systemd-ssh-generator, AF_VSOCK).
+[  OK  ] Reached target ssh-access.target - SSH Access Available.
+[  OK  ] Listening on systemd-hostnamed.socket - Hostname Service Socket.
+[  OK  ] Reached target sockets.target - Socket Units.
+[  OK  ] Reached target basic.target - Basic System.
+[  OK  ] Reached target basic.target - Basic System.
+         Starting dbus.service - D-Bus System Message Bus...
+         Starting dbus.service - D-Bus System Message Bus...
+         Starting ssh.service - OpenBSD Secure Shell server...
+         Starting ssh.service - OpenBSD Secure Shell server...
+         Starting systemd-logind.service - User Login Management...
+         Starting systemd-logind.service - User Login Management...
+         Starting systemd-user-sessions.service - Permit User Sessions...
+         Starting systemd-user-sessions.service - Permit User Sessions...
+[    **] (3 of 5) Job systemd-user-sessions.…ice/start running (37s / no limit)
+[    **] (3 of 5) Job systemd-user-sessions.…ice/start running (37s / no limit)
+[     *] (3 of 5) Job systemd-user-sessions.…ice/start running (37s / no limit)
+[    **] (3 of 5) Job systemd-user-sessions.…ice/start running (38s / no limit)
+[   ***] (4 of 5) Job ssh.service/start running (38s / 2min 3s)
+[  *** ] (4 of 5) Job ssh.service/start running (39s / 2min 3s)
+[  *** ] (4 of 5) Job ssh.service/start running (39s / 2min 3s)
+[  OK  ] Started dbus.service - D-Bus System Message Bus.
+[  OK  ] Finished systemd-user-sessions.service - Permit User Sessions.
+[  OK  ] Started getty@tty1.service - Getty on tty1.
+[  OK  ] Started getty@tty1.service - Getty on tty1.
+[ ***  ] (1 of 3) Job systemd-logind.service/start running (42s / 2min 3s)
+[ ***  ] (1 of 3) Job systemd-logind.service/start running (42s / 2min 3s)
+[***   ] (2 of 3) Job dev-ttyAMA0.device/start running (43s / 1min 30s)
+[**    ] (2 of 3) Job dev-ttyAMA0.device/start running (43s / 1min 30s)
+[*     ] (2 of 3) Job dev-ttyAMA0.device/start running (44s / 1min 30s)
+[**    ] (3 of 3) Job ssh.service/start running (44s / 2min 10s)
+[   64.648202] cfg80211: failed to load regulatory.db
+[  OK  ] Started systemd-logind.service - User Login Management.
+[  OK  ] Started ssh.service - OpenBSD Secure Shell server.
+[  OK  ] Started ssh.service - OpenBSD Secure Shell server.
+[***   ] Job dev-ttyAMA0.device/start running (47s / 1min 30s)
+[***   ] Job dev-ttyAMA0.device/start running (47s / 1min 30s)
+[ ***  ] Job dev-ttyAMA0.device/start running (48s / 1min 30s)
+[  *** ] Job dev-ttyAMA0.device/start running (48s / 1min 30s)
+[   ***] Job dev-ttyAMA0.device/start running (49s / 1min 30s)
+[    **] Job dev-ttyAMA0.device/start running (49s / 1min 30s)
+[     *] Job dev-ttyAMA0.device/start running (50s / 1min 30s)
+[    **] Job dev-ttyAMA0.device/start running (50s / 1min 30s)
+[   ***] Job dev-ttyAMA0.device/start running (51s / 1min 30s)
+[  *** ] Job dev-ttyAMA0.device/start running (51s / 1min 30s)
+[ ***  ] Job dev-ttyAMA0.device/start running (52s / 1min 30s)
+[***   ] Job dev-ttyAMA0.device/start running (52s / 1min 30s)
+[**    ] Job dev-ttyAMA0.device/start running (53s / 1min 30s)
+[*     ] Job dev-ttyAMA0.device/start running (53s / 1min 30s)
+[**    ] Job dev-ttyAMA0.device/start running (54s / 1min 30s)
+[***   ] Job dev-ttyAMA0.device/start running (54s / 1min 30s)
+[ ***  ] Job dev-ttyAMA0.device/start running (55s / 1min 30s)
+[  *** ] Job dev-ttyAMA0.device/start running (55s / 1min 30s)
+[   ***] Job dev-ttyAMA0.device/start running (56s / 1min 30s)
+[    **] Job dev-ttyAMA0.device/start running (56s / 1min 30s)
+[     *] Job dev-ttyAMA0.device/start running (57s / 1min 30s)
+[    **] Job dev-ttyAMA0.device/start running (57s / 1min 30s)
+[   ***] Job dev-ttyAMA0.device/start running (58s / 1min 30s)
+[  *** ] Job dev-ttyAMA0.device/start running (58s / 1min 30s)
+[ ***  ] Job dev-ttyAMA0.device/start running (59s / 1min 30s)
+[***   ] Job dev-ttyAMA0.device/start running (59s / 1min 30s)
+[**    ] Job dev-ttyAMA0.device/start running (1min / 1min 30s)
+[*     ] Job dev-ttyAMA0.device/start running (1min / 1min 30s)
+[**    ] Job dev-ttyAMA0.device/start running (1min 1s / 1min 30s)
+[***   ] Job dev-ttyAMA0.device/start running (1min 1s / 1min 30s)
+[ ***  ] Job dev-ttyAMA0.device/start running (1min 2s / 1min 30s)
+[  *** ] Job dev-ttyAMA0.device/start running (1min 2s / 1min 30s)
+[   ***] Job dev-ttyAMA0.device/start running (1min 3s / 1min 30s)
+[    **] Job dev-ttyAMA0.device/start running (1min 3s / 1min 30s)
+[     *] Job dev-ttyAMA0.device/start running (1min 4s / 1min 30s)
+[    **] Job dev-ttyAMA0.device/start running (1min 4s / 1min 30s)
+[   ***] Job dev-ttyAMA0.device/start running (1min 5s / 1min 30s)
+[  *** ] Job dev-ttyAMA0.device/start running (1min 5s / 1min 30s)
+[ ***  ] Job dev-ttyAMA0.device/start running (1min 6s / 1min 30s)
+[***   ] Job dev-ttyAMA0.device/start running (1min 6s / 1min 30s)
+[**    ] Job dev-ttyAMA0.device/start running (1min 7s / 1min 30s)
+[*     ] Job dev-ttyAMA0.device/start running (1min 7s / 1min 30s)
+[**    ] Job dev-ttyAMA0.device/start running (1min 8s / 1min 30s)
+[***   ] Job dev-ttyAMA0.device/start running (1min 8s / 1min 30s)
+[ ***  ] Job dev-ttyAMA0.device/start running (1min 9s / 1min 30s)
+[  *** ] Job dev-ttyAMA0.device/start running (1min 9s / 1min 30s)
+[   ***] Job dev-ttyAMA0.device/start running (1min 10s / 1min 30s)
+[    **] Job dev-ttyAMA0.device/start running (1min 10s / 1min 30s)
+[     *] Job dev-ttyAMA0.device/start running (1min 11s / 1min 30s)
+[    **] Job dev-ttyAMA0.device/start running (1min 11s / 1min 30s)
+[   ***] Job dev-ttyAMA0.device/start running (1min 12s / 1min 30s)
+[  *** ] Job dev-ttyAMA0.device/start running (1min 12s / 1min 30s)
+[ ***  ] Job dev-ttyAMA0.device/start running (1min 13s / 1min 30s)
+[***   ] Job dev-ttyAMA0.device/start running (1min 13s / 1min 30s)
+[**    ] Job dev-ttyAMA0.device/start running (1min 14s / 1min 30s)
+[*     ] Job dev-ttyAMA0.device/start running (1min 14s / 1min 30s)
+[**    ] Job dev-ttyAMA0.device/start running (1min 15s / 1min 30s)
+[***   ] Job dev-ttyAMA0.device/start running (1min 15s / 1min 30s)
+[ ***  ] Job dev-ttyAMA0.device/start running (1min 16s / 1min 30s)
+[  *** ] Job dev-ttyAMA0.device/start running (1min 16s / 1min 30s)
+[   ***] Job dev-ttyAMA0.device/start running (1min 17s / 1min 30s)
+[    **] Job dev-ttyAMA0.device/start running (1min 17s / 1min 30s)
+[     *] Job dev-ttyAMA0.device/start running (1min 18s / 1min 30s)
+[    **] Job dev-ttyAMA0.device/start running (1min 18s / 1min 30s)
+[   ***] Job dev-ttyAMA0.device/start running (1min 19s / 1min 30s)
+[  *** ] Job dev-ttyAMA0.device/start running (1min 19s / 1min 30s)
+[ ***  ] Job dev-ttyAMA0.device/start running (1min 20s / 1min 30s)
+[***   ] Job dev-ttyAMA0.device/start running (1min 20s / 1min 30s)
+[**    ] Job dev-ttyAMA0.device/start running (1min 21s / 1min 30s)
+[*     ] Job dev-ttyAMA0.device/start running (1min 21s / 1min 30s)
+[**    ] Job dev-ttyAMA0.device/start running (1min 22s / 1min 30s)
+[***   ] Job dev-ttyAMA0.device/start running (1min 22s / 1min 30s)
+[ ***  ] Job dev-ttyAMA0.device/start running (1min 23s / 1min 30s)
+[  *** ] Job dev-ttyAMA0.device/start running (1min 23s / 1min 30s)
+[   ***] Job dev-ttyAMA0.device/start running (1min 24s / 1min 30s)
+[    **] Job dev-ttyAMA0.device/start running (1min 24s / 1min 30s)
+[     *] Job dev-ttyAMA0.device/start running (1min 25s / 1min 30s)
+[    **] Job dev-ttyAMA0.device/start running (1min 25s / 1min 30s)
+[   ***] Job dev-ttyAMA0.device/start running (1min 26s / 1min 30s)
+[  *** ] Job dev-ttyAMA0.device/start running (1min 26s / 1min 30s)
+[ ***  ] Job dev-ttyAMA0.device/start running (1min 27s / 1min 30s)
+[***   ] Job dev-ttyAMA0.device/start running (1min 27s / 1min 30s)
+[**    ] Job dev-ttyAMA0.device/start running (1min 28s / 1min 30s)
+[*     ] Job dev-ttyAMA0.device/start running (1min 28s / 1min 30s)
+[**    ] Job dev-ttyAMA0.device/start running (1min 29s / 1min 30s)
+[***   ] Job dev-ttyAMA0.device/start running (1min 29s / 1min 30s)
+[ ***  ] Job dev-ttyAMA0.device/start running (1min 30s / 1min 30s)
+[ TIME ] Timed out waiting for device dev-ttyAMA0.device - /dev/ttyAMA0.
+[5:185mDEPEND] Dependency failed for serial-getty….service - Serial Getty on ttyAMA0.
+[  OK  ] Reached target getty.target - Login Prompts.
+[  OK  ] Reached target getty.target - Login Prompts.
+[  OK  ] Reached target multi-user.target - Multi-User System.
+[  OK  ] Reached target multi-user.target - Multi-User System.
+[  OK  ] Reached target graphical.target - Graphical Interface.
+[  OK  ] Started serial-login.service - Ser… Login on ttyAMA0 (no device wait).
+p
+p                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              p
+p                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              p
+Debian GNU/Linux 13 debuerreotype ttyAMA0
+debuerreotype login:
+{"ts": "2026-05-04T23:02:03.718424+00:00", "event": "boot_start", "data": "New boot detected"}
+{"ts": "2026-05-04T23:02:03.718424+00:00", "event": "boot_login", "data": "State: booting -> login"}
+{"ts": "2026-05-04T23:02:03.719136+00:00", "event": "operation_started", "data": "Operation Login started"}
+{"ts": "2026-05-04T23:02:03.719166+00:00", "event": "operation_stage", "data": "Operation Login stage: checking_boot_state"}
+{"ts": "2026-05-04T23:02:03.719184+00:00", "event": "operation_stage", "data": "Operation Login stage: waiting_for_login_prompt"}
+{"ts": "2026-05-04T23:02:03.719196+00:00", "event": "operation_stage", "data": "Operation Login stage: waiting_for_quiescence"}
+{"ts": "2026-05-04T23:02:08.720833+00:00", "event": "operation_stage", "data": "Operation Login stage: refreshing_login_prompt"}
+debuerreotype login:
+debuerreotype login:
+{"ts": "2026-05-04T23:02:09.722004+00:00", "event": "operation_stage", "data": "Operation Login stage: sending_username"}
+debuerreotype login: root
+{"ts": "2026-05-04T23:02:10.723464+00:00", "event": "operation_stage", "data": "Operation Login stage: waiting_for_password_or_shell"}
+Password:
+{"ts": "2026-05-04T23:02:11.084055+00:00", "event": "operation_stage", "data": "Operation Login stage: sending_password"}
+Password:
+{"ts": "2026-05-04T23:02:12.085261+00:00", "event": "operation_stage", "data": "Operation Login stage: waiting_for_shell"}
+Linux debuerreotype 6.6.52-g5a0a5e71d2bd #2 SMP PREEMPT Mon May  4 22:57:59 UTC 2026 aarch64
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+root@debuerreotype:~#
+{"ts": "2026-05-04T23:02:27.266215+00:00", "event": "shell_ready", "data": "State: login -> shell"}
+{"ts": "2026-05-04T23:02:27.266431+00:00", "event": "operation_stage", "data": "Operation Login stage: shell_setup_dmesg"}
+root@debuerreotype:~# dmesg -n 1
+root@debuerreotype:~#
+{"ts": "2026-05-04T23:02:27.767619+00:00", "event": "operation_stage", "data": "Operation Login stage: shell_setup_stty"}
+root@debuerreotype:~# stty cols 200
+{"ts": "2026-05-04T23:02:28.069285+00:00", "event": "operation_stage", "data": "Operation Login stage: shell_setup_sync"}
+echo __MCP_SETUP_81010__
+{"ts": "2026-05-04T23:02:28.097900+00:00", "event": "login_complete", "data": "Login complete: root"}
+{"ts": "2026-05-04T23:02:28.097971+00:00", "event": "operation_ended", "data": "Operation Login ended: completed"}
+root@debuerreotype:~#
+root@debuerreotype:~# echo __MCP_SETUP_81010__
+__MCP_SETUP_81010__
+root@debuerreotype:~#
+{"ts": "2026-05-04T23:02:29.215073+00:00", "event": "operation_started", "data": "Operation ConsoleCommand started"}
+{"ts": "2026-05-04T23:02:29.215710+00:00", "event": "command_started", "data": "Command started: uname -m"}
+root@debuerreotype:~# cat > /tmp/_mcp_76198.sh <<'__MCP_SCRIPT_76198__'
+cat > /tmp/_mcp_76198.sh <<'__MCP_SCRIPT_76198__'
+> uname -m
+> uname -m
+> __MCP_SCRIPT_76198__
+> __MCP_SCRIPT_76198__
+echo __MCP_PID_$$__; sh /tmp/_mcp_76198.sh; __MCP_EC=$?; rm -f /tmp/_mcp_76198.sh; echo __MCP_MARKER_76198__${__MCP_EC}
+echo __MCP_PID_$$__; sh /tmp/_mcp_76198.sh; __MCP_EC=$?; rm -f /tmp/_mcp_76198.sh; echo __MCP_MARKER_76198__${__MCP_EC}
+root@debuerreotype:~#
+root@debuerreotype:~#
+{"ts": "2026-05-04T23:02:29.491313+00:00", "event": "shell_ready", "data": "State: booting -> shell"}
+root@debuerreotype:~# echo __MCP_PID_$$__; sh /tmp/_mcp_76198.sh; __MCP_EC=$?; rm -f /tmp/_mcp_76198.sh; echo __MCP_MARKER_76198__${__MCP_EC}
+root@debuerreotype:~# echo __MCP_PID_$$__; sh /tmp/_mcp_76198.sh; __MCP_EC=$?; rm -f /tmp/_mcp_76198.sh; echo __MCP_MARKER_76198__${__MCP_EC}
+__MCP_PID_172__
+__MCP_PID_172__
+aarch64
+aarch64
+__MCP_MARKER_76198__0
+__MCP_MARKER_76198__0
+root@debuerreotype:~#
+root@debuerreotype:~#
+{"ts": "2026-05-04T23:02:29.946635+00:00", "event": "command_ended", "data": "Command ended: exit_code=0"}
+{"ts": "2026-05-04T23:02:29.947075+00:00", "event": "operation_ended", "data": "Operation ConsoleCommand ended: completed"}
+{"ts": "2026-05-04T23:02:30.078870+00:00", "event": "operation_started", "data": "Operation ConsoleCommand started"}
+{"ts": "2026-05-04T23:02:30.079084+00:00", "event": "command_started", "data": "Command started: dpkg -l openssh-server | tail -1"}
+root@debuerreotype:~# cat > /tmp/_mcp_79234.sh <<'__MCP_SCRIPT_79234__'
+cat > /tmp/_mcp_79234.sh <<'__MCP_SCRIPT_79234__'
+> dpkg -l openssh-server | tail -1
+> dpkg -l openssh-server | tail -1
+>
+>
+> __MCP_SCRIPT_79234__
+> __MCP_SCRIPT_79234__
+echo __MCP_PID_$$__; sh /tmp/_mcp_79234.sh; __MCP_EC=$?; rm -f /tmp/_mcp_79234.sh; echo __MCP_MARKER_79234__${__MCP_EC}
+echo __MCP_PID_$$__; sh /tmp/_mcp_79234.sh; __MCP_EC=$?; rm -f /tmp/_mcp_79234.sh; echo __MCP_MARKER_79234__${__MCP_EC}
+root@debuerreotype:~#
+root@debuerreotype:~#
+{"ts": "2026-05-04T23:02:30.374969+00:00", "event": "shell_ready", "data": "State: booting -> shell"}
+root@debuerreotype:~# echo __MCP_PID_$$__; sh /tmp/_mcp_79234.sh; __MCP_EC=$?; rm -f /tmp/_mcp_79234.sh; echo __MCP_MARKER_79234__${__MCP_EC}
+root@debuerreotype:~# echo __MCP_PID_$$__; sh /tmp/_mcp_79234.sh; __MCP_EC=$?; rm -f /tmp/_mcp_79234.sh; echo __MCP_MARKER_79234__${__MCP_EC}
+__MCP_PID_172__
+__MCP_PID_172__
+ii  openssh-server 1:10.0p1-7+deb13u1 arm64        secure shell (SSH) server, for secure access from remote machines
+ii  openssh-server 1:10.0p1-7+deb13u1 arm64        secure shell (SSH) server, for secure access from remote machines
+__MCP_MARKER_79234__0
+__MCP_MARKER_79234__0
+root@debuerreotype:~#
+root@debuerreotype:~#
+{"ts": "2026-05-04T23:02:31.273034+00:00", "event": "command_ended", "data": "Command ended: exit_code=0"}
+{"ts": "2026-05-04T23:02:31.273461+00:00", "event": "operation_ended", "data": "Operation ConsoleCommand ended: completed"}
+{"ts": "2026-05-04T23:02:31.396079+00:00", "event": "operation_started", "data": "Operation ConsoleCommand started"}
+{"ts": "2026-05-04T23:02:31.396465+00:00", "event": "command_started", "data": "Command started: cat /etc/firmwai-pipeline-test"}
+root@debuerreotype:~# cat > /tmp/_mcp_39402.sh <<'__MCP_SCRIPT_39402__'
+cat > /tmp/_mcp_39402.sh <<'__MCP_SCRIPT_39402__'
+> cat /etc/firmwai-pipeline-test
+> cat /etc/firmwai-pipeline-test
+> __MCP_SCRIPT_39402__
+> __MCP_SCRIPT_39402__
+echo __MCP_PID_$$__; sh /tmp/_mcp_39402.sh; __MCP_EC=$?; rm -f /tmp/_mcp_39402.sh; echo __MCP_MARKER_39402__${__MCP_EC}
+echo __MCP_PID_$$__; sh /tmp/_mcp_39402.sh; __MCP_EC=$?; rm -f /tmp/_mcp_39402.sh; echo __MCP_MARKER_39402__${__MCP_EC}
+root@debuerreotype:~#
+root@debuerreotype:~#
+{"ts": "2026-05-04T23:02:31.656917+00:00", "event": "shell_ready", "data": "State: booting -> shell"}
+root@debuerreotype:~# echo __MCP_PID_$$__; sh /tmp/_mcp_39402.sh; __MCP_EC=$?; rm -f /tmp/_mcp_39402.sh; echo __MCP_MARKER_39402__${__MCP_EC}
+root@debuerreotype:~# echo __MCP_PID_$$__; sh /tmp/_mcp_39402.sh; __MCP_EC=$?; rm -f /tmp/_mcp_39402.sh; echo __MCP_MARKER_39402__${__MCP_EC}
+__MCP_PID_172__
+__MCP_PID_172__
+# Marker file written by the i.MX8M pipeline test project
+# Marker file written by the i.MX8M pipeline test project
+# (test_projects/imx8m-pipeline-test/debian/overlay/etc/firmwai-pipeline-test).
+# Phase-11 SSHes in after boot and reads this back to validate that
+# the rootfs overlay made it through the pipeline.
+firmwai_pipeline_test_marker=phase-11
+# (test_projects/imx8m-pipeline-test/debian/overlay/etc/firmwai-pipeline-test).
+# Phase-11 SSHes in after boot and reads this back to validate that
+# the rootfs overlay made it through the pipeline.
+firmwai_pipeline_test_marker=phase-11
+__MCP_MARKER_39402__0
+__MCP_MARKER_39402__0
+root@debuerreotype:~#
+root@debuerreotype:~#
+{"ts": "2026-05-04T23:02:32.019006+00:00", "event": "command_ended", "data": "Command ended: exit_code=0"}
+{"ts": "2026-05-04T23:02:32.019417+00:00", "event": "operation_ended", "data": "Operation ConsoleCommand ended: completed"}
+{"ts": "2026-05-04T23:02:32.134572+00:00", "event": "operation_started", "data": "Operation ConsoleCommand started"}
+{"ts": "2026-05-04T23:02:32.134768+00:00", "event": "command_started", "data": "Command started: ls /lib/modules/ | head -1 && ls /lib/modules/$(uname -r)/ | wc -l"}
+root@debuerreotype:~# cat > /tmp/_mcp_69675.sh <<'__MCP_SCRIPT_69675__'
+cat > /tmp/_mcp_69675.sh <<'__MCP_SCRIPT_69675__'
+> ls /lib/modules/ | head -1 && ls /lib/modules/$(uname -r)/ | wc -l
+> ls /lib/modules/ | head -1 && ls /lib/modules/$(uname -r)/ | wc -l
+> __MCP_SCRIPT_69675__
+> __MCP_SCRIPT_69675__
+echo __MCP_PID_$$__; sh /tmp/_mcp_69675.sh; __MCP_EC=$?; rm -f /tmp/_mcp_69675.sh; echo __MCP_MARKER_69675__${__MCP_EC}
+echo __MCP_PID_$$__; sh /tmp/_mcp_69675.sh; __MCP_EC=$?; rm -f /tmp/_mcp_69675.sh; echo __MCP_MARKER_69675__${__MCP_EC}
+root@debuerreotype:~#
+root@debuerreotype:~#
+{"ts": "2026-05-04T23:02:32.381390+00:00", "event": "shell_ready", "data": "State: booting -> shell"}
+root@debuerreotype:~# echo __MCP_PID_$$__; sh /tmp/_mcp_69675.sh; __MCP_EC=$?; rm -f /tmp/_mcp_69675.sh; echo __MCP_MARKER_69675__${__MCP_EC}
+__MCP_PID_172__
+root@debuerreotype:~# echo __MCP_PID_$$__; sh /tmp/_mcp_69675.sh; __MCP_EC=$?; rm -f /tmp/_mcp_69675.sh; echo __MCP_MARKER_69675__${__MCP_EC}
+__MCP_PID_172__
+6.6.52-g5a0a5e71d2bd
+6.6.52-g5a0a5e71d2bd
+16
+16
+__MCP_MARKER_69675__0
+__MCP_MARKER_69675__0
+root@debuerreotype:~#
+root@debuerreotype:~#
+{"ts": "2026-05-04T23:02:33.200509+00:00", "event": "command_ended", "data": "Command ended: exit_code=0"}
+{"ts": "2026-05-04T23:02:33.200891+00:00", "event": "operation_ended", "data": "Operation ConsoleCommand ended: completed"}
+{"ts": "2026-05-04T23:02:33.311235+00:00", "event": "operation_started", "data": "Operation ConsoleCommand started"}
+{"ts": "2026-05-04T23:02:33.311425+00:00", "event": "command_started", "data": "Command started: df -T / | tail -1"}
+root@debuerreotype:~# cat > /tmp/_mcp_59380.sh <<'__MCP_SCRIPT_59380__'
+cat > /tmp/_mcp_59380.sh <<'__MCP_SCRIPT_59380__'
+> df -T / | tail -1
+> df -T / | tail -1
+> __MCP_SCRIPT_59380__
+> __MCP_SCRIPT_59380__
+echo __MCP_PID_$$__; sh /tmp/_mcp_59380.sh; __MCP_EC=$?; rm -f /tmp/_mcp_59380.sh; echo __MCP_MARKER_59380__${__MCP_EC}
+echo __MCP_PID_$$__; sh /tmp/_mcp_59380.sh; __MCP_EC=$?; rm -f /tmp/_mcp_59380.sh; echo __MCP_MARKER_59380__${__MCP_EC}
+root@debuerreotype:~#
+root@debuerreotype:~#
+{"ts": "2026-05-04T23:02:33.557241+00:00", "event": "shell_ready", "data": "State: booting -> shell"}
+root@debuerreotype:~# echo __MCP_PID_$$__; sh /tmp/_mcp_59380.sh; __MCP_EC=$?; rm -f /tmp/_mcp_59380.sh; echo __MCP_MARKER_59380__${__MCP_EC}
+__MCP_PID_172__
+root@debuerreotype:~# echo __MCP_PID_$$__; sh /tmp/_mcp_59380.sh; __MCP_EC=$?; rm -f /tmp/_mcp_59380.sh; echo __MCP_MARKER_59380__${__MCP_EC}
+__MCP_PID_172__
+/dev/root      ext4    996780 430800    497168  47% /
+/dev/root      ext4    996780 430800    497168  47% /
+__MCP_MARKER_59380__0
+__MCP_MARKER_59380__0
+root@debuerreotype:~#
+root@debuerreotype:~#
+{"ts": "2026-05-04T23:02:34.061026+00:00", "event": "command_ended", "data": "Command ended: exit_code=0"}
+{"ts": "2026-05-04T23:02:34.061587+00:00", "event": "operation_ended", "data": "Operation ConsoleCommand ended: completed"}

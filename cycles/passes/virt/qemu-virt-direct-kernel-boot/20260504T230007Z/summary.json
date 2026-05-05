@@ -1,0 +1,19 @@
+{
+  "machine_type": "virt",
+  "label": "qemu-virt-direct-kernel-boot",
+  "passed": true,
+  "timestamp": "20260504T230007Z",
+  "entry_count": 1873,
+  "console_bytes": 93024,
+  "boot_path": "qemu-system-aarch64 -M virt direct-kernel boot (no firmware/U-Boot in serial path)",
+  "first_boot_start_trigger": "OFF -> LOGIN transition (login prompt detected; no firmware patterns matched)",
+  "boot_operation": "login_shell",
+  "key_events": [
+    {"event_type": "boot_start", "trigger": "first-boot login transition", "kernel_time_seconds_approx": 80},
+    {"event_type": "boot_login", "data": "debuerreotype login: prompt detected"},
+    {"event_type": "operation_started", "data": "Login operation"},
+    {"event_type": "login_complete", "user": "root"},
+    {"event_type": "shell_ready", "data": "root@debuerreotype:~# prompt detected"}
+  ],
+  "notes": "First archived QEMU virt direct-kernel boot. Captures the BOOT_START-on-first-boot-login path added in lab_mcp commit 9623587. See ../../../../README.md for archive format."
+}
