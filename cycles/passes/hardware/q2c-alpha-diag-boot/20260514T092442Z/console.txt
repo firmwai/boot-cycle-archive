@@ -1,0 +1,2050 @@
+alphadiags:/tmp# sudo dmesg -n 1
+bash: sudo: command not found
+alphadiags:/tmp#
+alphadiags:/tmp# sudo -i
+alphadiags:/tmp# sudo -i
+bash: sudo: command not found
+alphadiags:/tmp#
+alphadiags:/tmp# stty cols 200
+alphadiags:/tmp#
+alphadiags:/tmp# echo __MCP_SETUP_92717__
+__MCP_SETUP_92717__
+alphadiags:/tmp#
+alphadiags:/tmp# cat > /tmp/_mcp_40535.sh <<'__MCP_SCRIPT_40535__'
+cat > /tmp/_mcp_40535.sh <<'__MCP_SCRIPT_40535__'
+> echo drivenets | sudo -S ip netns exec oob_bond_ns ip link set enp13s0 arp on
+> echo drivenets | sudo -S ip netns exec oob_bond_ns ip link set enp13s0 arp on
+> __MCP_SCRIPT_40535__
+> __MCP_SCRIPT_40535__
+alphadiags:/tmp# echo __MCP_PID_$$__; sh /tmp/_mcp_40535.sh; __MCP_EC=$?; rm -f
+alphadiags:/tmp# echo __MCP_PID_$$__; sh /tmp/_mcp_40535.sh; __MCP_EC=$?; rm -f
+/tmp/_mcp_40535.sh; echo __MCP_MARKER_40535__${__MCP_EC}
+__MCP_PID_267__
+/tmp/_mcp_40535.sh: line 1: sudo: command not found
+__MCP_MARKER_40535__127
+alphadiags:/tmp# echo __MCP_PID_$$__; sh /tmp/_mcp_40535.sh; __MCP_EC=$?; rm -f
+/tmp/_mcp_40535.sh; echo __MCP_MARKER_40535__${__MCP_EC}
+__MCP_PID_267__
+/tmp/_mcp_40535.sh: line 1: sudo: command not found
+__MCP_MARKER_40535__127
+alphadiags:/tmp# echo __MCP_PID_$$__; sh /tmp/_mcp_40535.sh; __MCP_EC=$?; rm -f
+alphadiags:/tmp# cat > /tmp/_mcp_93693.sh <<'__MCP_SCRIPT_93693__'_EC=$?; rm -f
+cat > /tmp/_mcp_93693.sh <<'__MCP_SCRIPT_93693__'
+>
+>
+ame -ahd; ls -la /usr/sbin/sshd 2>/dev/null; echo "---hostname---"; hostname; una
+ame -ahd; ls -la /usr/sbin/sshd 2>/dev/null; echo "---hostname---"; hostname; una
+>
+>
+> __MCP_SCRIPT_93693__
+> __MCP_SCRIPT_93693__
+alphadiags:/tmp#
+alphadiags:/tmp#
+/tmp/_mcp_93693.sh; echo __MCP_MARKER_93693__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /
+__MCP_PID_267__
+uid=0(root) gid=0(root)
+---ifaces---
+BusyBox v1.37.0 (2026-04-08 15:55:11 CST) multi-call binary.
+Usage: ip [OPTIONS] address|route|link|tunnel|neigh|rule [ARGS]
+OPTIONS := -f[amily] inet|inet6|link | -o[neline]
+ip addr add|del IFADDR dev IFACE | show|flush [dev IFACE] [to PREFIX]
+ip route list|flush|add|del|change|append|replace|test ROUTE
+ip link set IFACE [up|down] [arp on|off] [multicast on|off]
+	[promisc on|off] [mtu NUM] [name NAME] [qlen NUM] [address MAC]
+	[master IFACE | nomaster] [netns PID] [type TYPE ARGS]
+ip tunnel add|change|del|show [NAME]
+	[mode ipip|gre|sit] [remote ADDR] [local ADDR] [ttl TTL]
+ip neigh show|flush [to PREFIX] [dev DEV] [nud STATE]
+/tmp/_mcp_93693.sh; echo __MCP_MARKER_93693__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /
+__MCP_PID_267__
+uid=0(root) gid=0(root)
+---ifaces---
+BusyBox v1.37.0 (2026-04-08 15:55:11 CST) multi-call binary.
+Usage: ip [OPTIONS] address|route|link|tunnel|neigh|rule [ARGS]
+OPTIONS := -f[amily] inet|inet6|link | -o[neline]
+ip addr add|del IFADDR dev IFACE | show|flush [dev IFACE] [to PREFIX]
+ip route list|flush|add|del|change|append|replace|test ROUTE
+ip link set IFACE [up|down] [arp on|off] [multicast on|off]
+	[promisc on|off] [mtu NUM] [name NAME] [qlen NUM] [address MAC]
+	[master IFACE | nomaster] [netns PID] [type TYPE ARGS]
+ip tunnel add|change|del|show [NAME]
+	[mode ipip|gre|sit] [remote ADDR] [local ADDR] [ttl TTL]
+ip neigh show|flush [to PREFIX] [dev DEV] [nud STATE]
+ip rule [list] | add|del SELECTOR ACTION
+---addrs---
+BusyBox v1.37.0 (2026-04-08 15:55:11 CST) multi-call binary.
+Usage: ip [OPTIONS] address|route|link|tunnel|neigh|rule [ARGS]
+OPTIONS := -f[amily] inet|inet6|link | -o[neline]
+ip addr add|del IFADDR dev IFACE | show|flush [dev IFACE] [to PREFIX]
+ip route list|flush|add|del|change|append|replace|test ROUTE
+ip link set IFACE [up|down] [arp on|off] [multicast on|off]
+	[promisc on|off] [mtu NUM] [name NAME] [qlen NUM] [address MAC]
+	[master IFACE | nomaster] [netns PID] [type TYPE ARGS]
+ip tunnel add|change|del|show [NAME]
+	[mode ipip|gre|sit] [remote ADDR] [local ADDR] [ttl TTL]
+ip neigh show|flush [to PREFIX] [dev DEV] [nud STATE]
+ip rule [list] | add|del SELECTOR ACTION
+---netns---
+no netns
+---sshd---
+---hostname---
+alphadiags
+Linux alphadiags 6.12.40 #2 SMP PREEMPT_DYNAMIC Wed May 13 12:34:31 CST 2026 x86_64 GNU/Linux
+__MCP_MARKER_93693__0
+ip rule [list] | add|del SELECTOR ACTION
+---addrs---
+BusyBox v1.37.0 (2026-04-08 15:55:11 CST) multi-call binary.
+Usage: ip [OPTIONS] address|route|link|tunnel|neigh|rule [ARGS]
+OPTIONS := -f[amily] inet|inet6|link | -o[neline]
+ip addr add|del IFADDR dev IFACE | show|flush [dev IFACE] [to PREFIX]
+ip route list|flush|add|del|change|append|replace|test ROUTE
+ip link set IFACE [up|down] [arp on|off] [multicast on|off]
+	[promisc on|off] [mtu NUM] [name NAME] [qlen NUM] [address MAC]
+	[master IFACE | nomaster] [netns PID] [type TYPE ARGS]
+ip tunnel add|change|del|show [NAME]
+	[mode ipip|gre|sit] [remote ADDR] [local ADDR] [ttl TTL]
+ip neigh show|flush [to PREFIX] [dev DEV] [nud STATE]
+ip rule [list] | add|del SELECTOR ACTION
+---netns---
+no netns
+---sshd---
+---hostname---
+alphadiags
+Linux alphadiags 6.12.40 #2 SMP PREEMPT_DYNAMIC Wed May 13 12:34:31 CST 2026 x86_64 GNU/Linux
+__MCP_MARKER_93693__0
+alphadiags:/tmp#
+alphadiags:/tmp#
+alphadiags:/tmp# cat > /tmp/_mcp_25475.sh <<'__MCP_SCRIPT_25475__'
+cat > /tmp/_mcp_25475.sh <<'__MCP_SCRIPT_25475__'
+> echo "===link==="; ip link; echo "===addr==="; ip addr; echo "===sshd/dropbear=
+> echo "===link==="; ip link; echo "===addr==="; ip addr; echo "===sshd/dropbear=
+dev/null | grep -iE 'ssh|dropbear' | grep -v grephead; echo "===ps==="; ps w 2>/d
+dev/null | grep -iE 'ssh|dropbear' | grep -v grephead; echo "===ps==="; ps w 2>/d
+> __MCP_SCRIPT_25475__
+> __MCP_SCRIPT_25475__
+alphadiags:/tmp#
+alphadiags:/tmp#
+/tmp/_mcp_25475.sh; echo __MCP_MARKER_25475__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /
+__MCP_PID_267__
+===link===
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq qlen 1000
+    link/ether 00:30:64:7e:e2:1f brd ff:ff:ff:ff:ff:ff
+3: eth1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop qlen 1000
+    link/ether 00:30:64:7e:e2:20 brd ff:ff:ff:ff:ff:ff
+4: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq qlen 1000
+    link/ether 00:a0:c9:00:00:00 brd ff:ff:ff:ff:ff:ff
+===addr===
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq qlen 1000
+/tmp/_mcp_25475.sh; echo __MCP_MARKER_25475__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /
+__MCP_PID_267__
+===link===
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq qlen 1000
+    link/ether 00:30:64:7e:e2:1f brd ff:ff:ff:ff:ff:ff
+3: eth1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop qlen 1000
+    link/ether 00:30:64:7e:e2:20 brd ff:ff:ff:ff:ff:ff
+4: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq qlen 1000
+    link/ether 00:a0:c9:00:00:00 brd ff:ff:ff:ff:ff:ff
+===addr===
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq qlen 1000
+    link/ether 00:30:64:7e:e2:1f brd ff:ff:ff:ff:ff:ff
+3: eth1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop qlen 1000
+    link/ether 00:30:64:7e:e2:20 brd ff:ff:ff:ff:ff:ff
+4: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq qlen 1000
+    link/ether 00:a0:c9:00:00:00 brd ff:ff:ff:ff:ff:ff
+    inet 10.10.129.183/24 brd 10.10.129.255 scope global eth2
+       valid_lft forever preferred_lft forever
+===sshd/dropbear===
+-rwxr-xr-x    1 root     root        437776 Apr  8 08:09 /sbin/dropbear
+-rwxr-xr-x    1 root     root        437776 Apr  8 08:09 /usr/sbin/dropbear
+    link/ether 00:30:64:7e:e2:1f brd ff:ff:ff:ff:ff:ff
+3: eth1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop qlen 1000
+    link/ether 00:30:64:7e:e2:20 brd ff:ff:ff:ff:ff:ff
+4: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq qlen 1000
+    link/ether 00:a0:c9:00:00:00 brd ff:ff:ff:ff:ff:ff
+    inet 10.10.129.183/24 brd 10.10.129.255 scope global eth2
+       valid_lft forever preferred_lft forever
+===sshd/dropbear===
+-rwxr-xr-x    1 root     root        437776 Apr  8 08:09 /sbin/dropbear
+-rwxr-xr-x    1 root     root        437776 Apr  8 08:09 /usr/sbin/dropbear
+/usr/sbin/dropbear
+/etc/dropbear
+===ps===
+__MCP_MARKER_25475__1
+/usr/sbin/dropbear
+/etc/dropbear
+===ps===
+__MCP_MARKER_25475__1
+alphadiags:/tmp#
+alphadiags:/tmp#
+alphadiags:/tmp# cat > /tmp/_mcp_78924.sh <<'__MCP_SCRIPT_78924__'
+cat > /tmp/_mcp_78924.sh <<'__MCP_SCRIPT_78924__'
+> echo "===dropbear dir==="; ls -la /etc/dropbear/; echo "===passwd==="; cat /etc
+> echo "===dropbear dir==="; ls -la /etc/dropbear/; echo "===passwd==="; cat /etc
+routes==="; ip route"; /usr/sbin/dropbear -h 2>&1 | head -20; echo "===existing r
+routes==="; ip route"; /usr/sbin/dropbear -h 2>&1 | head -20; echo "===existing r
+> __MCP_SCRIPT_78924__
+> __MCP_SCRIPT_78924__
+alphadiags:/tmp#
+alphadiags:/tmp#
+/tmp/_mcp_78924.sh; echo __MCP_MARKER_78924__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /
+__MCP_PID_267__
+===dropbear dir===
+ls: /etc/dropbear/: No such file or directory
+===passwd===
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/bin/false
+bin:x:2:2:bin:/bin:/bin/false
+sys:x:3:3:sys:/dev:/bin/false
+sync:x:4:100:sync:/bin:/bin/sync
+mail:x:8:8:mail:/var/spool/mail:/bin/false
+www-data:x:33:33:www-data:/var/www:/bin/false
+operator:x:37:37:Operator:/var:/bin/false
+nobody:x:65534:65534:nobody:/home:/bin/false
+tss:x:100:101:tss user for tpm2:/:/bin/false
+===shadow root===
+root::::::::
+===dropbear help===
+Dropbear server v2025.89 https://matt.ucc.asn.au/dropbear/dropbear.html
+Usage: /usr/sbin/dropbear [options]
+-b bannerfile	Display the contents of bannerfile before user login
+		(default: none)
+-r keyfile      Specify hostkeys (repeatable)
+		defaults: 
+		- rsa /etc/dropbear/dropbear_rsa_host_key
+		- ecdsa /etc/dropbear/dropbear_ecdsa_host_key
+/tmp/_mcp_78924.sh; echo __MCP_MARKER_78924__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /
+__MCP_PID_267__
+===dropbear dir===
+ls: /etc/dropbear/: No such file or directory
+===passwd===
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/bin/false
+bin:x:2:2:bin:/bin:/bin/false
+sys:x:3:3:sys:/dev:/bin/false
+sync:x:4:100:sync:/bin:/bin/sync
+mail:x:8:8:mail:/var/spool/mail:/bin/false
+www-data:x:33:33:www-data:/var/www:/bin/false
+operator:x:37:37:Operator:/var:/bin/false
+nobody:x:65534:65534:nobody:/home:/bin/false
+tss:x:100:101:tss user for tpm2:/:/bin/false
+===shadow root===
+root::::::::
+===dropbear help===
+Dropbear server v2025.89 https://matt.ucc.asn.au/dropbear/dropbear.html
+Usage: /usr/sbin/dropbear [options]
+-b bannerfile	Display the contents of bannerfile before user login
+		(default: none)
+-r keyfile      Specify hostkeys (repeatable)
+		defaults: 
+		- rsa /etc/dropbear/dropbear_rsa_host_key
+		- ecdsa /etc/dropbear/dropbear_ecdsa_host_key
+		- ed25519 /etc/dropbear/dropbear_ed25519_host_key
+-D		Directory containing authorized_keys file
+-R		Create hostkeys as required
+-F		Don't fork into background
+-e		Pass on server process environment to child process
+-E		Log to stderr rather than syslog
+-m		Don't display the motd on login
+-w		Disallow root logins
+-G		Restrict logins to members of specified group
+-s		Disable password logins
+-g		Disable password logins for root
+-B		Allow blank password logins
+===existing routes===
+default via 10.10.129.254 dev eth2 
+10.10.129.0/24 dev eth2 scope link  src 10.10.129.183 
+__MCP_MARKER_78924__0
+		- ed25519 /etc/dropbear/dropbear_ed25519_host_key
+-D		Directory containing authorized_keys file
+-R		Create hostkeys as required
+-F		Don't fork into background
+-e		Pass on server process environment to child process
+-E		Log to stderr rather than syslog
+-m		Don't display the motd on login
+-w		Disallow root logins
+-G		Restrict logins to members of specified group
+-s		Disable password logins
+-g		Disable password logins for root
+-B		Allow blank password logins
+===existing routes===
+default via 10.10.129.254 dev eth2 
+10.10.129.0/24 dev eth2 scope link  src 10.10.129.183 
+__MCP_MARKER_78924__0
+alphadiags:/tmp#
+alphadiags:/tmp#
+alphadiags:/tmp# cat > /tmp/_mcp_56828.sh <<'__MCP_SCRIPT_56828__'
+cat > /tmp/_mcp_56828.sh <<'__MCP_SCRIPT_56828__'
+> mkdir -p /etc/dropbear; /usr/sbin/dropbear -R -B; sleep 1; echo "---exit:$?---"
+> mkdir -p /etc/dropbear; /usr/sbin/dropbear -R -B; sleep 1; echo "---exit:$?---"
+n 2>/dev/null | grep ':22 ' || ss -ltn 2>/dev/null | grep ':22 '--"; netstat -ltn
+n 2>/dev/null | grep ':22 ' || ss -ltn 2>/dev/null | grep ':22 '--"; netstat -ltn
+> __MCP_SCRIPT_56828__
+> __MCP_SCRIPT_56828__
+alphadiags:/tmp#
+alphadiags:/tmp#
+/tmp/_mcp_56828.sh; echo __MCP_MARKER_56828__${__MCP_EC}.sh; __MCP_EC=$?; rm -f
+__MCP_PID_267__
+mkdir: can't create directory '/etc/dropbear': No such file or directory
+/tmp/_mcp_56828.sh; echo __MCP_MARKER_56828__${__MCP_EC}.sh; __MCP_EC=$?; rm -f
+__MCP_PID_267__
+mkdir: can't create directory '/etc/dropbear': No such file or directory
+---exit:0---
+---exit:0---
+  541 root      0:00 /usr/sbin/dropbear -R -B
+---listening---
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      
+__MCP_MARKER_56828__0
+  541 root      0:00 /usr/sbin/dropbear -R -B
+---listening---
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      
+__MCP_MARKER_56828__0
+alphadiags:/tmp#
+alphadiags:/tmp#
+alphadiags:/tmp# cat > /tmp/_mcp_38902.sh <<'__MCP_SCRIPT_38902__'
+cat > /tmp/_mcp_38902.sh <<'__MCP_SCRIPT_38902__'
+> mount | grep -E ' / | /etc '; echo "---etc writable test---"; touch /etc/.wtest
+> mount | grep -E ' / | /etc '; echo "---etc writable test---"; touch /etc/.wtest
+ull | tr '\0' ' '; echo "---dropbear cmdline---"; cat /proc/541/cmdline 2>/dev/nu
+ull | tr '\0' ' '; echo "---dropbear cmdline---"; cat /proc/541/cmdline 2>/dev/nu
+> __MCP_SCRIPT_38902__
+> __MCP_SCRIPT_38902__
+alphadiags:/tmp#
+alphadiags:/tmp#
+/tmp/_mcp_38902.sh; echo __MCP_MARKER_38902__${__MCP_EC}.sh; __MCP_EC=$?; rm -f
+__MCP_PID_267__
+rootfs on / type rootfs (rw,size=32784824k,nr_inodes=8196206,inode64)
+---etc writable test---
+etc WRITABLE
+---hostkey location---
+ls: /etc/dropbear/: No such file or directory
+---dropbear cmdline---
+/usr/sbin/dropbear -R -B 
+__MCP_MARKER_38902__0
+/tmp/_mcp_38902.sh; echo __MCP_MARKER_38902__${__MCP_EC}.sh; __MCP_EC=$?; rm -f
+__MCP_PID_267__
+rootfs on / type rootfs (rw,size=32784824k,nr_inodes=8196206,inode64)
+---etc writable test---
+etc WRITABLE
+---hostkey location---
+ls: /etc/dropbear/: No such file or directory
+---dropbear cmdline---
+/usr/sbin/dropbear -R -B 
+__MCP_MARKER_38902__0
+alphadiags:/tmp#
+alphadiags:/tmp#
+alphadiags:/tmp# cat > /tmp/_mcp_50735.sh <<'__MCP_SCRIPT_50735__'
+cat > /tmp/_mcp_50735.sh <<'__MCP_SCRIPT_50735__'
+> mkdir /etc/dropbear && echo "mkdir OK" || echo "mkdir FAILED rc=$?"; ls -ld /et
+> mkdir /etc/dropbear && echo "mkdir OK" || echo "mkdir FAILED rc=$?"; ls -ld /et
+s -ld /etc; readlink -f /etcc/dropbear/ 2>&1; echo "---is /etc a symlink?---"; ls
+s -ld /etc; readlink -f /etcc/dropbear/ 2>&1; echo "---is /etc a symlink?---"; ls
+> __MCP_SCRIPT_50735__
+> __MCP_SCRIPT_50735__
+alphadiags:/tmp#
+alphadiags:/tmp#
+/tmp/_mcp_50735.sh; echo __MCP_MARKER_50735__${__MCP_EC}.sh; __MCP_EC=$?; rm -f
+__MCP_PID_267__
+mkdir: can't create directory '/etc/dropbear': File exists
+mkdir FAILED rc=1
+lrwxrwxrwx    1 root     root            17 Apr  8 07:55 /etc/dropbear -> /var/run/dropbear
+ls: /etc/dropbear/: No such file or directory
+---is /etc a symlink?---
+drwxr-xr-x    9 root     root           660 May 14 17:01 /etc
+/etc
+__MCP_MARKER_50735__0
+/tmp/_mcp_50735.sh; echo __MCP_MARKER_50735__${__MCP_EC}.sh; __MCP_EC=$?; rm -f
+__MCP_PID_267__
+mkdir: can't create directory '/etc/dropbear': File exists
+mkdir FAILED rc=1
+lrwxrwxrwx    1 root     root            17 Apr  8 07:55 /etc/dropbear -> /var/run/dropbear
+ls: /etc/dropbear/: No such file or directory
+---is /etc a symlink?---
+drwxr-xr-x    9 root     root           660 May 14 17:01 /etc
+/etc
+__MCP_MARKER_50735__0
+alphadiags:/tmp#
+alphadiags:/tmp#
+alphadiags:/tmp# cat > /tmp/_mcp_35627.sh <<'__MCP_SCRIPT_35627__'
+cat > /tmp/_mcp_35627.sh <<'__MCP_SCRIPT_35627__'
+alphadiags:/tmp# cat > /tmp/_mcp_35627.sh <<'__MCP_SCRIPT_35627__'
+cat > /tmp/_mcp_35627.sh <<'__MCP_SCRIPT_35627__'
+grep; ss -ltn 2>/dev/null | grep ':22 'ropbear/; ps w | grep dropbear | grep -v g
+grep; ss -ltn 2>/dev/null | grep ':22 'ropbear/; ps w | grep dropbear | grep -v g
+>
+>
+> __MCP_SCRIPT_35627__
+> __MCP_SCRIPT_35627__
+alphadiags:/tmp#
+alphadiags:/tmp#
+/tmp/_mcp_35627.sh; echo __MCP_MARKER_35627__${__MCP_EC}.sh; __MCP_EC=$?; rm -f
+__MCP_PID_267__
+keydir OK
+total 0
+drwxr-xr-x    2 root     root            40 May 14 17:02 .
+drwxr-xr-x    4 root     root           120 May 14 17:02 ..
+---restart dropbear cleanly---
+/tmp/_mcp_35627.sh; echo __MCP_MARKER_35627__${__MCP_EC}.sh; __MCP_EC=$?; rm -f
+__MCP_PID_267__
+keydir OK
+total 0
+drwxr-xr-x    2 root     root            40 May 14 17:02 .
+drwxr-xr-x    4 root     root           120 May 14 17:02 ..
+---restart dropbear cleanly---
+total 0
+total 0
+drwxr-xr-x    2 root     root            40 May 14 17:02 .
+drwxr-xr-x    4 root     root           120 May 14 17:02 ..
+  576 root      0:00 /usr/sbin/dropbear -R -B
+__MCP_MARKER_35627__1
+drwxr-xr-x    2 root     root            40 May 14 17:02 .
+drwxr-xr-x    4 root     root           120 May 14 17:02 ..
+  576 root      0:00 /usr/sbin/dropbear -R -B
+__MCP_MARKER_35627__1
+alphadiags:/tmp#
+alphadiags:/tmp#
+alphadiags:/tmp# cat > /tmp/_mcp_66683.sh <<'__MCP_SCRIPT_66683__'
+cat > /tmp/_mcp_66683.sh <<'__MCP_SCRIPT_66683__'
+> ps w | grep dropbear | grep -v grep; echo "---listen check---"; netstat -ltn 2>
+> ps w | grep dropbear | grep -v grep; echo "---listen check---"; netstat -ltn 2>
+cho; sleep 2) | telnet 127.0.0.1 22 2>&1 | head -3 "---loopback ssh test---"; (ec
+cho; sleep 2) | telnet 127.0.0.1 22 2>&1 | head -3 "---loopback ssh test---"; (ec
+> __MCP_SCRIPT_66683__
+> __MCP_SCRIPT_66683__
+alphadiags:/tmp#
+alphadiags:/tmp#
+/tmp/_mcp_66683.sh; echo __MCP_MARKER_66683__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /
+__MCP_PID_267__
+  576 root      0:00 /usr/sbin/dropbear -R -B
+---listen check---
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      
+---rc:1---
+---keys---
+total 0
+drwxr-xr-x    2 root     root            40 May 14 17:02 .
+drwxr-xr-x    4 root     root           120 May 14 17:02 ..
+---loopback ssh test---
+SSH-2.0-dropbear_2025.89
+/tmp/_mcp_66683.sh; echo __MCP_MARKER_66683__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /
+__MCP_PID_267__
+  576 root      0:00 /usr/sbin/dropbear -R -B
+---listen check---
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      
+---rc:1---
+---keys---
+total 0
+drwxr-xr-x    2 root     root            40 May 14 17:02 .
+drwxr-xr-x    4 root     root           120 May 14 17:02 ..
+---loopback ssh test---
+SSH-2.0-dropbear_2025.89
+���5                                                                                                                                                                                                        sntrup761x25519-sha512,sntrup761x25519-sha512@openssh.com,mlkem768x25519-sha256,curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group14-sha256,kexguess2@matt.ucc.asn.au,kex-strict-s-v00@openssh.com,ssh-ed25519,ecdsa-sha2-nistp256,rsa-sha2-2563chacha20-poly1305@openssh.com,aes256-ctr,aes128-ctr3chacha20-poly1305@openssh.com,hmac-sha2-256�R48-ctr
+Connected to 127.0.0.1
+���5                                                                                                                                                                                                        sntrup761x25519-sha512,sntrup761x25519-sha512@openssh.com,mlkem768x25519-sha256,curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group14-sha256,kexguess2@matt.ucc.asn.au,kex-strict-s-v00@openssh.com,ssh-ed25519,ecdsa-sha2-nistp256,rsa-sha2-2563chacha20-poly1305@openssh.com,aes256-ctr,aes128-ctr3chacha20-poly1305@openssh.com,hmac-sha2-256�R48-ctr
+Connected to 127.0.0.1
+__MCP_MARKER_66683__0
+__MCP_MARKER_66683__0
+alphadiags:/tmp#
+alphadiags:/tmp#
+alphadiags:/tmp# cat > /tmp/_mcp_88144.sh <<'__MCP_SCRIPT_88144__'
+cat > /tmp/_mcp_88144.sh <<'__MCP_SCRIPT_88144__'
+>
+>
+> ip link set eth2 up
+> ip link set eth2 up
+> __MCP_SCRIPT_88144__
+> __MCP_SCRIPT_88144__
+alphadiags:/tmp#
+alphadiags:/tmp#
+/tmp/_mcp_88144.sh; echo __MCP_MARKER_88144__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /
+__MCP_PID_267__
+__MCP_MARKER_88144__0
+/tmp/_mcp_88144.sh; echo __MCP_MARKER_88144__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /
+__MCP_PID_267__
+__MCP_MARKER_88144__0
+alphadiags:/tmp#
+alphadiags:/tmp#
+alphadiags:/tmp# cat > /tmp/_mcp_28343.sh <<'__MCP_SCRIPT_28343__'
+cat > /tmp/_mcp_28343.sh <<'__MCP_SCRIPT_28343__'
+> ip addr add 10.10.129.183/24 dev eth2 2>/dev/null || true
+> ip addr add 10.10.129.183/24 dev eth2 2>/dev/null || true
+> __MCP_SCRIPT_28343__
+> __MCP_SCRIPT_28343__
+alphadiags:/tmp# echo __MCP_PID_$$__; sh /tmp/_mcp_28343.sh; __MCP_EC=$?; rm -f /
+alphadiags:/tmp# echo __MCP_PID_$$__; sh /tmp/_mcp_28343.sh; __MCP_EC=$?; rm -f /
+/tmp/_mcp_28343.sh; echo __MCP_MARKER_28343__${__MCP_EC}
+__MCP_PID_267__
+__MCP_MARKER_28343__0
+alphadiags:/tmp# echo __MCP_PID_$$__; sh /tmp/_mcp_28343.sh; __MCP_EC=$?; rm -f /
+/tmp/_mcp_28343.sh; echo __MCP_MARKER_28343__${__MCP_EC}
+__MCP_PID_267__
+__MCP_MARKER_28343__0
+alphadiags:/tmp# echo __MCP_PID_$$__; sh /tmp/_mcp_28343.sh; __MCP_EC=$?; rm -f /
+alphadiags:/tmp# cat > /tmp/_mcp_63057.sh <<'__MCP_SCRIPT_63057__'_EC=$?; rm -f /
+cat > /tmp/_mcp_63057.sh <<'__MCP_SCRIPT_63057__'
+> mkdir -p /var/run/dropbear
+> mkdir -p /var/run/dropbear
+> mkdir -p /var/run/dropbear
+> mkdir -p /var/run/dropbear
+> __MCP_SCRIPT_63057__
+> __MCP_SCRIPT_63057__
+alphadiags:/tmp#
+alphadiags:/tmp#
+/tmp/_mcp_63057.sh; echo __MCP_MARKER_63057__${__MCP_EC}.sh; __MCP_EC=$?; rm -f
+__MCP_PID_267__
+__MCP_MARKER_63057__0
+/tmp/_mcp_63057.sh; echo __MCP_MARKER_63057__${__MCP_EC}.sh; __MCP_EC=$?; rm -f
+__MCP_PID_267__
+__MCP_MARKER_63057__0
+alphadiags:/tmp#
+alphadiags:/tmp#
+alphadiags:/tmp# cat > /tmp/_mcp_72833.sh <<'__MCP_SCRIPT_72833__'
+cat > /tmp/_mcp_72833.sh <<'__MCP_SCRIPT_72833__'
+alphadiags:/tmp# cat > /tmp/_mcp_72833.sh <<'__MCP_SCRIPT_72833__'
+cat > /tmp/_mcp_72833.sh <<'__MCP_SCRIPT_72833__'
+> /usr/sbin/dropbear -R -B 2>/dev/null || true
+> /usr/sbin/dropbear -R -B 2>/dev/null || true
+>
+>
+> __MCP_SCRIPT_72833__
+> __MCP_SCRIPT_72833__
+/tmp/_mcp_72833.sh; echo __MCP_MARKER_72833__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /
+__MCP_PID_267__
+__MCP_MARKER_72833__0
+/tmp/_mcp_72833.sh; echo __MCP_MARKER_72833__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /
+__MCP_PID_267__
+__MCP_MARKER_72833__0
+alphadiags:/tmp#
+alphadiags:/tmp#
+alphadiags:/tmp# cat > /tmp/_mcp_18938.sh <<'__MCP_SCRIPT_18938__'
+cat > /tmp/_mcp_18938.sh <<'__MCP_SCRIPT_18938__'
+> echo "===eth2 state==="; ip addr show eth2; echo "===ping host==="; ping -c 3 -
+> echo "===eth2 state==="; ip addr show eth2; echo "===ping host==="; ping -c 3 -
+l | grep ':22'==="; ps w | grep dropbear | grep -v grep; netstat -ltn 2>/dev/null
+l | grep ':22'==="; ps w | grep dropbear | grep -v grep; netstat -ltn 2>/dev/null
+> __MCP_SCRIPT_18938__
+> __MCP_SCRIPT_18938__
+alphadiags:/tmp#
+alphadiags:/tmp#
+/tmp/_mcp_18938.sh; echo __MCP_MARKER_18938__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /
+__MCP_PID_267__
+===eth2 state===
+4: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq qlen 1000
+    link/ether 00:a0:c9:00:00:00 brd ff:ff:ff:ff:ff:ff
+    inet 10.10.129.183/24 brd 10.10.129.255 scope global eth2
+       valid_lft forever preferred_lft forever
+===ping host===
+PING 10.10.129.1 (10.10.129.1): 56 data bytes
+64 bytes from 10.10.129.1: seq=0 ttl=64 time=0.218 ms
+/tmp/_mcp_18938.sh; echo __MCP_MARKER_18938__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /
+__MCP_PID_267__
+===eth2 state===
+4: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq qlen 1000
+    link/ether 00:a0:c9:00:00:00 brd ff:ff:ff:ff:ff:ff
+    inet 10.10.129.183/24 brd 10.10.129.255 scope global eth2
+       valid_lft forever preferred_lft forever
+===ping host===
+PING 10.10.129.1 (10.10.129.1): 56 data bytes
+64 bytes from 10.10.129.1: seq=0 ttl=64 time=0.218 ms
+64 bytes from 10.10.129.1: seq=1 ttl=64 time=0.178 ms
+64 bytes from 10.10.129.1: seq=1 ttl=64 time=0.178 ms
+64 bytes from 10.10.129.1: seq=2 ttl=64 time=0.181 ms
+--- 10.10.129.1 ping statistics ---
+64 bytes from 10.10.129.1: seq=2 ttl=64 time=0.181 ms
+--- 10.10.129.1 ping statistics ---
+3 packets transmitted, 3 packets received, 0% packet loss
+round-trip min/avg/max = 0.178/0.192/0.218 ms
+===arp===
+? (10.10.129.1) at d8:3a:dd:fc:27:3d [ether]  on eth2
+? (10.10.129.254) at <incomplete>  on eth2
+===dropbear still up===
+  576 root      0:00 /usr/sbin/dropbear -R -B
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      
+__MCP_MARKER_18938__0
+3 packets transmitted, 3 packets received, 0% packet loss
+round-trip min/avg/max = 0.178/0.192/0.218 ms
+===arp===
+? (10.10.129.1) at d8:3a:dd:fc:27:3d [ether]  on eth2
+? (10.10.129.254) at <incomplete>  on eth2
+===dropbear still up===
+  576 root      0:00 /usr/sbin/dropbear -R -B
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      
+__MCP_MARKER_18938__0
+alphadiags:/tmp#
+alphadiags:/tmp#
+q2c-ssh-probe
+alphadiags
+uid=0(root) gid=0(root) groups=0(root),10(wheel)
+6.12.40
+eth2 10.10.129.183/24
+ssh-ok
+alphadiags
+67737
+q2c-ssh-final-ok
+alphadiags:/tmp# cat > /tmp/_mcp_53597.sh <<'__MCP_SCRIPT_53597__'
+cat > /tmp/_mcp_53597.sh <<'__MCP_SCRIPT_53597__'
+>
+>
+> echo "pre-reboot uptime: $(cat /proc/uptime)"; sync; (sleep 1; reboot) &
+> echo "pre-reboot uptime: $(cat /proc/uptime)"; sync; (sleep 1; reboot) &
+>
+>
+> __MCP_SCRIPT_53597__
+> __MCP_SCRIPT_53597__
+/tmp/_mcp_53597.sh; echo __MCP_MARKER_53597__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /
+__MCP_PID_267__
+pre-reboot uptime: 68011.03 1088091.49
+__MCP_MARKER_53597__0
+/tmp/_mcp_53597.sh; echo __MCP_MARKER_53597__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /
+__MCP_PID_267__
+pre-reboot uptime: 68011.03 1088091.49
+__MCP_MARKER_53597__0
+alphadiags:/tmp#
+alphadiags:/tmp#
+alphadiags:/tmp# umount: none busy - remounted read-only
+umount: can't unmount /: Invalid argument
+swapoff: can't open '/etc/fstab': No such file or directory
+The system is going down NOW!
+Sent SIGTERM to all processes
+Sent SIGKILL to
+Sent SIGKILL to[68015.807844] ACPI: PM: Preparing to enter system sleep state S5
+[68016.125029] reboot: Restarting system
+[68016.128723] reboot: machine restart
+Version 2.22.1294. Copyright (C) 2026 AMI                                                                                                                                                               Express-VR7-R3.1 REV:1.05.11.DN03                                                                                                                                                                       Press <DEL> or <ESC> to enter setup.
+UEFI Interactive Shell v2.2
+EDK II
+UEFI v2.80 (American Megatrends, 0x00050018)
+Mapping table
+      FS0: Alias(s):HD2b0b:;BLK3:
+          PciRoot(0x0)/Pci(0x8,0x3)/Pci(0x0,0x3)/USB(0x1,0x0)/HD(1,MBR,0x00000000,0x800,0xE5317C0)
+     BLK2: Alias(s):
+          PciRoot(0x0)/Pci(0x8,0x3)/Pci(0x0,0x3)/USB(0x1,0x0)
+     BLK0: Alias(s):
+          PciRoot(0x0)/Pci(0x2,0x3)/Pci(0x0,0x0)/NVMe(0x1,83-35-EE-87-52-48-35-7C)
+     BLK1: Alias(s):
+          PciRoot(0x0)/Pci(0x2,0x5)/Pci(0x0,0x0)/NVMe(0x1,7E-35-EE-87-52-48-35-7C)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Press ESC in 5 seconds to skip startup.nsh or any other key to continue.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Press ESC in 4 seconds to skip startup.nsh or any other key to continue.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Press ESC in 3 seconds to skip startup.nsh or any other key to continue.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Press ESC in 2 seconds to skip startup.nsh or any other key to continue.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Press ESC in 1 seconds to skip startup.nsh or any other key to continue.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Press ESC in 1 seconds to skip startup.nsh or any other key to continue.
+Shell> qtooc.0.0.1-b2 console=ttyS0,115200n8
+[    0.000000] Linux version 6.12.40 (yushin@yushin-virtual-machine) (x86_64-buildroot-linux-gnu-gcc.br_real (Buildroot 2025.02.12) 14.3.0, GNU ld (GNU Binutils) 2.43.1) #2 SMP PREEMPT_DYNAMIC Wed May 13 12:34:31 CST 2026
+[    0.000000] Linux version 6.12.40 (yushin@yushin-virtual-machine) (x86_64-buildroot-linux-gnu-gcc.br_real (Buildroot 2025.02.12) 14.3.0, GNU ld (GNU Binutils) 2.43.1) #2 SMP PREEMPT_DYNAMIC Wed May 13 12:34:31 CST 2026
+[    0.000000] Command line: qtooc.0.0.1-b2 console=ttyS0,115200n8
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Hygon HygonGenuine
+[    0.000000]   Centaur CentaurHauls
+[    0.000000]   zhaoxin   Shanghai  
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009ffff] usable
+[    0.000000] BIOS-e820: [mem 0x00000000000a0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x0000000009afefff] usable
+[    0.000000] BIOS-e820: [mem 0x0000000009aff000-0x0000000009ffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x000000000a000000-0x000000000a1fffff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000a200000-0x000000000a216fff] ACPI NVS
+[    0.000000] BIOS-e820: [mem 0x000000000a217000-0x000000009381afff] usable
+[    0.000000] BIOS-e820: [mem 0x000000009381b000-0x0000000093b69fff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000093b6a000-0x0000000093bbcfff] ACPI data
+[    0.000000] BIOS-e820: [mem 0x0000000093bbd000-0x0000000098bf8fff] ACPI NVS
+[    0.000000] BIOS-e820: [mem 0x0000000098bf9000-0x0000000099dfdfff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000099dfe000-0x0000000099dfefff] usable
+[    0.000000] BIOS-e820: [mem 0x0000000099dff000-0x0000000099dfffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000099e00000-0x000000009affcfff] usable
+[    0.000000] BIOS-e820: [mem 0x000000009affd000-0x000000009bffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x000000009ce00000-0x000000009fffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000e0000000-0x00000000efffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fd000000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000100000000-0x000000105e2fffff] usable
+[    0.000000] BIOS-e820: [mem 0x000000105f340000-0x00000010801fffff] reserved
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] APIC: Static calls initialized
+[    0.000000] extended physical RAM map:
+[    0.000000] reserve setup_data: [mem 0x0000000000000000-0x000000000009ffff] usable
+[    0.000000] reserve setup_data: [mem 0x00000000000a0000-0x00000000000fffff] reserved
+[    0.000000] reserve setup_data: [mem 0x0000000000100000-0x0000000009afefff] usable
+[    0.000000] reserve setup_data: [mem 0x0000000009aff000-0x0000000009ffffff] reserved
+[    0.000000] reserve setup_data: [mem 0x000000000a000000-0x000000000a1fffff] usable
+[    0.000000] reserve setup_data: [mem 0x000000000a200000-0x000000000a216fff] ACPI NVS
+[    0.000000] reserve setup_data: [mem 0x000000000a217000-0x000000008f478017] usable
+[    0.000000] reserve setup_data: [mem 0x000000008f478018-0x000000008f482e57] usable
+[    0.000000] reserve setup_data: [mem 0x000000008f482e58-0x000000008f483017] usable
+[    0.000000] reserve setup_data: [mem 0x000000008f483018-0x000000008f48ae57] usable
+[    0.000000] reserve setup_data: [mem 0x000000008f48ae58-0x000000009381afff] usable
+[    0.000000] reserve setup_data: [mem 0x000000009381b000-0x0000000093b69fff] reserved
+[    0.000000] reserve setup_data: [mem 0x0000000093b6a000-0x0000000093bbcfff] ACPI data
+[    0.000000] reserve setup_data: [mem 0x0000000093bbd000-0x0000000098bf8fff] ACPI NVS
+[    0.000000] reserve setup_data: [mem 0x0000000098bf9000-0x0000000099dfdfff] reserved
+[    0.000000] reserve setup_data: [mem 0x0000000099dfe000-0x0000000099dfefff] usable
+[    0.000000] reserve setup_data: [mem 0x0000000099dff000-0x0000000099dfffff] reserved
+[    0.000000] reserve setup_data: [mem 0x0000000099e00000-0x000000009affcfff] usable
+[    0.000000] reserve setup_data: [mem 0x000000009affd000-0x000000009bffffff] reserved
+[    0.000000] reserve setup_data: [mem 0x000000009ce00000-0x000000009fffffff] reserved
+[    0.000000] reserve setup_data: [mem 0x00000000e0000000-0x00000000efffffff] reserved
+[    0.000000] reserve setup_data: [mem 0x00000000fd000000-0x00000000ffffffff] reserved
+[    0.000000] reserve setup_data: [mem 0x0000000100000000-0x000000105e2fffff] usable
+[    0.000000] reserve setup_data: [mem 0x000000105f340000-0x00000010801fffff] reserved
+[    0.000000] efi: EFI v2.8 by American Megatrends
+[    0.000000] efi: ACPI=0x98bdf000 ACPI 2.0=0x98bdf014 SMBIOS=0x99b95000 SMBIOS 3.0=0x99b94000 MEMATTR=0x8f617018 ESRT=0x91b91b98 RNG=0x93b79018 
+[    0.000000] random: crng init done
+[    0.000000] efi: Remove mem52: MMIO range=[0xe0000000-0xefffffff] (256MB) from e820 map
+[    0.000000] efi: Remove mem53: MMIO range=[0xfd000000-0xfedfffff] (30MB) from e820 map
+[    0.000000] efi: Not removing mem54: MMIO range=[0xfee00000-0xfee00fff] (4KB) from e820 map
+[    0.000000] efi: Remove mem55: MMIO range=[0xfee01000-0xffffffff] (17MB) from e820 map
+[    0.000000] efi: Remove mem57: MMIO range=[0x1060000000-0x10801fffff] (514MB) from e820 map
+[    0.000000] SMBIOS 3.4.0 present.
+[    0.000000] DMI: To be filled by O.E.M. To be filled by O.E.M./To be filled by O.E.M., BIOS 1.05.11.DN03 04/20/2026
+[    0.000000] DMI: Memory slots populated: 2/2
+[    0.000000] tsc: Fast TSC calibration using PIT
+[    0.000000] tsc: Detected 1896.388 MHz processor
+[    0.000418] last_pfn = 0x105e300 max_arch_pfn = 0x400000000
+[    0.000425] MTRR map: 5 entries (3 fixed + 2 variable; max 20), built from 9 variable MTRRs
+[    0.000427] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+[    0.000628] last_pfn = 0x9affd max_arch_pfn = 0x400000000
+[    0.003466] esrt: Reserving ESRT space from 0x0000000091b91b98 to 0x0000000091b91bd0.
+[    0.003485] Using GB pages for direct mapping
+[    0.003891] Secure boot disabled
+[    0.003895] ACPI: Early table checksum verification disabled
+[    0.003898] ACPI: RSDP 0x0000000098BDF014 000024 (v02 ALASKA)
+[    0.003902] ACPI: XSDT 0x0000000098BDE728 0000E4 (v01 ALASKA A M I    01072009 AMI  01000013)
+[    0.003907] ACPI: FACP 0x0000000093BB1000 000114 (v06 ALASKA A M I    01072009 AMI  00010013)
+[    0.003910] ACPI: DSDT 0x0000000093BA8000 008BA0 (v02 ALASKA A M I    01072009 INTL 20200717)
+[    0.003912] ACPI: FACS 0x0000000098BDC000 000040
+[    0.003913] ACPI: SSDT 0x0000000093BBC000 000573 (v01 AMD    ACDC     00000001 INTL 20200717)
+[    0.003915] ACPI: SPMI 0x0000000093BBB000 000041 (v05 ALASKA A M I    00000000 AMI. 00000000)
+[    0.003917] ACPI: SSDT 0x0000000093BB2000 00808B (v02 AMD    AmdTable 00000002 MSFT 02000002)
+[    0.003918] ACPI: FIDT 0x0000000093BA7000 00009F (v01 ALASKA A M I    01072009 AMI  00010013)
+[    0.003920] ACPI: MCFG 0x0000000093BA6000 00003C (v01 ALASKA A M I    01072009 MSFT 00010013)
+[    0.003921] ACPI: SSDT 0x0000000093BA2000 0035A4 (v02 AMD    AmdTable 00000001 AMD  00000001)
+[    0.003923] ACPI: CRAT 0x0000000093BA1000 000EE8 (v01 AMD    AmdTable 00000001 AMD  00000001)
+[    0.003924] ACPI: CDIT 0x0000000093BA0000 000029 (v01 AMD    AmdTable 00000001 AMD  00000001)
+[    0.003926] ACPI: SSDT 0x0000000093B9F000 000788 (v01 AMD    AmdTable 00000001 INTL 20200717)
+[    0.003927] ACPI: SSDT 0x0000000093B9D000 001245 (v01 AMD    AmdTable 00000001 INTL 20200717)
+[    0.003929] ACPI: SSDT 0x0000000093B9C000 000699 (v01 AMD    AmdTable 00000001 INTL 20200717)
+[    0.003930] ACPI: SSDT 0x0000000093B9B000 0000D3 (v01 AMD    AmdTable 00000001 INTL 20200717)
+[    0.003932] ACPI: SSDT 0x0000000093B93000 007EBA (v01 AMD    AmdTable 00000001 INTL 20200717)
+[    0.003933] ACPI: WSMT 0x0000000093B92000 000028 (v01 ALASKA A M I    01072009 AMI  00010013)
+[    0.003935] ACPI: APIC 0x0000000093B91000 000110 (v03 ALASKA A M I    01072009 AMI  00010013)
+[    0.003936] ACPI: SSDT 0x0000000093B90000 0007CF (v01 AMD    AmdTable 00000001 INTL 20200717)
+[    0.003938] ACPI: SSDT 0x0000000093B8E000 0010A5 (v01 AMD    AmdTable 00000001 INTL 20200717)
+[    0.003939] ACPI: SSDT 0x0000000093B8D000 0007B5 (v01 AMD    AmdTable 00000001 INTL 20200717)
+[    0.003940] ACPI: SSDT 0x0000000093B83000 009479 (v01 AMD    AmdTable 00000001 INTL 20200717)
+[    0.003942] ACPI: SSDT 0x0000000093B7D000 005022 (v01 AMD    AmdTable 00000001 INTL 20200717)
+[    0.003943] ACPI: SSDT 0x0000000093B7C000 000D40 (v01 AMD    AmdTable 00000001 INTL 20200717)
+[    0.003945] ACPI: SSDT 0x0000000093B7B000 00008D (v01 AMD    AmdTable 00000001 INTL 20200717)
+[    0.003946] ACPI: FPDT 0x0000000093B7A000 000044 (v01 ALASKA A M I    01072009 AMI  01000013)
+[    0.003947] ACPI: Reserving FACP table memory at [mem 0x93bb1000-0x93bb1113]
+[    0.003948] ACPI: Reserving DSDT table memory at [mem 0x93ba8000-0x93bb0b9f]
+[    0.003949] ACPI: Reserving FACS table memory at [mem 0x98bdc000-0x98bdc03f]
+[    0.003949] ACPI: Reserving SSDT table memory at [mem 0x93bbc000-0x93bbc572]
+[    0.003950] ACPI: Reserving SPMI table memory at [mem 0x93bbb000-0x93bbb040]
+[    0.003950] ACPI: Reserving SSDT table memory at [mem 0x93bb2000-0x93bba08a]
+[    0.003951] ACPI: Reserving FIDT table memory at [mem 0x93ba7000-0x93ba709e]
+[    0.003951] ACPI: Reserving MCFG table memory at [mem 0x93ba6000-0x93ba603b]
+[    0.003951] ACPI: Reserving SSDT table memory at [mem 0x93ba2000-0x93ba55a3]
+[    0.003952] ACPI: Reserving CRAT table memory at [mem 0x93ba1000-0x93ba1ee7]
+[    0.003952] ACPI: Reserving CDIT table memory at [mem 0x93ba0000-0x93ba0028]
+[    0.003953] ACPI: Reserving SSDT table memory at [mem 0x93b9f000-0x93b9f787]
+[    0.003953] ACPI: Reserving SSDT table memory at [mem 0x93b9d000-0x93b9e244]
+[    0.003954] ACPI: Reserving SSDT table memory at [mem 0x93b9c000-0x93b9c698]
+[    0.003954] ACPI: Reserving SSDT table memory at [mem 0x93b9b000-0x93b9b0d2]
+[    0.003954] ACPI: Reserving SSDT table memory at [mem 0x93b93000-0x93b9aeb9]
+[    0.003955] ACPI: Reserving WSMT table memory at [mem 0x93b92000-0x93b92027]
+[    0.003955] ACPI: Reserving APIC table memory at [mem 0x93b91000-0x93b9110f]
+[    0.003956] ACPI: Reserving SSDT table memory at [mem 0x93b90000-0x93b907ce]
+[    0.003956] ACPI: Reserving SSDT table memory at [mem 0x93b8e000-0x93b8f0a4]
+[    0.003957] ACPI: Reserving SSDT table memory at [mem 0x93b8d000-0x93b8d7b4]
+[    0.003957] ACPI: Reserving SSDT table memory at [mem 0x93b83000-0x93b8c478]
+[    0.003958] ACPI: Reserving SSDT table memory at [mem 0x93b7d000-0x93b82021]
+[    0.003958] ACPI: Reserving SSDT table memory at [mem 0x93b7c000-0x93b7cd3f]
+[    0.003958] ACPI: Reserving SSDT table memory at [mem 0x93b7b000-0x93b7b08c]
+[    0.003959] ACPI: Reserving FPDT table memory at [mem 0x93b7a000-0x93b7a043]
+[    0.004022] Zone ranges:
+[    0.004023]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.004024]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.004025]   Normal   [mem 0x0000000100000000-0x000000105e2fffff]
+[    0.004026] Movable zone start for each node
+[    0.004027] Early memory node ranges
+[    0.004027]   node   0: [mem 0x0000000000001000-0x000000000009ffff]
+[    0.004028]   node   0: [mem 0x0000000000100000-0x0000000009afefff]
+[    0.004028]   node   0: [mem 0x000000000a000000-0x000000000a1fffff]
+[    0.004029]   node   0: [mem 0x000000000a217000-0x000000009381afff]
+[    0.004030]   node   0: [mem 0x0000000099dfe000-0x0000000099dfefff]
+[    0.004030]   node   0: [mem 0x0000000099e00000-0x000000009affcfff]
+[    0.004030]   node   0: [mem 0x0000000100000000-0x000000105e2fffff]
+[    0.004034] Initmem setup node 0 [mem 0x0000000000001000-0x000000105e2fffff]
+[    0.004040] On node 0, zone DMA: 1 pages in unavailable ranges
+[    0.004059] On node 0, zone DMA: 96 pages in unavailable ranges
+[    0.004233] On node 0, zone DMA32: 1281 pages in unavailable ranges
+[    0.007886] On node 0, zone DMA32: 23 pages in unavailable ranges
+[    0.008114] On node 0, zone DMA32: 26083 pages in unavailable ranges
+[    0.008149] On node 0, zone DMA32: 1 pages in unavailable ranges
+[    0.132609] On node 0, zone Normal: 20483 pages in unavailable ranges
+[    0.132684] On node 0, zone Normal: 7424 pages in unavailable ranges
+[    0.133250] ACPI: PM-Timer IO Port: 0x808
+[    0.133259] ACPI: LAPIC_NMI (acpi_id[0xff] high edge lint[0x1])
+[    0.133275] IOAPIC[0]: apic_id 33, version 33, address 0xfec00000, GSI 0-23
+[    0.133281] IOAPIC[1]: apic_id 34, version 33, address 0xfec01000, GSI 24-55
+[    0.133282] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.133284] ACPI: INT_SRC_OVR (bus 0 bus_irq 1 global_irq 1 low edge)
+[    0.133285] ACPI: INT_SRC_OVR (bus 0 bus_irq 3 global_irq 3 high edge)
+[    0.133285] ACPI: INT_SRC_OVR (bus 0 bus_irq 4 global_irq 4 high edge)
+[    0.133286] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high edge)
+[    0.133286] ACPI: INT_SRC_OVR (bus 0 bus_irq 7 global_irq 7 high edge)
+[    0.133287] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)
+[    0.133289] ACPI: Using ACPI (MADT) for SMP configuration information
+[    0.133295] CPU topo: Max. logical packages:   1
+[    0.133296] CPU topo: Max. logical dies:       1
+[    0.133296] CPU topo: Max. dies per package:   1
+[    0.133299] CPU topo: Max. threads per core:   2
+[    0.133300] CPU topo: Num. cores per package:     8
+[    0.133300] CPU topo: Num. threads per package:  16
+[    0.133301] CPU topo: Allowing 16 present CPUs plus 0 hotplug CPUs
+[    0.133315] [mem 0xa0000000-0xfedfffff] available for PCI devices
+[    0.133318] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+[    0.133324] setup_percpu: NR_CPUS:64 nr_cpumask_bits:16 nr_cpu_ids:16 nr_node_ids:1
+[    0.134612] percpu: Embedded 81 pages/cpu s208896 r8192 d114688 u524288
+[    0.134634] Kernel command line: qtooc.0.0.1-b2 console=ttyS0,115200n8
+[    0.142154] Dentry cache hash table entries: 8388608 (order: 14, 67108864 bytes, linear)
+[    0.145764] Inode-cache hash table entries: 4194304 (order: 13, 33554432 bytes, linear)
+[    0.145841] Built 1 zonelists, mobility grouping on.  Total pages: 16721824
+[    0.145843] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.145848] software IO TLB: area num 16.
+[    0.279193] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=16, Nodes=1
+[    0.280044] Dynamic Preempt: voluntary
+[    0.280152] rcu: Preemptible hierarchical RCU implementation.
+[    0.280152] rcu: 	RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=16.
+[    0.280155] 	Trampoline variant of Tasks RCU enabled.
+[    0.280155] rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+[    0.280156] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=16
+[    0.280172] RCU Tasks: Setting shift to 4 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=16.
+[    0.281094] NR_IRQS: 4352, nr_irqs: 1096, preallocated irqs: 16
+[    0.281323] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.281484] Console: colour dummy device 80x25
+[    0.281547] printk: legacy console [ttyS0] enabled
+[    1.603330] ACPI: Core revision 20240827
+[    1.607452] APIC: Switch to symmetric I/O mode setup
+[    1.612619] x2apic: IRQ remapping doesn't support X2APIC mode
+[    1.619358] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    1.629435] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x36abafa6c16, max_idle_ns: 881590509157 ns
+[    1.639974] Calibrating delay loop (skipped), value calculated using timer frequency.. 3792.77 BogoMIPS (lpj=1896388)
+[    1.640990] x86/cpu: User Mode Instruction Prevention (UMIP) activated
+[    1.642004] LVT offset 1 assigned for vector 0xf9
+[    1.643092] LVT offset 2 assigned for vector 0xf4
+[    1.643995] Last level iTLB entries: 4KB 512, 2MB 512, 4MB 256
+[    1.644972] Last level dTLB entries: 4KB 2048, 2MB 2048, 4MB 1024, 1GB 0
+[    1.645974] process: using mwait in idle threads
+[    1.646974] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    1.647972] Spectre V2 : Mitigation: Retpolines
+[    1.648972] Spectre V2 : Spectre v2 / SpectreRSB: Filling RSB on context switch and VMEXIT
+[    1.649972] Spectre V2 : Enabling Restricted Speculation for firmware calls
+[    1.650973] Spectre V2 : mitigation: Enabling conditional Indirect Branch Prediction Barrier
+[    1.651972] Spectre V2 : User space: Mitigation: STIBP always-on protection
+[    1.652972] Speculative Store Bypass: Mitigation: Speculative Store Bypass disabled via prctl
+[    1.653972] Speculative Return Stack Overflow: IBPB-extending microcode not applied!
+[    1.654972] Speculative Return Stack Overflow: WARNING: See https://kernel.org/doc/html/latest/admin-guide/hw-vuln/srso.html for mitigation options.
+[    1.654972] Speculative Return Stack Overflow: Vulnerable: Safe RET, no microcode
+[    1.656972] Transient Scheduler Attacks: Vulnerable: Clear CPU buffers attempted, no microcode
+[    1.657977] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[    1.658972] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[    1.659972] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[    1.660972] x86/fpu: Supporting XSAVE feature 0x200: 'Protection Keys User registers'
+[    1.661972] x86/fpu: Supporting XSAVE feature 0x800: 'Control-flow User registers'
+[    1.662973] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    1.663972] x86/fpu: xstate_offset[9]:  832, xstate_sizes[9]:    8
+[    1.664972] x86/fpu: xstate_offset[11]:  840, xstate_sizes[11]:   16
+[    1.665972] x86/fpu: Enabled xstate features 0xa07, context size is 856 bytes, using 'compacted' format.
+[    1.686099] Freeing SMP alternatives memory: 32K
+[    1.686974] pid_max: default: 32768 minimum: 301
+[    1.690018] LSM: initializing lsm=capability
+[    1.691132] Mount-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    1.692088] Mountpoint-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    1.796248] smpboot: CPU0: AMD Ryzen Embedded V3C18I 8-Core Processor (family: 0x19, model: 0x44, stepping: 0x1)
+[    1.797158] Performance Events: Fam17h+ core perfctr, AMD PMU driver.
+[    1.797973] ... version:                0
+[    1.798972] ... bit width:              48
+[    1.799972] ... generic registers:      6
+[    1.800972] ... value mask:             0000ffffffffffff
+[    1.801972] ... max period:             00007fffffffffff
+[    1.802972] ... fixed-purpose events:   0
+[    1.803972] ... event mask:             000000000000003f
+[    1.805062] signal: max sigframe size: 2976
+[    1.805996] rcu: Hierarchical SRCU implementation.
+[    1.806973] rcu: 	Max phase no-delay instances is 400.
+[    1.808017] Timer migration: 2 hierarchy levels; 8 children per group; 2 crossnode level
+[    1.811989] MCE: In-kernel MCE decoding enabled.
+[    1.812993] NMI watchdog: Enabled. Permanently consumes one hw-PMU counter.
+[    1.814094] smp: Bringing up secondary CPUs ...
+[    1.815063] smpboot: x86: Booting SMP configuration:
+[    1.815974] .... node  #0, CPUs:        #2  #4  #6  #8 #10 #12 #14  #1  #3  #5  #7  #9 #11 #13 #15
+[    1.827974] Spectre V2 : Update user space SMT mitigation: STIBP always-on
+[    1.838002] smp: Brought up 1 node, 16 CPUs
+[    1.838974] smpboot: Total of 16 processors activated (60684.41 BogoMIPS)
+[    1.841130] Memory: 65556100K/66887296K available (14336K kernel code, 1807K rwdata, 4368K rodata, 72964K init, 2928K bss, 1317652K reserved, 0K cma-reserved)
+[    1.842694] devtmpfs: initialized
+[    1.843988] ACPI: PM: Registering ACPI NVS region [mem 0x0a200000-0x0a216fff] (94208 bytes)
+[    1.844983] ACPI: PM: Registering ACPI NVS region [mem 0x93bbd000-0x98bf8fff] (84131840 bytes)
+[    1.847217] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[    1.847976] futex hash table entries: 4096 (order: 6, 262144 bytes, linear)
+[    1.849047] pinctrl core: initialized pinctrl subsystem
+[    1.850075] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    1.851116] DMA: preallocated 4096 KiB GFP_KERNEL pool for atomic allocations
+[    1.851975] DMA: preallocated 4096 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    1.852975] DMA: preallocated 4096 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    1.854097] thermal_sys: Registered thermal governor 'fair_share'
+[    1.854099] thermal_sys: Registered thermal governor 'bang_bang'
+[    1.854973] thermal_sys: Registered thermal governor 'step_wise'
+[    1.855973] thermal_sys: Registered thermal governor 'user_space'
+[    1.856982] cpuidle: using governor ladder
+[    1.858977] cpuidle: using governor menu
+[    1.860011] ACPI FADT declares the system doesn't support PCIe ASPM, so disable it
+[    1.860974] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    1.862052] PCI: ECAM [mem 0xe0000000-0xefffffff] (base 0xe0000000) for domain 0000 [bus 00-ff]
+[    1.862986] PCI: Using configuration type 1 for base access
+[    1.864995] HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
+[    1.865973] HugeTLB: 16380 KiB vmemmap can be freed for a 1.00 GiB page
+[    1.866973] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    1.867972] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    1.870053] ACPI: Added _OSI(Module Device)
+[    1.870973] ACPI: Added _OSI(Processor Device)
+[    1.871974] ACPI: Added _OSI(Processor Aggregator Device)
+[    1.885459] ACPI BIOS Error (bug): Failure creating named object [\_TZ.TZ01], AE_ALREADY_EXISTS (20240827/dswload2-326)
+[    1.885973] ACPI Error: AE_ALREADY_EXISTS, During name lookup/catalog (20240827/psobject-220)
+[    1.886973] ACPI: Skipping parse of AML opcode: OpcodeName unavailable (0x5B85)
+[    1.888184] ACPI BIOS Error (bug): Could not resolve symbol [\_SB.PCI0.GP19.XHC3.RHUB.PRT2], AE_NOT_FOUND (20240827/dswload2-162)
+[    1.888973] ACPI Error: AE_NOT_FOUND, During name lookup/catalog (20240827/psobject-220)
+[    1.889973] ACPI: Skipping parse of AML opcode: OpcodeName unavailable (0x0010)
+[    1.891024] ACPI BIOS Error (bug): Could not resolve symbol [\_SB.PCI0.GP19.XHC4.RHUB.PRT2], AE_NOT_FOUND (20240827/dswload2-162)
+[    1.891973] ACPI Error: AE_NOT_FOUND, During name lookup/catalog (20240827/psobject-220)
+[    1.892973] ACPI: Skipping parse of AML opcode: OpcodeName unavailable (0x0010)
+[    1.896727] ACPI BIOS Error (bug): Could not resolve symbol [\_SB.PCI0.SBRG.EC0], AE_NOT_FOUND (20240827/dswload2-162)
+[    1.896973] ACPI Error: AE_NOT_FOUND, During name lookup/catalog (20240827/psobject-220)
+[    1.897973] ACPI: Skipping parse of AML opcode: OpcodeName unavailable (0x0010)
+[    1.900034] ACPI: 16 ACPI AML tables successfully acquired and loaded
+[    1.917165] ACPI: USB4 _OSC: OS supports USB3+ DisplayPort+ PCIe+ XDomain+
+[    1.917973] ACPI: USB4 _OSC: OS controls USB3+ DisplayPort+ PCIe+ XDomain+
+[    1.920613] ACPI: EC: EC started
+[    1.920975] ACPI: EC: interrupt blocked
+[    1.923418] ACPI: EC: EC_CMD/EC_SC=0x66, EC_DATA=0x62
+[    1.923973] ACPI: \_SB_.PCI0.SBRG.ITEC: Boot DSDT EC used to handle transactions
+[    1.924975] ACPI: Interpreter enabled
+[    1.925993] ACPI: PM: (supports S0 S3 S5)
+[    1.926973] ACPI: Using IOAPIC for interrupt routing
+[    1.930114] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    1.930972] PCI: Ignoring E820 reservations for host bridge windows
+[    1.932375] ACPI: Enabled 9 GPEs in block 00 to 1F
+[    1.937708] ACPI: \_SB_.PCI0.GP11.PWRS: New power resource
+[    1.938242] ACPI: \_SB_.PCI0.GP11: Overriding _PRW sleep state (S4) by S0 from power resources
+[    1.940246] ACPI: \_SB_.PCI0.GP11.SWUS.PWRS: New power resource
+[    1.942504] ACPI: \_SB_.PCI0.GP12.PWRS: New power resource
+[    1.943235] ACPI: \_SB_.PCI0.GP12: Overriding _PRW sleep state (S4) by S0 from power resources
+[    1.946061] ACPI: \_SB_.PCI0.GP12.SWUS.PWRS: New power resource
+[    1.947225] ACPI: \_SB_.PCI0.GP17.PWRS: New power resource
+[    1.949033] ACPI: \_SB_.PCI0.GP17.VGA_.PWRS: New power resource
+[    1.950294] ACPI: \_SB_.PCI0.GP17.HDAU.PWRS: New power resource
+[    1.951192] ACPI: \_SB_.PCI0.GP17.ACP_.PWRS: New power resource
+[    1.952376] ACPI: \_SB_.PCI0.GP17.AZAL.PWRS: New power resource
+[    1.954368] ACPI: \_SB_.PCI0.GP17.XHC0.PWRS: New power resource
+[    1.955570] ACPI: \_SB_.PCI0.GP17.XHC1.PWRS: New power resource
+[    1.957765] ACPI: \_SB_.PCI0.GP19.XHC2.PWRS: New power resource
+[    1.959457] ACPI: \_SB_.PCI0.GP19.XHC3.PWRS: New power resource
+[    1.961166] ACPI: \_SB_.PCI0.GP19.XHC4.PWRS: New power resource
+[    1.962722] ACPI: \_SB_.PCI0.GP19.NHI0.PWRS: New power resource
+[    1.964277] ACPI: \_SB_.PCI0.GP19.NHI0: Overriding _PRW sleep state (S4) by S0 from power resources
+[    1.965489] ACPI: \_SB_.PCI0.GP19.NHI1.PWRS: New power resource
+[    1.967249] ACPI: \_SB_.PCI0.GP19.NHI1: Overriding _PRW sleep state (S4) by S0 from power resources
+[    1.977622] ACPI: \_SB_.PRWL: New power resource
+[    1.978002] ACPI: \_SB_.PRWB: New power resource
+[    1.980835] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    1.980978] acpi PNP0A08:00: _OSC: OS supports [ExtendedConfig ASPM ClockPM Segments MSI EDR HPX-Type3]
+[    1.982056] acpi PNP0A08:00: _OSC: platform does not support [PME LTR DPC]
+[    1.983120] acpi PNP0A08:00: _OSC: OS now controls [PCIeHotplug AER PCIeCapability]
+[    1.983973] acpi PNP0A08:00: FADT indicates ASPM is unsupported, using BIOS configuration
+[    1.986022] PCI host bridge to bus 0000:00
+[    1.986981] pci_bus 0000:00: root bus resource [io  0x0000-0x03af window]
+[    1.987973] pci_bus 0000:00: root bus resource [io  0x03e0-0x0cf7 window]
+[    1.988973] pci_bus 0000:00: root bus resource [io  0x03b0-0x03df window]
+[    1.989973] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    1.990973] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000dffff window]
+[    1.991973] pci_bus 0000:00: root bus resource [mem 0xa0000000-0xdfffffff window]
+[    1.992973] pci_bus 0000:00: root bus resource [mem 0x1060000000-0x7fffffffff window]
+[    1.993973] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    1.994990] pci 0000:00:00.0: [1022:14b5] type 00 class 0x060000 conventional PCI endpoint
+[    1.996111] pci 0000:00:01.0: [1022:14b7] type 00 class 0x060000 conventional PCI endpoint
+[    1.997049] pci 0000:00:01.1: [1022:14b8] type 01 class 0x060400 PCIe Root Port
+[    1.997992] pci 0000:00:01.1: PCI bridge to [bus 01]
+[    1.998984] pci 0000:00:01.1:   bridge window [mem 0x7ff8800000-0x7ff90fffff 64bit pref]
+[    1.999981] pci 0000:00:01.1: enabling Extended Tags
+[    2.001029] pci 0000:00:01.1: PME# supported from D0 D3hot D3cold
+[    2.002131] pci 0000:00:01.2: [1022:14b8] type 01 class 0x060400 PCIe Root Port
+[    2.002991] pci 0000:00:01.2: PCI bridge to [bus 02]
+[    2.003984] pci 0000:00:01.2:   bridge window [mem 0x7ff9200000-0x7ff92fffff 64bit pref]
+[    2.004980] pci 0000:00:01.2: enabling Extended Tags
+[    2.006027] pci 0000:00:01.2: PME# supported from D0 D3hot D3cold
+[    2.007129] pci 0000:00:02.0: [1022:14b7] type 00 class 0x060000 conventional PCI endpoint
+[    2.008051] pci 0000:00:02.1: [1022:14ba] type 01 class 0x060400 PCIe Root Port
+[    2.008997] pci 0000:00:02.1: PCI bridge to [bus 03]
+[    2.009977] pci 0000:00:02.1:   bridge window [io  0xf000-0xffff]
+[    2.010974] pci 0000:00:02.1:   bridge window [mem 0xdcf00000-0xdcffffff]
+[    2.011991] pci 0000:00:02.1: enabling Extended Tags
+[    2.013046] pci 0000:00:02.1: PME# supported from D0 D3hot D3cold
+[    2.015163] pci 0000:00:02.2: [1022:14ba] type 01 class 0x060400 PCIe Root Port
+[    2.015997] pci 0000:00:02.2: PCI bridge to [bus 04-05]
+[    2.017068] pci 0000:00:02.2: PME# supported from D0 D3hot D3cold
+[    2.018155] pci 0000:00:02.3: [1022:14ba] type 01 class 0x060400 PCIe Root Port
+[    2.018997] pci 0000:00:02.3: PCI bridge to [bus 06]
+[    2.019979] pci 0000:00:02.3:   bridge window [mem 0xdce00000-0xdcefffff]
+[    2.020991] pci 0000:00:02.3: enabling Extended Tags
+[    2.022046] pci 0000:00:02.3: PME# supported from D0 D3hot D3cold
+[    2.023152] pci 0000:00:02.5: [1022:14ba] type 01 class 0x060400 PCIe Root Port
+[    2.023997] pci 0000:00:02.5: PCI bridge to [bus 07]
+[    2.024979] pci 0000:00:02.5:   bridge window [mem 0xdcd00000-0xdcdfffff]
+[    2.025991] pci 0000:00:02.5: enabling Extended Tags
+[    2.027978] pci 0000:00:02.5: PME# supported from D0 D3hot D3cold
+[    2.029146] pci 0000:00:02.6: [1022:14ba] type 01 class 0x060400 PCIe Root Port
+[    2.029997] pci 0000:00:02.6: PCI bridge to [bus 08]
+[    2.030979] pci 0000:00:02.6:   bridge window [mem 0xdc900000-0xdcbfffff]
+[    2.031991] pci 0000:00:02.6: enabling Extended Tags
+[    2.033046] pci 0000:00:02.6: PME# supported from D0 D3hot D3cold
+[    2.034138] pci 0000:00:03.0: [1022:14b7] type 00 class 0x060000 conventional PCI endpoint
+[    2.035052] pci 0000:00:03.1: [1022:14cd] type 01 class 0x060400 PCIe Root Port
+[    2.035999] pci 0000:00:03.1: PCI bridge to [bus 09-78]
+[    2.036978] pci 0000:00:03.1:   bridge window [io  0xd000-0xefff]
+[    2.037975] pci 0000:00:03.1:   bridge window [mem 0xc4000000-0xdbffffff]
+[    2.038981] pci 0000:00:03.1:   bridge window [mem 0x7fd0000000-0x7ff7ffffff 64bit pref]
+[    2.039984] pci 0000:00:03.1: enabling Extended Tags
+[    2.042108] pci 0000:00:03.1: PME# supported from D0 D3hot D3cold
+[    2.044250] pci 0000:00:04.0: [1022:14b7] type 00 class 0x060000 conventional PCI endpoint
+[    2.045055] pci 0000:00:04.1: [1022:14cd] type 01 class 0x060400 PCIe Root Port
+[    2.046979] pci 0000:00:04.1: PCI bridge to [bus 79-e8]
+[    2.047978] pci 0000:00:04.1:   bridge window [io  0xb000-0xcfff]
+[    2.048975] pci 0000:00:04.1:   bridge window [mem 0xac000000-0xc3ffffff]
+[    2.049982] pci 0000:00:04.1:   bridge window [mem 0x7fa0000000-0x7fc7ffffff 64bit pref]
+[    2.050984] pci 0000:00:04.1: enabling Extended Tags
+[    2.052235] pci 0000:00:04.1: PME# supported from D0 D3hot D3cold
+[    2.054905] pci 0000:00:08.0: [1022:14b7] type 00 class 0x060000 conventional PCI endpoint
+[    2.055049] pci 0000:00:08.1: [1022:14b9] type 01 class 0x060400 PCIe Root Port
+[    2.055995] pci 0000:00:08.1: PCI bridge to [bus e9]
+[    2.056977] pci 0000:00:08.1:   bridge window [mem 0xdc000000-0xdc4fffff]
+[    2.057988] pci 0000:00:08.1: enabling Extended Tags
+[    2.059024] pci 0000:00:08.1: PME# supported from D0 D3hot D3cold
+[    2.060125] pci 0000:00:08.2: [1022:14b9] type 01 class 0x060400 PCIe Root Port
+[    2.060996] pci 0000:00:08.2: PCI bridge to [bus ea]
+[    2.061977] pci 0000:00:08.2:   bridge window [mem 0xdcc00000-0xdccfffff]
+[    2.062988] pci 0000:00:08.2: enabling Extended Tags
+[    2.064972] pci 0000:00:08.2: PME# supported from D0 D3hot D3cold
+[    2.064972] pci 0000:00:08.2: PME# supported from D0 D3hot D3cold
+[    2.066114] pci 0000:00:08.3: [1022:14b9] type 01 class 0x060400 PCIe Root Port
+[    2.066995] pci 0000:00:08.3: PCI bridge to [bus eb]
+[    2.067977] pci 0000:00:08.3:   bridge window [mem 0xdc500000-0xdc8fffff]
+[    2.068988] pci 0000:00:08.3: enabling Extended Tags
+[    2.070027] pci 0000:00:08.3: PME# supported from D0 D3hot D3cold
+[    2.071150] pci 0000:00:14.0: [1022:790b] type 00 class 0x0c0500 conventional PCI endpoint
+[    2.072140] pci 0000:00:14.3: [1022:1682] type 00 class 0x060100 conventional PCI endpoint
+[    2.073171] pci 0000:00:18.0: [1022:1679] type 00 class 0x060000 conventional PCI endpoint
+[    2.075014] pci 0000:00:18.1: [1022:167a] type 00 class 0x060000 conventional PCI endpoint
+[    2.076021] pci 0000:00:18.2: [1022:167b] type 00 class 0x060000 conventional PCI endpoint
+[    2.077022] pci 0000:00:18.3: [1022:167c] type 00 class 0x060000 conventional PCI endpoint
+[    2.078023] pci 0000:00:18.4: [1022:167d] type 00 class 0x060000 conventional PCI endpoint
+[    2.079023] pci 0000:00:18.5: [1022:167e] type 00 class 0x060000 conventional PCI endpoint
+[    2.080023] pci 0000:00:18.6: [1022:167f] type 00 class 0x060000 conventional PCI endpoint
+[    2.081023] pci 0000:00:18.7: [1022:1680] type 00 class 0x060000 conventional PCI endpoint
+[    2.082087] pci 0000:01:00.0: [14e4:8820] type 00 class 0x020000 PCIe Endpoint
+[    2.082988] pci 0000:01:00.0: BAR 0 [mem 0x7ff9000000-0x7ff9007fff 64bit pref]
+[    2.083982] pci 0000:01:00.0: BAR 2 [mem 0x7ff8800000-0x7ff8ffffff 64bit pref]
+[    2.085073] pci 0000:01:00.0: PME# supported from D0 D3hot D3cold
+[    2.086149] pci 0000:00:01.1: PCI bridge to [bus 01]
+[    2.087038] pci 0000:02:00.0: [14e4:9800] type 00 class 0x020000 PCIe Endpoint
+[    2.087989] pci 0000:02:00.0: BAR 0 [mem 0x7ff9202000-0x7ff9202fff 64bit pref]
+[    2.088982] pci 0000:02:00.0: BAR 2 [mem 0x7ff9201000-0x7ff9201fff 64bit pref]
+[    2.089982] pci 0000:02:00.0: BAR 4 [mem 0x7ff9200000-0x7ff9200fff 64bit pref]
+[    2.091066] pci 0000:02:00.0: PME# supported from D0 D3hot
+[    2.092130] pci 0000:00:01.2: PCI bridge to [bus 02]
+[    2.093063] pci 0000:03:00.0: working around ROM BAR overlap defect
+[    2.093973] pci 0000:03:00.0: [8086:1533] type 00 class 0x020000 PCIe Endpoint
+[    2.094991] pci 0000:03:00.0: BAR 0 [mem 0xdcf00000-0xdcf7ffff]
+[    2.095990] pci 0000:03:00.0: BAR 2 [io  0xf000-0xf01f]
+[    2.096981] pci 0000:03:00.0: BAR 3 [mem 0xdcf80000-0xdcf83fff]
+[    2.098097] pci 0000:03:00.0: PME# supported from D0 D3hot D3cold
+[    2.099176] pci 0000:00:02.1: PCI bridge to [bus 03]
+[    2.100051] pci 0000:04:00.0: [1a03:1150] type 01 class 0x060400 PCIe to PCI/PCI-X bridge
+[    2.101004] pci 0000:04:00.0: PCI bridge to [bus 05]
+[    2.103049] pci 0000:04:00.0: supports D1 D2
+[    2.103973] pci 0000:04:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    2.105120] pci 0000:00:02.2: PCI bridge to [bus 04-05]
+[    2.106015] pci_bus 0000:05: extended config space not accessible
+[    2.107023] pci 0000:04:00.0: PCI bridge to [bus 05]
+[    2.108058] pci 0000:06:00.0: [1d79:2269] type 00 class 0x010802 PCIe Endpoint
+[    2.108989] pci 0000:06:00.0: BAR 0 [mem 0xdce00000-0xdce03fff 64bit]
+[    2.110278] pci 0000:06:00.0: 15.753 Gb/s available PCIe bandwidth, limited by 16.0 GT/s PCIe x1 link at 0000:00:02.3 (capable of 63.012 Gb/s with 16.0 GT/s PCIe x4 link)
+[    2.112018] pci 0000:00:02.3: PCI bridge to [bus 06]
+[    2.113048] pci 0000:07:00.0: [1d79:2269] type 00 class 0x010802 PCIe Endpoint
+[    2.113988] pci 0000:07:00.0: BAR 0 [mem 0xdcd00000-0xdcd03fff 64bit]
+[    2.116085] pci 0000:07:00.0: 15.753 Gb/s available PCIe bandwidth, limited by 16.0 GT/s PCIe x1 link at 0000:00:02.5 (capable of 63.012 Gb/s with 16.0 GT/s PCIe x4 link)
+[    2.117090] pci 0000:00:02.5: PCI bridge to [bus 07]
+[    2.118057] pci 0000:08:00.0: [8086:125d] type 00 class 0x020000 PCIe Endpoint
+[    2.118989] pci 0000:08:00.0: BAR 0 [mem 0xdca00000-0xdcafffff]
+[    2.119998] pci 0000:08:00.0: BAR 3 [mem 0xdcb00000-0xdcb03fff]
+[    2.120998] pci 0000:08:00.0: ROM [mem 0xdc900000-0xdc9fffff pref]
+[    2.122983] pci 0000:08:00.0: PME# supported from D0 D3hot D3cold
+[    2.124154] pci 0000:00:02.6: PCI bridge to [bus 08]
+[    2.125044] pci 0000:00:03.1: PCI bridge to [bus 09-78]
+[    2.126043] pci 0000:00:04.1: PCI bridge to [bus 79-e8]
+[    2.128011] pci 0000:e9:00.0: [1002:145a] type 00 class 0x130000 PCIe Legacy Endpoint
+[    2.129012] pci 0000:e9:00.0: enabling Extended Tags
+[    2.131077] pci 0000:e9:00.2: [1022:1649] type 00 class 0x108000 PCIe Endpoint
+[    2.132050] pci 0000:e9:00.2: BAR 2 [mem 0xdc300000-0xdc3fffff]
+[    2.132988] pci 0000:e9:00.2: BAR 5 [mem 0xdc44a000-0xdc44bfff]
+[    2.133985] pci 0000:e9:00.2: enabling Extended Tags
+[    2.135128] pci 0000:e9:00.3: [1022:161d] type 00 class 0x0c0330 PCIe Endpoint
+[    2.135990] pci 0000:e9:00.3: BAR 0 [mem 0xdc200000-0xdc2fffff 64bit]
+[    2.137008] pci 0000:e9:00.3: enabling Extended Tags
+[    2.138020] pci 0000:e9:00.3: PME# supported from D0 D3hot D3cold
+[    2.139091] pci 0000:e9:00.4: [1022:161e] type 00 class 0x0c0330 PCIe Endpoint
+[    2.139990] pci 0000:e9:00.4: BAR 0 [mem 0xdc100000-0xdc1fffff 64bit]
+[    2.141008] pci 0000:e9:00.4: enabling Extended Tags
+[    2.142020] pci 0000:e9:00.4: PME# supported from D0 D3hot D3cold
+[    2.143092] pci 0000:e9:00.5: [1022:15e2] type 00 class 0x048000 PCIe Endpoint
+[    2.143986] pci 0000:e9:00.5: BAR 0 [mem 0xdc400000-0xdc43ffff]
+[    2.145004] pci 0000:e9:00.5: enabling Extended Tags
+[    2.146017] pci 0000:e9:00.5: PME# supported from D0 D3hot D3cold
+[    2.148019] pci 0000:e9:00.6: [1022:15e3] type 00 class 0x040300 PCIe Endpoint
+[    2.148986] pci 0000:e9:00.6: BAR 0 [mem 0xdc440000-0xdc447fff]
+[    2.150004] pci 0000:e9:00.6: enabling Extended Tags
+[    2.151017] pci 0000:e9:00.6: PME# supported from D0 D3hot D3cold
+[    2.152090] pci 0000:e9:00.7: [1022:15e4] type 00 class 0x118000 PCIe Endpoint
+[    2.152993] pci 0000:e9:00.7: BAR 2 [mem 0xdc000000-0xdc0fffff]
+[    2.153988] pci 0000:e9:00.7: BAR 5 [mem 0xdc448000-0xdc449fff]
+[    2.154985] pci 0000:e9:00.7: enabling Extended Tags
+[    2.156139] pci 0000:00:08.1: PCI bridge to [bus e9]
+[    2.157035] pci 0000:ea:00.0: [1022:145a] type 00 class 0x130000 PCIe Endpoint
+[    2.158011] pci 0000:ea:00.0: enabling Extended Tags
+[    2.159161] pci 0000:ea:00.2: [1022:1458] type 00 class 0x020000 PCIe Endpoint
+[    2.159987] pci 0000:ea:00.2: BAR 0 [mem 0xdcc60000-0xdcc7ffff]
+[    2.160982] pci 0000:ea:00.2: BAR 1 [mem 0xdcc40000-0xdcc5ffff]
+[    2.161986] pci 0000:ea:00.2: BAR 2 [mem 0xdcc82000-0xdcc83fff 64bit]
+[    2.162997] pci 0000:ea:00.2: enabling Extended Tags
+[    2.164092] pci 0000:ea:00.3: [1022:1458] type 00 class 0x020000 PCIe Endpoint
+[    2.164987] pci 0000:ea:00.3: BAR 0 [mem 0xdcc20000-0xdcc3ffff]
+[    2.165982] pci 0000:ea:00.3: BAR 1 [mem 0xdcc00000-0xdcc1ffff]
+[    2.166985] pci 0000:ea:00.3: BAR 2 [mem 0xdcc80000-0xdcc81fff 64bit]
+[    2.167997] pci 0000:ea:00.3: enabling Extended Tags
+[    2.169097] pci 0000:00:08.2: PCI bridge to [bus ea]
+[    2.170063] pci 0000:eb:00.0: [1022:161f] type 00 class 0x0c0330 PCIe Endpoint
+[    2.170993] pci 0000:eb:00.0: BAR 0 [mem 0xdc700000-0xdc7fffff 64bit]
+[    2.172011] pci 0000:eb:00.0: enabling Extended Tags
+[    2.173031] pci 0000:eb:00.0: PME# supported from D0 D3hot D3cold
+[    2.175016] pci 0000:eb:00.3: [1022:15d6] type 00 class 0x0c0330 PCIe Endpoint
+[    2.175990] pci 0000:eb:00.3: BAR 0 [mem 0xdc600000-0xdc6fffff 64bit]
+[    2.177008] pci 0000:eb:00.3: enabling Extended Tags
+[    2.178021] pci 0000:eb:00.3: PME# supported from D0 D3hot D3cold
+[    2.180050] pci 0000:eb:00.4: [1022:15d7] type 00 class 0x0c0330 PCIe Endpoint
+[    2.180990] pci 0000:eb:00.4: BAR 0 [mem 0xdc500000-0xdc5fffff 64bit]
+[    2.182008] pci 0000:eb:00.4: enabling Extended Tags
+[    2.183020] pci 0000:eb:00.4: PME# supported from D0 D3hot D3cold
+[    2.185071] pci 0000:eb:00.5: [1022:162e] type 00 class 0x0c0340 PCIe Endpoint
+[    2.185991] pci 0000:eb:00.5: BAR 0 [mem 0xdc880000-0xdc8fffff 64bit]
+[    2.187001] pci 0000:eb:00.5: enabling Extended Tags
+[    2.188021] pci 0000:eb:00.5: PME# supported from D0 D3hot D3cold
+[    2.189092] pci 0000:eb:00.6: [1022:162f] type 00 class 0x0c0340 PCIe Endpoint
+[    2.189991] pci 0000:eb:00.6: BAR 0 [mem 0xdc800000-0xdc87ffff 64bit]
+[    2.191000] pci 0000:eb:00.6: enabling Extended Tags
+[    2.192020] pci 0000:eb:00.6: PME# supported from D0 D3hot D3cold
+[    2.193100] pci 0000:00:08.3: PCI bridge to [bus eb]
+[    2.202158] ACPI: PCI: Interrupt link LNKA configured for IRQ 0
+[    2.203023] ACPI: PCI: Interrupt link LNKB configured for IRQ 0
+[    2.204047] ACPI: PCI: Interrupt link LNKC configured for IRQ 0
+[    2.205026] ACPI: PCI: Interrupt link LNKD configured for IRQ 0
+[    2.206022] ACPI: PCI: Interrupt link LNKE configured for IRQ 0
+[    2.207013] ACPI: PCI: Interrupt link LNKF configured for IRQ 0
+[    2.208024] ACPI: PCI: Interrupt link LNKG configured for IRQ 0
+[    2.209014] ACPI: PCI: Interrupt link LNKH configured for IRQ 0
+[    2.211116] ACPI: EC: interrupt unblocked
+[    2.211973] ACPI: EC: event unblocked
+[    2.212972] ACPI: EC: EC_CMD/EC_SC=0x66, EC_DATA=0x62
+[    2.213972] ACPI: EC: GPE=0x2
+[    2.214973] ACPI: \_SB_.PCI0.SBRG.ITEC: Boot DSDT EC initialization complete
+[    2.215978] ACPI: \_SB_.PCI0.SBRG.ITEC: EC: Used to handle transactions and events
+[    2.217054] iommu: Default domain type: Translated
+[    2.217973] iommu: DMA domain TLB invalidation policy: lazy mode
+[    2.219021] SCSI subsystem initialized
+[    2.219996] ACPI: bus type USB registered
+[    2.220990] usbcore: registered new interface driver usbfs
+[    2.221981] usbcore: registered new interface driver hub
+[    2.222982] usbcore: registered new device driver usb
+[    2.238525] EDAC MC: Ver: 3.0.0
+[    2.239106] efivars: Registered efivars operations
+[    2.240142] PCI: Using ACPI for IRQ routing
+[    2.250732] vgaarb: loaded
+[    2.251050] clocksource: Switched to clocksource tsc-early
+[    2.256646] pnp: PnP ACPI init
+[    2.259826] system 00:00: [mem 0xe0000000-0xefffffff] has been reserved
+[    2.270379] system 00:02: [io  0x0200-0x0201] has been reserved
+[    2.276332] system 00:02: [io  0x0a00-0x0a1f] has been reserved
+[    2.282277] system 00:02: [io  0x0a20-0x0a2f] has been reserved
+[    2.288240] system 00:02: [io  0x0a30-0x0a3f] has been reserved
+[    2.294182] system 00:02: [io  0x0a40-0x0a4f] has been reserved
+[    2.300126] system 00:02: [io  0x0a50-0x0a5f] has been reserved
+[    2.306070] system 00:02: [io  0x0a60-0x0a6f] has been reserved
+[    2.312956] ACPI: IRQ 5 override to edge(!), high(!)
+[    2.318236] ACPI: IRQ 7 override to edge(!), high(!)
+[    2.323511] system 00:08: [io  0x04d0-0x04d1] has been reserved
+[    2.329465] system 00:08: [io  0x040b] has been reserved
+[    2.334802] system 00:08: [io  0x04d6] has been reserved
+[    2.340137] system 00:08: [io  0x0c00-0x0c01] has been reserved
+[    2.346077] system 00:08: [io  0x0c14] has been reserved
+[    2.351697] system 00:08: [io  0x0c50-0x0c51] has been reserved
+[    2.357642] system 00:08: [io  0x0c52] has been reserved
+[    2.362976] system 00:08: [io  0x0c6c] has been reserved
+[    2.368312] system 00:08: [io  0x0c6f] has been reserved
+[    2.373650] system 00:08: [io  0x0cd0-0x0cd1] has been reserved
+[    2.379590] system 00:08: [io  0x0cd2-0x0cd3] has been reserved
+[    2.385533] system 00:08: [io  0x0cd4-0x0cd5] has been reserved
+[    2.391475] system 00:08: [io  0x0cd6-0x0cd7] has been reserved
+[    2.397420] system 00:08: [io  0x0cd8-0x0cdf] has been reserved
+[    2.403366] system 00:08: [io  0x0800-0x089f] has been reserved
+[    2.409310] system 00:08: [io  0x0b00-0x0b0f] has been reserved
+[    2.415247] system 00:08: [io  0x0b20-0x0b3f] has been reserved
+[    2.421189] system 00:08: [io  0x0900-0x090f] has been reserved
+[    2.427134] system 00:08: [io  0x0910-0x091f] has been reserved
+[    2.433077] system 00:08: [mem 0xfec00000-0xfec00fff] could not be reserved
+[    2.440057] system 00:08: [mem 0xfec01000-0xfec01fff] could not be reserved
+[    2.447038] system 00:08: [mem 0xfedc0000-0xfedc0fff] has been reserved
+[    2.453675] system 00:08: [mem 0xfee00000-0xfee00fff] has been reserved
+[    2.460309] system 00:08: [mem 0xfed80000-0xfed8ffff] could not be reserved
+[    2.467295] system 00:08: [mem 0xfec10000-0xfec10fff] has been reserved
+[    2.473930] system 00:08: [mem 0xff000000-0xffffffff] has been reserved
+[    2.481238] pnp: PnP ACPI: found 9 devices
+[    2.491702] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    2.500663] NET: Registered PF_INET protocol family
+[    2.505746] IP idents hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    2.515128] tcp_listen_portaddr_hash hash table entries: 32768 (order: 7, 524288 bytes, linear)
+[    2.523896] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    2.531681] TCP established hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    2.540238] TCP bind hash table entries: 65536 (order: 9, 2097152 bytes, linear)
+[    2.547835] TCP: Hash tables configured (established 524288 bind 65536)
+[    2.554515] UDP hash table entries: 32768 (order: 8, 1048576 bytes, linear)
+[    2.561613] UDP-Lite hash table entries: 32768 (order: 8, 1048576 bytes, linear)
+[    2.569184] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    2.574894] pci 0000:00:01.1: PCI bridge to [bus 01]
+[    2.579886] pci 0000:00:01.1:   bridge window [mem 0x7ff8800000-0x7ff90fffff 64bit pref]
+[    2.588000] pci 0000:00:01.2: PCI bridge to [bus 02]
+[    2.592989] pci 0000:00:01.2:   bridge window [mem 0x7ff9200000-0x7ff92fffff 64bit pref]
+[    2.601105] pci 0000:00:02.1: PCI bridge to [bus 03]
+[    2.606095] pci 0000:00:02.1:   bridge window [io  0xf000-0xffff]
+[    2.612214] pci 0000:00:02.1:   bridge window [mem 0xdcf00000-0xdcffffff]
+[    2.619032] pci 0000:04:00.0: PCI bridge to [bus 05]
+[    2.624032] pci 0000:00:02.2: PCI bridge to [bus 04-05]
+[    2.629286] pci 0000:00:02.3: PCI bridge to [bus 06]
+[    2.634276] pci 0000:00:02.3:   bridge window [mem 0xdce00000-0xdcefffff]
+[    2.641092] pci 0000:00:02.5: PCI bridge to [bus 07]
+[    2.646081] pci 0000:00:02.5:   bridge window [mem 0xdcd00000-0xdcdfffff]
+[    2.652897] pci 0000:00:02.6: PCI bridge to [bus 08]
+[    2.657886] pci 0000:00:02.6:   bridge window [mem 0xdc900000-0xdcbfffff]
+[    2.664700] pci 0000:00:03.1: PCI bridge to [bus 09-78]
+[    2.669947] pci 0000:00:03.1:   bridge window [io  0xd000-0xefff]
+[    2.676068] pci 0000:00:03.1:   bridge window [mem 0xc4000000-0xdbffffff]
+[    2.682881] pci 0000:00:03.1:   bridge window [mem 0x7fd0000000-0x7ff7ffffff 64bit pref]
+[    2.691000] pci 0000:00:04.1: PCI bridge to [bus 79-e8]
+[    2.696250] pci 0000:00:04.1:   bridge window [io  0xb000-0xcfff]
+[    2.702371] pci 0000:00:04.1:   bridge window [mem 0xac000000-0xc3ffffff]
+[    2.709181] pci 0000:00:04.1:   bridge window [mem 0x7fa0000000-0x7fc7ffffff 64bit pref]
+[    2.717296] pci 0000:00:08.1: PCI bridge to [bus e9]
+[    2.722293] pci 0000:00:08.1:   bridge window [mem 0xdc000000-0xdc4fffff]
+[    2.729113] pci 0000:00:08.2: PCI bridge to [bus ea]
+[    2.734104] pci 0000:00:08.2:   bridge window [mem 0xdcc00000-0xdccfffff]
+[    2.740921] pci 0000:00:08.3: PCI bridge to [bus eb]
+[    2.745913] pci 0000:00:08.3:   bridge window [mem 0xdc500000-0xdc8fffff]
+[    2.752729] pci_bus 0000:00: resource 4 [io  0x0000-0x03af window]
+[    2.758928] pci_bus 0000:00: resource 5 [io  0x03e0-0x0cf7 window]
+[    2.765132] pci_bus 0000:00: resource 6 [io  0x03b0-0x03df window]
+[    2.771338] pci_bus 0000:00: resource 7 [io  0x0d00-0xffff window]
+[    2.777539] pci_bus 0000:00: resource 8 [mem 0x000a0000-0x000dffff window]
+[    2.784436] pci_bus 0000:00: resource 9 [mem 0xa0000000-0xdfffffff window]
+[    2.791334] pci_bus 0000:00: resource 10 [mem 0x1060000000-0x7fffffffff window]
+[    2.798661] pci_bus 0000:01: resource 2 [mem 0x7ff8800000-0x7ff90fffff 64bit pref]
+[    2.806253] pci_bus 0000:02: resource 2 [mem 0x7ff9200000-0x7ff92fffff 64bit pref]
+[    2.813842] pci_bus 0000:03: resource 0 [io  0xf000-0xffff]
+[    2.819432] pci_bus 0000:03: resource 1 [mem 0xdcf00000-0xdcffffff]
+[    2.825721] pci_bus 0000:06: resource 1 [mem 0xdce00000-0xdcefffff]
+[    2.832010] pci_bus 0000:07: resource 1 [mem 0xdcd00000-0xdcdfffff]
+[    2.838298] pci_bus 0000:08: resource 1 [mem 0xdc900000-0xdcbfffff]
+[    2.844589] pci_bus 0000:09: resource 0 [io  0xd000-0xefff]
+[    2.850188] pci_bus 0000:09: resource 1 [mem 0xc4000000-0xdbffffff]
+[    2.856475] pci_bus 0000:09: resource 2 [mem 0x7fd0000000-0x7ff7ffffff 64bit pref]
+[    2.864069] pci_bus 0000:79: resource 0 [io  0xb000-0xcfff]
+[    2.869663] pci_bus 0000:79: resource 1 [mem 0xac000000-0xc3ffffff]
+[    2.875949] pci_bus 0000:79: resource 2 [mem 0x7fa0000000-0x7fc7ffffff 64bit pref]
+[    2.883544] pci_bus 0000:e9: resource 1 [mem 0xdc000000-0xdc4fffff]
+[    2.889835] pci_bus 0000:ea: resource 1 [mem 0xdcc00000-0xdccfffff]
+[    2.896127] pci_bus 0000:eb: resource 1 [mem 0xdc500000-0xdc8fffff]
+[    2.902555] pci 0000:00:08.1: can't derive routing for PCI INT A
+[    2.908589] pci 0000:00:08.1: PCI INT A: not connected
+[    2.913837] pci 0000:e9:00.3: quirk_usb_early_handoff+0x0/0x6a0 took 11042 usecs
+[    2.921377] pci 0000:00:08.3: can't derive routing for PCI INT A
+[    2.927404] pci 0000:00:08.3: PCI INT A: not connected
+[    2.932636] pci 0000:eb:00.0: quirk_usb_early_handoff+0x0/0x6a0 took 11011 usecs
+[    2.940208] PCI: CLS 64 bytes, default 64
+[    2.944249] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    2.950714] software IO TLB: mapped [mem 0x000000008b478000-0x000000008f478000] (64MB)
+[    2.959526] RAPL PMU: API unit is 2^-32 Joules, 1 fixed counters, 163840 ms ovfl timer
+[    2.967478] RAPL PMU: hw unit of domain package 2^-16 Joules
+[    2.973159] LVT offset 0 assigned for vector 0x400
+[    2.978088] perf: AMD IBS detected (0x000003fd)
+[    2.982931] amd_uncore: 4 amd_df counters detected
+[    2.987768] amd_uncore: 6 amd_l3 counters detected
+[    2.995983] Initialise system trusted keyrings
+[    3.000523] workingset: timestamp_bits=62 max_order=24 bucket_order=0
+[    3.007290] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    3.022823] Key type asymmetric registered
+[    3.026953] Asymmetric key parser 'x509' registered
+[    3.031877] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+[    3.039301] io scheduler mq-deadline registered
+[    3.045748] ledtrig-cpu: registered to indicate activity on CPUs
+[    3.052671] pcieport 0000:00:03.1: pciehp: Slot #0 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    3.066700] pcieport 0000:00:04.1: pciehp: Slot #0 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    3.080769] pcieport 0000:00:08.2: can't derive routing for PCI INT A
+[    3.087241] pcieport 0000:00:08.2: PCI INT A: not connected
+[    3.093042] pcieport 0000:00:08.3: AER: enabled with IRQ 45
+[    3.098807] IPMI message handler: version 39.2
+[    3.103299] ipmi device interface
+[    3.106689] ipmi_si: IPMI System Interface driver
+[    3.111434] ipmi_si dmi-ipmi-si.0: ipmi_platform: probing via SMBIOS
+[    3.117809] ipmi_platform: ipmi_si: SMBIOS: io 0xca2 regsize 1 spacing 1 irq 0
+[    3.125056] ipmi_si: Adding SMBIOS-specified kcs state machine
+[    3.130967] ipmi_si IPI0001:00: ipmi_platform: probing via ACPI
+[    3.137059] ipmi_si IPI0001:00: ipmi_platform: [io  0x0ca2] regsize 1 spacing 1 irq 0
+[    3.459235] ipmi_si dmi-ipmi-si.0: Removing SMBIOS-specified kcs state machine in favor of ACPI
+[    3.467974] ipmi_si: Adding ACPI-specified kcs state machine
+[    3.473731] ipmi_si: Trying ACPI-specified kcs state machine at i/o address 0xca2, slave address 0x20, irq 0
+[    3.602378] ipmi_si IPI0001:00: IPMI message handler: Found new BMC (man_id: 0x007c82, prod_id: 0x0000, dev_id: 0x04)
+[    3.602378] ipmi_si IPI0001:00: IPMI message handler: Found new BMC (man_id: 0x007c82, prod_id: 0x0000, dev_id: 0x04)
+[    3.768390] ipmi_si IPI0001:00: IPMI kcs interface initialized
+[    3.774263] ipmi_ssif: IPMI SSIF Interface driver
+[    3.790366] IPMI Watchdog: driver initialized
+[    3.794748] IPMI poweroff: Copyright (C) 2004 MontaVista Software - IPMI Powerdown via sys_reboot
+[    3.828292] IPMI poweroff: ATCA Detect mfg 0x7C82 prod 0x0
+[    3.833805] IPMI poweroff: Found a chassis style poweroff function
+[    3.840212] ACPI: AC: AC Adapter [ADP1] (on-line)
+[    3.845016] input: Power Button as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0C:00/input/input0
+[    3.853416] ACPI: button: Power Button [PWRB]
+[    3.857841] input: Sleep Button as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0E:00/input/input1
+[    3.866254] ACPI: button: Sleep Button [SLPB]
+[    3.870679] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input2
+[    3.878135] ACPI: button: Power Button [PWRF]
+[    3.884991] Estimated ratio of average max frequency by base frequency (times 1024): 1561
+[    3.893774] ACPI: \_TZ_.TZ01: _AL0 evaluation failure
+[    3.898866] ACPI: thermal: [Firmware Bug]: Invalid critical threshold (-274000)
+[    3.906585] ACPI: thermal: [Firmware Bug]: No valid trip points!
+[    3.913008] thermal LNXTHERM:00: registered as thermal_zone0
+[    3.918692] ACPI: thermal: Thermal Zone [TZ01] (37 C)
+[    3.923873] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+�[    3.952671] 00:03: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    3.983171] 00:04: ttyS1 at I/O 0x2f8 (irq = 3, base_baud = 115200) is a 16550A
+[    4.012588] 00:06: ttyS4 at I/O 0x240 (irq = 5, base_baud = 115200) is a 16550A
+[    4.020632] tsc: Refined TSC clocksource calibration: 1896.437 MHz
+[    4.026850] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x36ac0c539a6, max_idle_ns: 881590694765 ns
+[    4.043625] clocksource: Switched to clocksource tsc
+[    4.044006] 00:07: ttyS5 at I/O 0x248 (irq = 7, base_baud = 115200) is a 16550A
+[    4.058663] hpet_acpi_add: no address or irqs in _CRS
+[    4.067776] loop: module loaded
+[    4.071356] nvme nvme0: pci function 0000:06:00.0
+[    4.071362] nvme nvme1: pci function 0000:07:00.0
+[    4.071493] xgbe_get_all_hw_features pps_out_num  2 aux_snap_num 2
+[    4.071723] amd-xgbe 0000:ea:00.2: xgbe_phy_init: 4241
+[    4.071725] amd-xgbe 0000:ea:00.2: XP_PROP_0: 0x15000800
+[    4.071727] amd-xgbe 0000:ea:00.2: XP_PROP_1: 0x03030303
+[    4.071729] amd-xgbe 0000:ea:00.2: XP_PROP_2: 0x00040004
+[    4.071730] amd-xgbe 0000:ea:00.2: XP_PROP_3: 0x2dc0e100
+[    4.071731] amd-xgbe 0000:ea:00.2: XP_PROP_4: 0x00001c10
+[    4.071732] amd-xgbe 0000:ea:00.2: XP_PROP_5: 0x00000000
+[    4.071734] amd-xgbe 0000:ea:00.2: running xgbe_i2c_init
+[    4.072634] amd-xgbe 0000:ea:00.2: port mode=8
+[    4.072636] amd-xgbe 0000:ea:00.2: port id=0
+[    4.072637] amd-xgbe 0000:ea:00.2: port speeds=0x14
+[    4.072638] amd-xgbe 0000:ea:00.2: conn type=1
+[    4.072640] amd-xgbe 0000:ea:00.2: mdio addr=1
+[    4.072641] amd-xgbe 0000:ea:00.2: redrv present=0
+[    4.072642] amd-xgbe 0000:ea:00.2: redrv i/f=0
+[    4.072643] amd-xgbe 0000:ea:00.2: redrv addr=0x0
+[    4.072645] amd-xgbe 0000:ea:00.2: redrv lane=0
+[    4.072646] amd-xgbe 0000:ea:00.2: redrv model=0
+[    4.072647] amd-xgbe 0000:ea:00.2: GPIO INFO: reg0 0, reg1 0
+[    4.072649] amd-xgbe 0000:ea:00.2: xgbe_phy_init: 4337, run xgbe_phy_mdio_reset_setup
+[    4.072651] amd-xgbe 0000:ea:00.2: xgbe_phy_init: 4344
+[    4.073325] amd-xgbe 0000:ea:00.2 eth0: net device enabled
+[    4.073451] xgbe_get_all_hw_features pps_out_num  2 aux_snap_num 2
+[    4.073683] amd-xgbe 0000:ea:00.3: xgbe_phy_init: 4241
+[    4.073685] amd-xgbe 0000:ea:00.3: XP_PROP_0: 0x15000801
+[    4.073686] amd-xgbe 0000:ea:00.3: XP_PROP_1: 0x03030303
+[    4.073687] amd-xgbe 0000:ea:00.3: XP_PROP_2: 0x00040004
+[    4.073689] amd-xgbe 0000:ea:00.3: XP_PROP_3: 0x2980a100
+[    4.073690] amd-xgbe 0000:ea:00.3: XP_PROP_4: 0x00001c20
+[    4.073692] amd-xgbe 0000:ea:00.3: XP_PROP_5: 0x00000000
+[    4.073693] amd-xgbe 0000:ea:00.3: running xgbe_i2c_init
+[    4.073711] amd-xgbe 0000:ea:00.3: port mode=8
+[    4.073713] amd-xgbe 0000:ea:00.3: port id=1
+[    4.073714] amd-xgbe 0000:ea:00.3: port speeds=0x14
+[    4.073715] amd-xgbe 0000:ea:00.3: conn type=1
+[    4.073716] amd-xgbe 0000:ea:00.3: mdio addr=0
+[    4.073718] amd-xgbe 0000:ea:00.3: redrv present=0
+[    4.073719] amd-xgbe 0000:ea:00.3: redrv i/f=0
+[    4.073720] amd-xgbe 0000:ea:00.3: redrv addr=0x0
+[    4.073722] amd-xgbe 0000:ea:00.3: redrv lane=0
+[    4.073723] amd-xgbe 0000:ea:00.3: redrv model=0
+[    4.073725] amd-xgbe 0000:ea:00.3: GPIO INFO: reg0 0, reg1 0
+[    4.073726] amd-xgbe 0000:ea:00.3: xgbe_phy_init: 4337, run xgbe_phy_mdio_reset_setup
+[    4.073727] amd-xgbe 0000:ea:00.3: xgbe_phy_init: 4344
+[    4.074337] amd-xgbe 0000:ea:00.3 eth1: net device enabled
+[    4.074355] igb: Intel(R) Gigabit Ethernet Network Driver
+[    4.074356] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    4.074379] igb 0000:03:00.0: enabling device (0000 -> 0002)
+[    4.096530] nvme nvme0: allocated 64 MiB host memory buffer.
+[    4.106193] igb 0000:03:00.0: Intel(R) Gigabit Ethernet Network Connection
+[    4.117640] nvme nvme1: allocated 64 MiB host memory buffer.
+[    4.118916] igb 0000:03:00.0: eth2: (PCIe:2.5Gb/s:Width x1) 00:a0:c9:00:00:00
+[    4.145454] nvme nvme1: 16/0/0 default/read/poll queues
+[    4.147833] igb 0000:03:00.0: eth2: PBA No: 000300-000
+[    4.284951] nvme nvme0: 16/0/0 default/read/poll queues
+[    4.289470] igb 0000:03:00.0: Using MSI-X interrupts. 4 rx queue(s), 4 tx queue(s)
+[    4.289526] usbcore: registered new device driver r8152-cfgselector
+[    4.389985] usbcore: registered new interface driver r8152
+[    4.395505] usbcore: registered new interface driver asix
+[    4.400938] usbcore: registered new interface driver ax88179_178a
+[    4.407062] usbcore: registered new interface driver cdc_ether
+[    4.412925] usbcore: registered new interface driver net1080
+[    4.418619] usbcore: registered new interface driver cdc_subset
+[    4.424570] usbcore: registered new interface driver zaurus
+[    4.430169] usbcore: registered new interface driver cdc_ncm
+[    4.435860] usbcore: registered new interface driver qmi_wwan
+[    4.441634] usbcore: registered new interface driver cdc_mbim
+[    4.447412] usbcore: registered new interface driver r8153_ecm
+[    4.453436] xhci_hcd 0000:e9:00.3: xHCI Host Controller
+[    4.458724] xhci_hcd 0000:e9:00.3: new USB bus registered, assigned bus number 1
+[    4.466545] xhci_hcd 0000:e9:00.3: hcc params 0x0120ffc5 hci version 0x120 quirks 0x0000000200000010
+[    4.475926] xhci_hcd 0000:e9:00.3: xHCI Host Controller
+[    4.481212] xhci_hcd 0000:e9:00.3: new USB bus registered, assigned bus number 2
+[    4.488640] xhci_hcd 0000:e9:00.3: Host supports USB 3.1 Enhanced SuperSpeed
+[    4.495769] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.12
+[    4.504060] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.511307] usb usb1: Product: xHCI Host Controller
+[    4.516207] usb usb1: Manufacturer: Linux 6.12.40 xhci-hcd
+[    4.521717] usb usb1: SerialNumber: 0000:e9:00.3
+[    4.526476] hub 1-0:1.0: USB hub found
+[    4.530273] hub 1-0:1.0: 4 ports detected
+[    4.534480] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[    4.542621] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 6.12
+[    4.550910] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.558155] usb usb2: Product: xHCI Host Controller
+[    4.563052] usb usb2: Manufacturer: Linux 6.12.40 xhci-hcd
+[    4.568565] usb usb2: SerialNumber: 0000:e9:00.3
+[    4.573302] hub 2-0:1.0: USB hub found
+[    4.577089] hub 2-0:1.0: 2 ports detected
+[    4.581343] xhci_hcd 0000:e9:00.4: xHCI Host Controller
+[    4.586640] xhci_hcd 0000:e9:00.4: new USB bus registered, assigned bus number 3
+[    4.594469] xhci_hcd 0000:e9:00.4: hcc params 0x0120ffc5 hci version 0x120 quirks 0x0000000200000010
+[    4.603916] xhci_hcd 0000:e9:00.4: xHCI Host Controller
+[    4.609202] xhci_hcd 0000:e9:00.4: new USB bus registered, assigned bus number 4
+[    4.616631] xhci_hcd 0000:e9:00.4: Host supports USB 3.1 Enhanced SuperSpeed
+[    4.623731] usb usb3: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.12
+[    4.632022] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.639269] usb usb3: Product: xHCI Host Controller
+[    4.644170] usb usb3: Manufacturer: Linux 6.12.40 xhci-hcd
+[    4.649682] usb usb3: SerialNumber: 0000:e9:00.4
+[    4.654415] hub 3-0:1.0: USB hub found
+[    4.658207] hub 3-0:1.0: 3 ports detected
+[    4.662357] usb usb4: We don't know the algorithms for LPM for this host, disabling LPM.
+[    4.670487] usb usb4: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 6.12
+[    4.678775] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.686035] usb usb4: Product: xHCI Host Controller
+[    4.690939] usb usb4: Manufacturer: Linux 6.12.40 xhci-hcd
+[    4.696450] usb usb4: SerialNumber: 0000:e9:00.4
+[    4.701199] hub 4-0:1.0: USB hub found
+[    4.704988] hub 4-0:1.0: 2 ports detected
+[    4.709265] xhci_hcd 0000:eb:00.0: xHCI Host Controller
+[    4.714564] xhci_hcd 0000:eb:00.0: new USB bus registered, assigned bus number 5
+[    4.723269] xhci_hcd 0000:eb:00.0: USB3 root hub has no ports
+[    4.729075] xhci_hcd 0000:eb:00.0: hcc params 0x0110ffc5 hci version 0x120 quirks 0x0000000200000010
+[    4.738516] xhci_hcd 0000:eb:00.0: xHCI Host Controller
+[    4.743799] xhci_hcd 0000:eb:00.0: new USB bus registered, assigned bus number 6
+[    4.751218] xhci_hcd 0000:eb:00.0: Host supports USB 3.0 SuperSpeed
+[    4.757558] usb usb5: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.12
+[    4.765844] usb usb5: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.773089] usb usb5: Product: xHCI Host Controller
+[    4.777991] usb usb5: Manufacturer: Linux 6.12.40 xhci-hcd
+[    4.783499] usb usb5: SerialNumber: 0000:eb:00.0
+[    4.788230] hub 5-0:1.0: USB hub found
+[    4.792018] hub 5-0:1.0: 1 port detected
+[    4.796057] usb usb6: We don't know the algorithms for LPM for this host, disabling LPM.
+[    4.804192] usb usb6: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 6.12
+[    4.812482] usb usb6: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.819726] usb usb6: Product: xHCI Host Controller
+[    4.824628] usb usb6: Manufacturer: Linux 6.12.40 xhci-hcd
+[    4.830139] usb usb6: SerialNumber: 0000:eb:00.0
+[    4.834867] hub 6-0:1.0: USB hub found
+[    4.838655] hub 6-0:1.0: config failed, hub doesn't have any ports! (err -19)
+[    4.845971] xhci_hcd 0000:eb:00.3: xHCI Host Controller
+[    4.851265] xhci_hcd 0000:eb:00.3: new USB bus registered, assigned bus number 7
+[    4.859942] xhci_hcd 0000:eb:00.3: hcc params 0x0110ffc5 hci version 0x120 quirks 0x0000000200000010
+[    4.869433] xhci_hcd 0000:eb:00.3: xHCI Host Controller
+[    4.874725] xhci_hcd 0000:eb:00.3: new USB bus registered, assigned bus number 8
+[    4.882147] xhci_hcd 0000:eb:00.3: Host supports USB 3.1 Enhanced SuperSpeed
+[    4.889250] usb usb7: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.12
+[    4.897534] usb usb7: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.904782] usb usb7: Product: xHCI Host Controller
+[    4.909688] usb usb7: Manufacturer: Linux 6.12.40 xhci-hcd
+[    4.909712] usb 3-2: new high-speed USB device number 2 using xhci_hcd
+[    4.915196] usb usb7: SerialNumber: 0000:eb:00.3
+[    4.926479] hub 7-0:1.0: USB hub found
+[    4.930268] hub 7-0:1.0: 1 port detected
+[    4.934288] usb usb8: We don't know the algorithms for LPM for this host, disabling LPM.
+[    4.942419] usb usb8: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 6.12
+[    4.950708] usb usb8: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.957953] usb usb8: Product: xHCI Host Controller
+[    4.962852] usb usb8: Manufacturer: Linux 6.12.40 xhci-hcd
+[    4.968358] usb usb8: SerialNumber: 0000:eb:00.3
+[    4.973085] hub 8-0:1.0: USB hub found
+[    4.976871] hub 8-0:1.0: 1 port detected
+[    4.981145] xhci_hcd 0000:eb:00.4: xHCI Host Controller
+[    4.986448] xhci_hcd 0000:eb:00.4: new USB bus registered, assigned bus number 9
+[    4.995190] xhci_hcd 0000:eb:00.4: hcc params 0x0110ffc5 hci version 0x120 quirks 0x0000000200000010
+[    5.004771] xhci_hcd 0000:eb:00.4: xHCI Host Controller
+[    5.010056] xhci_hcd 0000:eb:00.4: new USB bus registered, assigned bus number 10
+[    5.017564] xhci_hcd 0000:eb:00.4: Host supports USB 3.1 Enhanced SuperSpeed
+[    5.024670] usb usb9: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.12
+[    5.032954] usb usb9: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    5.040201] usb usb9: Product: xHCI Host Controller
+[    5.045103] usb usb9: Manufacturer: Linux 6.12.40 xhci-hcd
+[    5.050614] usb usb9: SerialNumber: 0000:eb:00.4
+[    5.053185] usb 3-2: New USB device found, idVendor=0b1f, idProduct=03ef, bcdDevice= 1.00
+[    5.055348] hub 9-0:1.0: USB hub found
+[    5.063460] usb 3-2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    5.067235] hub 9-0:1.0: 1 port detected
+[    5.074386] usb 3-2: Product: USB Virtual Hub
+[    5.078402] usb usb10: We don't know the algorithms for LPM for this host, disabling LPM.
+[    5.082710] usb 3-2: Manufacturer: Aspeed
+[    5.090928] usb usb10: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 6.12
+[    5.094942] usb 3-2: SerialNumber: 00000000
+[    5.103311] usb usb10: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    5.114853] usb usb10: Product: xHCI Host Controller
+[    5.119838] usb usb10: Manufacturer: Linux 6.12.40 xhci-hcd
+[    5.125437] usb usb10: SerialNumber: 0000:eb:00.4
+[    5.130250] hub 10-0:1.0: USB hub found
+[    5.134124] hub 10-0:1.0: 1 port detected
+[    5.138456] usbcore: registered new interface driver cdc_wdm
+[    5.144189] usbcore: registered new interface driver usb-storage
+[    5.150252] usbcore: registered new interface driver usbserial_generic
+[    5.156806] usbserial: USB Serial support registered for generic
+[    5.162846] usbcore: registered new interface driver cp210x
+[    5.167857] hub 3-2:1.0: USB hub found
+[    5.168446] usbserial: USB Serial support registered for cp210x
+[    5.172424] hub 3-2:1.0: 7 ports detected
+[    5.178207] usbcore: registered new interface driver ftdi_sio
+[    5.187987] usbserial: USB Serial support registered for FTDI USB Serial Device
+[    5.195393] usbcore: registered new interface driver option
+[    5.200996] usbserial: USB Serial support registered for GSM modem (1-port)
+[    5.208100] usbcore: registered new interface driver pl2303
+[    5.213710] usbserial: USB Serial support registered for pl2303
+[    5.219669] usbcore: registered new interface driver usb_serial_simple
+[    5.226224] usbserial: USB Serial support registered for carelink
+[    5.232344] usbserial: USB Serial support registered for flashloader
+[    5.238726] usbserial: USB Serial support registered for funsoft
+[    5.244762] usbserial: USB Serial support registered for google
+[    5.250718] usbserial: USB Serial support registered for hp4x
+[    5.256489] usbserial: USB Serial support registered for kaufmann
+[    5.262613] usbserial: USB Serial support registered for libtransistor
+[    5.269172] usbserial: USB Serial support registered for moto_modem
+[    5.275470] usbserial: USB Serial support registered for motorola_tetra
+[    5.282109] usbserial: USB Serial support registered for nokia
+[    5.287969] usbserial: USB Serial support registered for novatel_gps
+[    5.294350] usbserial: USB Serial support registered for owon
+[    5.300124] usbserial: USB Serial support registered for siemens_mpi
+[    5.306507] usbserial: USB Serial support registered for suunto
+[    5.312457] usbserial: USB Serial support registered for vivopay
+[    5.318491] usbserial: USB Serial support registered for zio
+[    5.318576] usb 8-1: new SuperSpeed USB device number 2 using xhci_hcd
+[    5.324197] usbcore: registered new interface driver usb_ehset_test
+[    5.337062] i8042: PNP: No PS/2 controller found.
+[    5.341920] rtc_cmos 00:01: RTC can wake from S4
+[    5.346813] rtc_cmos 00:01: registered as rtc0
+[    5.351323] rtc_cmos 00:01: setting system clock to 2026-05-14T17:14:56 UTC (1778778896)
+[    5.359465] rtc_cmos 00:01: alarms up to one month, y3k, 114 bytes nvram
+[    5.366204] i2c_dev: i2c /dev entries driver
+[    5.370577] piix4_smbus 0000:00:14.0: SMBus Host Controller at 0xb00, revision 0
+[    5.378002] piix4_smbus 0000:00:14.0: Using register 0x02 for SMBus port selection
+[    5.386687] piix4_smbus 0000:00:14.0: Auxiliary SMBus Host Controller at 0xb20
+[    5.407822] EDAC MC0: Giving out device to module amd64_edac controller F19h_M40h: DEV 0000:00:18.3 (INTERRUPT)
+[    5.417951] EDAC amd64: F19h_M40h detected (node 0).
+[    5.422944] EDAC amd64: MC: 0:  8192MB 1:  8192MB
+[    5.427674] EDAC amd64: MC: 2:     0MB 3:     0MB
+[    5.432403] EDAC amd64: MC: 0:  8192MB 1:  8192MB
+[    5.437131] EDAC amd64: MC: 2:     0MB 3:     0MB
+[    5.441861] EDAC amd64: MC: 0:  8192MB 1:  8192MB
+[    5.446589] EDAC amd64: MC: 2:     0MB 3:     0MB
+[    5.451318] EDAC amd64: MC: 0:  8192MB 1:  8192MB
+[    5.456046] EDAC amd64: MC: 2:     0MB 3:     0MB
+[    5.461730] usbcore: registered new interface driver usbhid
+[    5.467336] usbhid: USB HID core driver
+[    5.471286] NET: Registered PF_PACKET protocol family
+[    5.476374] 8021q: 802.1Q VLAN Support v1.8
+[    5.482798] microcode: Current revision: 0x0a404102
+[    5.488083] resctrl: L3 allocation detected
+[    5.492300] resctrl: MB allocation detected
+[    5.496512] resctrl: L3 monitoring detected
+[    5.500748] IPI shorthand broadcast: enabled
+[    5.506835] sched_clock: Marking stable (4157011358, 1349608576)->(7409922325, -1903302391)
+[    5.515364] Loading compiled-in X.509 certificates
+[    5.525482] ACPI BIOS Error (bug): Could not resolve symbol [\_SB.PCI0.SBRG.EC0.OKEC], AE_NOT_FOUND (20240827/psargs-332)
+[    5.536468] ACPI Error: Aborting method \_SB.GPIO._EVT due to previous error (AE_NOT_FOUND) (20240827/psparse-529)
+[    5.547344] clk: Disabling unused clocks
+[    5.551990] Freeing unused decrypted memory: 2044K
+[    5.565704] Freeing unused kernel image (initmem) memory: 72964K
+[    5.571756] Write protecting the kernel read-only data: 20480k
+[    5.578085] Freeing unused kernel image (rodata/data gap) memory: 1776K
+[    5.584735] Run /init as init process
+Looking in links: /alpha/whl
+Processing /alpha/whl/diagpy-0.0.1b2-py3-none-any.whl (from -r /alpha/whl/requirements.txt (line 1))
+Processing /alpha/whl/pytest-9.0.2-py3-none-any.whl (from -r /alpha/whl/requirements.txt (line 2))
+Processing /alpha/whl/pytest_loop-1.0.13-py3-none-any.whl (from -r /alpha/whl/requirements.txt (line 3))
+Processing /alpha/whl/pyserial-3.5-py2.py3-none-any.whl (from -r /alpha/whl/requirements.txt (line 4))
+Processing /alpha/whl/pexpect-4.9.0-py2.py3-none-any.whl (from -r /alpha/whl/requirements.txt (line 5))
+Processing /alpha/whl/rpyc-6.0.2-py3-none-any.whl (from -r /alpha/whl/requirements.txt (line 6))
+Processing /alpha/whl/toml-0.10.2-py2.py3-none-any.whl (from diagpy->-r /alpha/whl/requirements.txt (line 1))
+Processing /alpha/whl/smbus2-0.6.0-py2.py3-none-any.whl (from diagpy->-r /alpha/whl/requirements.txt (line 1))
+Processing /alpha/whl/oom-0.5-py3-none-any.whl (from diagpy->-r /alpha/whl/requirements.txt (line 1))
+Processing /alpha/whl/iniconfig-2.3.0-py3-none-any.whl (from pytest->-r /alpha/whl/requirements.txt (line 2))
+Processing /alpha/whl/packaging-26.0-py3-none-any.whl (from pytest->-r /alpha/whl/requirements.txt (line 2))
+Processing /alpha/whl/pluggy-1.6.0-py3-none-any.whl (from pytest->-r /alpha/whl/requirements.txt (line 2))
+Processing /alpha/whl/pygments-2.19.2-py3-none-any.whl (from pytest->-r /alpha/whl/requirements.txt (line 2))
+Processing /alpha/whl/ptyprocess-0.7.0-py2.py3-none-any.whl (from pexpect->-r /alpha/whl/requirements.txt (line 5))
+Processing /alpha/whl/plumbum-1.10.0-py3-none-any.whl (from rpyc->-r /alpha/whl/requirements.txt (line 6))
+Installing collected packages: smbus2, pyserial, ptyprocess, oom, toml, pygments, plumbum, pluggy, pexpect, packaging, iniconfig, rpyc, pytest, diagpy, pytest-loop
+Successfully installed diagpy-0.0.1b2 iniconfig-2.3.0 oom-0.5 packaging-26.0 pexpect-4.9.0 pluggy-1.6.0 plumbum-1.10.0 ptyprocess-0.7.0 pygments-2.19.2 pyserial-3.5 pytest-9.0.2 pytest-loop-1.0.13 rpyc-6.0.2 smbus2-0.6.0 toml-0.10.2
+Successfully installed diagpy-0.0.1b2 iniconfig-2.3.0 oom-0.5 packaging-26.0 pexpect-4.9.0 pluggy-1.6.0 plumbum-1.10.0 ptyprocess-0.7.0 pygments-2.19.2 pyserial-3.5 pytest-9.0.2 pytest-loop-1.0.13 rpyc-6.0.2 smbus2-0.6.0 toml-0.10.2
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+*** WARNING: The BOARD ID is set to 0x00 by default. ***
+[    7.566875] usb 8-1: New USB device found, idVendor=0781, idProduct=55a3, bcdDevice= 1.00
+[    7.575088] usb 8-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    7.582244] usb 8-1: Product:  SanDisk 3.2Gen1
+[    7.586711] usb 8-1: Manufacturer:  USB
+[    7.590571] usb 8-1: SerialNumber: 00014203050525094404
+[    7.596215] usb-storage 8-1:1.0: USB Mass Storage device detected
+[    7.602519] scsi host0: usb-storage 8-1:1.0
+:: Loading ADLIN[    8.209728] adl_bmc: loading out-of-tree module taints kernel.
+K SEMA drivers
+[    8.217635] [ADLINK] SEMA FOR EC
+:: Disable lo
+:: Setup lo with address 127.0.0.1/8
+:: Setup lo with address ::1/8
+ip: RTNETLINK answers: Operation not supported
+:: Enable lo
+Scanning devices...
+::     ___   __     __
+::    / _ | / /__  / /  ___ _
+::   / __ |/ / _ \/ _ \/ _ `/
+::  /_/ |_/_/ .__/_//_/\_,_/
+::        _/_/ _                         __  _
+::       / _ \(_)__ ____ ____  ___  ___ / /_(_)______
+::      / // / / _ `/ _ `/ _ \/ _ \(_-</ __/ / __(_-<
+::     /____/_/\_,_/\_, /_//_/\___/___/\__/_/\__/___/
+::                 /___/
+::
+::
+::  qtooc.0.0.1-b2 is built by yushin at 12:33:29 13/05/2026.
+::
+:: No DIAGPS is detected.
+alphadiags:/#
+alphadiags:/# [    8.639007] scsi 0:0:0:0: Direct-Access      USB      SanDisk 3.2Gen1 1.00 PQ: 0 ANSI: 7
+alphadiags:/# [    8.639007] scsi 0:0:0:0: Direct-Access      USB      SanDisk 3.2Gen1 1.00 PQ: 0 ANSI: 7
+[    8.647278] sd 0:0:0:0: Attached scsi generic sg0 type 0
+[    8.648083] sd 0:0:0:0: [sda] 240328704 512-byte logical blocks: (123 GB/115 GiB)
+[    8.660306] sd 0:0:0:0: [sda] Write Protect is off
+[    8.665317] sd 0:0:0:0: [sda] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
+[    8.696043]  sda: sda1
+[    8.698486] sd 0:0:0:0: [sda] Attached SCSI removable disk
+[    8.718003] FAT-fs (sda1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+cat > /tmp/_mcp_40292.sh <<'__MCP_SCRIPT_40292__'
+cat > /tmp/_mcp_40292.sh <<'__MCP_SCRIPT_40292__'
+> echo "=== uptime ==="; cat /proc/uptime; echo "=== eth2 ==="; ip addr show eth2
+> echo "=== uptime ==="; cat /proc/uptime; echo "=== eth2 ==="; ip addr show eth2
+at -ltn 2>/dev/null | grep ':22' || echo "nothing on :22"ho "=== :22 ==="; netsta
+at -ltn 2>/dev/null | grep ':22' || echo "nothing on :22"ho "=== :22 ==="; netsta
+> __MCP_SCRIPT_40292__
+> __MCP_SCRIPT_40292__
+alphadiags:/#
+alphadiags:/#
+p/_mcp_40292.sh; echo __MCP_MARKER_40292__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /tmp
+__MCP_PID_269__
+=== uptime ===
+60.45 953.31
+=== eth2 ===
+4: eth2: <BROADCAST,MULTICAST> mtu 1500 qdisc noop qlen 1000
+    link/ether 00:a0:c9:00:00:00 brd ff:ff:ff:ff:ff:ff
+=== routes ===
+=== dropbear? ===
+dropbear NOT running
+=== :22 ===
+nothing on :22
+__MCP_MARKER_40292__0
+p/_mcp_40292.sh; echo __MCP_MARKER_40292__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /tmp
+__MCP_PID_269__
+=== uptime ===
+60.45 953.31
+=== eth2 ===
+4: eth2: <BROADCAST,MULTICAST> mtu 1500 qdisc noop qlen 1000
+    link/ether 00:a0:c9:00:00:00 brd ff:ff:ff:ff:ff:ff
+=== routes ===
+=== dropbear? ===
+dropbear NOT running
+=== :22 ===
+nothing on :22
+__MCP_MARKER_40292__0
+alphadiags:/#
+alphadiags:/#
+alphadiags:/# cat > /tmp/_mcp_21419.sh <<'__MCP_SCRIPT_21419__'
+cat > /tmp/_mcp_21419.sh <<'__MCP_SCRIPT_21419__'
+>
+>
+':22'==="; ps w | grep dropbear | grep -v grep; netstat -ltn 2>/dev/null | grep
+':22'==="; ps w | grep dropbear | grep -v grep; netstat -ltn 2>/dev/null | grep
+>
+>
+> __MCP_SCRIPT_21419__
+> __MCP_SCRIPT_21419__
+alphadiags:/#
+alphadiags:/#
+p/_mcp_21419.sh; echo __MCP_MARKER_21419__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /tmp
+__MCP_PID_269__
+[   88.557969] 8021q: adding VLAN 0 to HW filter on device eth2
+p/_mcp_21419.sh; echo __MCP_MARKER_21419__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /tmp
+__MCP_PID_269__
+[   88.557969] 8021q: adding VLAN 0 to HW filter on device eth2
+[   91.512179] igb 0000:03:00.0 eth2: igb: eth2 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX/TX
+[   91.512179] igb 0000:03:00.0 eth2: igb: eth2 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX/TX
+=== eth2 after setup ===
+4: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq qlen 1000
+    link/ether 00:a0:c9:00:00:00 brd ff:ff:ff:ff:ff:ff
+    inet 10.10.129.183/24 scope global eth2
+       valid_lft forever preferred_lft forever
+=== dropbear ===
+  325 root      0:00 /usr/sbin/dropbear -R -B
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      
+__MCP_MARKER_21419__0
+=== eth2 after setup ===
+4: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq qlen 1000
+    link/ether 00:a0:c9:00:00:00 brd ff:ff:ff:ff:ff:ff
+    inet 10.10.129.183/24 scope global eth2
+       valid_lft forever preferred_lft forever
+=== dropbear ===
+  325 root      0:00 /usr/sbin/dropbear -R -B
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      
+__MCP_MARKER_21419__0
+alphadiags:/#
+alphadiags:/#
+alphadiags:/# cat > /tmp/_mcp_90824.sh <<'__MCP_SCRIPT_90824__'
+cat > /tmp/_mcp_90824.sh <<'__MCP_SCRIPT_90824__'
+> ip addr flush dev eth2 2>/dev/null; ip link set eth2 down 2>/dev/null; kill $(p
+> ip addr flush dev eth2 2>/dev/null; ip link set eth2 down 2>/dev/null; kill $(p
+pped"p addr show eth2; ps w | grep dropbear | grep -v grep || echo "dropbear stop
+pped"p addr show eth2; ps w | grep dropbear | grep -v grep || echo "dropbear stop
+> __MCP_SCRIPT_90824__
+> __MCP_SCRIPT_90824__
+alphadiags:/#
+alphadiags:/#
+p/_mcp_90824.sh; echo __MCP_MARKER_90824__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /tmp
+__MCP_PID_269__
+p/_mcp_90824.sh; echo __MCP_MARKER_90824__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /tmp
+__MCP_PID_269__
+=== reset to cold-boot-like state ===
+=== reset to cold-boot-like state ===
+=== reset to cold-boot-like state ===
+4: eth2: <BROADCAST,MULTICAST> mtu 1500 qdisc mq qlen 1000
+    link/ether 00:a0:c9:00:00:00 brd ff:ff:ff:ff:ff:ff
+dropbear stopped
+__MCP_MARKER_90824__0
+=== reset to cold-boot-like state ===
+4: eth2: <BROADCAST,MULTICAST> mtu 1500 qdisc mq qlen 1000
+    link/ether 00:a0:c9:00:00:00 brd ff:ff:ff:ff:ff:ff
+dropbear stopped
+__MCP_MARKER_90824__0
+alphadiags:/#
+alphadiags:/#
+alphadiags:/# cat > /tmp/_mcp_83522.sh <<'__MCP_SCRIPT_83522__'
+cat > /tmp/_mcp_83522.sh <<'__MCP_SCRIPT_83522__'
+alphadiags:/# cat > /tmp/_mcp_83522.sh <<'__MCP_SCRIPT_83522__'
+cat > /tmp/_mcp_83522.sh <<'__MCP_SCRIPT_83522__'
+> ip link set eth2 up
+> ip link set eth2 up
+>
+>
+> __MCP_SCRIPT_83522__
+> __MCP_SCRIPT_83522__
+alphadiags:/#
+alphadiags:/#
+p/_mcp_83522.sh; echo __MCP_MARKER_83522__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /tmp
+__MCP_PID_269__
+[  263.316723] 8021q: adding VLAN 0 to HW filter on device eth2
+__MCP_MARKER_83522__0
+p/_mcp_83522.sh; echo __MCP_MARKER_83522__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /tmp
+__MCP_PID_269__
+[  263.316723] 8021q: adding VLAN 0 to HW filter on device eth2
+__MCP_MARKER_83522__0
+alphadiags:/#
+alphadiags:/#
+alphadiags:/# cat > /tmp/_mcp_35837.sh <<'__MCP_SCRIPT_35837__'
+cat > /tmp/_mcp_35837.sh <<'__MCP_SCRIPT_35837__'
+> ip addr add 10.10.129.183/24 dev eth2 2>/dev/null || true
+> ip addr add 10.10.129.183/24 dev eth2 2>/dev/null || true
+> __MCP_SCRIPT_35837__
+> __MCP_SCRIPT_35837__
+alphadiags:/# echo __MCP_PID_$$__; sh /tmp/_mcp_35837.sh; __MCP_EC=$?; rm -f /tmp
+alphadiags:/# echo __MCP_PID_$$__; sh /tmp/_mcp_35837.sh; __MCP_EC=$?; rm -f /tmp
+p/_mcp_35837.sh; echo __MCP_MARKER_35837__${__MCP_EC}
+__MCP_PID_269__
+__MCP_MARKER_35837__0
+alphadiags:/# echo __MCP_PID_$$__; sh /tmp/_mcp_35837.sh; __MCP_EC=$?; rm -f /tmp
+p/_mcp_35837.sh; echo __MCP_MARKER_35837__${__MCP_EC}
+__MCP_PID_269__
+__MCP_MARKER_35837__0
+alphadiags:/# echo __MCP_PID_$$__; sh /tmp/_mcp_35837.sh; __MCP_EC=$?; rm -f /tmp
+alphadiags:/# cat > /tmp/_mcp_63030.sh <<'__MCP_SCRIPT_63030__'_EC=$?; rm -f /tmp
+cat > /tmp/_mcp_63030.sh <<'__MCP_SCRIPT_63030__'
+> mkdir -p /var/run/dropbear
+> mkdir -p /var/run/dropbear
+>
+>
+> __MCP_SCRIPT_63030__
+> __MCP_SCRIPT_63030__
+alphadiags:/#
+alphadiags:/#
+p/_mcp_63030.sh; echo __MCP_MARKER_63030__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /tmp
+__MCP_PID_269__
+__MCP_MARKER_63030__0
+p/_mcp_63030.sh; echo __MCP_MARKER_63030__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /tmp
+__MCP_PID_269__
+__MCP_MARKER_63030__0
+alphadiags:/#
+alphadiags:/#
+alphadiags:/# cat > /tmp/_mcp_91224.sh <<'__MCP_SCRIPT_91224__'
+cat > /tmp/_mcp_91224.sh <<'__MCP_SCRIPT_91224__'
+alphadiags:/# cat > /tmp/_mcp_91224.sh <<'__MCP_SCRIPT_91224__'
+cat > /tmp/_mcp_91224.sh <<'__MCP_SCRIPT_91224__'
+> /usr/sbin/dropbear -R -B 2>/dev/null || true
+> /usr/sbin/dropbear -R -B 2>/dev/null || true
+>
+>
+> __MCP_SCRIPT_91224__
+> __MCP_SCRIPT_91224__
+p/_mcp_91224.sh; echo __MCP_MARKER_91224__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /tmp
+__MCP_PID_269__
+__MCP_MARKER_91224__0
+p/_mcp_91224.sh; echo __MCP_MARKER_91224__${__MCP_EC}.sh; __MCP_EC=$?; rm -f /tmp
+__MCP_PID_269__
+__MCP_MARKER_91224__0
+alphadiags:/#
+alphadiags:/#
+alphadiags:/# [  266.275172] igb 0000:03:00.0 eth2: igb: eth2 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX/TX
+uptime:275s
+eth2 10.10.129.183/24
+  362 root      0:00 /usr/sbin/dropbear -R -B
+  364 root      0:00 /usr/sbin/dropbear -R -B -2 7
+cold-boot-path-verified
+NAME=Buildroot
+VERSION=2025.02.12
+ID=buildroot
+VERSION_ID=2025.02.12
+PRETTY_NAME="Buildroot 2025.02.12"
+---UNAME---
+Linux alphadiags 6.12.40 #2 SMP PREEMPT_DYNAMIC Wed May 13 12:34:31 CST 2026 x86_64 GNU/Linux
+---HOSTNAME---
+alphadiags
+---MODEL---
+---CPU---
+bash: line 1: lscpu: command not found
+---MEM---
+MemTotal:       65646428 kB
+---CPUINFO---
+model name	: AMD Ryzen Embedded V3C18I 8-Core Processor
+16
+---DMI---
+To be filled by O.E.M.
+To be filled by O.E.M.
+To be filled by O.E.M.
+1.05.11.DN03
+---CMDLINE---
+qtooc.0.0.1-b2 console=ttyS0,115200n8
+---UPTIME---
+ 17:21:40 up 6 min,  1 users,  load average: 0.00, 0.00, 0.00
+---ROOT---
+alpha  dev    init   lib64  mnt    proc   run    sys    usr
+bin    etc    lib    media  opt    root   sbin   tmp    var
+---ETC---
+RELEASE.diag       inputrc            passwd             services
+banner             issue              profile            shadow
+dropbear           mcelog             profile.d          shells
+group              mdev.conf          protocols          smartd.conf
+hostname           mtab               resolv.conf        smartd_warning.d
+hosts              network            screenrc           smartd_warning.sh
+init.d             nsswitch.conf      sensors.d          ssl
+inittab            os-release         sensors3.conf
+===RELEASE.diag===
+# Auto-generated, DON'T modify
+export SERIES_NAME="QTOOC"
+export RELEASE_VERSION="0.0.1-b2"
+export RELEASE_DATE="12:33:29 13/05/2026"
+export BUILDER="yushin"
+export IMAGE_NAME="qtooc.0.0.1-b2"
+===banner===
+::     ___   __     __
+::    / _ | / /__  / /  ___ _
+::   / __ |/ / _ \/ _ \/ _ `/
+::  /_/ |_/_/ .__/_//_/\_,_/
+::        _/_/ _                         __  _
+::       / _ \(_)__ ____ ____  ___  ___ / /_(_)______
+::      / // / / _ `/ _ `/ _ \/ _ \(_-</ __/ / __(_-<
+::     /____/_/\_,_/\_, /_//_/\___/___/\__/_/\__/___/
+::                 /___/
+::
+::
+::  qtooc.0.0.1-b2 is built by yushin at 12:33:29 13/05/2026.
+::
+===issue===
+Welcome to Buildroot
+===alpha===
+total 0
+drwxr-xr-x   10 root     root           200 May 14 17:14 .
+drwxr-xr-x   15 root     root           400 May 13 03:59 ..
+drwxr-xr-x    5 root     root           160 May 13 04:32 bcm
+drwxr-xr-x    2 root     root           220 May 13 04:33 bin
+drwxrwxr-x    3 root     root            60 May 13 04:24 lib
+drwxrwxrwx    3 root     root            60 May 14 17:14 mnt
+drwxr-xr-x    3 root     root            80 May 13 03:59 script
+drwxr-xr-x    3 root     root            80 May 13 03:59 toml
+drwxr-xr-x    2 root     root           400 May 13 04:20 whl
+drwxr-xr-x    2 root     root           220 May 13 04:33 xml
+===opt===
+total 0
+drwxr-xr-x    2 root     root            40 Mar 17 19:48 .
+drwxr-xr-x   15 root     root           400 May 13 03:59 ..
+===DMI more===
+American Megatrends Inc.
+04/20/2026
+COMe Type 7
+===bcm===
+/alpha/bcm:
+cmicfw
+config.bcm
+db
+dnx.soc
+led
+rc.soc
+/alpha/bcm/cmicfw:
+custom_led.bin
+linkscan_led_fw.bin
+/alpha/bcm/db:
+jericho2_a0
+jericho2c_a0
+jericho2p_a0
+jericho2x_a0
+jericho3_a0
+jericho3_b0
+jericho3ai_a0
+jericho3ai_b0
+jericho3ai_b1
+jericho3ai_plus_c0
+jericho3ai_plus_c1
+jericho4_a0
+jericho4l_a0
+qumran2a_b0
+qumran3a_a0
+qumran3d_a0
+qumran4d_a0
+qumran4dl_a0
+ramon
+ramon2
+ramon3
+/alpha/bcm/db/jericho2_a0:
+data
+/alpha/bcm/db/jericho2_a0/data:
+bcm88691_data.xml
+===alpha/xml===
+develop.xml      gearbox-cmd.xml  root-view.xml
+diag-cmd.xml     global-cmd.xml   startup.xml
+dirty-cmd.xml    pfe-cmd.xml      types.xml
+===alpha/toml===
+/alpha/toml:
+3200r       board.toml
+/alpha/toml/3200r:
+gearbox.toml  i2c.toml      pfe.toml      xcvr.toml
+===alpha/bin===
+alphach             mgmt-app            quectel-atc-proxy
+board_id_get        modem               quectel-mbim-proxy
+cli                 quectel-CM          quectel-qmi-proxy
+===lspci broadcom===
+01:00.0 Ethernet controller: Broadcom Inc. and subsidiaries Device 8820 (rev 02)
+02:00.0 Ethernet controller: Broadcom Inc. and subsidiaries Device 9800
+===netdev===
+eth0  eth1  eth2  lo
+===alpha/mnt===
+/alpha/mnt:
+usb
+/alpha/mnt/usb:
+System Volume Information
+autorun.ico
+autorun.inf
+diag-installer-x86_64-ncp1_1-r0.sh
+drivenets_baseos_2.2540007001.tar
+install_trace.log
+onie-installer-x86_64-drivenets_ncp1_1_s9700_53dx-r0
+onie-updater-x86_64-drivenets_ncp1_1_s9700_53dx-r0
+package-s9700-53dx-24.04-basic-1.0.0-rootfs_c995f1e2.tar.xz
+qtooc.0.0.1-b2
+startup.nsh
+/alpha/mnt/usb/System Volume Information:
+IndexerVolumeGuid  WPSettings.dat
+===board.toml===
+# Unknown box here. As a fallback virtual board, it must provide a minimum
+# work environment. Any board specific function must be disabled.
+[board-9999]
+board_id = 0xBADB0A8D
+name = "UnknownBoard"
+description = "Something goes wrong..."
+[board-101]
+board_id = 0x00
+name = "3200R"
+port_prefixes = ['fp']
+port_prefix_default = 'fp'
+quickstart = "/alpha/script/quickstart"
+pfe_toml = "/alpha/toml/3200r/pfe.toml"
+gearbox_toml = "/alpha/toml/3200r/gearbox.toml"
+i2c_toml = "/alpha/toml/3200r/i2c.toml"
+xcvr_toml = "/alpha/toml/3200r/xcvr.toml"
+description = "DN 3200R Switch"
+===board_id_get===
+*** WARNING: The BOARD ID is set to 0x00 by default. ***
+0x00
+===mounts===
+rootfs on / type rootfs (rw,size=32784820k,nr_inodes=8196205,inode64)
+/dev/sda1 on /alpha/mnt/usb type vfat (rw,sync,relatime,fmask=0000,dmask=0000,allow_utime=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro)
+===blkid===
+/dev/sda1: LABEL="BASEOS_INST" UUID="18F7-0F13"
+===dmi-rest===
+To be filled by O.E.M.
+A2
+To be filled by O.E.M.
+===modem===
+===dn-version===
+/alpha/mnt/usb/qtooc.0.0.1-b2
